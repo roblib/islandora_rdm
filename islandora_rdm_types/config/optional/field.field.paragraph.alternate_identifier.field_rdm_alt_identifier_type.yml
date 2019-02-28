@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_identifier_type
+    - paragraphs.paragraphs_type.alternate_identifier
+  module:
+    - options
+id: paragraph.alternate_identifier.field_rdm_identifier_type
+field_name: field_rdm_identifier_type
+entity_type: paragraph
+bundle: alternate_identifier
+label: 'Identifier Type'
+description: 'The type of the identifier.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

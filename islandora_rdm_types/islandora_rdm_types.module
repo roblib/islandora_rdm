@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains islandora_rdm_types.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function islandora_rdm_types_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the islandora_rdm_types module.
+    case 'help.page.islandora_rdm_types':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Base content types for Islandora RDM') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_award_uri
+    - node.type.funding_information
+  module:
+    - link
+id: node.funding_information.field_rdm_award_uri
+field_name: field_rdm_award_uri
+entity_type: node
+bundle: funding_information
+label: 'Award URI'
+description: 'The URI leading to a page provided by the funder for more information about the award (grant).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

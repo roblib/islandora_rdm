@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: alternate_identifier
+label: 'Alternate Identifier'
+icon_uuid: null
+description: 'An identifier or identifiers other than the primary Identifier applied to the resource being registered.'
+behavior_plugins: {  }

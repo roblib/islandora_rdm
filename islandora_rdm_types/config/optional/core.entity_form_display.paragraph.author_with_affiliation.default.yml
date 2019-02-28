@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.author_with_affiliation.field_affiliation_contributor
+    - field.field.paragraph.author_with_affiliation.field_affiliation_string
+    - paragraphs.paragraphs_type.author_with_affiliation
+  module:
+    - text
+id: paragraph.author_with_affiliation.default
+targetEntityType: paragraph
+bundle: author_with_affiliation
+mode: default
+content:
+  field_affiliation_contributor:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_affiliation_string:
+    type: text_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

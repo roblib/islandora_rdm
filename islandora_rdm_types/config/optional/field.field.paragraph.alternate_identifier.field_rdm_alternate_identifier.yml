@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_alternate_identifier
+    - paragraphs.paragraphs_type.alternate_identifier
+id: paragraph.alternate_identifier.field_rdm_alternate_identifier
+field_name: field_rdm_alternate_identifier
+entity_type: paragraph
+bundle: alternate_identifier
+label: 'Alternate Identifier'
+description: 'An identifier or identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of issue. May be used for local identifiers. AlternateIdentifier should be used for another identifier of the same instance (same location, same file).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,226 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.islandora_rdm_dataset.body
+    - field.field.node.islandora_rdm_dataset.field_authors_and_affiliations
+    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_creator
+    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
+    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_publisher
+    - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
+    - field.field.node.islandora_rdm_dataset.field_rdm_description_type
+    - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
+    - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
+    - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
+    - field.field.node.islandora_rdm_dataset.field_rdm_resource_type
+    - field.field.node.islandora_rdm_dataset.field_rights
+    - node.type.islandora_rdm_dataset
+  module:
+    - datetime
+    - field_group
+    - geolocation
+    - name
+    - paragraphs
+third_party_settings:
+  field_group:
+    group_dataset:
+      children:
+        - group_identification
+        - group_people
+        - group_relationships
+        - group_geographical_info
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: dataset-groups
+        classes: ''
+        direction: vertical
+      label: Dataset
+      region: content
+    group_identification:
+      children:
+        - title
+        - langcode
+        - field_islandora_rdm_identifier
+        - field_islandora_rdm_publisher
+        - field_rdm_publication_year
+        - field_description
+        - field_rdm_description_type
+        - field_rdm_resource_type
+      parent_name: group_dataset
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: dataset-group-identification
+        classes: ''
+        formatter: open
+        description: 'Basic info'
+        required_fields: true
+      label: Identification
+      region: content
+    group_people:
+      children:
+        - field_islandora_rdm_creator
+        - field_authors_and_affiliations
+      parent_name: group_dataset
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: group-dataset-people
+        classes: ''
+        formatter: closed
+        description: 'Creator and contributor information'
+        required_fields: true
+      label: People
+      region: content
+    group_geographical_info:
+      children:
+        - field_rdm_geograhical_location
+      parent_name: group_dataset
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: group-dataset-geographical-info
+        classes: ''
+        formatter: closed
+        description: 'Geographical locations related to this dataset.'
+        required_fields: true
+      label: 'Geographical Info'
+      region: content
+    group_relationships:
+      children:
+        - field_rdm_alternate_identifier
+        - field_rdm_related_identifier
+        - field_rights
+      parent_name: group_dataset
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: group-dataset-relationships
+        classes: ''
+        formatter: closed
+        description: 'Links to related items and alternate identifiers'
+        required_fields: true
+      label: Relationships
+      region: content
+_core:
+  default_config_hash: gVsScNrYSWRSLX0cufzReoP-hSzyCM0xswEbPfP395o
+id: node.islandora_rdm_dataset.default
+targetEntityType: node
+bundle: islandora_rdm_dataset
+mode: default
+content:
+  field_authors_and_affiliations:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_islandora_rdm_creator:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_islandora_rdm_identifier:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_islandora_rdm_publisher:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rdm_alternate_identifier:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_description_type:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_rdm_geograhical_location:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  field_rdm_publication_year:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rdm_related_identifier:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_resource_type:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rights:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

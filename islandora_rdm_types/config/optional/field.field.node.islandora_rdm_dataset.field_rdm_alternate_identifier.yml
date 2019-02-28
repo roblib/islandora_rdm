@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_alternate_identifier
+    - node.type.islandora_rdm_dataset
+    - paragraphs.paragraphs_type.alternate_identifier
+  module:
+    - entity_reference_revisions
+id: node.islandora_rdm_dataset.field_rdm_alternate_identifier
+field_name: field_rdm_alternate_identifier
+entity_type: node
+bundle: islandora_rdm_dataset
+label: 'Alternate Identifier'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      alternate_identifier: alternate_identifier
+    target_bundles_drag_drop:
+      alternate_identifier:
+        enabled: true
+        weight: 3
+      author_with_affiliation:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

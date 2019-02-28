@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.author_with_affiliation.field_affiliation_contributor
+    - field.field.paragraph.author_with_affiliation.field_affiliation_string
+    - paragraphs.paragraphs_type.author_with_affiliation
+  module:
+    - name
+    - text
+_core:
+  default_config_hash: h9LaqBk9aB8ygJmzUQsIjXUzDtj3251-4NlYxlkXC7o
+id: paragraph.author_with_affiliation.default
+targetEntityType: paragraph
+bundle: author_with_affiliation
+mode: default
+content:
+  field_affiliation_contributor:
+    weight: 0
+    label: visually_hidden
+    settings:
+      format: default
+      markup: true
+      output: default
+      multiple: inline_list
+      multiple_delimiter: ', '
+      multiple_and: text
+      multiple_delimiter_precedes_last: never
+      multiple_el_al_min: '10'
+      multiple_el_al_first: '1'
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_affiliation_string:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

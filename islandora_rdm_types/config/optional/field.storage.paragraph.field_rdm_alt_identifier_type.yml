@@ -1,0 +1,78 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_rdm_identifier_type
+field_name: field_rdm_identifier_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: ARK
+      label: ARK
+    -
+      value: arXiv
+      label: arXiv
+    -
+      value: bibcode
+      label: bibcode
+    -
+      value: DOI
+      label: DOI
+    -
+      value: EAN13
+      label: EAN13
+    -
+      value: EISSN
+      label: EISSN
+    -
+      value: Handle
+      label: Handle
+    -
+      value: IGSN
+      label: IGSN
+    -
+      value: ISBN
+      label: ISBN
+    -
+      value: ISSN
+      label: ISSN
+    -
+      value: ISTC
+      label: ISTC
+    -
+      value: LISSN
+      label: LISSN
+    -
+      value: LSID
+      label: LSID
+    -
+      value: PMID
+      label: PMID
+    -
+      value: PURL
+      label: PURL
+    -
+      value: UPC
+      label: UPC
+    -
+      value: URL
+      label: URL
+    -
+      value: URN
+      label: URN
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

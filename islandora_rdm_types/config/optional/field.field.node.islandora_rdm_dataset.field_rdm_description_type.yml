@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_description_type
+    - node.type.islandora_rdm_dataset
+  module:
+    - options
+id: node.islandora_rdm_dataset.field_rdm_description_type
+field_name: field_rdm_description_type
+entity_type: node
+bundle: islandora_rdm_dataset
+label: 'Description Type'
+description: 'The type of the description.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

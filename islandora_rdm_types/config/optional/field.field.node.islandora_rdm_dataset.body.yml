@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.islandora_rdm_dataset
+  module:
+    - text
+_core:
+  default_config_hash: UGMi6wBxw0agRS3WbED7dMJn3zGXJSXZrSQj2e_NJ60
+id: node.islandora_rdm_dataset.body
+field_name: body
+entity_type: node
+bundle: islandora_rdm_dataset
+label: Description
+description: 'All additional information that does not fit in any of the other categories. May be used for technical information.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

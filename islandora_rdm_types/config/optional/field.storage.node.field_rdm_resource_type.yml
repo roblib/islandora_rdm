@@ -1,0 +1,129 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_rdm_resource_type
+field_name: field_rdm_resource_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Book
+      label: Book
+    -
+      value: 'Book Chapter'
+      label: 'Book Chapter'
+    -
+      value: 'Book Prospectus'
+      label: 'Book Prospectus'
+    -
+      value: 'Book Review'
+      label: 'Book Review'
+    -
+      value: 'Book Series'
+      label: 'Book Series'
+    -
+      value: 'Conference Abstract'
+      label: 'Conference Abstract'
+    -
+      value: 'Conference Paper'
+      label: 'Conference Paper'
+    -
+      value: 'Conference Poster'
+      label: 'Conference Poster'
+    -
+      value: 'Conference Program'
+      label: 'Conference Program'
+    -
+      value: 'Dictionary Entry'
+      label: 'Dictionary Entry'
+    -
+      value: Disclosure
+      label: Disclosure
+    -
+      value: Dissertation
+      label: Dissertation
+    -
+      value: 'Edited Book'
+      label: 'Edited Book'
+    -
+      value: 'Encyclopedia Entry'
+      label: 'Encyclopedia Entry'
+    -
+      value: 'Funding Submission'
+      label: 'Funding Submission'
+    -
+      value: 'Journal Article'
+      label: 'Journal Article'
+    -
+      value: 'Journal Issue'
+      label: 'Journal Issue'
+    -
+      value: License
+      label: License
+    -
+      value: 'Magazine Article'
+      label: 'Magazine Article'
+    -
+      value: Manual
+      label: Manual
+    -
+      value: 'Newsletter Article'
+      label: 'Newsletter Article'
+    -
+      value: 'Newspaper Article'
+      label: 'Newspaper Article'
+    -
+      value: 'Online Resource'
+      label: 'Online Resource'
+    -
+      value: Patent
+      label: Patent
+    -
+      value: 'Registered Copyright'
+      label: 'Registered Copyright'
+    -
+      value: Report
+      label: Report
+    -
+      value: 'Research Tool'
+      label: 'Research Tool'
+    -
+      value: 'Supervised Student Publication'
+      label: 'Supervised Student Publication'
+    -
+      value: Tenure-Promotion
+      label: Tenure-Promotion
+    -
+      value: Test
+      label: Test
+    -
+      value: Trademark
+      label: Trademark
+    -
+      value: Translation
+      label: Translation
+    -
+      value: 'University Academic Unit'
+      label: 'University Academic Unit'
+    -
+      value: Website
+      label: Website
+    -
+      value: 'Working Paper'
+      label: 'Working Paper'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

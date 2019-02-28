@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: author_with_affiliation
+label: 'Author with affiliation'
+icon_uuid: null
+description: 'Contains a reference to a contributor and information about that contributor''s affiliation(s) timely to the article that includes the reference.'
+behavior_plugins: {  }

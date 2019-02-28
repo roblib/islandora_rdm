@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_affiliation_string
+    - paragraphs.paragraphs_type.author_with_affiliation
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    links_only: links_only
+    rich_text_references: '0'
+    rich_text: '0'
+    plain_text: '0'
+_core:
+  default_config_hash: rewmrnMIgCET3Fd_8WaxYQTC2OopaFpgTG2KgXrThT8
+id: paragraph.author_with_affiliation.field_affiliation_string
+field_name: field_affiliation_string
+entity_type: paragraph
+bundle: author_with_affiliation
+label: Affiliation
+description: 'The full affiliation, including department or faculty, institution name and institution address.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_geograhical_location
+    - node.type.islandora_rdm_dataset
+  module:
+    - geolocation
+id: node.islandora_rdm_dataset.field_rdm_geograhical_location
+field_name: field_rdm_geograhical_location
+entity_type: node
+bundle: islandora_rdm_dataset
+label: 'Geograhical Location'
+description: 'Spatial region or named place where the data was gathered or about which the data is focused'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

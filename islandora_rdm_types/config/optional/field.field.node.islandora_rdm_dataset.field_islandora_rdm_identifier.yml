@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_islandora_rdm_identifier
+    - node.type.islandora_rdm_dataset
+id: node.islandora_rdm_dataset.field_islandora_rdm_identifier
+field_name: field_islandora_rdm_identifier
+entity_type: node
+bundle: islandora_rdm_dataset
+label: Identifier
+description: "The Identifier is a unique\r\nstring that identifies a resource. For software, determine whether the identifier is for a specific version of a piece of software, (per the Force11 Software Citation Principles13), or for all versions.\r\n\r\nFormat: <a href=\"https://doi.org/\">DOI</a> (Digital Object Identifier)\r\nregistered by a <a href=\"https://datacite.org/\">DataCite</a> member. Format should be “10.1234/foo”\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
