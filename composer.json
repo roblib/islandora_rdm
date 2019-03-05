@@ -1,0 +1,19 @@
+{
+    "name": "drupal/islandora_rdm",
+    "description": "Islandora Research Data Managment Platform",
+    "type": "drupal-module",
+    "homepage": "https://github.com/roblib/islandora_rdm",
+    "authors": [
+        {
+            "name": "Alexander O'Neill (alxp)",
+            "homepage": "https://www.drupal.org/u/alxp",
+            "role": "Maintainer"
+        }
+    ],
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "require": {
+        "drupal/paragraphs": "~1.5"
+    }
+}
+
