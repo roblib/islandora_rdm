@@ -4,4 +4,5 @@ description: 'Base content types for Islandora RDM'
 core: 8.x
 package: 'Islandora RDM'
 dependencies:
+  - name
   - paragraphs
