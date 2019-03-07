@@ -13,6 +13,7 @@
     "license": "GPL-2.0-or-later",
     "minimum-stability": "dev",
     "require": {
+	"drupal/entity_reference_revisions": "^1.6",
 	"drupal/name": "^1.0@RC",
         "drupal/paragraphs": "~1.5"
     }
