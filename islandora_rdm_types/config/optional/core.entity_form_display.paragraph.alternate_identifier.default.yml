@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.alternate_identifier.field_identifier_type
+    - field.field.paragraph.alternate_identifier.field_rdm_alternate_identifier
+    - paragraphs.paragraphs_type.alternate_identifier
+id: paragraph.alternate_identifier.default
+targetEntityType: paragraph
+bundle: alternate_identifier
+mode: default
+content:
+  field_identifier_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_rdm_alternate_identifier:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -3,8 +3,8 @@ status: true
 dependencies:
   config:
     - field.field.node.islandora_rdm_dataset.body
-    - field.field.node.islandora_rdm_dataset.field_authors_and_affiliations
-    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_creator
+    - field.field.node.islandora_rdm_dataset.field_contributors
+    - field.field.node.islandora_rdm_dataset.field_creator
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_publisher
     - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
@@ -19,8 +19,9 @@ dependencies:
     - datetime
     - field_group
     - geolocation
-    - name
+    - inline_entity_form
     - paragraphs
+    - text
 third_party_settings:
   field_group:
     group_dataset:
@@ -45,7 +46,7 @@ third_party_settings:
         - field_islandora_rdm_identifier
         - field_islandora_rdm_publisher
         - field_rdm_publication_year
-        - field_description
+        - body
         - field_rdm_description_type
         - field_rdm_resource_type
       parent_name: group_dataset
@@ -61,8 +62,8 @@ third_party_settings:
       region: content
     group_people:
       children:
-        - field_islandora_rdm_creator
-        - field_authors_and_affiliations
+        - field_creator
+        - field_contributors
       parent_name: group_dataset
       weight: 21
       format_type: tab
@@ -105,29 +106,52 @@ third_party_settings:
       label: Relationships
       region: content
 _core:
-  default_config_hash: gVsScNrYSWRSLX0cufzReoP-hSzyCM0xswEbPfP395o
+  default_config_hash: 9o3_zgUXrqdhjwxHplDJhLB3VdxVP_pltG0-_tvDoeA
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
 mode: default
 content:
-  field_authors_and_affiliations:
-    type: entity_reference_paragraphs
-    weight: 2
+  body:
+    type: text_textarea_with_summary
+    weight: 5
     region: content
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
     third_party_settings: {  }
-  field_islandora_rdm_creator:
-    weight: 1
-    settings: {  }
+  field_contributors:
+    weight: 27
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      allow_duplicate: true
+      override_labels: false
+      collapsible: false
+      collapsed: false
     third_party_settings: {  }
-    type: name_default
+    type: inline_entity_form_complex
+    region: content
+  field_creator:
+    weight: 26
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      allow_duplicate: true
+      override_labels: false
+      collapsible: false
+      collapsed: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
     region: content
   field_islandora_rdm_identifier:
     type: string_textfield
@@ -146,15 +170,21 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_rdm_alternate_identifier:
-    type: entity_reference_paragraphs
+    type: paragraphs
     weight: 2
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: 'Alternate Identifier'
+      title_plural: 'Alternate Identifiers'
       edit_mode: open
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: alternate_identifier
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
     region: content
   field_rdm_description_type:
@@ -176,15 +206,22 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_rdm_related_identifier:
-    type: entity_reference_paragraphs
+    type: paragraphs
     weight: 3
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: 'Related Identifier'
+      title_plural: 'Related Identifiers'
       edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: alternate_identifier
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
     third_party_settings: {  }
     region: content
   field_rdm_resource_type:
@@ -217,7 +254,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  body: true
   created: true
   path: true
   promote: true

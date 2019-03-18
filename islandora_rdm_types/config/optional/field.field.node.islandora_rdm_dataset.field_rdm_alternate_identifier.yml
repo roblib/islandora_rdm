@@ -7,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.alternate_identifier
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: 5tf1FgR2-FlicnWmG0yMjIOM0WfrAmf2OjamTj_qgyY
 id: node.islandora_rdm_dataset.field_rdm_alternate_identifier
 field_name: field_rdm_alternate_identifier
 entity_type: node

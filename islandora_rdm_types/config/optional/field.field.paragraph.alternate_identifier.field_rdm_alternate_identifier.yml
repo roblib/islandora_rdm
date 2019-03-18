@@ -4,12 +4,14 @@ dependencies:
   config:
     - field.storage.paragraph.field_rdm_alternate_identifier
     - paragraphs.paragraphs_type.alternate_identifier
+_core:
+  default_config_hash: C7kfqFSt1FpwaGF3gGAJbEwTgErvLl-pGzMysNETdh0
 id: paragraph.alternate_identifier.field_rdm_alternate_identifier
 field_name: field_rdm_alternate_identifier
 entity_type: paragraph
 bundle: alternate_identifier
-label: 'Alternate Identifier'
-description: 'An identifier or identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of issue. May be used for local identifiers. AlternateIdentifier should be used for another identifier of the same instance (same location, same file).'
+label: Identifier
+description: '='
 required: false
 translatable: false
 default_value: {  }
