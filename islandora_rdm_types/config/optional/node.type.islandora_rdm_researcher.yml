@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Researcher
+type: islandora_rdm_researcher
+description: 'Represents a creator or contributor to a dataset, or any other person included in a citation.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false
+
