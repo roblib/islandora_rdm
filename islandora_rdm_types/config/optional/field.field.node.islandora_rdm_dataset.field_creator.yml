@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_creator
+    - node.type.islandora_rdm_dataset
+    - node.type.islandora_rdm_researcher
+id: node.islandora_rdm_dataset.field_creator
+field_name: field_creator
+entity_type: node
+bundle: islandora_rdm_dataset
+label: Creator
+description: 'The main researchers involved in producing the data, or the authors of the publication, in priority order. To supply multiple creators, repeat this property'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      islandora_rdm_researcher: islandora_rdm_researcher
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
+

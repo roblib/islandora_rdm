@@ -3,8 +3,8 @@ status: true
 dependencies:
   config:
     - field.field.node.islandora_rdm_dataset.body
-    - field.field.node.islandora_rdm_dataset.field_authors_and_affiliations
-    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_creator
+    - field.field.node.islandora_rdm_dataset.field_contributors
+    - field.field.node.islandora_rdm_dataset.field_creator
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_publisher
     - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
@@ -20,7 +20,6 @@ dependencies:
     - entity_reference_revisions
     - field_group
     - geolocation
-    - name
     - options
     - text
     - user
@@ -32,7 +31,6 @@ third_party_settings:
         - field_rdm_resource_type
         - field_islandora_rdm_publisher
         - field_rdm_publication_year
-        - field_islandora_rdm_creator
         - field_rdm_description_type
         - body
       parent_name: group_dataset
@@ -51,7 +49,6 @@ third_party_settings:
         - field_rdm_related_identifier
         - field_rdm_geograhical_location
         - field_rights
-        - field_authors_and_affiliations
       parent_name: group_dataset
       weight: 7
       format_type: tab
@@ -76,7 +73,7 @@ third_party_settings:
       label: Dataset
       region: content
 _core:
-  default_config_hash: CFPbMvK3QKurUbYRgleu2qJrRZULHlj8TIvSJdO6Sbc
+  default_config_hash: NrIUO4Bj0f9cXgDx8rOD5A5C2YW90hAWpseLjM9MGGY
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -109,30 +106,21 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_authors_and_affiliations:
-    type: entity_reference_revisions_entity_view
-    weight: 12
+  field_contributors:
+    weight: 15
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
+  field_creator:
+    weight: 14
     label: above
     settings:
-      view_mode: default
-      link: ''
+      link: true
     third_party_settings: {  }
-  field_islandora_rdm_creator:
-    weight: 11
-    label: above
-    settings:
-      format: default
-      markup: false
-      output: default
-      multiple: default
-      multiple_delimiter: ', '
-      multiple_and: text
-      multiple_delimiter_precedes_last: never
-      multiple_el_al_min: '3'
-      multiple_el_al_first: '1'
-    third_party_settings: {  }
-    type: name_default
+    type: entity_reference_label
     region: content
   field_islandora_rdm_identifier:
     weight: 7
@@ -213,3 +201,4 @@ content:
     third_party_settings: {  }
 hidden:
   langcode: true
+

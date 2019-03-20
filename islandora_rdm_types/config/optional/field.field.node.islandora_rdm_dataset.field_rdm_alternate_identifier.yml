@@ -29,7 +29,5 @@ settings:
       alternate_identifier:
         enabled: true
         weight: 3
-      author_with_affiliation:
-        weight: 4
-        enabled: false
 field_type: entity_reference_revisions
+
