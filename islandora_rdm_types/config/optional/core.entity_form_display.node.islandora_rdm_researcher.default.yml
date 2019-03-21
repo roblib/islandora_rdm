@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.islandora_rdm_researcher.body
     - field.field.node.islandora_rdm_researcher.field_affiliation
     - field.field.node.islandora_rdm_researcher.field_isni
     - field.field.node.islandora_rdm_researcher.field_name
@@ -54,7 +53,6 @@ content:
     type: boolean_checkbox
     region: content
 hidden:
-  body: true
   created: true
   langcode: true
   path: true
@@ -63,3 +61,4 @@ hidden:
   sticky: true
   title: true
   uid: true
+
