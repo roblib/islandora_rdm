@@ -1,0 +1,14 @@
+{
+  "name": "drupal/islandora_rdm_datacite",
+  "type": "drupal-module",
+  "description": "DataCite API and services for producing DataCite data formats.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/islandora_rdm_datacite",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/islandora_rdm_datacite",
+    "source": "http://cgit.drupalcode.org/islandora_rdm_datacite"
+  },
+  "require": { }
+}

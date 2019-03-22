@@ -1,0 +1,8 @@
+name: 'Islandora RDM DataCite'
+type: module
+description: 'DataCite API and services for producing DataCite data formats.'
+core: 8.x
+package: 'Islandora RDM'
+dependencies:
+  - islandora_rdm_types
+  - jsonapi

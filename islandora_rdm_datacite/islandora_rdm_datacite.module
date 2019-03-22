@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains islandora_rdm_datacite.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function islandora_rdm_datacite_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the islandora_rdm_datacite module.
+    case 'help.page.islandora_rdm_datacite':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('DataCite API and services for producing DataCite data formats.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

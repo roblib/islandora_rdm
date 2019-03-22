@@ -1,0 +1,8 @@
+
+islandora_rdm_datacite.datacite_format_controller_getDatacite:
+  path: '/islandora_rdm_datacite/get/{node}'
+  defaults:
+    _controller: '\Drupal\islandora_rdm_datacite\Controller\DataciteFormatController::getDatacite'
+    _title: 'Get DataCite formatted output'
+  requirements:
+    _permission: 'access content'
