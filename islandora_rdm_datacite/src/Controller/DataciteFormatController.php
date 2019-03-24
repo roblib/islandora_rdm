@@ -69,6 +69,7 @@ class DataciteFormatController extends ControllerBase {
     $response = new Response();
     $dataset = new \Drupal\islandora_rdm_datacite\Dataset();
     $xml_content = $dataset->createFromNode($node);
+    $response->headers->set('Content-Type', 'text/xml');
     $response->setContent($xml_content);
 
     return $response;
