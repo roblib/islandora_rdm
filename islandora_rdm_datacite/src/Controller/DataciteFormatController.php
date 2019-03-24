@@ -7,6 +7,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\jsonapi\Serializer\Serializer;
 use Drupal\Core\Routing\Access\AccessInterface;
+use Symfony\Component\HttpFoundation\Response;
+
 
 /**
  * Class DataciteFormatController.
@@ -59,10 +61,17 @@ class DataciteFormatController extends ControllerBase {
    *   Return Hello string.
    */
   public function getDatacite($node) {
-    return [
-      '#type' => 'markup',
-      '#markup' => $this->t('Implement method: getDatacite with parameter(s): $node'),
-    ];
+    $node = $this->entityTypeManager->getStorage('node')->load($node);
+    ksm($node);
+    if (empty($node)) {
+      return ['#type' => 'markup', '#markup' => 'Not found'];
+    }
+    $response = new Response();
+    $dataset = new \Drupal\islandora_rdm_datacite\Dataset();
+    $xml_content = $dataset->createFromNode($node);
+    $response->setContent($xml_content);
+
+    return $response;
   }
 
 }
