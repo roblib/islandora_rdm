@@ -4,8 +4,7 @@ namespace Drupal\islandora_rdm_datacite\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\jsonapi\Serializer\Serializer;
+use Drupal\Core\Entity\EntityTypeManagerInterface; 
 use Drupal\Core\Routing\Access\AccessInterface;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -21,12 +20,7 @@ class DataciteFormatController extends ControllerBase {
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
-  /**
-   * Drupal\jsonapi\Serializer\Serializer definition.
-   *
-   * @var \Drupal\jsonapi\Serializer\Serializer
-   */
-  protected $jsonapiSerializer;
+
   /**
    * Drupal\Core\Routing\Access\AccessInterface definition.
    *
@@ -37,9 +31,8 @@ class DataciteFormatController extends ControllerBase {
   /**
    * Constructs a new DataciteFormatController object.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, Serializer $jsonapi_serializer, AccessInterface $access_check_entity) {
-    $this->entityTypeManager = $entity_type_manager;
-    $this->jsonapiSerializer = $jsonapi_serializer;
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, AccessInterface $access_check_entity) {
+    $this->entityTypeManager = $entity_type_manager; 
     $this->accessCheckEntity = $access_check_entity;
   }
 
@@ -48,8 +41,7 @@ class DataciteFormatController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity_type.manager'),
-      $container->get('jsonapi.serializer'),
+      $container->get('entity_type.manager'), 
       $container->get('access_check.entity')
     );
   }

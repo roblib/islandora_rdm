@@ -61,28 +61,32 @@ class Dataset {
 
   private function addResearcherField($node, $field_name, $element_name, $parent_element) {
     foreach ($node->get($field_name) as $reference_field) {
-      $researcher = $reference_field->get('entity')->getTarget()->getValue();
-      $name = $researcher->get('field_name')->first()->getValue();
-      ksm($name);
-      $formatted_name =  \Drupal::service('name.formatter')->format($name);
-      $wrapper_element =  $this->doc->createElement($element_name);
-      $name_element = $this->doc->createElement($element_name . 'Name', $formatted_name);
-      $wrapper_element->appendChild($name_element);
-      foreach(['given', 'family'] as $name_segment) {
+      if ($researcher_target = $reference_field->get('entity')->getTarget()) {
+        $researcher = $researcher_target->getValue();
+        $name = $researcher->get('field_name')->first()->getValue();
+
+        $formatted_name =  \Drupal::service('name.formatter')->format($name);
+        $wrapper_element =  $this->doc->createElement($element_name);
+        $name_element = $this->doc->createElement($element_name . 'Name', $formatted_name);
+        $wrapper_element->appendChild($name_element);
+        foreach(['given', 'family'] as $name_segment) {
         if (!empty($name[$name_segment])) {
-          $name_segment_element = $this->doc->createElement($name_segment . 'Name', $name[$name_segment]);
-          $wrapper_element->appendChild($name_segment_element);
+            $name_segment_element = $this->doc->createElement($name_segment . 'Name', $name[$name_segment]);
+            $wrapper_element->appendChild($name_segment_element);
+          }
         }
       }
 
-      if ($orcid = $researcher->get('field_orcid_id')->first()->getString()) {
+      if (!empty($researcher->get('field_orcid_id')->first()) &&
+          $orcid = $researcher->get('field_orcid_id')->first()->getString()) {
         $orcid_element = $this->doc->createElement('nameIdentifier', $orcid);
         $orcid_element->setAttribute('schemeURI', 'http://orcid.org/');
         $orcid_element->setAttribute('nameIdentifierScheme', 'ORCID');
         $wrapper_element->appendChild($orcid_element);
       }
 
-      if ($affiliation = $researcher->get('field_affiliation')->first()->getString()) {
+      if (!empty($researcher->get('field_affiliation')->first()) 
+          && $affiliation = $researcher->get('field_affiliation')->first()->getString()) {
         $affiliation_element = $this->doc->createElement('affiliation', $affiliation);
         $wrapper_element->appendChild($affiliation_element);
       }
