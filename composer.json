@@ -14,6 +14,7 @@
     "minimum-stability": "dev",
     "require": {
         "drupal/inline_entity_form": "*",
+        "drupal/field_group": "*",
 	"drupal/entity_reference_revisions": "^1.6",
 	"drupal/name": "1.x-dev",
         "drupal/paragraphs": "~1.5"
