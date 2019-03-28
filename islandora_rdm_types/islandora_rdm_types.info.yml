@@ -6,7 +6,7 @@ package: 'Islandora RDM'
 dependencies:
   - auto_entitylabel
   - name
-  - controlled_access_terms
+  - islandora:controlled_access_terms
   - field_permissions
   - field_group
   - geolocation
