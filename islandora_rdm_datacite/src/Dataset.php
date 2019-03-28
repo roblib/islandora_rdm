@@ -13,7 +13,6 @@ class Dataset {
 
   public function createFromNode(NodeInterface $node) {
     if ($node->getType() !== 'islandora_rdm_dataset') {
-      ksm($node->getType());
       return FALSE;
     }
 
