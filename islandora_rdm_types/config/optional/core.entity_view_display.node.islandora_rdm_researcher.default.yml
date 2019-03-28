@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.islandora_rdm_researcher.body
     - field.field.node.islandora_rdm_researcher.field_affiliation
     - field.field.node.islandora_rdm_researcher.field_isni
     - field.field.node.islandora_rdm_researcher.field_name
@@ -34,20 +33,19 @@ content:
     type: string
     region: content
   field_name:
+    type: name_default
+    settings:
+      list_format: default
+      format: default
+      markup: none
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
     weight: 0
     label: above
-    settings:
-      format: default
-      markup: false
-      output: default
-      multiple: default
-      multiple_delimiter: ', '
-      multiple_and: text
-      multiple_delimiter_precedes_last: never
-      multiple_el_al_min: '3'
-      multiple_el_al_first: '1'
     third_party_settings: {  }
-    type: name_default
     region: content
   field_orcid_id:
     weight: 2
@@ -58,7 +56,6 @@ content:
     type: string
     region: content
 hidden:
-  body: true
   display_media_entity_view_1: true
   display_media_entity_view_2: true
   display_media_service_file: true
@@ -66,3 +63,4 @@ hidden:
   field_type: true
   langcode: true
   links: true
+
