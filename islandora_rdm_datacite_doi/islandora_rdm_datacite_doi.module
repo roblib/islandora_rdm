@@ -1,0 +1,79 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implementation of hook_noce_insert().
+ * If the publication state is not 'draft', mint a new
+ * DOI.
+ *
+ * @param EntityInterface $entity
+ */
+function islandora_rdm_datacite_doi_node_insert(EntityInterface $entity) {
+
+}
+
+/**
+ * Implementation of hook_noce_delete().
+ * If the node has a DOI, inform Datacite taht the
+ * DOI should be marked as 'archived'.
+ *
+ * TODO: We should leave a stub node to indicate that a DOI's resource used to exist
+ *
+ * @param EntityInterface $entity
+ */
+function islandora_rdm_datacite_doi_node_delete(EntityInterface $entity) {
+
+}
+
+/**
+ * Implementation of hook_node_update().
+ * Push state change up to Datacite DOI API.
+ * @TODO: Replace this code if this is committed to core: https://www.drupal.org/project/drupal/issues/2873287
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function islandora_rdm_datacite_doi_node_update(EntityInterface $entity) {
+
+  if ($entity->bundle() !== 'islandora_rdm_dataset') {
+    return;
+  }
+  $current_entity_lang=$entity->get('langcode')->value;
+  $translated_entity = $entity->getTranslation($current_entity_lang);
+  $new_moderation_state = $translated_entity->get('moderation_state')->first()->getValue()['value'];
+
+  $original_entity =  $entity->original;
+  $original_entity_lang=$original_entity->get('langcode')->value;
+  $original_translated_entity = $original_entity->getTranslation($original_entity_lang);
+
+  $original_moderation_state = $original_translated_entity->get('moderation_state')->first()->getValue()['value'];
+
+  //Get the original Moderation state;
+  // This doubles as a string representation of the state change.
+  $workflow_transition = rtrim($original_moderation_state . '-->'. $new_moderation_state);
+
+  $d = new \Drupal\islandora_rdm_datacite\Dataset();
+  $x = $d->createFromNode($entity);
+
+  $config = \Drupal::config('islandora_datacite_doi.settings');
+  $doi = new \Drupal\islandora_datacite_doi\DataciteDoi($config->get('prefix'), $config->get('site'), $config->get('username'), $config->get('password'), Drupal::httpClient());
+  $doi->testMode = TRUE;
+
+  ksm($doi);
+
+
+  switch ($workflow_transition) {
+    case '-->draft':
+      $doi->sendXmlToDatacite($x);
+
+    case 'published-->archived':
+    case 'draft-->archived':
+      // 'Delete' DOI
+      break;
+    case 'draft-->published':
+    case 'archived-->published':
+      // Make DOI active
+      break;
+  }
+}
