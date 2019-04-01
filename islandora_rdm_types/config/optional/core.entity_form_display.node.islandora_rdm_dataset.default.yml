@@ -5,6 +5,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.body
     - field.field.node.islandora_rdm_dataset.field_contributors
     - field.field.node.islandora_rdm_dataset.field_creator
+    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_creator
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_publisher
     - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
@@ -13,9 +14,11 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
     - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
     - field.field.node.islandora_rdm_dataset.field_rdm_resource_type
+    - field.field.node.islandora_rdm_dataset.field_rdm_resource_type_general
     - field.field.node.islandora_rdm_dataset.field_rights
     - node.type.islandora_rdm_dataset
   module:
+    - content_moderation
     - datetime
     - field_group
     - geolocation
@@ -42,13 +45,13 @@ third_party_settings:
     group_identification:
       children:
         - title
-        - langcode
         - field_islandora_rdm_identifier
         - field_islandora_rdm_publisher
         - field_rdm_publication_year
         - body
         - field_rdm_description_type
         - field_rdm_resource_type
+        - field_rdm_resource_type_general
       parent_name: group_dataset
       weight: 20
       format_type: tab
@@ -106,7 +109,7 @@ third_party_settings:
       label: Relationships
       region: content
 _core:
-  default_config_hash: 9o3_zgUXrqdhjwxHplDJhLB3VdxVP_pltG0-_tvDoeA
+  default_config_hash: C_TSw57oKMHORorJKfhO_mJCeSFUZ-4znbAxvBrdVMs
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -114,7 +117,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 5
+    weight: 4
     region: content
     settings:
       rows: 9
@@ -155,7 +158,7 @@ content:
     region: content
   field_islandora_rdm_identifier:
     type: string_textfield
-    weight: 2
+    weight: 1
     region: content
     settings:
       size: 60
@@ -163,7 +166,7 @@ content:
     third_party_settings: {  }
   field_islandora_rdm_publisher:
     type: string_textfield
-    weight: 3
+    weight: 2
     region: content
     settings:
       size: 60
@@ -188,7 +191,7 @@ content:
     third_party_settings: {  }
     region: content
   field_rdm_description_type:
-    weight: 6
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -201,7 +204,7 @@ content:
     region: content
   field_rdm_publication_year:
     type: datetime_default
-    weight: 4
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -226,10 +229,16 @@ content:
     region: content
   field_rdm_resource_type:
     type: options_select
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_rdm_resource_type_general:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_rights:
     weight: 4
     settings:
@@ -238,12 +247,11 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  langcode:
-    type: language_select
-    weight: 1
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
     region: content
-    settings:
-      include_locked: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -255,9 +263,9 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_islandora_rdm_creator: true
   path: true
   promote: true
   status: true
   sticky: true
   uid: true
-

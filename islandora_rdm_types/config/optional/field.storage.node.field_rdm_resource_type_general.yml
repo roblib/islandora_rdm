@@ -1,0 +1,69 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - options
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_rdm_resource_type_general
+field_name: field_rdm_resource_type_general
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Audiovisual
+      label: Audiovisual
+    -
+      value: Collection
+      label: Collection
+    -
+      value: DataPaper
+      label: 'Data Paper'
+    -
+      value: Dataset
+      label: Dataset
+    -
+      value: Event
+      label: Event
+    -
+      value: Image
+      label: Image
+    -
+      value: InteractiveResource
+      label: 'Interactive Resource'
+    -
+      value: Model
+      label: Model
+    -
+      value: PhysicalObject
+      label: 'Physical Object'
+    -
+      value: Service
+      label: Service
+    -
+      value: Software
+      label: Software
+    -
+      value: Sound
+      label: Sound
+    -
+      value: Text
+      label: Text
+    -
+      value: Workflow
+      label: Workflow
+    -
+      value: Other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
