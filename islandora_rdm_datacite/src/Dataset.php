@@ -20,10 +20,24 @@ class Dataset {
 
     // Identifier
     $resource = $this->doc->documentElement;
+
     if ($identifier_field = $node->get('field_islandora_rdm_identifier')->first()) {
       $identifier = $this->doc->createElement('identifier', $identifier_field->getString());
       $identifier->setAttribute('identifierType', 'DOI');
       $resource->appendChild($identifier);
+    }
+    else {
+      $identifier = $this->doc->createElement('identifier', 'none');
+      $identifier->setAttribute('identifierType', 'DOI');
+      $resource->appendChild($identifier);
+    }
+
+    if ($resource_type_field = $node->get('field_rdm_resource_type')->first()) {
+      $resource_type = $this->doc->createElement('resourceType', $resource_type_field->getString());
+      if ($resource_type_general_field = $node->get('field_rdm_resource_type_general')->first()) {
+        $resource_type->setAttribute('resourceTypeGeneral', $resource_type_general_field->getString());
+      }
+      $resource->appendChild($resource_type);
     }
 
     // Creator
@@ -38,11 +52,23 @@ class Dataset {
     $titles_element->appendChild($title_element);
     $resource->appendChild($titles_element);
 
+    if ($year_field = $node->get('field_rdm_publication_year')->first()) {
+      $year = $this->doc->createElement('publicationYear', strtok($year_field->getValue()['value'], '-'));
+      $resource->appendChild($year);
+    }
+
+    if ($publisher_field = $node->get('field_islandora_rdm_publisher')->first()) {
+      $publisher = $this->doc->createElement('publisher', $publisher_field->getString());
+      $resource->appendChild($publisher);
+    }
+
     // Contributor
     $contributors_element = $this->doc->createElement('contributors');
-    $resource->appendChild($contributors_element);
-    $this->addResearcherField($node, 'field_contributors', 'contributor', $contributors_element);
 
+    $contributor_count = $this->addResearcherField($node, 'field_contributors', 'contributor', $contributors_element);
+    if ($contributor_count >= 1) {
+      $resource->appendChild($contributors_element);
+    }
     // Dates
     $dates_element = $this->doc->createElement('dates');
     $date_element = $this->doc->createElement('date', date('Y-m-d', $node->getChangedTime()));
@@ -52,7 +78,7 @@ class Dataset {
 
     // Description
     $descriptions_element = $this->doc->createElement('descriptions');
-    $description_element = $this->doc->createElement('description', $node->get('body')->getValue()['value']);
+    $description_element = $this->doc->createElement('description', $node->get('body')->first()->getValue()['value']);
     $description_element->setAttribute('descriptionType', $node->get('field_rdm_description_type')->getString());
     $descriptions_element->appendChild($description_element);
     $resource->appendChild($descriptions_element);
@@ -61,6 +87,7 @@ class Dataset {
   }
 
   private function addResearcherField($node, $field_name, $element_name, $parent_element) {
+    $count = 0;
     foreach ($node->get($field_name) as $reference_field) {
       if ($researcher_target = $reference_field->get('entity')->getTarget()) {
         $researcher = $researcher_target->getValue();
@@ -71,7 +98,7 @@ class Dataset {
         $name_element = $this->doc->createElement($element_name . 'Name', $formatted_name);
         $wrapper_element->appendChild($name_element);
         foreach(['given', 'family'] as $name_segment) {
-        if (!empty($name[$name_segment])) {
+          if (!empty($name[$name_segment])) {
             $name_segment_element = $this->doc->createElement($name_segment . 'Name', $name[$name_segment]);
             $wrapper_element->appendChild($name_segment_element);
           }
@@ -92,6 +119,8 @@ class Dataset {
         $wrapper_element->appendChild($affiliation_element);
       }
       $parent_element->appendChild($wrapper_element);
+      $count += 1;
     }
+    return $count;
   }
 }

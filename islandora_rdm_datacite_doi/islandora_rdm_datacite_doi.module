@@ -2,17 +2,9 @@
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\islandora_datacite_doi\DataciteDoi;
+use Drupal\islandora_rdm_datacite\Dataset;
 
-/**
- * Implementation of hook_noce_insert().
- * If the publication state is not 'draft', mint a new
- * DOI.
- *
- * @param EntityInterface $entity
- */
-function islandora_rdm_datacite_doi_node_insert(EntityInterface $entity) {
-
-}
 
 /**
  * Implementation of hook_noce_delete().
@@ -24,56 +16,150 @@ function islandora_rdm_datacite_doi_node_insert(EntityInterface $entity) {
  * @param EntityInterface $entity
  */
 function islandora_rdm_datacite_doi_node_delete(EntityInterface $entity) {
-
+  if ($entity->bundle() !== 'islandora_rdm_dataset') {
+    return;
+  }
+  $doi = _islandora_rdm_datacite_doi_get_doi_service($entity);
+  $result = $doi->deleteDataciteDoi();
 }
 
-/**
+/*
  * Implementation of hook_node_update().
- * Push state change up to Datacite DOI API.
+ * Register the URL with Datacite if the node transitions to a 'published' state.
+ * This has to be separate from the presave hook because:
+ * 1. You can't update the node in this hook
+ * 2. The moderation state chagne is not available in the presave hook.
  * @TODO: Replace this code if this is committed to core: https://www.drupal.org/project/drupal/issues/2873287
  *
  * @param \Drupal\Core\Entity\EntityInterface $entity
- */
+*/
 function islandora_rdm_datacite_doi_node_update(EntityInterface $entity) {
 
   if ($entity->bundle() !== 'islandora_rdm_dataset') {
     return;
   }
-  $current_entity_lang=$entity->get('langcode')->value;
-  $translated_entity = $entity->getTranslation($current_entity_lang);
-  $new_moderation_state = $translated_entity->get('moderation_state')->first()->getValue()['value'];
+  $new_moderation_state = _islandora_rdm_datacite_doi_get_entity_moderation_state($entity);
+  if (!empty($entity->original)) {
+    $original_moderation_state = _islandora_rdm_datacite_doi_get_entity_moderation_state($entity->original);
+  }
 
-  $original_entity =  $entity->original;
-  $original_entity_lang=$original_entity->get('langcode')->value;
-  $original_translated_entity = $original_entity->getTranslation($original_entity_lang);
-
-  $original_moderation_state = $original_translated_entity->get('moderation_state')->first()->getValue()['value'];
-
-  //Get the original Moderation state;
-  // This doubles as a string representation of the state change.
   $workflow_transition = rtrim($original_moderation_state . '-->'. $new_moderation_state);
-
-  $d = new \Drupal\islandora_rdm_datacite\Dataset();
-  $x = $d->createFromNode($entity);
-
-  $config = \Drupal::config('islandora_datacite_doi.settings');
-  $doi = new \Drupal\islandora_datacite_doi\DataciteDoi($config->get('prefix'), $config->get('site'), $config->get('username'), $config->get('password'), Drupal::httpClient());
-  $doi->testMode = TRUE;
-
-  ksm($doi);
-
+  $doi = _islandora_rdm_datacite_doi_get_doi_service($entity);
 
   switch ($workflow_transition) {
-    case '-->draft':
-      $doi->sendXmlToDatacite($x);
-
-    case 'published-->archived':
-    case 'draft-->archived':
-      // 'Delete' DOI
-      break;
     case 'draft-->published':
+      _islandora_rdm_datacite_doi_register_url($entity, $doi);
+      break;
     case 'archived-->published':
-      // Make DOI active
+    case 'published-->published':
+      // Only update the URL field if it has changed.
+      //if ($entity->toUrl()->setAbsolute()->toString() !== $entity->original->toUrl()->setAbsolute()->toString()) {
+        _islandora_rdm_datacite_doi_register_url($entity, $doi);
+      //}
       break;
   }
+}
+
+/**
+ * Implementation of hook_node_presave().
+ * Push state change up to Datacite DOI API.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function islandora_rdm_datacite_doi_node_presave(EntityInterface $entity) {
+  $new_moderation_state = _islandora_rdm_datacite_doi_get_entity_moderation_state($entity);
+
+  $doi = _islandora_rdm_datacite_doi_get_doi_service($entity);
+
+  switch ($new_moderation_state) {
+    case 'draft':
+      _islandora_rdm_datacite_doi_push_doi($entity, $doi);
+      break;
+    case 'published':
+      _islandora_rdm_datacite_doi_push_doi($entity, $doi);
+      break;
+    case 'archived':
+      _islandora_rdm_datacite_doi_push_doi($entity, $doi);
+      _islandora_rdm_datacite_doi_delete_doi($doi);
+      break;
+  }
+}
+
+/**
+ * @param array $doi
+ */
+function _islandora_rdm_datacite_doi_delete_doi(DataciteDoi $doi) {
+  // 'Delete' DOI
+  try {
+    $result = $doi->deleteDataciteDoi();
+    \Drupal::messenger()->addMessage(t("Archived DOI @doi at Datacite.", ['@doi' => $doi->getDoi()]), "status");
+  } catch (\Exception $e) {
+    \Drupal::messenger()
+      ->addMessage(t("There was an error trying to delete the DOI from Datacite") . $e->getMessage, 'error');
+  }
+}
+
+/**
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * @param array $doi
+ */
+function _islandora_rdm_datacite_doi_register_url(EntityInterface $entity, DataciteDoi $doi) {
+  try {
+    $register_url_result = $doi->registerDoiUrl($entity->toUrl()
+      ->setAbsolute()
+      ->toString());
+    \Drupal::messenger()->addMessage(t("Updated the URL registered for DOI @doi.", ['@doi' => $doi->getDoi()]), "status");
+  } catch (\Exception $e) {
+    \Drupal::messenger()
+      ->addMessage(t("There was an error updating the URL to Datacite. ") . $e->getMessage(), "error");
+  }
+}
+
+/**
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * @param array $doi
+ */
+function _islandora_rdm_datacite_doi_push_doi(EntityInterface $entity, $doi) {
+  try {
+    // If the DOI is already set this will not change.
+    $new_doi = $doi->sendXmlToDatacite();
+    $entity->set('field_islandora_rdm_identifier', $new_doi);
+    \Drupal::messenger()->addMessage(t("Updated DOI @doi at Datacite.", ['@doi' => $new_doi]), "status");
+  } catch (\Exception $e) {
+    \Drupal::messenger()
+      ->addMessage(t('An error occurred while communicating with the DOI service.') . $e->getMessage(), 'error');
+  }
+}
+
+/**
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *
+ * @return array
+ */
+function _islandora_rdm_datacite_doi_get_doi_service(EntityInterface $entity) {
+  $d = new Dataset();
+
+  $config = \Drupal::config('islandora_datacite_doi.settings');
+  $doi = new DataciteDoi($config->get('prefix'), $config->get('site'), $config->get('username'), $config->get('password'), Drupal::httpClient());
+  if ($doi_field = $entity->get('field_islandora_rdm_identifier')->first()) {
+    $doi->setDoi($doi_field->getString());
+  }
+
+  $x = $d->createFromNode($entity);
+  $doi->setDataciteXml($x);
+  return $doi;
+}
+
+/**
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *
+ * @return string The string representing the moderation state.
+ */
+function _islandora_rdm_datacite_doi_get_entity_moderation_state(EntityInterface $entity) {
+  $current_entity_lang = $entity->get('langcode')->value;
+  $translated_entity = $entity->getTranslation($current_entity_lang);
+  $moderation_state = $translated_entity->get('moderation_state')
+    ->first()
+    ->getValue()['value'];
+  return $moderation_state;
 }
