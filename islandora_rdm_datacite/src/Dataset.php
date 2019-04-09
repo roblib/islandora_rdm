@@ -65,10 +65,11 @@ class Dataset {
     // Contributor
     $contributors_element = $this->doc->createElement('contributors');
 
-    $contributor_count = $this->addResearcherField($node, 'field_contributors', 'contributor', $contributors_element);
+    $contributor_count = $this->addResearcherField($node, 'field_rdm_contributors', 'contributor', $contributors_element);
     if ($contributor_count >= 1) {
       $resource->appendChild($contributors_element);
     }
+
     // Dates
     $dates_element = $this->doc->createElement('dates');
     $date_element = $this->doc->createElement('date', date('Y-m-d', $node->getChangedTime()));
@@ -90,11 +91,18 @@ class Dataset {
     $count = 0;
     foreach ($node->get($field_name) as $reference_field) {
       if ($researcher_target = $reference_field->get('entity')->getTarget()) {
+        $wrapper_element =  $this->doc->createElement($element_name);
         $researcher = $researcher_target->getValue();
+        // Contributors are embedded inside a paragraph type.
+        if ($is_contributor = $researcher->getType() == 'rdm_contributor') {
+          $contributor_type = $researcher->get('field_rdm_contributor_type')->first()->getString();
+          $wrapper_element->setAttribute('contributorType', $contributor_type);
+          $researcher = $researcher->get('field_rdm_contributor')->first()->get('entity')->getTarget();
+        }
         $name = $researcher->get('field_name')->first()->getValue();
 
         $formatted_name =  \Drupal::service('name.formatter')->format($name);
-        $wrapper_element =  $this->doc->createElement($element_name);
+
         $name_element = $this->doc->createElement($element_name . 'Name', $formatted_name);
         $wrapper_element->appendChild($name_element);
         foreach(['given', 'family'] as $name_segment) {

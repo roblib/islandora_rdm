@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_contributors
+    - node.type.islandora_rdm_dataset
+    - paragraphs.paragraphs_type.rdm_contributor
+  module:
+    - entity_reference_revisions
+id: node.islandora_rdm_dataset.field_rdm_contributors
+field_name: field_rdm_contributors
+entity_type: node
+bundle: islandora_rdm_dataset
+label: Contributors
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      rdm_contributor: rdm_contributor
+    target_bundles_drag_drop:
+      alternate_identifier:
+        weight: 4
+        enabled: false
+      islandora_rdm_doi:
+        weight: 5
+        enabled: false
+      rdm_contributor:
+        enabled: true
+        weight: 6
+field_type: entity_reference_revisions

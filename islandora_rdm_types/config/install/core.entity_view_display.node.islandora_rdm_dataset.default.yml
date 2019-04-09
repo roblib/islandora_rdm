@@ -3,18 +3,16 @@ status: true
 dependencies:
   config:
     - field.field.node.islandora_rdm_dataset.body
-    - field.field.node.islandora_rdm_dataset.field_contributors
     - field.field.node.islandora_rdm_dataset.field_creator
-    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_creator
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_publisher
     - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
+    - field.field.node.islandora_rdm_dataset.field_rdm_contributors
     - field.field.node.islandora_rdm_dataset.field_rdm_description_type
     - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
     - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
     - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
     - field.field.node.islandora_rdm_dataset.field_rdm_resource_type
-    - field.field.node.islandora_rdm_dataset.field_rdm_resource_type_general
     - field.field.node.islandora_rdm_dataset.field_rights
     - node.type.islandora_rdm_dataset
   module:
@@ -31,7 +29,6 @@ third_party_settings:
       children:
         - field_islandora_rdm_identifier
         - field_rdm_resource_type
-        - field_rdm_resource_type_general
         - field_islandora_rdm_publisher
         - field_rdm_publication_year
         - field_rdm_description_type
@@ -91,9 +88,9 @@ content:
     region: content
   content_moderation_control:
     weight: -20
-    region: content
     settings: {  }
     third_party_settings: {  }
+    region: content
   display_media_entity_view_1:
     weight: 1
     region: content
@@ -114,14 +111,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_contributors:
-    weight: 15
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_creator:
     weight: 14
     label: above
@@ -139,7 +128,7 @@ content:
     type: string
     region: content
   field_islandora_rdm_publisher:
-    weight: 10
+    weight: 9
     label: above
     settings:
       link_to_entity: false
@@ -149,6 +138,15 @@ content:
   field_rdm_alternate_identifier:
     type: entity_reference_revisions_entity_view
     weight: 8
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_contributors:
+    type: entity_reference_revisions_entity_view
+    weight: 15
     label: above
     settings:
       view_mode: default
@@ -170,7 +168,7 @@ content:
     type: geolocation_latlng
     region: content
   field_rdm_publication_year:
-    weight: 11
+    weight: 10
     label: above
     settings:
       timezone_override: ''
@@ -194,13 +192,6 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-  field_rdm_resource_type_general:
-    weight: 9
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
   field_rights:
     weight: 11
     label: above
@@ -214,5 +205,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_islandora_rdm_creator: true
+hidden: {  }
