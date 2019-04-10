@@ -158,8 +158,10 @@ function _islandora_rdm_datacite_doi_get_doi_service(EntityInterface $entity) {
 function _islandora_rdm_datacite_doi_get_entity_moderation_state(EntityInterface $entity) {
   $current_entity_lang = $entity->get('langcode')->value;
   $translated_entity = $entity->getTranslation($current_entity_lang);
-  $moderation_state = $translated_entity->get('moderation_state')
-    ->first()
-    ->getValue()['value'];
-  return $moderation_state;
+  if ($moderation_state_field = $translated_entity->get('moderation_state')
+    ->first()) {
+    return $moderation_state_field->getValue()['value'];
+  }
+
+  return FALSE;
 }
