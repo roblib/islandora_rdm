@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_contributor_type
+    - paragraphs.paragraphs_type.rdm_contributor
+  module:
+    - options
+id: paragraph.rdm_contributor.field_rdm_contributor_type
+field_name: field_rdm_contributor_type
+entity_type: paragraph
+bundle: rdm_contributor
+label: 'Contributor Type'
+description: 'The type of contributor of the resource.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

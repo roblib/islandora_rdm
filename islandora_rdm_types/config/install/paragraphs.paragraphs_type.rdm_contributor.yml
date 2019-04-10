@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: rdm_contributor
+label: Contributor
+icon_uuid: null
+description: 'A researcher with data about their contributor role.'
+behavior_plugins: {  }

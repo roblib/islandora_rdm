@@ -11,5 +11,6 @@ dependencies:
   - field_group
   - geolocation
   - inline_entity_form
+  - islandora_rdm_datacite
   - paragraphs
   - token
