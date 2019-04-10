@@ -54,7 +54,7 @@ class DataciteFormatController extends ControllerBase {
    */
   public function getDatacite($node) {
     $node = $this->entityTypeManager->getStorage('node')->load($node);
-    ksm($node);
+
     if (empty($node)) {
       return ['#type' => 'markup', '#markup' => 'Not found'];
     }
