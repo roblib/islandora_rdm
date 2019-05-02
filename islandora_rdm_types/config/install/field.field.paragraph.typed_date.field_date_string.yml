@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date_string
+    - paragraphs.paragraphs_type.typed_date
+  module:
+    - controlled_access_terms
+id: paragraph.typed_date.field_date_string
+field_name: field_date_string
+entity_type: paragraph
+bundle: typed_date
+label: 'Date String'
+description: 'YYYY,YYYY-MM-DD, YYYY-MM-DDThh:mm:ssTZD or any other format or level of granularity described in <a href="https://www.w3.org/TR/NOTE-datetime">W3CDTF</a>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: edtf

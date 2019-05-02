@@ -11,7 +11,7 @@ field_name: field_rdm_alternate_identifier
 entity_type: paragraph
 bundle: alternate_identifier
 label: Identifier
-description: '='
+description: 'Identifiers of related resources. These must be globally unique identifiers.'
 required: false
 translatable: false
 default_value: {  }

@@ -30,4 +30,3 @@ settings:
         enabled: true
         weight: 3
 field_type: entity_reference_revisions
-

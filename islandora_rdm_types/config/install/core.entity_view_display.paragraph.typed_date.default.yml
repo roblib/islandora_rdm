@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.typed_date.field_date_information
+    - field.field.paragraph.typed_date.field_date_string
+    - field.field.paragraph.typed_date.field_type_of_date
+    - paragraphs.paragraphs_type.typed_date
+  module:
+    - controlled_access_terms
+    - field_group
+    - options
+third_party_settings:
+  field_group:
+    group_dates:
+      children:
+        - field_date_string
+        - field_type_of_date
+        - field_date_information
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        label: ''
+        description: ''
+        id: ''
+        classes: node
+      label: ''
+      region: content
+id: paragraph.typed_date.default
+targetEntityType: paragraph
+bundle: typed_date
+mode: default
+content:
+  field_date_information:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_date_string:
+    weight: 1
+    label: hidden
+    settings:
+      date_separator: dash
+      date_order: big_endian
+      month_format: mm
+      day_format: dd
+    third_party_settings: {  }
+    type: edtf_default
+    region: content
+  field_type_of_date:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

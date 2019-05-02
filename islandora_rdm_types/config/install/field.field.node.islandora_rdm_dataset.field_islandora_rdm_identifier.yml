@@ -4,12 +4,14 @@ dependencies:
   config:
     - field.storage.node.field_islandora_rdm_identifier
     - node.type.islandora_rdm_dataset
+_core:
+  default_config_hash: giX82cAyzllxSnIvhySec1isKFOjaLu88yF4vQUPXRE
 id: node.islandora_rdm_dataset.field_islandora_rdm_identifier
 field_name: field_islandora_rdm_identifier
 entity_type: node
 bundle: islandora_rdm_dataset
 label: Identifier
-description: "The Identifier is a unique\r\nstring that identifies a resource. For software, determine whether the identifier is for a specific version of a piece of software, (per the Force11 Software Citation Principles13), or for all versions.\r\n\r\nFormat: <a href=\"https://doi.org/\">DOI</a> (Digital Object Identifier)\r\nregistered by a <a href=\"https://datacite.org/\">DataCite</a> member. Format should be “10.1234/foo”\r\n"
+description: "The Digital Object Identifier (DOI) that will be minted for this object when submitted to DataCite. Include a full DOI using the institutional prefix, or leave blank to have one minted for this. \r\n\r\nFormat should be “10.1234/foo”\r\n"
 required: false
 translatable: false
 default_value: {  }

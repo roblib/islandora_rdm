@@ -6,3 +6,4 @@ package: 'Islandora RDM'
 dependencies:
   - content_moderation
   - islandora_rdm_types
+  - lc_subject_field

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date_information
+    - paragraphs.paragraphs_type.typed_date
+id: paragraph.typed_date.field_date_information
+field_name: field_date_information
+entity_type: paragraph
+bundle: typed_date
+label: 'Date Information'
+description: "Specific information about the date, if appropriate.  \r\n\r\nMay be used to provide more information about the publication, release or collection date details, for example."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

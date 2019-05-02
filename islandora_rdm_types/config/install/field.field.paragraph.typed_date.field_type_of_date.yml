@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_type_of_date
+    - paragraphs.paragraphs_type.typed_date
+  module:
+    - options
+id: paragraph.typed_date.field_type_of_date
+field_name: field_type_of_date
+entity_type: paragraph
+bundle: typed_date
+label: 'Type of Date'
+description: 'See Datacite Specification Appendix for definitions and recommendations.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

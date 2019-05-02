@@ -6,6 +6,8 @@ dependencies:
     - node.type.islandora_rdm_dataset
   module:
     - options
+_core:
+  default_config_hash: _dAxH9sOtBnFn53MPVtwTbDKhtL_ByZ5s9pDYfK81WM
 id: node.islandora_rdm_dataset.field_rdm_description_type
 field_name: field_rdm_description_type
 entity_type: node

@@ -4,6 +4,8 @@ dependencies:
   config:
     - field.storage.node.field_rdm_award_number
     - node.type.funding_information
+_core:
+  default_config_hash: Vn35kggRiuIhq5qgy-krhPEHczfUqZxFUkRZhqGiTo8
 id: node.funding_information.field_rdm_award_number
 field_name: field_rdm_award_number
 entity_type: node

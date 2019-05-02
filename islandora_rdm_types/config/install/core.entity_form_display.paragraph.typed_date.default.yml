@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.typed_date.field_date_information
+    - field.field.paragraph.typed_date.field_date_string
+    - field.field.paragraph.typed_date.field_type_of_date
+    - paragraphs.paragraphs_type.typed_date
+  module:
+    - controlled_access_terms
+id: paragraph.typed_date.default
+targetEntityType: paragraph
+bundle: typed_date
+mode: default
+content:
+  field_date_information:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_date_string:
+    weight: 0
+    settings:
+      strict_dates: false
+      intervals: false
+      sets: false
+    third_party_settings: {  }
+    type: edtf_default
+    region: content
+  field_type_of_date:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

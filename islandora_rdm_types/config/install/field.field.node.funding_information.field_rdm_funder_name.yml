@@ -4,6 +4,8 @@ dependencies:
   config:
     - field.storage.node.field_rdm_funder_name
     - node.type.funding_information
+_core:
+  default_config_hash: aAohwJy0O00Q4gVCDET5xuvQXqe-sCBE8ok4gDujkoI
 id: node.funding_information.field_rdm_funder_name
 field_name: field_rdm_funder_name
 entity_type: node

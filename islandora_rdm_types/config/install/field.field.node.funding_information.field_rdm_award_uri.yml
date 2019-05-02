@@ -6,6 +6,8 @@ dependencies:
     - node.type.funding_information
   module:
     - link
+_core:
+  default_config_hash: UEJxyzI71lDoAE93DRLAuGcQ4MbHuNpziKqHEpyEE9I
 id: node.funding_information.field_rdm_award_uri
 field_name: field_rdm_award_uri
 entity_type: node

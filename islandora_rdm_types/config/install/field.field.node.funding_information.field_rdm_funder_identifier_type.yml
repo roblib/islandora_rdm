@@ -6,6 +6,8 @@ dependencies:
     - node.type.funding_information
   module:
     - options
+_core:
+  default_config_hash: GNXei1Ikmpt7gfbYEtRq_PRfgCzlBCREaUG7lUH-XdI
 id: node.funding_information.field_rdm_funder_identifier_type
 field_name: field_rdm_funder_identifier_type
 entity_type: node

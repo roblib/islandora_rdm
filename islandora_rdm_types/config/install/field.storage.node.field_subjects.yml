@@ -3,23 +3,22 @@ status: true
 dependencies:
   module:
     - field_permissions
+    - lc_subject_field
     - node
 third_party_settings:
   field_permissions:
     permission_type: public
-_core:
-  default_config_hash: xtJ8pq4aKZRn9Vp3qzPNe7KqHdfHKGBe3p02oHkJsvQ
-id: node.field_islandora_rdm_identifier
-field_name: field_islandora_rdm_identifier
+id: node.field_subjects
+field_name: field_subjects
 entity_type: node
-type: string
+type: lcsubject_field
 settings:
-  max_length: 255
+  max_length: '255'
   is_ascii: false
   case_sensitive: false
-module: core
+module: lc_subject_field
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

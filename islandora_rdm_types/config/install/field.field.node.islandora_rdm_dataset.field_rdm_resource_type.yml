@@ -4,17 +4,15 @@ dependencies:
   config:
     - field.storage.node.field_rdm_resource_type
     - node.type.islandora_rdm_dataset
-  module:
-    - options
 id: node.islandora_rdm_dataset.field_rdm_resource_type
 field_name: field_rdm_resource_type
 entity_type: node
 bundle: islandora_rdm_dataset
 label: 'Resource Type'
-description: 'A description of the resource'
-required: false
+description: 'A description of the resource. A single term is preferred. Consider using a term from the <a href="https://dictionary.casrai.org/Output_Types">CASRAI Publications resource type list</a>, especially if the Resource Type General is ''text''. '
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: list_string
+field_type: string

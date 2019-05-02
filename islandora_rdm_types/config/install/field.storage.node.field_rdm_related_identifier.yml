@@ -9,6 +9,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
+_core:
+  default_config_hash: ER5vSL9emT1TfZrFJdtwjKPKGFKip6Ii8xmCguee7Jw
 id: node.field_rdm_related_identifier
 field_name: field_rdm_related_identifier
 entity_type: node

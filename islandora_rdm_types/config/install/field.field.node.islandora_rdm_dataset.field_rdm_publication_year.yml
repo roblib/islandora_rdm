@@ -4,20 +4,15 @@ dependencies:
   config:
     - field.storage.node.field_rdm_publication_year
     - node.type.islandora_rdm_dataset
-  module:
-    - datetime
 id: node.islandora_rdm_dataset.field_rdm_publication_year
 field_name: field_rdm_publication_year
 entity_type: node
 bundle: islandora_rdm_dataset
 label: 'Publication Year'
-description: "The year when the data was\r\nor will be made publicly available. In the case of resources such as software or dynamic data where there may be multiple releases in one year, include the Date/dateType/ dateInformation property and sub-properties to provide more information about the publication or release date details."
+description: 'The year when the data was or will be made publicly available. In the case of resources such as software or dynamic data where there may be multiple releases in one year, include the Date/dateType/ dateInformation property and sub-properties to provide more information about the publication or release date details.'
 required: true
 translatable: false
-default_value:
-  -
-    default_date_type: now
-    default_date: now
+default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: datetime
+field_type: string

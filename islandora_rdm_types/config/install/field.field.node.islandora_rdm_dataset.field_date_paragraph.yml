@@ -2,19 +2,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_rdm_related_identifier
+    - field.storage.node.field_date_paragraph
     - node.type.islandora_rdm_dataset
-    - paragraphs.paragraphs_type.alternate_identifier
+    - paragraphs.paragraphs_type.typed_date
   module:
     - entity_reference_revisions
-_core:
-  default_config_hash: Foclcj_42hgi6mBW8PBoftEQZVaic8VJaDLZETWe5Fw
-id: node.islandora_rdm_dataset.field_rdm_related_identifier
-field_name: field_rdm_related_identifier
+id: node.islandora_rdm_dataset.field_date_paragraph
+field_name: field_date_paragraph
 entity_type: node
 bundle: islandora_rdm_dataset
-label: 'Related Identifier'
-description: 'Identifiers of related resources. These must be globally unique identifiers.'
+label: Date
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -24,9 +22,15 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      alternate_identifier: alternate_identifier
+      typed_date: typed_date
     target_bundles_drag_drop:
       alternate_identifier:
+        weight: 4
+        enabled: false
+      rdm_contributor:
+        weight: 5
+        enabled: false
+      typed_date:
         enabled: true
-        weight: 3
+        weight: 6
 field_type: entity_reference_revisions

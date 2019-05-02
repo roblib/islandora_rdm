@@ -77,6 +77,21 @@ class Dataset {
     $dates_element->appendChild($date_element);
     $resource->appendChild($dates_element);
 
+    // Subject fields
+    $has_subjects = FALSE;
+    if ($subjects_field = $node->get('field_rdm_lc_subject')) {
+      $subjects_element = $this->doc->createElement('subjects');
+      foreach ($subjects_field as $subject) {
+        $subject_value = $subject->getValue();
+        $has_subjects = TRUE;
+        $subject_element = $this->doc->createElement('subject', $subject_value['value']);
+        $subjects_element->appendChild($subject_element);
+      }
+      if ($has_subjects) {
+        $resource->appendChild($subjects_element);
+      }
+    }
+
     // Description
     $descriptions_element = $this->doc->createElement('descriptions');
     $description_element = $this->doc->createElement('description', $node->get('body')->first()->getValue()['value']);

@@ -23,6 +23,7 @@
         "drupal/inline_entity_form": "*", 
         "drupal/field_permissions": "*",
         "drupal/field_group": "*",
+        "drupal/lc_subject_field": "*",
         "islandora/controlled_access_terms": "*",
         "drupal/field_permissions": "*",
 	"drupal/entity_reference_revisions": "^1.6",

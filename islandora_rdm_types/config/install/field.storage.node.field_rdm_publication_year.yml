@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - datetime
     - field_permissions
     - node
 third_party_settings:
@@ -11,10 +10,12 @@ third_party_settings:
 id: node.field_rdm_publication_year
 field_name: field_rdm_publication_year
 entity_type: node
-type: datetime
+type: string
 settings:
-  datetime_type: date
-module: datetime
+  max_length: 4
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true
