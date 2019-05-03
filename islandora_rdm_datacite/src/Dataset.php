@@ -2,15 +2,34 @@
 
 namespace Drupal\islandora_rdm_datacite;
 
+use DOMElement;
 use Drupal\node\NodeInterface;
 
+/**
+ * A representation of a Dataset for DataCite export.
+ *
+ * @package Drupal\islandora_rdm_datacite
+ */
 class Dataset {
 
   /**
-   * @var \DOMDocument $doc
+   * The DataCite document object.
+   *
+   * @var DOMDocument
    */
   public $doc;
 
+  /**
+   * Given a node, create a DataCite-formatted XML representation.
+   *
+   * @param Drupal\node\NodeInterface $node
+   *   Node to transform to XML.
+   *
+   * @return bool|string
+   *   DataCite-formatted XML.
+   *
+   * @throws Drupal\Core\TypedData\Exception\MissingDataException
+   */
   public function createFromNode(NodeInterface $node) {
     if ($node->getType() !== 'islandora_rdm_dataset') {
       return FALSE;
@@ -18,7 +37,7 @@ class Dataset {
 
     $this->doc = \DOMDocument::loadXml('<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://datacite.org/schema/kernel-4" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd"></resource>');
 
-    // Identifier
+    // Identifier.
     $resource = $this->doc->documentElement;
 
     if ($identifier_field = $node->get('field_islandora_rdm_identifier')->first()) {
@@ -40,12 +59,12 @@ class Dataset {
       $resource->appendChild($resource_type);
     }
 
-    // Creator
+    // Creator.
     $creators_element = $this->doc->createElement('creators');
     $resource->appendChild($creators_element);
     $this->addResearcherField($node, 'field_creator', 'creator', $creators_element);
 
-    // Title
+    // Title.
     $titles_element = $this->doc->createElement('titles');
     $title_element = $this->doc->createElement('title', $node->getTitle());
     $title_element->setAttribute('xml:lang', $node->language()->getId());
@@ -62,7 +81,7 @@ class Dataset {
       $resource->appendChild($publisher);
     }
 
-    // Contributor
+    // Contributor.
     $contributors_element = $this->doc->createElement('contributors');
 
     $contributor_count = $this->addResearcherField($node, 'field_rdm_contributors', 'contributor', $contributors_element);
@@ -70,16 +89,16 @@ class Dataset {
       $resource->appendChild($contributors_element);
     }
 
-    // Dates
+    // Dates.
     $dates_element = $this->doc->createElement('dates');
     $date_element = $this->doc->createElement('date', date('Y-m-d', $node->getChangedTime()));
     $date_element->setAttribute('dateType', 'Updated');
     $dates_element->appendChild($date_element);
     $resource->appendChild($dates_element);
 
-    // Subject fields
+    // Subject fields.
     $has_subjects = FALSE;
-    if ($subjects_field = $node->get('field_rdm_lc_subject')) {
+    if ($subjects_field = $node->get('field_subjects')) {
       $subjects_element = $this->doc->createElement('subjects');
       foreach ($subjects_field as $subject) {
         $subject_value = $subject->getValue();
@@ -92,7 +111,7 @@ class Dataset {
       }
     }
 
-    // Description
+    // Description.
     $descriptions_element = $this->doc->createElement('descriptions');
     $description_element = $this->doc->createElement('description', $node->get('body')->first()->getValue()['value']);
     $description_element->setAttribute('descriptionType', $node->get('field_rdm_description_type')->getString());
@@ -102,11 +121,26 @@ class Dataset {
     return $this->doc->saveXML();
   }
 
-  private function addResearcherField($node, $field_name, $element_name, $parent_element) {
+  /**
+   * Format a Researcher item as XML.
+   *
+   * @param Drupal\node\NodeInterface $node
+   *   The node being exported.
+   * @param string $field_name
+   *   The field name to extract.
+   * @param string $element_name
+   *   The type of name being extracte ('creator', 'contributor').
+   * @param DOMElement $parent_element
+   *   The XML element to apped to.
+   *
+   * @return int
+   *   The number of elements added.
+   */
+  private function addResearcherField(NodeInterface $node, $field_name, $element_name, DOMElement $parent_element) {
     $count = 0;
     foreach ($node->get($field_name) as $reference_field) {
       if ($researcher_target = $reference_field->get('entity')->getTarget()) {
-        $wrapper_element =  $this->doc->createElement($element_name);
+        $wrapper_element = $this->doc->createElement($element_name);
         $researcher = $researcher_target->getValue();
         // Contributors are embedded inside a paragraph type.
         if ($is_contributor = $researcher->getType() == 'rdm_contributor') {
@@ -116,11 +150,11 @@ class Dataset {
         }
         $name = $researcher->get('field_name')->first()->getValue();
 
-        $formatted_name =  \Drupal::service('name.formatter')->format($name);
+        $formatted_name = \Drupal::service('name.formatter')->format($name);
 
         $name_element = $this->doc->createElement($element_name . 'Name', $formatted_name);
         $wrapper_element->appendChild($name_element);
-        foreach(['given', 'family'] as $name_segment) {
+        foreach (['given', 'family'] as $name_segment) {
           if (!empty($name[$name_segment])) {
             $name_segment_element = $this->doc->createElement($name_segment . 'Name', $name[$name_segment]);
             $wrapper_element->appendChild($name_segment_element);
@@ -136,7 +170,7 @@ class Dataset {
         $wrapper_element->appendChild($orcid_element);
       }
 
-      if (!empty($researcher->get('field_affiliation')->first()) 
+      if (!empty($researcher->get('field_affiliation')->first())
           && $affiliation = $researcher->get('field_affiliation')->first()->getString()) {
         $affiliation_element = $this->doc->createElement('affiliation', $affiliation);
         $wrapper_element->appendChild($affiliation_element);
