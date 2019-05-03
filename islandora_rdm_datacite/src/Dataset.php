@@ -94,8 +94,21 @@ class Dataset {
     $date_element = $this->doc->createElement('date', date('Y-m-d', $node->getChangedTime()));
     $date_element->setAttribute('dateType', 'Updated');
     $dates_element->appendChild($date_element);
-    $resource->appendChild($dates_element);
 
+    if ($additional_date_fields = $node->get('field_date_paragraph')) {
+      foreach ($additional_date_fields as $additional_date_field) {
+        if ($date_target = $additional_date_field->get('entity')->getTarget()) {
+          $additional_date_string = $date_target->get('field_date_string')->getString();
+          $additional_date_type = $date_target->get('field_type_of_date')->getString();
+          if (!empty($additional_date_type) && !empty($additional_date_string)) {
+            $additional_date_element = $this->doc->createElement('date', $additional_date_string);
+            $additional_date_element->setAttribute('dateType', $additional_date_type);
+            $dates_element->appendChild($additional_date_element);
+          }
+        }
+      }
+    }
+    $resource->appendChild($dates_element);
     // Subject fields.
     $has_subjects = FALSE;
     if ($subjects_field = $node->get('field_subjects')) {
