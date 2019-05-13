@@ -126,10 +126,23 @@ class Dataset {
 
     // Description.
     $descriptions_element = $this->doc->createElement('descriptions');
-    $description_element = $this->doc->createElement('description', $node->get('body')->first()->getValue()['value']);
-    $description_element->setAttribute('descriptionType', $node->get('field_rdm_description_type')->getString());
-    $descriptions_element->appendChild($description_element);
-    $resource->appendChild($descriptions_element);
+    $description_count = 0;
+    if ($descriptions_field = $node->get('field_rdm_description')) {
+      foreach ($descriptions_field as $description_field) {
+        if ($description_target = $description_field->get('entity')->getTarget()) {
+          $description_string = $description_target->get('field_rdm_description')->getString();
+          $description_type = $description_target->get('field_rdm_description_type')->getString();
+          $description_element = $this->doc->createElement('description', $description_string);
+          $description_element->setAttribute('descriptionType', $description_type);
+          $descriptions_element->appendChild($description_element);
+          $description_count += 1;
+        }
+      }
+    }
+
+    if ($description_count > 0) {
+      $resource->appendChild($descriptions_element);
+    }
 
     return $this->doc->saveXML();
   }

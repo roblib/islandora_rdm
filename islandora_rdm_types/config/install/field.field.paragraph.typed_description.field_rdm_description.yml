@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_description
+    - paragraphs.paragraphs_type.typed_description
+id: paragraph.typed_description.field_rdm_description
+field_name: field_rdm_description
+entity_type: paragraph
+bundle: typed_description
+label: Description
+description: 'All additional information that does not fit in any of the other categories. May be used for technical information.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

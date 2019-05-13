@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.typed_description.field_rdm_description
+    - field.field.paragraph.typed_description.field_rdm_description_type
+    - paragraphs.paragraphs_type.typed_description
+id: paragraph.typed_description.default
+targetEntityType: paragraph
+bundle: typed_description
+mode: default
+content:
+  field_rdm_description:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_rdm_description_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

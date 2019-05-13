@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_description
+    - node.type.islandora_rdm_dataset
+    - paragraphs.paragraphs_type.typed_description
+  module:
+    - entity_reference_revisions
+id: node.islandora_rdm_dataset.field_rdm_description
+field_name: field_rdm_description
+entity_type: node
+bundle: islandora_rdm_dataset
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      typed_description: typed_description
+    target_bundles_drag_drop:
+      alternate_identifier:
+        weight: 5
+        enabled: false
+      rdm_contributor:
+        weight: 6
+        enabled: false
+      typed_date:
+        weight: 7
+        enabled: false
+      typed_description:
+        enabled: true
+        weight: 8
+field_type: entity_reference_revisions

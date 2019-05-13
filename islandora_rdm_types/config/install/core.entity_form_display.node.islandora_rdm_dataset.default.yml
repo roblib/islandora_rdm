@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.islandora_rdm_dataset.body
     - field.field.node.islandora_rdm_dataset.field_creator
     - field.field.node.islandora_rdm_dataset.field_date_paragraph
+    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_creator
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_publisher
     - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
     - field.field.node.islandora_rdm_dataset.field_rdm_contributors
-    - field.field.node.islandora_rdm_dataset.field_rdm_description_type
+    - field.field.node.islandora_rdm_dataset.field_rdm_description
     - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
     - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
     - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
@@ -25,7 +25,6 @@ dependencies:
     - inline_entity_form
     - lc_subject_field
     - paragraphs
-    - text
 third_party_settings:
   field_group:
     group_dataset:
@@ -49,13 +48,11 @@ third_party_settings:
         - field_islandora_rdm_identifier
         - field_islandora_rdm_publisher
         - field_subjects
-        - body
-        - field_rdm_description_type
+        - field_rdm_description
         - field_rdm_resource_type_general
         - field_rdm_resource_type
         - field_rdm_publication_year
         - field_date_paragraph
-        - langcode
       parent_name: group_dataset
       weight: 20
       format_type: tab
@@ -113,21 +110,12 @@ third_party_settings:
       label: Relationships
       region: content
 _core:
-  default_config_hash: C_TSw57oKMHORorJKfhO_mJCeSFUZ-4znbAxvBrdVMs
+  default_config_hash: OZKgyURcMkwhSii0NXCzXQTAMceLCBP56LLH5dcheNo
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 4
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
   field_creator:
     weight: 26
     settings:
@@ -146,7 +134,7 @@ content:
     region: content
   field_date_paragraph:
     type: entity_reference_paragraphs
-    weight: 9
+    weight: 8
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -209,11 +197,17 @@ content:
         add_above: '0'
     third_party_settings: {  }
     region: content
-  field_rdm_description_type:
-    weight: 5
-    settings: {  }
+  field_rdm_description:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
-    type: options_select
     region: content
   field_rdm_geograhical_location:
     weight: 24
@@ -222,7 +216,7 @@ content:
     type: geolocation_latlng
     region: content
   field_rdm_publication_year:
-    weight: 8
+    weight: 7
     settings:
       size: 4
       placeholder: ''
@@ -249,7 +243,7 @@ content:
     third_party_settings: {  }
     region: content
   field_rdm_resource_type:
-    weight: 7
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -258,7 +252,7 @@ content:
     region: content
   field_rdm_resource_type_general:
     type: options_select
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -272,19 +266,10 @@ content:
     region: content
   field_subjects:
     weight: 3
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
     type: lcsubject_widget
     region: content
-  langcode:
-    type: language_select
-    weight: 10
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 100

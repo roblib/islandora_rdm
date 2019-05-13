@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_description_type
+    - paragraphs.paragraphs_type.typed_description
+  module:
+    - options
+id: paragraph.typed_description.field_rdm_description_type
+field_name: field_rdm_description_type
+entity_type: paragraph
+bundle: typed_description
+label: 'Description type'
+description: 'The type of the Description'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

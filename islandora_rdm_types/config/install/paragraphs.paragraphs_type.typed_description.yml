@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: typed_description
+label: 'Typed Description'
+icon_uuid: null
+description: 'Plain-text description with a controlled vocabulary type field.'
+behavior_plugins: {  }
