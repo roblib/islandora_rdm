@@ -19,7 +19,6 @@
         }
     },
     "require": {
-        "drupal/auto_entitylabel": "*",
         "drupal/inline_entity_form": "*", 
         "drupal/field_permissions": "*",
         "drupal/field_group": "*",

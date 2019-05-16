@@ -4,7 +4,6 @@ description: 'Base content types for Islandora RDM'
 core: 8.x
 package: 'Islandora RDM'
 dependencies:
-  - auto_entitylabel
   - name
   - islandora:controlled_access_terms
   - field_permissions
