@@ -1,3 +1,4 @@
+uuid: 0687cd12-7847-4048-8781-bb93e60883ef
 langcode: en
 status: true
 dependencies:
@@ -7,12 +8,14 @@ dependencies:
     - paragraphs.paragraphs_type.typed_date
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: tha-48o__BdN7-8Vy6VbHTVP1nPqxZTopSgxzE2XOR0
 id: node.islandora_rdm_dataset.field_date_paragraph
 field_name: field_date_paragraph
 entity_type: node
 bundle: islandora_rdm_dataset
 label: Date
-description: ''
+description: 'Add dates to describe the date created, submitted, copyrighted, etc. '
 required: false
 translatable: false
 default_value: {  }
@@ -27,10 +30,28 @@ settings:
       alternate_identifier:
         weight: 4
         enabled: false
-      rdm_contributor:
-        weight: 5
-        enabled: false
       typed_date:
         enabled: true
         weight: 6
+      rdm_contribution_organizational:
+        weight: 11
+        enabled: false
+      rdm_contribution_personal:
+        weight: 12
+        enabled: false
+      rdm_organization:
+        weight: 13
+        enabled: false
+      rdm_organizational_identifier:
+        weight: 14
+        enabled: false
+      rdm_person:
+        weight: 15
+        enabled: false
+      rdm_personal_identifier:
+        weight: 16
+        enabled: false
+      typed_description:
+        weight: 18
+        enabled: false
 field_type: entity_reference_revisions

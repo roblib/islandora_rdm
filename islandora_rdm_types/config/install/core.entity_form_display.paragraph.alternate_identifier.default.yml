@@ -1,3 +1,4 @@
+uuid: 013d93c2-f238-4d47-9f8f-cc7c3466a280
 langcode: en
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.field.paragraph.alternate_identifier.field_identifier_type
     - field.field.paragraph.alternate_identifier.field_rdm_alternate_identifier
     - paragraphs.paragraphs_type.alternate_identifier
+_core:
+  default_config_hash: _t0gST5sp6Ih-JKg5gsKPnLVx3b07fV-iM6kz2WCTMk
 id: paragraph.alternate_identifier.default
 targetEntityType: paragraph
 bundle: alternate_identifier

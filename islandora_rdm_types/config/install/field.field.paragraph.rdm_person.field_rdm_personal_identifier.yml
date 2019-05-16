@@ -1,0 +1,49 @@
+uuid: ad22bba4-999e-40d2-af2e-f9af5e89fd9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_personal_identifier
+    - paragraphs.paragraphs_type.rdm_person
+    - paragraphs.paragraphs_type.rdm_personal_identifier
+  module:
+    - entity_reference_revisions
+id: paragraph.rdm_person.field_rdm_personal_identifier
+field_name: field_rdm_personal_identifier
+entity_type: paragraph
+bundle: rdm_person
+label: 'Personal Identifier'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      rdm_personal_identifier: rdm_personal_identifier
+    target_bundles_drag_drop:
+      alternate_identifier:
+        weight: 8
+        enabled: false
+      rdm_organization:
+        weight: 9
+        enabled: false
+      rdm_organizational_identifier:
+        weight: 10
+        enabled: false
+      rdm_person:
+        weight: 11
+        enabled: false
+      rdm_personal_identifier:
+        enabled: true
+        weight: 12
+      typed_date:
+        weight: 13
+        enabled: false
+      typed_description:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

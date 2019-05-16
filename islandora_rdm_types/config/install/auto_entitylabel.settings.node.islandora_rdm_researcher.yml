@@ -1,8 +1,0 @@
-status: '1'
-pattern: '[node:field_name] / [node:field_affiliation]'
-php: 0
-escape: 0
-dependencies:
-  config:
-    - node.type.islandora_rdm_researcher
-

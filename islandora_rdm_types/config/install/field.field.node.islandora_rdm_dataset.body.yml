@@ -1,3 +1,4 @@
+uuid: 99a7b106-b7aa-46c2-bd25-92745b62e982
 langcode: en
 status: true
 dependencies:
@@ -7,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: UGMi6wBxw0agRS3WbED7dMJn3zGXJSXZrSQj2e_NJ60
+  default_config_hash: CGz5aWeWH80hHKGpghxYrp2Lvyxli9YhOsXwl_FpV3M
 id: node.islandora_rdm_dataset.body
 field_name: body
 entity_type: node

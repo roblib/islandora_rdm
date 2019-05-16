@@ -1,0 +1,33 @@
+uuid: f3c40979-faef-4d9f-91cf-041db0906226
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rdm_contribution_organizational.field_rdm_organization
+    - field.field.paragraph.rdm_contribution_organizational.field_rdm_role_organizational
+    - paragraphs.paragraphs_type.rdm_contribution_organizational
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.rdm_contribution_organizational.default
+targetEntityType: paragraph
+bundle: rdm_contribution_organizational
+mode: default
+content:
+  field_rdm_organization:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_role_organizational:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

@@ -1,9 +1,12 @@
+uuid: ba0a6d7a-ee7c-4827-ad4c-52807ab56bab
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_rdm_description
     - paragraphs.paragraphs_type.typed_description
+_core:
+  default_config_hash: Bj2-OERPLxr5QK2zlK5__-UqaJL8gSnODVf-n49gGNc
 id: paragraph.typed_description.field_rdm_description
 field_name: field_rdm_description
 entity_type: paragraph

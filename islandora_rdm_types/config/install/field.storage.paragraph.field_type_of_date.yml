@@ -1,3 +1,4 @@
+uuid: ec7b28d0-f26c-4c6c-81e9-73909a5e5d74
 langcode: en
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
+_core:
+  default_config_hash: rohBFBv5-sqE_pNJmjso7QPc3Enkzsw34NOeJ_8GnvY
 id: paragraph.field_type_of_date
 field_name: field_type_of_date
 entity_type: paragraph

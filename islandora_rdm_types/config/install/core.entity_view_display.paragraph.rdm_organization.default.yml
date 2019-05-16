@@ -1,0 +1,33 @@
+uuid: 6743a502-9f28-4a03-969d-54f640266af1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rdm_organization.field_rdm_organization_name
+    - field.field.paragraph.rdm_organization.field_rdm_organizational_ids
+    - paragraphs.paragraphs_type.rdm_organization
+  module:
+    - entity_reference_revisions
+id: paragraph.rdm_organization.default
+targetEntityType: paragraph
+bundle: rdm_organization
+mode: default
+content:
+  field_rdm_organization_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_rdm_organizational_ids:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

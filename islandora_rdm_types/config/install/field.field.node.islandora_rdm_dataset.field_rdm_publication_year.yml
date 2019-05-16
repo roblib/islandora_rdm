@@ -1,9 +1,12 @@
+uuid: 36a0798a-845e-4f10-8874-abc1258625b8
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_rdm_publication_year
     - node.type.islandora_rdm_dataset
+_core:
+  default_config_hash: BYQ0_wdVFynGakSJD59_ZfxNeKijp4G_pcI5gilOS6w
 id: node.islandora_rdm_dataset.field_rdm_publication_year
 field_name: field_rdm_publication_year
 entity_type: node

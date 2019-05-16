@@ -1,0 +1,43 @@
+uuid: 49e4150c-cfe6-4189-99d6-032d6f7ea31e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rdm_person.field_rdm_personal_affiliation
+    - field.field.paragraph.rdm_person.field_rdm_personal_identifier
+    - field.field.paragraph.rdm_person.field_rdm_personal_name
+    - paragraphs.paragraphs_type.rdm_person
+  module:
+    - entity_reference_revisions
+id: paragraph.rdm_person.default
+targetEntityType: paragraph
+bundle: rdm_person
+mode: default
+content:
+  field_rdm_personal_affiliation:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_personal_identifier:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_personal_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

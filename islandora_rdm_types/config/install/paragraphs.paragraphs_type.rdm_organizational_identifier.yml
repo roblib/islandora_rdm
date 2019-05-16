@@ -1,0 +1,9 @@
+uuid: 6217dc05-6b6e-44ad-98ac-49bc6450e1e4
+langcode: en
+status: true
+dependencies: {  }
+id: rdm_organizational_identifier
+label: 'Organizational Identifier'
+icon_uuid: null
+description: 'A typed identifier for an organization. Types include isni (defined by Datacite Schema) as well as wikidata and grid.'
+behavior_plugins: {  }

@@ -1,0 +1,9 @@
+uuid: 3eecb807-ac4f-4007-9331-8cf1606b559d
+langcode: en
+status: true
+dependencies: {  }
+id: related_resource
+label: 'Related Resource'
+icon_uuid: null
+description: 'A resource, identified by an identifier, that has a relation to this resource.'
+behavior_plugins: {  }

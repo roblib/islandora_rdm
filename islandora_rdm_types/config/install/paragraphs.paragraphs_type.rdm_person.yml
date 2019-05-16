@@ -1,0 +1,9 @@
+uuid: 3dacf2d5-16a3-4c42-b762-fb32b76300c6
+langcode: en
+status: true
+dependencies: {  }
+id: rdm_person
+label: Person
+icon_uuid: null
+description: 'A set of fields representing a person, with name, optional identifiers, and optional affiliation(s).'
+behavior_plugins: {  }

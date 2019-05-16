@@ -1,0 +1,38 @@
+uuid: 0934f3f0-304f-4a05-8ca4-3b9faf16a4f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rdm_organization.field_rdm_organization_name
+    - field.field.paragraph.rdm_organization.field_rdm_organizational_ids
+    - paragraphs.paragraphs_type.rdm_organization
+  module:
+    - paragraphs
+id: paragraph.rdm_organization.default
+targetEntityType: paragraph
+bundle: rdm_organization
+mode: default
+content:
+  field_rdm_organization_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_rdm_organizational_ids:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

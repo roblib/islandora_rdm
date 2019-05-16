@@ -1,0 +1,36 @@
+uuid: c09cbaf5-755d-4acd-804c-b568fef3b106
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_resource.field_rdm_related_resource
+    - field.field.paragraph.related_resource.field_rdm_relation_type
+    - paragraphs.paragraphs_type.related_resource
+  module:
+    - paragraphs
+id: paragraph.related_resource.default
+targetEntityType: paragraph
+bundle: related_resource
+mode: default
+content:
+  field_rdm_related_resource:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_relation_type:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

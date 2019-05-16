@@ -1,0 +1,30 @@
+uuid: db930f1a-6753-4439-afb9-1ffbe3298483
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rdm_organizational_identifier.field_rdm_identifier_string
+    - field.field.paragraph.rdm_organizational_identifier.field_rdm_identifier_type_org
+    - paragraphs.paragraphs_type.rdm_organizational_identifier
+id: paragraph.rdm_organizational_identifier.default
+targetEntityType: paragraph
+bundle: rdm_organizational_identifier
+mode: default
+content:
+  field_rdm_identifier_string:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_rdm_identifier_type_org:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,21 @@
+uuid: fcf89faf-c3cd-437b-aaf9-53c26e606592
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_role_organizational
+    - paragraphs.paragraphs_type.rdm_contribution_organizational
+  module:
+    - options
+id: paragraph.rdm_contribution_organizational.field_rdm_role_organizational
+field_name: field_rdm_role_organizational
+entity_type: paragraph
+bundle: rdm_contribution_organizational
+label: 'Role (Organizational)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

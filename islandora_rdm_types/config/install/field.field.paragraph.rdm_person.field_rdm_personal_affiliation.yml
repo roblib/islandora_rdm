@@ -1,0 +1,49 @@
+uuid: a2e7ebd6-6001-42cc-8a5e-0723724d9a9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_personal_affiliation
+    - paragraphs.paragraphs_type.rdm_organization
+    - paragraphs.paragraphs_type.rdm_person
+  module:
+    - entity_reference_revisions
+id: paragraph.rdm_person.field_rdm_personal_affiliation
+field_name: field_rdm_personal_affiliation
+entity_type: paragraph
+bundle: rdm_person
+label: 'Personal Affiliation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      rdm_organization: rdm_organization
+    target_bundles_drag_drop:
+      alternate_identifier:
+        weight: 8
+        enabled: false
+      rdm_organization:
+        enabled: true
+        weight: 9
+      rdm_organizational_identifier:
+        weight: 10
+        enabled: false
+      rdm_person:
+        weight: 11
+        enabled: false
+      rdm_personal_identifier:
+        weight: 12
+        enabled: false
+      typed_date:
+        weight: 13
+        enabled: false
+      typed_description:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

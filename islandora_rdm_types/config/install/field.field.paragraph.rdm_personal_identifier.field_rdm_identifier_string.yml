@@ -1,0 +1,19 @@
+uuid: 23e32563-154c-44b5-b669-a02393897f1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_identifier_string
+    - paragraphs.paragraphs_type.rdm_personal_identifier
+id: paragraph.rdm_personal_identifier.field_rdm_identifier_string
+field_name: field_rdm_identifier_string
+entity_type: paragraph
+bundle: rdm_personal_identifier
+label: 'Identifier String'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

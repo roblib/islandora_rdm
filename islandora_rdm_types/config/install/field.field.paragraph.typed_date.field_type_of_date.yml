@@ -1,3 +1,4 @@
+uuid: 38cad69e-7a32-4973-9208-8d3de011be78
 langcode: en
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.typed_date
   module:
     - options
+_core:
+  default_config_hash: mYZ0l6k1Jm9uLuDX-8rWjQKXNBKW502qKCUBmzO0soE
 id: paragraph.typed_date.field_type_of_date
 field_name: field_type_of_date
 entity_type: paragraph

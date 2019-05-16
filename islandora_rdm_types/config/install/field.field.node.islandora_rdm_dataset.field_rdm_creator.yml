@@ -1,0 +1,57 @@
+uuid: 9ffe0d52-78be-4e4f-86e1-78fedd4b891c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_creator
+    - node.type.islandora_rdm_dataset
+    - paragraphs.paragraphs_type.rdm_organization
+    - paragraphs.paragraphs_type.rdm_person
+  module:
+    - entity_reference_revisions
+id: node.islandora_rdm_dataset.field_rdm_creator
+field_name: field_rdm_creator
+entity_type: node
+bundle: islandora_rdm_dataset
+label: Creator
+description: 'The main researchers involved in producing the data, or the authors of the publication, in priority order. To supply multiple creators, repeat this property'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      rdm_person: rdm_person
+      rdm_organization: rdm_organization
+    target_bundles_drag_drop:
+      alternate_identifier:
+        weight: -19
+        enabled: false
+      rdm_contribution_organizational:
+        weight: -18
+        enabled: false
+      rdm_contribution_personal:
+        weight: -17
+        enabled: false
+      rdm_person:
+        enabled: true
+        weight: -16
+      rdm_organization:
+        enabled: true
+        weight: -15
+      rdm_organizational_identifier:
+        weight: -14
+        enabled: false
+      rdm_personal_identifier:
+        weight: -13
+        enabled: false
+      typed_date:
+        weight: -12
+        enabled: false
+      typed_description:
+        weight: -11
+        enabled: false
+field_type: entity_reference_revisions

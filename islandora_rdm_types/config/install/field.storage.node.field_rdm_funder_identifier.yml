@@ -1,3 +1,4 @@
+uuid: 7e6e539e-a3ca-48ca-97f5-fac887bc8a61
 langcode: en
 status: true
 dependencies:
@@ -8,7 +9,7 @@ third_party_settings:
   field_permissions:
     permission_type: public
 _core:
-  default_config_hash: SQTSnv68e2JGyWWB_J_qCkYBBAZjKd9XxbMt7oaEYOQ
+  default_config_hash: r3n9Lap98YFAdswhMaowHrZav4St9qhKKinXV1810ds
 id: node.field_rdm_funder_identifier
 field_name: field_rdm_funder_identifier
 entity_type: node

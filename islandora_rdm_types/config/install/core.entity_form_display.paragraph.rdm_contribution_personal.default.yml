@@ -1,0 +1,36 @@
+uuid: ed70c896-44de-4a00-8ee7-1977acea482b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rdm_contribution_personal.field_rdm_person
+    - field.field.paragraph.rdm_contribution_personal.field_rdm_role_personal
+    - paragraphs.paragraphs_type.rdm_contribution_personal
+  module:
+    - paragraphs
+id: paragraph.rdm_contribution_personal.default
+targetEntityType: paragraph
+bundle: rdm_contribution_personal
+mode: default
+content:
+  field_rdm_person:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_role_personal:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

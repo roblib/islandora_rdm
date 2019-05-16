@@ -1,0 +1,33 @@
+uuid: 9b1d841f-bf3b-4834-81b2-82d73bb5b5ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_resource.field_rdm_related_resource
+    - field.field.paragraph.related_resource.field_rdm_relation_type
+    - paragraphs.paragraphs_type.related_resource
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.related_resource.default
+targetEntityType: paragraph
+bundle: related_resource
+mode: default
+content:
+  field_rdm_related_resource:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_relation_type:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

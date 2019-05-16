@@ -1,0 +1,55 @@
+uuid: 04581e68-c48e-4461-847d-c23a11cfa11d
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_rdm_role_organizational
+field_name: field_rdm_role_organizational
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: DataCollector
+      label: DataCollector
+    -
+      value: DataManager
+      label: DataManager
+    -
+      value: Distributor
+      label: Distributor
+    -
+      value: HostingInstitution
+      label: HostingInstitution
+    -
+      value: Producer
+      label: Producer
+    -
+      value: RegistrationAgency
+      label: RegistrationAgency
+    -
+      value: RegistrationAuthority
+      label: RegistrationAuthority
+    -
+      value: RightsHolder
+      label: RightsHolder
+    -
+      value: Sponsor
+      label: Sponsor
+    -
+      value: Other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

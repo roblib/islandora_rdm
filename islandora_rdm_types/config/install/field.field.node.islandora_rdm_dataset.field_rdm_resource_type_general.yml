@@ -1,3 +1,4 @@
+uuid: f6bbd8c2-6564-40b7-bdfa-e5ad5e0ec0e7
 langcode: en
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.islandora_rdm_dataset
   module:
     - options
+_core:
+  default_config_hash: Az5oX-5tIn2Swj0ZvcPq3XQ5jW1gVpDpS6thNDCHi3I
 id: node.islandora_rdm_dataset.field_rdm_resource_type_general
 field_name: field_rdm_resource_type_general
 entity_type: node

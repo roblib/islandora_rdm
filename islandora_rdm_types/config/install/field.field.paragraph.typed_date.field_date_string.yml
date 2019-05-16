@@ -1,3 +1,4 @@
+uuid: d8fc7c07-d159-4418-8ecf-89db37fd90fe
 langcode: en
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.typed_date
   module:
     - controlled_access_terms
+_core:
+  default_config_hash: vMp2Ntn7mgvg7eUz5fKOnkBkfTCzBRFkVnJsDnNxcgw
 id: paragraph.typed_date.field_date_string
 field_name: field_date_string
 entity_type: paragraph

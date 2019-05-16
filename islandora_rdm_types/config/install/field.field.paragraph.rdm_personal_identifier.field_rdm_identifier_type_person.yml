@@ -1,0 +1,21 @@
+uuid: 28742b6e-8ee3-45e0-8421-a28e450ed59a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_identifier_type_person
+    - paragraphs.paragraphs_type.rdm_personal_identifier
+  module:
+    - options
+id: paragraph.rdm_personal_identifier.field_rdm_identifier_type_person
+field_name: field_rdm_identifier_type_person
+entity_type: paragraph
+bundle: rdm_personal_identifier
+label: 'Identifier Type (Person)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

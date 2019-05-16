@@ -1,0 +1,55 @@
+uuid: c879f9e6-4e1a-48fa-86c1-8a24a39a1def
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_person
+    - paragraphs.paragraphs_type.rdm_contribution_personal
+    - paragraphs.paragraphs_type.rdm_person
+  module:
+    - entity_reference_revisions
+id: paragraph.rdm_contribution_personal.field_rdm_person
+field_name: field_rdm_person
+entity_type: paragraph
+bundle: rdm_contribution_personal
+label: Person
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      rdm_person: rdm_person
+    target_bundles_drag_drop:
+      alternate_identifier:
+        weight: 9
+        enabled: false
+      rdm_contribution_personal:
+        weight: 10
+        enabled: false
+      rdm_contribution_organizational:
+        weight: 11
+        enabled: false
+      rdm_organization:
+        weight: 11
+        enabled: false
+      rdm_organizational_identifier:
+        weight: 12
+        enabled: false
+      rdm_person:
+        enabled: true
+        weight: 13
+      rdm_personal_identifier:
+        weight: 14
+        enabled: false
+      typed_date:
+        weight: 15
+        enabled: false
+      typed_description:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

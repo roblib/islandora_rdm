@@ -1,0 +1,58 @@
+uuid: 5e5429f0-946b-476e-8d55-ac4c82875cc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_related_resource
+    - paragraphs.paragraphs_type.alternate_identifier
+    - paragraphs.paragraphs_type.related_resource
+  module:
+    - entity_reference_revisions
+id: paragraph.related_resource.field_rdm_related_resource
+field_name: field_rdm_related_resource
+entity_type: paragraph
+bundle: related_resource
+label: 'Related Resource'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      alternate_identifier: alternate_identifier
+    target_bundles_drag_drop:
+      alternate_identifier:
+        enabled: true
+        weight: 11
+      rdm_contribution_organizational:
+        weight: 12
+        enabled: false
+      rdm_contribution_personal:
+        weight: 13
+        enabled: false
+      rdm_organization:
+        weight: 14
+        enabled: false
+      rdm_organizational_identifier:
+        weight: 15
+        enabled: false
+      rdm_person:
+        weight: 16
+        enabled: false
+      rdm_personal_identifier:
+        weight: 17
+        enabled: false
+      related_resource:
+        weight: 18
+        enabled: false
+      typed_date:
+        weight: 19
+        enabled: false
+      typed_description:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,3 +1,4 @@
+uuid: be1892c2-27bf-4bb8-ab29-0e41a6d385aa
 langcode: en
 status: true
 dependencies:
@@ -8,6 +9,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
+_core:
+  default_config_hash: 2fwJuhCHvWLqkA--fsaQmwTTPylPcmKnNmhzdsQ9Vpw
 id: node.field_rdm_award_uri
 field_name: field_rdm_award_uri
 entity_type: node

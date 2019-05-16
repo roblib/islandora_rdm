@@ -1,0 +1,19 @@
+uuid: 9d934a12-447e-4e4d-b981-883ceff1ca28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_personal_name
+    - paragraphs.paragraphs_type.rdm_person
+id: paragraph.rdm_person.field_rdm_personal_name
+field_name: field_rdm_personal_name
+entity_type: paragraph
+bundle: rdm_person
+label: 'Personal Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

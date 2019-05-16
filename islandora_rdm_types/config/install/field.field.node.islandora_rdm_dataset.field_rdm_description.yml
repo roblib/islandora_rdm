@@ -1,3 +1,4 @@
+uuid: f245602d-63cd-4b07-ade4-8f19dfeaece6
 langcode: en
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.typed_description
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: 8qMGfnF_aB3pHbuugfAC_1Xi4hO5qaP54ZeNFeraoeI
 id: node.islandora_rdm_dataset.field_rdm_description
 field_name: field_rdm_description
 entity_type: node

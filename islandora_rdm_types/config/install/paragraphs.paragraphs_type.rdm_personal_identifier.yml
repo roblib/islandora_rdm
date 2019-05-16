@@ -1,0 +1,9 @@
+uuid: 01af2907-89de-4ab6-a82f-6a10dededce0
+langcode: en
+status: true
+dependencies: {  }
+id: rdm_personal_identifier
+label: 'Personal Identifier'
+icon_uuid: null
+description: 'An typed identifier for a person. Type can be chosen from dia, isni, orcid, viaf, and several others (defined by the DataCite schema). '
+behavior_plugins: {  }

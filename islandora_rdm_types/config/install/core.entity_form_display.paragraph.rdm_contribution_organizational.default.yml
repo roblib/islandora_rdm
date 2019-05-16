@@ -1,0 +1,36 @@
+uuid: f3ccc354-06ea-4007-8786-973703ed1349
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rdm_contribution_organizational.field_rdm_organization
+    - field.field.paragraph.rdm_contribution_organizational.field_rdm_role_organizational
+    - paragraphs.paragraphs_type.rdm_contribution_organizational
+  module:
+    - paragraphs
+id: paragraph.rdm_contribution_organizational.default
+targetEntityType: paragraph
+bundle: rdm_contribution_organizational
+mode: default
+content:
+  field_rdm_organization:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_role_organizational:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

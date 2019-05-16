@@ -1,0 +1,55 @@
+uuid: e2c8e025-0822-4904-b15a-c452d854e91d
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_rdm_identifier_type_person
+field_name: field_rdm_identifier_type_person
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: dia
+      label: dia
+    -
+      value: isni
+      label: isni
+    -
+      value: jst
+      label: jst
+    -
+      value: national-insurance-number
+      label: national-insurance-number
+    -
+      value: nii
+      label: nii
+    -
+      value: openid
+      label: openid
+    -
+      value: orcid
+      label: orcid
+    -
+      value: researcherid
+      label: researcherid
+    -
+      value: social-security-number
+      label: social-security-number
+    -
+      value: viaf
+      label: viaf
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

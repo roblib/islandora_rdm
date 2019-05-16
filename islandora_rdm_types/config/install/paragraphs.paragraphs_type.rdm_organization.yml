@@ -1,0 +1,9 @@
+uuid: 3dde47b4-e6d2-482e-8e0a-ae325791de46
+langcode: en
+status: true
+dependencies: {  }
+id: rdm_organization
+label: Organization
+icon_uuid: null
+description: 'An organization, with name and optional identifier(s)'
+behavior_plugins: {  }

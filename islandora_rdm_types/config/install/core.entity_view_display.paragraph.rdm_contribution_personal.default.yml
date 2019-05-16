@@ -1,0 +1,33 @@
+uuid: 57c1658e-a192-485b-a76c-f149eb4c9d64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rdm_contribution_personal.field_rdm_person
+    - field.field.paragraph.rdm_contribution_personal.field_rdm_role_personal
+    - paragraphs.paragraphs_type.rdm_contribution_personal
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.rdm_contribution_personal.default
+targetEntityType: paragraph
+bundle: rdm_contribution_personal
+mode: default
+content:
+  field_rdm_person:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_role_personal:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

@@ -1,0 +1,9 @@
+uuid: 53854eda-60e4-4cf7-b00c-a62b2937f5ef
+langcode: en
+status: true
+dependencies: {  }
+id: rdm_contribution_organizational
+label: 'Contribution - Organizational'
+icon_uuid: null
+description: 'A contribution done by an organization with a role.'
+behavior_plugins: {  }

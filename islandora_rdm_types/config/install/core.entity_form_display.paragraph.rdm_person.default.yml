@@ -1,0 +1,51 @@
+uuid: c0205dbd-6327-4a38-b67d-a52fa3749eb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rdm_person.field_rdm_personal_affiliation
+    - field.field.paragraph.rdm_person.field_rdm_personal_identifier
+    - field.field.paragraph.rdm_person.field_rdm_personal_name
+    - paragraphs.paragraphs_type.rdm_person
+  module:
+    - paragraphs
+id: paragraph.rdm_person.default
+targetEntityType: paragraph
+bundle: rdm_person
+mode: default
+content:
+  field_rdm_personal_affiliation:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_rdm_personal_identifier:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_rdm_personal_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

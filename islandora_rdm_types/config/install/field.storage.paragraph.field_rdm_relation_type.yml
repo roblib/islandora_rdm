@@ -1,0 +1,118 @@
+uuid: 0a918147-761c-4a27-9b57-85cd2c7ceb23
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_rdm_relation_type
+field_name: field_rdm_relation_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: IsCitedBy
+      label: IsCitedBy
+    -
+      value: Cites
+      label: Cites
+    -
+      value: IsSupplementTo
+      label: IsSupplementTo
+    -
+      value: IsSupplementedBy
+      label: IsSupplementedBy
+    -
+      value: IsContinuedBy
+      label: IsContinuedBy
+    -
+      value: Continues
+      label: Continues
+    -
+      value: IsDescribedBy
+      label: IsDescribedBy
+    -
+      value: Describes
+      label: Describes
+    -
+      value: HasMetadata
+      label: HasMetadata
+    -
+      value: IsMetadataFor
+      label: IsMetadataFor
+    -
+      value: HasVersion
+      label: HasVersion
+    -
+      value: IsVersionOf
+      label: IsVersionOf
+    -
+      value: IsNewVersionOf
+      label: IsNewVersionOf
+    -
+      value: IsPreviousVersionOf
+      label: IsPreviousVersionOf
+    -
+      value: IsPartOf
+      label: IsPartOf
+    -
+      value: HasPart
+      label: HasPart
+    -
+      value: IsReferencedBy
+      label: IsReferencedBy
+    -
+      value: References
+      label: References
+    -
+      value: IsDocumentedBy
+      label: IsDocumentedBy
+    -
+      value: Documents
+      label: Documents
+    -
+      value: IsCompiledBy
+      label: IsCompiledBy
+    -
+      value: Compiles
+      label: Compiles
+    -
+      value: IsVariantFormOf
+      label: IsVariantFormOf
+    -
+      value: IsOriginalFormOf
+      label: IsOriginalFormOf
+    -
+      value: IsIdenticalTo
+      label: IsIdenticalTo
+    -
+      value: IsReviewedBy
+      label: IsReviewedBy
+    -
+      value: Reviews
+      label: Reviews
+    -
+      value: IsDerivedFrom
+      label: IsDerivedFrom
+    -
+      value: IsSourceOf
+      label: IsSourceOf
+    -
+      value: IsRequiredBy
+      label: IsRequiredBy
+    -
+      value: Requires
+      label: Requires
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

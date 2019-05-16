@@ -1,0 +1,31 @@
+uuid: aa302c2b-dae7-49b6-8f87-6df0b27c3e9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rdm_organizational_identifier.field_rdm_identifier_string
+    - field.field.paragraph.rdm_organizational_identifier.field_rdm_identifier_type_org
+    - paragraphs.paragraphs_type.rdm_organizational_identifier
+  module:
+    - options
+id: paragraph.rdm_organizational_identifier.default
+targetEntityType: paragraph
+bundle: rdm_organizational_identifier
+mode: default
+content:
+  field_rdm_identifier_string:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_rdm_identifier_type_org:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

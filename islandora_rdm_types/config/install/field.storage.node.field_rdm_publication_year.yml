@@ -1,3 +1,4 @@
+uuid: 7d78ddc5-0895-4f68-ba70-3fbf13055e73
 langcode: en
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
+_core:
+  default_config_hash: 8XiuHnQpO3FENQORQ7ugyv_b20SDec9FacR90zq8Of0
 id: node.field_rdm_publication_year
 field_name: field_rdm_publication_year
 entity_type: node

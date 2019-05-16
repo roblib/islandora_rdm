@@ -1,0 +1,46 @@
+uuid: ae8da712-a0c9-4234-8fc1-c769531a80d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_organizational_ids
+    - paragraphs.paragraphs_type.rdm_organization
+    - paragraphs.paragraphs_type.rdm_organizational_identifier
+  module:
+    - entity_reference_revisions
+id: paragraph.rdm_organization.field_rdm_organizational_ids
+field_name: field_rdm_organizational_ids
+entity_type: paragraph
+bundle: rdm_organization
+label: 'Organizational Identifiers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      rdm_organizational_identifier: rdm_organizational_identifier
+    target_bundles_drag_drop:
+      alternate_identifier:
+        weight: 7
+        enabled: false
+      rdm_organization:
+        weight: 8
+        enabled: false
+      rdm_organizational_identifier:
+        enabled: true
+        weight: 9
+      rdm_personal_identifier:
+        weight: 10
+        enabled: false
+      typed_date:
+        weight: 11
+        enabled: false
+      typed_description:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

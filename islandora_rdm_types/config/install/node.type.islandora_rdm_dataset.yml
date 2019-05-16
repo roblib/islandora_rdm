@@ -1,3 +1,4 @@
+uuid: 04a58f76-69b7-48df-870d-5df7fa6c4920
 langcode: en
 status: true
 dependencies:
@@ -9,7 +10,7 @@ third_party_settings:
       - main
     parent: 'main:'
 _core:
-  default_config_hash: B7ds_mGqHh4C4zqMiF9qPEZkMsHB1aRf4JqmQJlW-rU
+  default_config_hash: ov2QlbK4Q6WbRsoWg1dvx5ne_vlGgOMnPLMpIhhtOxM
 name: 'RDM Dataset'
 type: islandora_rdm_dataset
 description: 'A container for a dataset.'

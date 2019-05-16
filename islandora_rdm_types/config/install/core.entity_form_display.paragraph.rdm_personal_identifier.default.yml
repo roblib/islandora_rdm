@@ -1,0 +1,30 @@
+uuid: 9812f5eb-e707-4a5e-aada-2a573fac78ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rdm_personal_identifier.field_rdm_identifier_string
+    - field.field.paragraph.rdm_personal_identifier.field_rdm_identifier_type_person
+    - paragraphs.paragraphs_type.rdm_personal_identifier
+id: paragraph.rdm_personal_identifier.default
+targetEntityType: paragraph
+bundle: rdm_personal_identifier
+mode: default
+content:
+  field_rdm_identifier_string:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_rdm_identifier_type_person:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

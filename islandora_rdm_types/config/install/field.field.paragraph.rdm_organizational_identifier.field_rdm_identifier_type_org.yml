@@ -1,0 +1,21 @@
+uuid: a545905b-8ee9-4091-b30e-bd1938bca362
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_identifier_type_org
+    - paragraphs.paragraphs_type.rdm_organizational_identifier
+  module:
+    - options
+id: paragraph.rdm_organizational_identifier.field_rdm_identifier_type_org
+field_name: field_rdm_identifier_type_org
+entity_type: paragraph
+bundle: rdm_organizational_identifier
+label: 'Identifier Type (Organization)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

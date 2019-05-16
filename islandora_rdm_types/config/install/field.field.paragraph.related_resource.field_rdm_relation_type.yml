@@ -1,0 +1,21 @@
+uuid: 42d175cc-b2e1-4e32-b5d2-87a2e05ac30d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rdm_relation_type
+    - paragraphs.paragraphs_type.related_resource
+  module:
+    - options
+id: paragraph.related_resource.field_rdm_relation_type
+field_name: field_rdm_relation_type
+entity_type: paragraph
+bundle: related_resource
+label: 'Relation Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

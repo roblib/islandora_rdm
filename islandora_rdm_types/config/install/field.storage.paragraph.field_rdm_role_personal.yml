@@ -1,0 +1,73 @@
+uuid: 4a250862-c4c4-41e5-8488-3e2bf1075e0d
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_rdm_role_personal
+field_name: field_rdm_role_personal
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: ContactPerson
+      label: ContactPerson
+    -
+      value: DataCollector
+      label: DataCollector
+    -
+      value: DataCurator
+      label: DataCurator
+    -
+      value: DataManager
+      label: DataManager
+    -
+      value: Editor
+      label: Editor
+    -
+      value: Producer
+      label: Producer
+    -
+      value: ProjectLeader
+      label: ProjectLeader
+    -
+      value: ProjectManager
+      label: ProjectManager
+    -
+      value: ProjectMember
+      label: ProjectMember
+    -
+      value: RelatedPerson
+      label: RelatedPerson
+    -
+      value: Researcher
+      label: Researcher
+    -
+      value: RightsHolder
+      label: RightsHolder
+    -
+      value: Sponsor
+      label: Sponsor
+    -
+      value: Supervisor
+      label: Supervisor
+    -
+      value: WorkPackageLeader
+      label: WorkPackageLeader
+    -
+      value: Other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

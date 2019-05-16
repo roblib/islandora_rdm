@@ -1,3 +1,4 @@
+uuid: 28e53a4a-d5d3-481e-9fa8-d96ea88e008a
 langcode: en
 status: true
 dependencies:
@@ -10,7 +11,7 @@ third_party_settings:
   field_permissions:
     permission_type: public
 _core:
-  default_config_hash: Q_SFLqScxZqSZpYyL0sHce56G7Zee_c0v-IJk8gR1o8
+  default_config_hash: YjUIblHwDRUwMpC6e4UgqOHQIcLoRTdlvt2xLl2CdZA
 id: node.field_rdm_alternate_identifier
 field_name: field_rdm_alternate_identifier
 entity_type: node

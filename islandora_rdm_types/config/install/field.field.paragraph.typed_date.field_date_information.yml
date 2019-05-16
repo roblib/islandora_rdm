@@ -1,9 +1,12 @@
+uuid: 673a00b6-34c8-435e-81dc-8bd350433ecc
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_date_information
     - paragraphs.paragraphs_type.typed_date
+_core:
+  default_config_hash: wr3snxLhkzmt0rIbknfT47-J-FTBE1mka0uR5vjnBYc
 id: paragraph.typed_date.field_date_information
 field_name: field_date_information
 entity_type: paragraph

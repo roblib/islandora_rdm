@@ -1,0 +1,9 @@
+uuid: 99ae13ef-758e-4809-a6c9-394d962972bd
+langcode: en
+status: true
+dependencies: {  }
+id: rdm_contribution_personal
+label: 'Contribution - Personal'
+icon_uuid: null
+description: 'A contribution done by a person with a role.'
+behavior_plugins: {  }

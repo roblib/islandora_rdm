@@ -1,9 +1,12 @@
+uuid: 37adf2ba-2691-4c4f-a98f-f5c8b9742acc
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_rights
     - node.type.islandora_rdm_dataset
+_core:
+  default_config_hash: Ti95qCCdxdOKwC1cqk_oiKNdJVDYFwNcGFNUk0diMYQ
 id: node.islandora_rdm_dataset.field_rights
 field_name: field_rights
 entity_type: node

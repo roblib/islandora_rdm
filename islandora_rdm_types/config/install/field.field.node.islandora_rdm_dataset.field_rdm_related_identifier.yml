@@ -1,14 +1,15 @@
+uuid: 1e531d97-046d-4e87-9098-26a4cf751e99
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_rdm_related_identifier
     - node.type.islandora_rdm_dataset
-    - paragraphs.paragraphs_type.alternate_identifier
+    - paragraphs.paragraphs_type.related_resource
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: Foclcj_42hgi6mBW8PBoftEQZVaic8VJaDLZETWe5Fw
+  default_config_hash: RWV_LX3S9aUiD61vrgOkGZTDVu7HPPvCs8dguBT2jX0
 id: node.islandora_rdm_dataset.field_rdm_related_identifier
 field_name: field_rdm_related_identifier
 entity_type: node
@@ -24,9 +25,36 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      alternate_identifier: alternate_identifier
+      related_resource: related_resource
     target_bundles_drag_drop:
       alternate_identifier:
-        enabled: true
         weight: 3
+        enabled: false
+      rdm_contribution_organizational:
+        weight: 12
+        enabled: false
+      rdm_contribution_personal:
+        weight: 13
+        enabled: false
+      rdm_organization:
+        weight: 14
+        enabled: false
+      rdm_organizational_identifier:
+        weight: 15
+        enabled: false
+      rdm_person:
+        weight: 16
+        enabled: false
+      rdm_personal_identifier:
+        weight: 17
+        enabled: false
+      related_resource:
+        enabled: true
+        weight: 18
+      typed_date:
+        weight: 19
+        enabled: false
+      typed_description:
+        weight: 20
+        enabled: false
 field_type: entity_reference_revisions

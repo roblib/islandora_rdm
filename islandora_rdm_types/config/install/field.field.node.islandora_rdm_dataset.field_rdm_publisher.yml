@@ -1,0 +1,55 @@
+uuid: 433b6bf1-d1a3-4838-ba91-6056e7f95dc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_publisher
+    - node.type.islandora_rdm_dataset
+    - paragraphs.paragraphs_type.rdm_organization
+  module:
+    - entity_reference_revisions
+id: node.islandora_rdm_dataset.field_rdm_publisher
+field_name: field_rdm_publisher
+entity_type: node
+bundle: islandora_rdm_dataset
+label: Publisher
+description: 'The name of the entity that holds, archives, publishes prints, distributes, releases, issues, or produces the resource. This property will be used to formulate the citation, so consider the prominence of the role. For software, use Publisher for the code repository. If there is an entity other than a code repository, that "holds, archives, publishes, prints, distributes, releases, issues, or produces" the code, use the property Contributor/contributorType/ hostingInstitution for the code repository.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      rdm_organization: rdm_organization
+    target_bundles_drag_drop:
+      alternate_identifier:
+        weight: 10
+        enabled: false
+      rdm_contribution_organizational:
+        weight: 11
+        enabled: false
+      rdm_contribution_personal:
+        weight: 12
+        enabled: false
+      rdm_organization:
+        enabled: true
+        weight: 13
+      rdm_organizational_identifier:
+        weight: 14
+        enabled: false
+      rdm_person:
+        weight: 15
+        enabled: false
+      rdm_personal_identifier:
+        weight: 16
+        enabled: false
+      typed_date:
+        weight: 17
+        enabled: false
+      typed_description:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions
