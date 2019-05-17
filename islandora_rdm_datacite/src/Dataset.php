@@ -62,7 +62,7 @@ class Dataset {
     // Creator.
     $creators_element = $this->doc->createElement('creators');
     $resource->appendChild($creators_element);
-    $this->addResearcherField($node, 'field_creator', 'creator', $creators_element);
+    $this->addContributorField($node, 'field_rdm_creator', 'creator', $creators_element);
 
     // Title.
     $titles_element = $this->doc->createElement('titles');
@@ -76,15 +76,16 @@ class Dataset {
       $resource->appendChild($year);
     }
 
-    if ($publisher_field = $node->get('field_islandora_rdm_publisher')->first()) {
-      $publisher = $this->doc->createElement('publisher', $publisher_field->getString());
+    if ($publisher_field = $node->get('field_rdm_publisher')->first()) {
+      $publisher_name = $publisher_field->get('entity')->getTarget()->get('field_rdm_organization_name')->first()->getString();
+      $publisher = $this->doc->createElement('publisher', $publisher_name);
       $resource->appendChild($publisher);
     }
 
     // Contributor.
     $contributors_element = $this->doc->createElement('contributors');
 
-    $contributor_count = $this->addResearcherField($node, 'field_rdm_contributors', 'contributor', $contributors_element);
+    $contributor_count = $this->addContributorField($node, 'field_rdm_contributors', 'contributor', $contributors_element);
     if ($contributor_count >= 1) {
       $resource->appendChild($contributors_element);
     }
@@ -148,57 +149,85 @@ class Dataset {
   }
 
   /**
-   * Format a Researcher item as XML.
+   * Format a Creator/Contributor item as XML.
    *
    * @param Drupal\node\NodeInterface $node
    *   The node being exported.
    * @param string $field_name
    *   The field name to extract.
    * @param string $element_name
-   *   The type of name being extracte ('creator', 'contributor').
+   *   The type of name being extracted ('creator', 'contributor').
    * @param DOMElement $parent_element
-   *   The XML element to apped to.
+   *   The XML element to append to.
    *
    * @return int
    *   The number of elements added.
    */
-  private function addResearcherField(NodeInterface $node, $field_name, $element_name, DOMElement $parent_element) {
+  private function addContributorField(NodeInterface $node, $field_name, $element_name, DOMElement $parent_element) {
     $count = 0;
     foreach ($node->get($field_name) as $reference_field) {
       if ($researcher_target = $reference_field->get('entity')->getTarget()) {
         $wrapper_element = $this->doc->createElement($element_name);
         $researcher = $researcher_target->getValue();
-        // Contributors are embedded inside a paragraph type.
-        if ($is_contributor = $researcher->getType() == 'rdm_contributor') {
-          $contributor_type = $researcher->get('field_rdm_contributor_type')->first()->getString();
+        // Contributors have roles.
+        if ($is_contributor = $researcher->getType() == 'rdm_contribution_personal') {
+          $contributor_type = $researcher->get('field_rdm_role_personal')->first()->getString();
           $wrapper_element->setAttribute('contributorType', $contributor_type);
-          $researcher = $researcher->get('field_rdm_contributor')->first()->get('entity')->getTarget();
+          $researcher = $researcher->get('field_rdm_person')->first()->get('entity')->getTarget()->getValue();
         }
-        $name = $researcher->get('field_name')->first()->getValue();
+        elseif ($is_contributor = $researcher->getType() == 'rdm_contribution_organizational') {
+          $contributor_type = $researcher->get('field_rdm_role_organizational')->first()->getString();
+          $wrapper_element->setAttribute('contributorType', $contributor_type);
+          $researcher = $researcher->get('field_rdm_organization')->first()->get('entity')->getTarget()->getValue();
+        }
+        $is_person = $researcher->getType() == 'rdm_person';
 
-        $formatted_name = \Drupal::service('name.formatter')->format($name);
-
-        $name_element = $this->doc->createElement($element_name . 'Name', $formatted_name);
+        // Person
+        if ($is_person) {
+          $name = $researcher->get('field_rdm_personal_name')->first()->getString();
+          $name_element = $this->doc->createElement($element_name . 'Name', $name);
+          $name_element->setAttribute('nameType', 'Personal');
+        }
+        // Organization
+        else {
+          $name = $researcher->get('field_rdm_organization_name')->first()->getString();
+          $name_element = $this->doc->createElement($element_name . 'Name', $name);
+          $name_element->setAttribute('nameType', 'Organizational');
+        }
         $wrapper_element->appendChild($name_element);
-        foreach (['given', 'family'] as $name_segment) {
-          if (!empty($name[$name_segment])) {
-            $name_segment_element = $this->doc->createElement($name_segment . 'Name', $name[$name_segment]);
-            $wrapper_element->appendChild($name_segment_element);
+      }
+      // Identifiers (person)
+      if ($is_person) {
+        foreach ($researcher->get('field_rdm_personal_identifier') as $person_id) {
+          $person_id = $person_id->get('entity')->getTarget();
+          if (!empty($person_id->get('field_rdm_identifier_string')->first()) &&
+              $id = $person_id->get('field_rdm_identifier_string')->first()->getString()) {
+            $scheme = $person_id->get('field_rdm_identifier_type_person')->first()->getString();
+            $id_element = $this->doc->createElement('nameIdentifier', $id);
+            $id_element->setAttribute('nameIdentifierScheme', $scheme);
+            $wrapper_element->appendChild($id_element);
           }
         }
       }
-
-      if (!empty($researcher->get('field_orcid_id')->first()) &&
-          $orcid = $researcher->get('field_orcid_id')->first()->getString()) {
-        $orcid_element = $this->doc->createElement('nameIdentifier', $orcid);
-        $orcid_element->setAttribute('schemeURI', 'http://orcid.org/');
-        $orcid_element->setAttribute('nameIdentifierScheme', 'ORCID');
-        $wrapper_element->appendChild($orcid_element);
+      // Identifiers (org)
+      else {
+        foreach ($researcher->get('field_rdm_organizational_ids') as $org_id) {
+          $org_id = $org_id->get('entity')->getTarget();
+          if (!empty($org_id->get('field_rdm_identifier_string')->first()) &&
+              $id = $org_id->get('field_rdm_identifier_string')->first()->getString()) {
+            $scheme = $org_id->get('field_rdm_identifier_type_org')->first()->getString();
+            $id_element = $this->doc->createElement('nameIdentifier', $id);
+            $id_element->setAttribute('nameIdentifierScheme', $scheme);
+            $wrapper_element->appendChild($id_element);
+          }
+        }
       }
-
-      if (!empty($researcher->get('field_affiliation')->first())
-          && $affiliation = $researcher->get('field_affiliation')->first()->getString()) {
-        $affiliation_element = $this->doc->createElement('affiliation', $affiliation);
+      // Affiliation (person)
+      if ($is_person && !empty($researcher->get('field_rdm_personal_affiliation')->first())) {
+        //  && $affiliation = $researcher->get('field_rdm_personal_affiliation')->first()->get('entity')->getTarget()) {
+        $affiliation = $researcher->get('field_rdm_personal_affiliation')->first()->get('entity')->getTarget();
+        $affiliation_name = $affiliation->get('field_rdm_organization_name')->first()->getString();
+        $affiliation_element = $this->doc->createElement('affiliation', $affiliation_name);
         $wrapper_element->appendChild($affiliation_element);
       }
       $parent_element->appendChild($wrapper_element);
@@ -207,3 +236,4 @@ class Dataset {
     return $count;
   }
 }
+
