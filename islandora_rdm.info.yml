@@ -6,3 +6,6 @@ package: 'Islandora RDM'
 dependencies:
   - entity_reference_revisions
   - paragraphs
+  - islandora_rdm_types
+  - islandora_datacite
+  - islandora_altmetric
