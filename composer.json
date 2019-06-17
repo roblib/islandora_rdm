@@ -1,5 +1,5 @@
 {
-    "name": "drupal/islandora_rdm",
+    "name": "islandora-rdm/islandora_rdm",
     "description": "Islandora Research Data Managment Platform",
     "type": "drupal-module",
     "homepage": "https://github.com/roblib/islandora_rdm",
