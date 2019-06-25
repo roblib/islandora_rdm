@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains disk_usage.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function disk_usage_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the disk_usage module.
+    case 'help.page.islandora_rdm_disk_usage':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module will display a report of the disk storage used by Islandora repository items.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function disk_usage_theme() {
+  return [
+    'islandora_rdm_disk_usage' => [
+      'render element' => 'children',
+    ],
+  ];
+}

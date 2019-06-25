@@ -1,0 +1,8 @@
+disk_usage.createReports:
+  path: '/admin/reports/islandora/storage'
+  defaults:
+    _controller: 'Drupal\islandora_rdm_disk_usage\Controller\DiskUsageController::createReports'
+    _title: 'Islandora Rdm Disk Usage Report'
+  requirements:
+    _permission: 'administer site configuration'
+
