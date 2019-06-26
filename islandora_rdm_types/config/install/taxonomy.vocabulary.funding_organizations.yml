@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Funding Organizations'
+vid: funding_organizations
+description: 'A selected list of organizations who provide project funding'
+weight: 0

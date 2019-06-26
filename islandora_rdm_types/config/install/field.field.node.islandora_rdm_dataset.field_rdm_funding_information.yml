@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_funding_information
+    - node.type.funding_information
+    - node.type.islandora_rdm_dataset
+id: node.islandora_rdm_dataset.field_rdm_funding_information
+field_name: field_rdm_funding_information
+entity_type: node
+bundle: islandora_rdm_dataset
+label: 'Funding Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      funding_information: funding_information
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

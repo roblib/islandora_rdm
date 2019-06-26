@@ -1,0 +1,77 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.funding_information.field_rdm_award_uri
+    - field.field.node.funding_information.field_rdm_end_date
+    - field.field.node.funding_information.field_rdm_funding_organization
+    - field.field.node.funding_information.field_rdm_funding_program
+    - field.field.node.funding_information.field_rdm_funding_type
+    - field.field.node.funding_information.field_rdm_start_date
+    - node.type.funding_information
+  module:
+    - link
+    - options
+    - user
+id: node.funding_information.default
+targetEntityType: node
+bundle: funding_information
+mode: default
+content:
+  field_rdm_award_uri:
+    type: link
+    weight: 6
+    region: content
+    label: inline
+    settings:
+      trim_length: 255
+      rel: nofollow
+      target: _blank
+      url_only: false
+      url_plain: false
+    third_party_settings: {  }
+  field_rdm_end_date:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_rdm_funding_organization:
+    weight: 0
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_rdm_funding_program:
+    weight: 1
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_rdm_funding_type:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_rdm_start_date:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.funding_information_selector
     - field.field.node.islandora_rdm_dataset.body
     - field.field.node.islandora_rdm_dataset.field_date_paragraph
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
@@ -9,6 +10,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_rdm_contributors
     - field.field.node.islandora_rdm_dataset.field_rdm_creator
     - field.field.node.islandora_rdm_dataset.field_rdm_description
+    - field.field.node.islandora_rdm_dataset.field_rdm_funding_information
     - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
     - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
     - field.field.node.islandora_rdm_dataset.field_rdm_publisher
@@ -19,6 +21,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_subjects
     - node.type.islandora_rdm_dataset
   module:
+    - entity_browser
     - field_group
     - geolocation
     - lc_subject_field
@@ -31,6 +34,7 @@ third_party_settings:
         - group_people
         - group_geographical_info
         - group_relationships
+        - group_funding
       parent_name: ''
       weight: 0
       format_type: tabs
@@ -110,6 +114,19 @@ third_party_settings:
         classes: ''
       label: Identifiers
       region: content
+    group_funding:
+      children:
+        - field_rdm_funding_information
+      parent_name: group_dataset
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Funding
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -214,6 +231,20 @@ content:
         collapse_edit_all: collapse_edit_all
         add_above: '0'
     third_party_settings: {  }
+    region: content
+  field_rdm_funding_information:
+    weight: 2
+    settings:
+      entity_browser: funding_information_selector
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
     region: content
   field_rdm_geograhical_location:
     weight: 24
