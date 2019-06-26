@@ -1,4 +1,3 @@
-uuid: 669d3eea-fc40-4ea0-911b-732c7d6a0762
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-_core:
-  default_config_hash: wtksNsGwNrayBBtsrkYUp7z0Ax1rmtdtTVJwU0ApgQk
 id: paragraph.field_rdm_alternate_identifier
 field_name: field_rdm_alternate_identifier
 entity_type: paragraph

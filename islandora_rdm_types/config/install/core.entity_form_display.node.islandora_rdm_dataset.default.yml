@@ -1,4 +1,3 @@
-uuid: d233d489-2e11-4adf-bf8b-ebfeb4c30d07
 langcode: en
 status: true
 dependencies:
@@ -111,8 +110,6 @@ third_party_settings:
         classes: ''
       label: Identifiers
       region: content
-_core:
-  default_config_hash: ELwtfC-Wn5yaS2wwr1cV3TwLl41cotQKFzJOsZM8y1c
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset

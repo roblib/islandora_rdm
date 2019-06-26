@@ -1,12 +1,9 @@
-uuid: a843a48c-94c1-45d0-bc2b-476f0d946fcf
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_rdm_resource_type
     - node.type.islandora_rdm_dataset
-_core:
-  default_config_hash: 9A0kHcm7ikK1iQp75TEJpRzem2LxfkiVeUiOmSmSdK8
 id: node.islandora_rdm_dataset.field_rdm_resource_type
 field_name: field_rdm_resource_type
 entity_type: node

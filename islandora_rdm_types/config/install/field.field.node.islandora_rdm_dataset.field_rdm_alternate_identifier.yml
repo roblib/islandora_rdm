@@ -1,4 +1,3 @@
-uuid: 20fd428c-7b67-429e-96f3-b22f4b8ea920
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.alternate_identifier
   module:
     - entity_reference_revisions
-_core:
-  default_config_hash: DBmb3v_zuinS8QuQ0Pur3rpBDdLZxsC09vVORukQuMw
 id: node.islandora_rdm_dataset.field_rdm_alternate_identifier
 field_name: field_rdm_alternate_identifier
 entity_type: node

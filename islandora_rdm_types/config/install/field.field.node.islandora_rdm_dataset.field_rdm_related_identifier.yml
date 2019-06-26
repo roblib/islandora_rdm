@@ -1,4 +1,3 @@
-uuid: 1e531d97-046d-4e87-9098-26a4cf751e99
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.related_resource
   module:
     - entity_reference_revisions
-_core:
-  default_config_hash: RWV_LX3S9aUiD61vrgOkGZTDVu7HPPvCs8dguBT2jX0
 id: node.islandora_rdm_dataset.field_rdm_related_identifier
 field_name: field_rdm_related_identifier
 entity_type: node

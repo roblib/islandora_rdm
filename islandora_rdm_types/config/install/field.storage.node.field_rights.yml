@@ -1,11 +1,8 @@
-uuid: 280aabbf-9b2a-49b3-90c4-30499cb03725
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: BJEODxw6gtx3aQXUGooLxkhjlVG9H21VT3wxkiSjvGo
 id: node.field_rights
 field_name: field_rights
 entity_type: node

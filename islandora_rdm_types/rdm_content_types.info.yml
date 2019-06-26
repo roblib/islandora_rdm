@@ -1,8 +1,6 @@
-name: 'Islandora RDM Types'
+name: 'RDM Content Types'
 type: module
-description: 'Base content types for Islandora RDM'
 core: 8.x
-package: 'Islandora RDM'
 dependencies:
   - controlled_access_terms
   - entity_reference_revisions

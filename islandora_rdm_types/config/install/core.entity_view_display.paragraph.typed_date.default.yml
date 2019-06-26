@@ -1,4 +1,3 @@
-uuid: 6304cab3-2fce-4b25-a323-9ce45aa786f6
 langcode: en
 status: true
 dependencies:
@@ -28,8 +27,6 @@ third_party_settings:
         classes: node
       label: ''
       region: content
-_core:
-  default_config_hash: JAlYmI49VE0r26PewBoeLfloX2gGCKHPvY6XdN7oeJg
 id: paragraph.typed_date.default
 targetEntityType: paragraph
 bundle: typed_date

@@ -1,4 +1,3 @@
-uuid: 101e5d06-c844-4022-ac7b-43eeff27aa00
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.islandora_rdm_dataset
   module:
     - lc_subject_field
-_core:
-  default_config_hash: DHhE7x_MUR7ET8lqMVX2lgQHDehq0qwJgSzZxbm9kpc
 id: node.islandora_rdm_dataset.field_subjects
 field_name: field_subjects
 entity_type: node

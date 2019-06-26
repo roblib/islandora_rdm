@@ -1,4 +1,3 @@
-uuid: bf2d8d65-4537-4902-88f7-7608789c76c1
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - paragraphs.paragraphs_type.typed_description
   module:
     - options
-_core:
-  default_config_hash: xnvubxGX5SgMtz9t2clep4PGshggbqWihlAzU9_FBDE
 id: paragraph.typed_description.field_rdm_description_type
 field_name: field_rdm_description_type
 entity_type: paragraph
