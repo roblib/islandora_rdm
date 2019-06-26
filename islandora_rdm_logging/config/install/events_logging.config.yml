@@ -1,31 +1,32 @@
 enabled_events_logging_plugins:
   database: database
-_core:
-  default_config_hash: VqdXn-mwIXVYxBTGOSunM60VE2kNCERYQwG-YoCeErs
 enabled_content_entities:
+  comment: comment
+  file: file
   media: media
   node: node
+  taxonomy_term: taxonomy_term
+  user: user
   block_content: '0'
-  comment: '0'
   contact_message: '0'
+  content_moderation_state: '0'
   entity_embed_fake_entity: '0'
-  file: '0'
   search_api_task: '0'
   shortcut: '0'
-  taxonomy_term: '0'
-  user: '0'
   menu_link_content: '0'
+  paragraph: '0'
 enabled_config_entities:
   context: context
-  field_config: field_config
   field_storage_config: field_storage_config
-  key_config_override: key_config_override
+  field_config: field_config
+  image_style: image_style
   key: key
-  media_type: media_type
+  key_config_override: key_config_override
   node_type: node_type
   rdf_mapping: rdf_mapping
-  action: action
+  taxonomy_vocabulary: taxonomy_vocabulary
   user_role: user_role
+  workflow: workflow
   block: '0'
   block_content_type: '0'
   comment_type: '0'
@@ -33,32 +34,32 @@ enabled_config_entities:
   editor: '0'
   embed_button: '0'
   entity_browser: '0'
-  facets_facet: '0'
   facets_facet_source: '0'
+  facets_facet: '0'
   features_bundle: '0'
   filter_format: '0'
-  image_style: '0'
   configurable_language: '0'
   language_content_settings: '0'
+  media_type: '0'
   migration_group: '0'
   migration: '0'
-  name_format: '0'
   name_list_format: '0'
+  name_format: '0'
   responsive_image_style: '0'
   rest_resource_config: '0'
-  search_api_server: '0'
   search_api_index: '0'
+  search_api_server: '0'
   solr_field_type: '0'
   shortcut_set: '0'
   menu: '0'
-  taxonomy_vocabulary: '0'
+  action: '0'
   tour: '0'
   view: '0'
-  date_format: '0'
+  paragraphs_type: '0'
   base_field_override: '0'
-  entity_view_mode: '0'
-  entity_form_mode: '0'
   entity_form_display: '0'
+  entity_view_mode: '0'
   entity_view_display: '0'
+  entity_form_mode: '0'
+  date_format: '0'
 max_records: '0'
-
