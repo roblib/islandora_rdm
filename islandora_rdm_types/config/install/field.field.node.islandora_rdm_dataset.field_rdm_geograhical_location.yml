@@ -1,4 +1,3 @@
-uuid: a1554d14-831b-4f67-b6d1-e09bee7140c9
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.islandora_rdm_dataset
   module:
     - geolocation
-_core:
-  default_config_hash: SQWqYqobm-dtOlghrGAAtDqFyeOEnpvJcoC3NNmcMdk
 id: node.islandora_rdm_dataset.field_rdm_geograhical_location
 field_name: field_rdm_geograhical_location
 entity_type: node

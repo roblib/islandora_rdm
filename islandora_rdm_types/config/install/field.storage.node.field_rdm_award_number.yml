@@ -1,4 +1,3 @@
-uuid: f18084c2-1c35-40b8-8c0a-fae87ec38630
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-_core:
-  default_config_hash: RfOR7BenW7_u2yUuJaHvUuUlRs5DJIqBff69_H9M0us
 id: node.field_rdm_award_number
 field_name: field_rdm_award_number
 entity_type: node

@@ -1,12 +1,9 @@
-uuid: 76cde9e1-630f-4e4c-86d9-1af191863c71
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_rdm_award_number
     - node.type.funding_information
-_core:
-  default_config_hash: yX84QnMGdLaBlU6UhGWfs_7XMRst7pXMagsywIkny1k
 id: node.funding_information.field_rdm_award_number
 field_name: field_rdm_award_number
 entity_type: node

@@ -1,9 +1,6 @@
-uuid: 6cb5f1f0-95f3-48c2-b02e-db82dea6b744
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 2TdhEZxJya_in1uGAgfAF9Y-UgJEAy8bzGMMeBtxUl0
 id: typed_description
 label: 'Typed Description'
 icon_uuid: null

@@ -1,12 +1,9 @@
-uuid: 8499e48c-dcec-4380-9c43-cf9f3dcd3435
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_rdm_funder_identifier
     - node.type.funding_information
-_core:
-  default_config_hash: 5YwOjo9plsEhLUoSkZrutsbAK_rGBsRZWckOiYkTuZQ
 id: node.funding_information.field_rdm_funder_identifier
 field_name: field_rdm_funder_identifier
 entity_type: node

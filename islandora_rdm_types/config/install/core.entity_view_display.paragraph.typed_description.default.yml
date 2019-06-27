@@ -1,4 +1,3 @@
-uuid: 23bbbb0a-0ead-42e4-acfd-3e4ffe0f1451
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.typed_description
   module:
     - options
-_core:
-  default_config_hash: jD7pXjmRY_E1Bg-3DtKYT1eN8eC8I4MYyM2sOFOCbbc
 id: paragraph.typed_description.default
 targetEntityType: paragraph
 bundle: typed_description

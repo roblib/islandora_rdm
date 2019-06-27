@@ -1,4 +1,3 @@
-uuid: 3304e1ed-99cc-4848-a0aa-f52e7e4c3b3a
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.funding_information
   module:
     - options
-_core:
-  default_config_hash: X5nRJIPqPZ6W1rix4uY6ZgIOP0aQxBlcjgWUxIwK3JQ
 id: node.funding_information.field_rdm_funder_identifier_type
 field_name: field_rdm_funder_identifier_type
 entity_type: node

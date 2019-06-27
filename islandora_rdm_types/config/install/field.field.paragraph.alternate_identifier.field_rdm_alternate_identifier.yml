@@ -1,12 +1,9 @@
-uuid: 2aed2872-a84c-420a-a310-8041b3325e4d
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_rdm_alternate_identifier
     - paragraphs.paragraphs_type.alternate_identifier
-_core:
-  default_config_hash: DWBY2-o1yeDock3cC1P2Ml3AeclFL2RHfjSlkztBySo
 id: paragraph.alternate_identifier.field_rdm_alternate_identifier
 field_name: field_rdm_alternate_identifier
 entity_type: paragraph

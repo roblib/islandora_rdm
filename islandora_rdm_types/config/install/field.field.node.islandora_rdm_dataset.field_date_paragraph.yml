@@ -1,4 +1,3 @@
-uuid: 0687cd12-7847-4048-8781-bb93e60883ef
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.typed_date
   module:
     - entity_reference_revisions
-_core:
-  default_config_hash: tha-48o__BdN7-8Vy6VbHTVP1nPqxZTopSgxzE2XOR0
 id: node.islandora_rdm_dataset.field_date_paragraph
 field_name: field_date_paragraph
 entity_type: node
