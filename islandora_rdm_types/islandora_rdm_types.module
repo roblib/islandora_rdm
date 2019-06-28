@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Implements hook_help().
@@ -21,4 +22,26 @@ function islandora_rdm_types_help($route_name, RouteMatchInterface $route_match)
 
     default:
   }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function islandora_rdm_types_theme() {
+  return [
+    'node__islandora_rdm_dataset__rdm_citation' => [
+      'template' => 'node--islandora-rdm-dataset--rdm-citation',
+      'base hook' => 'node'
+    ],
+  ];
+}
+
+function islandora_rdm_types_preprocess_node__islandora_rdm_dataset__rdm_citation(&$variables) {
+  $variables['swart'] = "A very long season";
+
+  $target = $variables['node']->get('field_rdm_creator')->getValue()[0]['target_id'];
+  $p = \Drupal\paragraphs\Entity\Paragraph::load($target);
+  $name = $p->field_rdm_personal_name;
+  ksm($name);
+
 }
