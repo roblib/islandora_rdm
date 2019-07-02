@@ -41,7 +41,15 @@ function islandora_rdm_types_preprocess_node__islandora_rdm_dataset__rdm_citatio
 
   $target = $variables['node']->get('field_rdm_creator')->getValue()[0]['target_id'];
   $p = \Drupal\paragraphs\Entity\Paragraph::load($target);
-  $name = $p->field_rdm_personal_name;
-  ksm($name);
 
+  $name = '';
+  switch($p->getType()) {
+    case 'rdm_organization':
+      $name = $p->get('field_rdm_organization_name')->getString();
+      break;
+    case 'rdm_person':
+      $name = $p->get('field_rdm_personal_name')->getString();
+      break;
+  }
+  $variables['cite_name'] = $name;
 }

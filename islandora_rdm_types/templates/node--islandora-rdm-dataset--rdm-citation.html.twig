@@ -80,4 +80,4 @@
 {{ attach_library('classy/node') }}
 {# Format Creator (PublicationYear): Title. Version. Publisher. (resourceTypeGeneral). Identifier
  #}
-{{ swart }}
+{{ cite_name }} ({{ node.field_rdm_publication_year.value }}): <cite>{{ node.title.value }}</cite>. {{ node.field_rdm_publisher.0.entity.field_rdm_organization_name.value }}. ({{ node.field_rdm_resource_type_general.value }}). {{ node.field_islandora_rdm_identifier.value }}

@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+  theme:
+    - carapace
+id: entityviewcontent
+theme: carapace
+region: sidebar_second
+weight: -7
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Entity view (Content)'
+  provider: ctools
+  label_display: visible
+  view_mode: rdm_citation
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      islandora_rdm_dataset: islandora_rdm_dataset
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
