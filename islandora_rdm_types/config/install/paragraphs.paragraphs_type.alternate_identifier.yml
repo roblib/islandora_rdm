@@ -1,9 +1,6 @@
-uuid: 287814d5-cb12-497d-b654-8c26819d9d67
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: HtAzN9ptKi7G86IFSLoAolfPw_x6yDgpsFMj5IOOT3s
 id: alternate_identifier
 label: 'Alternate Resource Identifier'
 icon_uuid: null

@@ -1,0 +1,262 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.rdm_citation
+    - field.field.node.islandora_rdm_dataset.body
+    - field.field.node.islandora_rdm_dataset.field_date_paragraph
+    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
+    - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
+    - field.field.node.islandora_rdm_dataset.field_rdm_contributors
+    - field.field.node.islandora_rdm_dataset.field_rdm_creator
+    - field.field.node.islandora_rdm_dataset.field_rdm_description
+    - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
+    - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
+    - field.field.node.islandora_rdm_dataset.field_rdm_publisher
+    - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
+    - field.field.node.islandora_rdm_dataset.field_rdm_resource_type
+    - field.field.node.islandora_rdm_dataset.field_rdm_resource_type_general
+    - field.field.node.islandora_rdm_dataset.field_rights
+    - field.field.node.islandora_rdm_dataset.field_subjects
+    - node.type.islandora_rdm_dataset
+  module:
+    - entity_reference_revisions
+    - field_group
+    - geolocation
+    - lc_subject_field
+    - options
+    - user
+third_party_settings:
+  field_group:
+    group_identification:
+      children:
+        - field_islandora_rdm_identifier
+        - field_rdm_description
+        - field_rdm_resource_type_general
+        - field_rdm_resource_type
+        - field_rdm_publication_year
+      parent_name: group_dataset
+      weight: 6
+      format_type: tab
+      format_settings:
+        formatter: open
+        description: ''
+        id: group-dataset-identification
+        classes: ''
+      label: Identification
+      region: content
+    group_more_info:
+      children:
+        - field_rdm_alternate_identifier
+        - field_rdm_related_identifier
+        - field_rdm_geograhical_location
+        - field_rights
+      parent_name: group_dataset
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: group-dataset-more-info
+        classes: ''
+        formatter: closed
+        description: 'Extended information'
+      label: 'More info'
+      region: content
+    group_dataset:
+      children:
+        - group_identification
+        - group_more_info
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: group-dataset
+        classes: ''
+        direction: horizontal
+      label: Dataset
+      region: content
+_core:
+  default_config_hash: Q9bFFDQXwHhKlb4krGAOQdGW-InhUbxHkkNeLRlCGJI
+id: node.islandora_rdm_dataset.rdm_citation
+targetEntityType: node
+bundle: islandora_rdm_dataset
+mode: rdm_citation
+content:
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  display_media_entity_view_1:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  display_media_entity_view_2:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  display_media_service_file:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  display_media_thumbnail:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_paragraph:
+    type: entity_reference_revisions_entity_view
+    weight: 19
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_islandora_rdm_identifier:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_rdm_alternate_identifier:
+    type: entity_reference_revisions_entity_view
+    weight: 8
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_contributors:
+    type: entity_reference_revisions_entity_view
+    weight: 20
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_creator:
+    type: entity_reference_revisions_entity_view
+    weight: 21
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_description:
+    type: entity_reference_revisions_entity_view
+    weight: 8
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_geograhical_location:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  field_rdm_publication_year:
+    weight: 12
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_rdm_publisher:
+    type: entity_reference_revisions_entity_view
+    weight: 22
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_related_identifier:
+    type: entity_reference_revisions_entity_view
+    weight: 9
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_rdm_resource_type:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_rdm_resource_type_general:
+    type: list_default
+    weight: 9
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_rights:
+    weight: 11
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_subjects:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: lcsubject_formatter
+    region: content
+  links:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  openseadragon_media_evas_entity_view_1:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  openseadragon_media_evas_entity_view_2:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  openseadragon_media_evas_service_file:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  pdfjs_media_evas_entity_view_1:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  pdfjs_media_evas_entity_view_2:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  pdfjs_media_evas_service_file:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  langcode: true

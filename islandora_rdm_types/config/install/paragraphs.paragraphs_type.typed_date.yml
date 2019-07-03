@@ -1,9 +1,6 @@
-uuid: 86fa073d-6f0e-46e6-8c9d-3e29d350349e
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: mtMlsNFSq8lMCTfs9kWvmNeQHMxg9ILvZ5RvNuG4h-8
 id: typed_date
 label: 'Typed Date'
 icon_uuid: null

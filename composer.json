@@ -11,14 +11,10 @@
         }
     ],
     "license": "GPL-2.0-or-later",
-    "minimum-stability": "dev",
-    "repositories": {
-        "islandora_claw_controlled_access_terms": {
-            "type": "github",
-            "url": "https://github.com/Islandora-CLAW/controlled_access_terms.git"
-        }
-    },
+    "minimum-stability": "dev", 
     "require": {
+        "drupal/chartjs_api": "*",
+        "drupal/events_logging": "*",
         "drupal/inline_entity_form": "*", 
         "drupal/field_permissions": "*",
         "drupal/field_group": "*",

@@ -1,4 +1,3 @@
-uuid: 54de42bc-f191-4e40-b6dd-2949a4f5b6ff
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-_core:
-  default_config_hash: VskXmqc12-_i2w7ZjHFqrx9CMIy_CLayyFaKWMMgoBE
 id: node.field_rdm_resource_type
 field_name: field_rdm_resource_type
 entity_type: node
