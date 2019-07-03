@@ -63,7 +63,6 @@ class DiskUsageController extends ControllerBase {
 
     $report['report']['chart']['content']['#rows'] = $rows;
     // \Kint::$maxLevels = 0;
-    // ksm($report);
     return $report;
   }
 
@@ -73,12 +72,12 @@ class DiskUsageController extends ControllerBase {
   private function createTable() {
     $entities = $this->getMyList();
 
-    $report = ['content'];
-    $report['content']['pageTitle'] = [
+    $report['pageTitle'] = [
       '#type' => 'markup',
       '#markup' => '<h3>Media Items List</h3>',
     ];
-    $report['content']['table'] = [
+
+    $report['table'] = [
       '#type' => 'table',
       '#header' => [
         t('Title'),
@@ -88,16 +87,42 @@ class DiskUsageController extends ControllerBase {
       ],
     ];
 
-    $rows = [];
-    foreach ($entities as $key => $entity) {
-      $rows[$key] = [
-        'title' => $entity->get('name')->getString(),
-        'owner' => $entity->get('revision_user')->getString(),
-        'size' => $entity->get('field_file_size')->getString(),
-        'type' => $entity->get('field_mime_type')->getString(),
+    // Using array_keys(),array_values()function
+    $key = array_keys($entities);
+    $entity = array_values($entities);
+
+    // Get current page.
+    $page = \Drupal::request()->query->get('page', '');
+    // Starts from 0.
+    $current_page = $page;
+    $num_per_page = 5;
+
+    $begin = $current_page * $num_per_page;
+    $end = $current_page * $num_per_page + $num_per_page;
+
+    if ($end >= count($entities)) {
+      $end = count($entities);
+    }
+    for ($i = $begin; $i < $end; $i++) {
+      $rows[$key[$i]] = [
+        'title' => $entity[$i]->get('name')->getString(),
+        'owner' => $entity[$i]->get('revision_user')->getString(),
+        'size' => $entity[$i]->get('field_file_size')->getString(),
+        'type' => $entity[$i]->get('field_mime_type')->getString(),
       ];
     }
-    $report['content']['table']['#rows'] = $rows;
+    $report['table']['#rows'] = $rows;
+
+    // Now that we have the total number of results
+    // Create and initialize the pager.
+    pager_default_initialize(count($entities), $num_per_page);
+
+    // Finally, add the pager to the render array, and return.
+    // Pager_default_initialize sets some global variables so that
+    // The pager theme code 'pager' knows how many page links to create
+    // The pager theme code also create the html code.
+    $report['pager'] = ['#type' => 'pager'];
+
     return $report;
   }
 
@@ -119,18 +144,12 @@ class DiskUsageController extends ControllerBase {
       $type = strtok($typeFull, '/');
 
       if ($groupBy == "type") {
-        // Echo "before adding: type: " . $type . "
-        // size: " . $count[$type] . "<br>";
-        // echo "to be added: type: " . $type . "
-        // size: " . $size . "<br>";.
         if ($this->exist($type, $count)) {
           $count[$type] = $count[$type] + $size;
         }
         else {
           $count[$type] = $size;
         }
-        // Echo "after adding: type: " . $type . "
-        // size: " . $count[$type] . "<br><br>";.
       }
       // Group by owner.
       else {
@@ -145,7 +164,6 @@ class DiskUsageController extends ControllerBase {
         }
       }
     }
-
     $report = ['content'];
     $report['content']['pageTitle'] = [
       '#type' => 'markup',
@@ -179,6 +197,7 @@ class DiskUsageController extends ControllerBase {
     // Get An array of entity ID of all published materials.
     $query_all = $query->getQuery()
       ->condition('status', 1)
+      ->sort('field_file_size', 'DESC')
       ->execute();
 
     // Load the entities, loadMultiple($ids):
