@@ -5,6 +5,8 @@ core: 8.x
 package: 'Islandora RDM'
 dependencies:
   - controlled_access_terms
+  - entity_browser
+  - entity_browser_entity_form
   - entity_reference_revisions
   - field
   - field_group
@@ -16,6 +18,8 @@ dependencies:
   - node
   - options
   - paragraphs
+  - taxonomy
   - text
   - user
+  - views
 version: 8.x-dev

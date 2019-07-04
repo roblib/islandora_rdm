@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Funding Programs'
+vid: funding_programs
+description: 'Known funding programs, run by funding organizations'
+weight: 0

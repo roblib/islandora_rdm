@@ -2,16 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_rdm_funder_identifier_type
+    - field.storage.node.field_rdm_funding_type
     - node.type.funding_information
   module:
     - options
-id: node.funding_information.field_rdm_funder_identifier_type
-field_name: field_rdm_funder_identifier_type
+id: node.funding_information.field_rdm_funding_type
+field_name: field_rdm_funding_type
 entity_type: node
 bundle: funding_information
-label: 'Funder Identifier Type'
-description: 'The type of the funderIdentifier'
+label: 'Funding Type'
+description: ''
 required: false
 translatable: false
 default_value: {  }
