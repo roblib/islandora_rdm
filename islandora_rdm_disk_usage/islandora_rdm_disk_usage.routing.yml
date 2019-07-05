@@ -1,4 +1,4 @@
-disk_usage.createReports:
+disk_usage.reports:
   path: '/admin/reports/islandora/storage'
   defaults:
     _controller: 'Drupal\islandora_rdm_disk_usage\Controller\DiskUsageController::createReports'

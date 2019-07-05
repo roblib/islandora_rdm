@@ -1,0 +1,7 @@
+switch-button:
+  version: 1.x
+
+  js:
+    js/switch-button.js: {}
+  dependencies:
+    - core/jquery

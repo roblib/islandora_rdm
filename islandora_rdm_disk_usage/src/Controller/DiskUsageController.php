@@ -39,7 +39,6 @@ class DiskUsageController extends ControllerBase {
    */
   public function createReports() {
     $report = ['report'];
-    $report['report']['table'] = $this->createTable();
 
     $report['report']['chart']['pageTitle'] = [
       '#type' => 'markup',
@@ -63,6 +62,7 @@ class DiskUsageController extends ControllerBase {
 
     $report['report']['chart']['content']['#rows'] = $rows;
     // \Kint::$maxLevels = 0;
+    $report['report']['table'] = $this->createTable();
     return $report;
   }
 

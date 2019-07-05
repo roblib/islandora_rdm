@@ -1,8 +1,0 @@
-name: 'Islandora Rdm Disk Usage Module'
-type: module
-description: 'This module will display a report of the disk storage used by Islandora repository items.'
-core: 8.x
-package: 'Custom'
-dependencies:
- - chartjs_api
-

@@ -1,0 +1,6 @@
+disk_usage.reports:
+  title: 'Islandora RDM Disk Usage Reports'
+  parent: system.admin_reports
+  description: 'Disk storage used by Islandora repository items.'
+  route_name: disk_usage.reports
+
