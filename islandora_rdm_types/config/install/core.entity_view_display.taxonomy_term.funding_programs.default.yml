@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.funding_programs.field_rdm_funding_agency
+    - taxonomy.vocabulary.funding_programs
+id: taxonomy_term.funding_programs.default
+targetEntityType: taxonomy_term
+bundle: funding_programs
+mode: default
+content:
+  field_rdm_funding_agency:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  description: true
