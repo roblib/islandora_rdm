@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_end_date
+    - node.type.funding_information
+id: node.funding_information.field_rdm_end_date
+field_name: field_rdm_end_date
+entity_type: node
+bundle: funding_information
+label: 'End Date (year)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

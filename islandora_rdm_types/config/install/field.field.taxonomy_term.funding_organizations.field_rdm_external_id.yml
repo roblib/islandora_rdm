@@ -1,0 +1,57 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_rdm_external_id
+    - paragraphs.paragraphs_type.rdm_organizational_identifier
+    - taxonomy.vocabulary.funding_organizations
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.funding_organizations.field_rdm_external_id
+field_name: field_rdm_external_id
+entity_type: taxonomy_term
+bundle: funding_organizations
+label: 'External IDs'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      rdm_organizational_identifier: rdm_organizational_identifier
+    target_bundles_drag_drop:
+      alternate_identifier:
+        weight: 11
+        enabled: false
+      rdm_contribution_organizational:
+        weight: 12
+        enabled: false
+      rdm_contribution_personal:
+        weight: 13
+        enabled: false
+      rdm_organization:
+        weight: 14
+        enabled: false
+      rdm_organizational_identifier:
+        enabled: true
+        weight: 15
+      rdm_person:
+        weight: 16
+        enabled: false
+      rdm_personal_identifier:
+        weight: 17
+        enabled: false
+      related_resource:
+        weight: 18
+        enabled: false
+      typed_date:
+        weight: 19
+        enabled: false
+      typed_description:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

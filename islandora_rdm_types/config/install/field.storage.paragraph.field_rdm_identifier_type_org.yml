@@ -23,6 +23,9 @@ settings:
     -
       value: wikidata
       label: wikidata
+    -
+      value: fundref
+      label: 'Funder Registry'
   allowed_values_function: ''
 module: options
 locked: false

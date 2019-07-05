@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_rdm_contributors
     - field.field.node.islandora_rdm_dataset.field_rdm_creator
     - field.field.node.islandora_rdm_dataset.field_rdm_description
+    - field.field.node.islandora_rdm_dataset.field_rdm_funding_information
     - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
     - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
     - field.field.node.islandora_rdm_dataset.field_rdm_publisher
@@ -33,10 +34,9 @@ third_party_settings:
         - field_rdm_description
         - field_rdm_resource_type_general
         - field_rdm_resource_type
-        - field_islandora_rdm_publisher
         - field_rdm_publication_year
       parent_name: group_dataset
-      weight: 6
+      weight: 21
       format_type: tab
       format_settings:
         label: Identification
@@ -53,7 +53,7 @@ third_party_settings:
         - field_rdm_geograhical_location
         - field_rights
       parent_name: group_dataset
-      weight: 7
+      weight: 22
       format_type: tab
       format_settings:
         id: group-dataset-more-info
@@ -66,6 +66,7 @@ third_party_settings:
       children:
         - group_identification
         - group_more_info
+        - group_rdm_funding
       parent_name: ''
       weight: 0
       format_type: tabs
@@ -75,6 +76,19 @@ third_party_settings:
         direction: horizontal
       label: Dataset
       region: content
+    group_rdm_funding:
+      children:
+        - field_rdm_funding_information
+      parent_name: group_dataset
+      weight: 23
+      format_type: tab
+      format_settings:
+        label: Funding
+        formatter: closed
+        description: ''
+        id: ''
+        classes: ''
+      label: Funding
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -157,6 +171,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_rdm_funding_information:
+    weight: 23
+    label: above
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   field_rdm_geograhical_location:
     weight: 10

@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.funding_information_selector
+  module:
+    - entity_browser_entity_form
+    - views
+name: funding_information_selector
+label: 'Funding Information Selector'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '800'
+  link_text: 'Select Grants'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  a0c17775-90f4-417c-a737-d14352fa466e:
+    settings:
+      view: funding_information_selector
+      view_display: entity_browser_1
+      submit_text: Select
+      auto_select: false
+    uuid: a0c17775-90f4-417c-a737-d14352fa466e
+    weight: 1
+    label: 'Use Existing'
+    id: view
+  561a7a1c-8aec-4186-bec7-9d5e4b943027:
+    settings:
+      entity_type: node
+      bundle: funding_information
+      form_mode: default
+      submit_text: 'Save entity'
+    uuid: 561a7a1c-8aec-4186-bec7-9d5e4b943027
+    weight: 2
+    label: 'Create New'
+    id: entity_form
