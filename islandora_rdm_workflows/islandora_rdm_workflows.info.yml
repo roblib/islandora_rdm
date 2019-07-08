@@ -1,0 +1,8 @@
+name: 'Islandora Workflows'
+type: module
+description: 'Islandora RDM Workflow configuration'
+core: 8.x
+package: 'Islandora RDM'
+dependencies:
+  - content_moderation
+  - islandora_rdm_types
