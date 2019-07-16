@@ -2,22 +2,110 @@
 
 /**
  * @file
- * Install/update hook implementations.
+ * To test the services that Islandora uses.
  */
 
-use Drupal\field\Entity\FieldConfig;
+use Drupal\Core\Site\Settings;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
 
 /**
- * Implements hook_install().
+ * Implements hook_requirements().
  */
-function islandora_rdm_install() {
-  // Add zip extension if it doesn't already exist;.
-  $field = FieldConfig::load("media.file.field_media_file");
-  $fieldSettings = $field->getSettings();
-  $extensions = $fieldSettings['file_extensions'];
-  if (!strpos($extensions, 'zip')) {
-    $fieldSettings['file_extensions'] .= ' zip';
-    $field->set('settings', $fieldSettings);
-    $field->save();
+function islandora_rdm_requirements($phase) {
+  $requirements = [];
+  if ($phase == 'runtime') {
+    $requirements += check_fedora_service();
+    $requirements += check_bigdata_service();
   }
+  return $requirements;
+}
+
+/**
+ * A function to check the Fedora service.
+ */
+function check_fedora_service() {
+  $array = [];
+  $message = "";
+  $settings_flysystem = settings::get('flysystem', '');
+  $fedora_server_URL = $settings_flysystem['fedora']['config']['root'];
+  // Test ConnectException: $fedora_server_URL = 'http://localhost:2222/fcrepo/rest/';
+  // Test ClientException: $fedora_server_URL = 'http://localhost:8080/fcrepo/resttt/';
+  // Make an HTTP request; Get the client service class.
+  $client = \Drupal::httpClient();
+  try {
+    $request = $client->get($fedora_server_URL);
+    $message = "Working well";
+    $array = [
+      'fedora_server_check' => [
+        'title' => t('Fedora Server'),
+        'value' => $message,
+        'severity' => REQUIREMENT_OK,
+      ],
+    ];
+  }
+  catch (ClientException $e1) {
+    $e_response = (string) $e1->getCode();
+    if ($e_response == "404") {
+      $message = "Server not found";
+      $array = [
+        'fedora_server_check' => [
+          'title' => t('Fedora Server'),
+          'value' => $message,
+          'description' => $e1->getMessage(),
+          'severity' => REQUIREMENT_ERROR,
+        ],
+      ];
+    }
+  }
+  catch (ConnectException $e2) {
+    $message = "Connection refused";
+    $array = [
+      'fedora_server_check' => [
+        'title' => t('Fedora Server'),
+        'value' => $message,
+        'description' => $e2->getMessage(),
+        'severity' => REQUIREMENT_ERROR,
+      ],
+    ];
+  }
+  return $array;
+}
+
+/**
+ * A function to check the big data query service.
+ */
+function check_bigdata_service() {
+  $array = [];
+  try {
+    $all_count = 'SELECT (COUNT(?s) AS ?triples) WHERE { ?s ?p ?o }';
+
+    $settings = \Drupal::config('preservation_reports.settings');
+    $sparql_service = \Drupal::service('preservation_reports.sparqlqueryrunner');
+    // Get count of all triples.
+    $results = $sparql_service->getQueryResults($all_count);
+    $message = $results[0]->triples->value;
+
+    $array = [
+      'bigdata_check' => [
+        'title' => t('Big Data'),
+        'value' => 'COUNT Query returned ' . $message . ' results',
+        'severity' => REQUIREMENT_OK,
+      ],
+    ];
+    return $array;
+  }
+  catch (RequestException $e3) {
+    $array = [
+      'bigdata_check' => [
+        'title' => t('Big Data'),
+        'value' => 'Unavailable',
+        'description' => $e3->getMessage(),
+        'severity' => REQUIREMENT_ERROR,
+      ],
+    ];
+    return $array;
+  }
+
 }
