@@ -157,7 +157,7 @@ class Dataset {
    *   The field name to extract.
    * @param string $element_name
    *   The type of name being extracted ('creator', 'contributor').
-   * @param DOMElement $parent_element
+   * @param \DOMElement $parent_element
    *   The XML element to append to.
    *
    * @return int
@@ -182,13 +182,13 @@ class Dataset {
         }
         $is_person = $researcher->getType() == 'rdm_person';
 
-        // Person
+        // Person.
         if ($is_person) {
           $name = $researcher->get('field_rdm_personal_name')->first()->getString();
           $name_element = $this->doc->createElement($element_name . 'Name', $name);
           $name_element->setAttribute('nameType', 'Personal');
         }
-        // Organization
+        // Organization.
         else {
           $name = $researcher->get('field_rdm_organization_name')->first()->getString();
           $name_element = $this->doc->createElement($element_name . 'Name', $name);
@@ -224,7 +224,6 @@ class Dataset {
       }
       // Affiliation (person)
       if ($is_person && !empty($researcher->get('field_rdm_personal_affiliation')->first())) {
-        //  && $affiliation = $researcher->get('field_rdm_personal_affiliation')->first()->get('entity')->getTarget()) {
         $affiliation = $researcher->get('field_rdm_personal_affiliation')->first()->get('entity')->getTarget();
         $affiliation_name = $affiliation->get('field_rdm_organization_name')->first()->getString();
         $affiliation_element = $this->doc->createElement('affiliation', $affiliation_name);
@@ -235,5 +234,5 @@ class Dataset {
     }
     return $count;
   }
-}
 
+}

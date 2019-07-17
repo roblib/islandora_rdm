@@ -1,19 +1,21 @@
 <?php
 
+/**
+ * @file
+ */
+
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\islandora_datacite_doi\DataciteDoi;
 use Drupal\islandora_rdm_datacite\Dataset;
-
 
 /**
  * Implementation of hook_noce_delete().
  * If the node has a DOI, inform Datacite taht the
  * DOI should be marked as 'archived'.
  *
- * TODO: We should leave a stub node to indicate that a DOI's resource used to exist
+ * TODO: We should leave a stub node to indicate that a DOI's resource used to exist.
  *
- * @param EntityInterface $entity
+ * @param \Drupal\Core\Entity\EntityInterface $entity
  */
 function islandora_rdm_datacite_doi_node_delete(EntityInterface $entity) {
   if ($entity->bundle() !== 'islandora_rdm_dataset') {
@@ -23,16 +25,17 @@ function islandora_rdm_datacite_doi_node_delete(EntityInterface $entity) {
   $result = $doi->deleteDataciteDoi();
 }
 
-/*
+/**
  * Implementation of hook_node_update().
  * Register the URL with Datacite if the node transitions to a 'published' state.
  * This has to be separate from the presave hook because:
  * 1. You can't update the node in this hook
  * 2. The moderation state chagne is not available in the presave hook.
+ *
  * @TODO: Replace this code if this is committed to core: https://www.drupal.org/project/drupal/issues/2873287
  *
  * @param \Drupal\Core\Entity\EntityInterface $entity
-*/
+ */
 function islandora_rdm_datacite_doi_node_update(EntityInterface $entity) {
 
   if ($entity->bundle() !== 'islandora_rdm_dataset') {
@@ -43,19 +46,20 @@ function islandora_rdm_datacite_doi_node_update(EntityInterface $entity) {
     $original_moderation_state = _islandora_rdm_datacite_doi_get_entity_moderation_state($entity->original);
   }
 
-  $workflow_transition = rtrim($original_moderation_state . '-->'. $new_moderation_state);
+  $workflow_transition = rtrim($original_moderation_state . '-->' . $new_moderation_state);
   $doi = _islandora_rdm_datacite_doi_get_doi_service($entity);
 
   switch ($workflow_transition) {
     case 'draft-->published':
       _islandora_rdm_datacite_doi_register_url($entity, $doi);
       break;
+
     case 'archived-->published':
     case 'published-->published':
       // Only update the URL field if it has changed.
-      //if ($entity->toUrl()->setAbsolute()->toString() !== $entity->original->toUrl()->setAbsolute()->toString()) {
-        _islandora_rdm_datacite_doi_register_url($entity, $doi);
-      //}
+      // if ($entity->toUrl()->setAbsolute()->toString() !== $entity->original->toUrl()->setAbsolute()->toString()) {.
+      _islandora_rdm_datacite_doi_register_url($entity, $doi);
+      // }.
       break;
   }
 }
@@ -75,9 +79,11 @@ function islandora_rdm_datacite_doi_node_presave(EntityInterface $entity) {
     case 'draft':
       _islandora_rdm_datacite_doi_push_doi($entity, $doi);
       break;
+
     case 'published':
       _islandora_rdm_datacite_doi_push_doi($entity, $doi);
       break;
+
     case 'archived':
       _islandora_rdm_datacite_doi_push_doi($entity, $doi);
       _islandora_rdm_datacite_doi_delete_doi($doi);
@@ -89,11 +95,12 @@ function islandora_rdm_datacite_doi_node_presave(EntityInterface $entity) {
  * @param array $doi
  */
 function _islandora_rdm_datacite_doi_delete_doi(DataciteDoi $doi) {
-  // 'Delete' DOI
+  // 'Delete' DOI.
   try {
     $result = $doi->deleteDataciteDoi();
     \Drupal::messenger()->addMessage(t("Archived DOI @doi at Datacite.", ['@doi' => $doi->getDoi()]), "status");
-  } catch (\Exception $e) {
+  }
+  catch (\Exception $e) {
     \Drupal::messenger()
       ->addMessage(t("There was an error trying to delete the DOI from Datacite") . $e->getMessage, 'error');
   }
@@ -109,7 +116,8 @@ function _islandora_rdm_datacite_doi_register_url(EntityInterface $entity, Datac
       ->setAbsolute()
       ->toString());
     \Drupal::messenger()->addMessage(t("Updated the URL registered for DOI @doi.", ['@doi' => $doi->getDoi()]), "status");
-  } catch (\Exception $e) {
+  }
+  catch (\Exception $e) {
     \Drupal::messenger()
       ->addMessage(t("There was an error updating the URL to Datacite. ") . $e->getMessage(), "error");
   }
@@ -125,7 +133,8 @@ function _islandora_rdm_datacite_doi_push_doi(EntityInterface $entity, $doi) {
     $new_doi = $doi->sendXmlToDatacite();
     $entity->set('field_islandora_rdm_identifier', $new_doi);
     \Drupal::messenger()->addMessage(t("Updated DOI @doi at Datacite.", ['@doi' => $new_doi]), "status");
-  } catch (\Exception $e) {
+  }
+  catch (\Exception $e) {
     \Drupal::messenger()
       ->addMessage(t('An error occurred while communicating with the DOI service.') . $e->getMessage(), 'error');
   }

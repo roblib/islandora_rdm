@@ -1,0 +1,4 @@
+services:
+  islandora_rdm.sparqlqueryrunner:
+    class: Drupal\islandora_rdm\Services\SparqlService
+    arguments: ['@http_client', '@config.factory']

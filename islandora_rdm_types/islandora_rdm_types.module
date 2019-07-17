@@ -5,8 +5,8 @@
  * Contains islandora_rdm_types.module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Implements hook_help().
@@ -31,22 +31,26 @@ function islandora_rdm_types_theme() {
   return [
     'node__islandora_rdm_dataset__rdm_citation' => [
       'template' => 'node--islandora-rdm-dataset--rdm-citation',
-      'base hook' => 'node'
+      'base hook' => 'node',
     ],
   ];
 }
 
+/**
+ *
+ */
 function islandora_rdm_types_preprocess_node__islandora_rdm_dataset__rdm_citation(&$variables) {
   $variables['swart'] = "A very long season";
 
   $target = $variables['node']->get('field_rdm_creator')->getValue()[0]['target_id'];
-  $p = \Drupal\paragraphs\Entity\Paragraph::load($target);
+  $p = Paragraph::load($target);
 
   $name = '';
-  switch($p->getType()) {
+  switch ($p->getType()) {
     case 'rdm_organization':
       $name = $p->get('field_rdm_organization_name')->getString();
       break;
+
     case 'rdm_person':
       $name = $p->get('field_rdm_personal_name')->getString();
       break;
