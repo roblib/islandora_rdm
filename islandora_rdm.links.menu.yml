@@ -1,0 +1,5 @@
+islandora_rdm.admin_form:
+  title: 'Islandora RDM Reports'
+  parent: system.admin_config_islandora
+  description: 'Configure Islandora RDM Reports.'
+  route_name: islandora_rdm.admin_form

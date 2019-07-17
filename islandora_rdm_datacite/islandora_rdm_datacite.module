@@ -5,8 +5,8 @@
  * Contains islandora_rdm_datacite.module.
  */
 
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+
 /**
  * Implements hook_help().
  */

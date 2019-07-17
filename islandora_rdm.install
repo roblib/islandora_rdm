@@ -81,8 +81,8 @@ function check_bigdata_service() {
   try {
     $all_count = 'SELECT (COUNT(?s) AS ?triples) WHERE { ?s ?p ?o }';
 
-    $settings = \Drupal::config('preservation_reports.settings');
-    $sparql_service = \Drupal::service('preservation_reports.sparqlqueryrunner');
+    $settings = \Drupal::config('islandora_rdm.settings');
+    $sparql_service = \Drupal::service('islandora_rdm.sparqlqueryrunner');
     // Get count of all triples.
     $results = $sparql_service->getQueryResults($all_count);
     $message = $results[0]->triples->value;
