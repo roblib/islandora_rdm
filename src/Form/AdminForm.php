@@ -18,7 +18,7 @@ class AdminForm extends ConfigFormBase {
   }
 
   /**
-   *
+   * Get the config names.
    */
   protected function getEditableConfigNames() {
     return [
@@ -48,13 +48,6 @@ class AdminForm extends ConfigFormBase {
     ];
 
     return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    parent::validateForm($form, $form_state);
   }
 
   /**

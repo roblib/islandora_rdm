@@ -13,7 +13,7 @@ class SparqlService {
   private $config;
 
   /**
-   *
+   * Constructor.
    */
   public function __construct($client, $config) {
     $this->client = $client;
@@ -21,7 +21,7 @@ class SparqlService {
   }
 
   /**
-   *
+   * To get the query results.
    */
   public function getQueryResults($query) {
     $config = $this->config->get('islandora_rdm.settings');

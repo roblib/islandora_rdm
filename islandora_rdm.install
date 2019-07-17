@@ -30,8 +30,10 @@ function check_fedora_service() {
   $message = "";
   $settings_flysystem = settings::get('flysystem', '');
   $fedora_server_URL = $settings_flysystem['fedora']['config']['root'];
-  // Test ConnectException: $fedora_server_URL = 'http://localhost:2222/fcrepo/rest/';
-  // Test ClientException: $fedora_server_URL = 'http://localhost:8080/fcrepo/resttt/';
+  // Test ConnectException:
+  // $fedora_server_URL = 'http://localhost:2222/fcrepo/rest/';
+  // Test ClientException:
+  // $fedora_server_URL = 'http://localhost:8080/fcrepo/resttt/';
   // Make an HTTP request; Get the client service class.
   $client = \Drupal::httpClient();
   try {
