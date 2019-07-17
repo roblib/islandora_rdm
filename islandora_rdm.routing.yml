@@ -2,6 +2,6 @@ islandora_rdm.admin_form:
   path: '/admin/reports/status/SPARQL endpoint'
   defaults:
     _form: '\Drupal\islandora_rdm\Form\AdminForm'
-    _title: 'AdminForm'
+    _title: 'Islandora RDM Settings'
   requirements:
-    _access: 'TRUE'
+    _permission: 'administer site configuration'
