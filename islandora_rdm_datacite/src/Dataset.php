@@ -224,7 +224,6 @@ class Dataset {
       }
       // Affiliation (person)
       if ($is_person && !empty($researcher->get('field_rdm_personal_affiliation')->first())) {
-
         $affiliation = $researcher->get('field_rdm_personal_affiliation')->first()->get('entity')->getTarget();
         $affiliation_name = $affiliation->get('field_rdm_organization_name')->first()->getString();
         $affiliation_element = $this->doc->createElement('affiliation', $affiliation_name);
