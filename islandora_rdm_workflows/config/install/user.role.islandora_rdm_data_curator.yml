@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora_rdm_workflows
+  enforced:
+    module:
+      - islandora_rdm_workflows
+_core:
+  default_config_hash: dJgXv0-Bl7I0Hr6VqrTYFvGXB8jF0DFUyNTYOLBdMxY
+id: islandora_rdm_data_curator
+label: 'Data curator'
+weight: 5
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'administer nodes'
+  - 'administer workflow participants'
+  - 'can be workflow participant'
+  - 'create article content'
+  - 'create audio media'
+  - 'create data_management_plan content'
+  - 'create file media'
+  - 'create fits_technical_metadata media'
+  - 'create funding_information content'
+  - 'create image media'
+  - 'create islandora_object content'
+  - 'create islandora_rdm_dataset content'
+  - 'create page content'
+  - 'create remote_video media'
+  - 'create video media'
+  - 'delete any article content'
+  - 'delete any data_management_plan content'
+  - 'delete any funding_information content'
+  - 'delete any islandora_object content'
+  - 'delete any islandora_rdm_dataset content'
+  - 'delete any page content'
+  - 'delete islandora_object revisions'
+  - 'delete islandora_rdm_dataset revisions'
+  - 'edit any article content'
+  - 'edit any data_management_plan content'
+  - 'edit any funding_information content'
+  - 'edit any islandora_object content'
+  - 'edit any islandora_rdm_dataset content'
+  - 'edit any page content'
+  - 'grant content access'
+  - 'manage own workflow participants'
+  - 'manage workflow participants'
+  - 'revert data_management_plan revisions'
+  - 'revert funding_information revisions'
+  - 'revert islandora_object revisions'
+  - 'revert islandora_rdm_dataset revisions'
+  - 'use islandora_rdm_dataset_workflow transition archive'
+  - 'use islandora_rdm_dataset_workflow transition create_new_draft'
+  - 'use islandora_rdm_dataset_workflow transition publish'
+  - 'use moderation dashboard'
+  - 'view any moderation dashboard'
+  - 'view data_management_plan revisions'
+  - 'view funding_information revisions'
+  - 'view islandora_object revisions'
+  - 'view islandora_rdm_dataset revisions'
+  - 'view latest version'
+  - 'view own unpublished content'

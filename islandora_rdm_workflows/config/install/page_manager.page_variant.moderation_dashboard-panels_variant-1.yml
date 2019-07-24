@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.moderation_dashboard
+    - views.view.islandora_rdm_my_workflow
+  module:
+    - panels
+    - views
+    - islandora_rdm_workflows
+  enforced:
+    module:
+      - islandora_rdm_workflows
+id: moderation_dashboard-panels_variant-1
+label: 'RDM Moderation Dashboard'
+variant: panels_variant
+variant_settings:
+  blocks:
+    24c58721-4941-4839-aaac-04b7d882c081:
+      id: 'views_block:islandora_rdm_my_workflow-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: '40'
+      region: top
+      weight: 0
+      uuid: 24c58721-4941-4839-aaac-04b7d882c081
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 27f74710-6907-48dd-a47a-c3d06b8819de
+  label: null
+  weight: 0
+  layout: twocol-3-9
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: moderation_dashboard-panels_variant-1
+  builder: standard
+page: moderation_dashboard
+weight: -10
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

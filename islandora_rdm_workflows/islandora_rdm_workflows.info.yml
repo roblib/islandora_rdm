@@ -6,3 +6,7 @@ package: 'Islandora RDM'
 dependencies:
   - content_moderation
   - islandora_rdm_types
+  - moderation_dashboard
+  - page_manager_ui
+  - workflow_participants
+  - workflows

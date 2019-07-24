@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora_rdm_workflows
+  enforced:
+    module:
+      - islandora_rdm_workflows
+_core:
+  default_config_hash: s5k8TFl5xU9WM7uOnCS-XzupULBDBtKAqGNA6N5Eg6Y
+id: islandora_rdm_data_creator
+label: 'Research data user'
+weight: 6
+is_admin: null
+permissions:
+  - 'can be workflow participant'
+  - 'create audio media'
+  - 'create data_management_plan content'
+  - 'create file media'
+  - 'create fits_technical_metadata media'
+  - 'create funding_information content'
+  - 'create image media'
+  - 'create islandora_object content'
+  - 'create islandora_rdm_dataset content'
+  - 'create media'
+  - 'create remote_video media'
+  - 'create video media'
+  - 'delete islandora_object revisions'
+  - 'delete islandora_rdm_dataset revisions'
+  - 'delete media'
+  - 'delete own audio media'
+  - 'delete own data_management_plan content'
+  - 'delete own file media'
+  - 'delete own fits_technical_metadata media'
+  - 'delete own funding_information content'
+  - 'delete own image media'
+  - 'delete own islandora_object content'
+  - 'delete own islandora_rdm_dataset content'
+  - 'delete own remote_video media'
+  - 'delete own video media'
+  - 'edit own audio media'
+  - 'edit own data_management_plan content'
+  - 'edit own file media'
+  - 'edit own fits_technical_metadata media'
+  - 'edit own funding_information content'
+  - 'edit own image media'
+  - 'edit own islandora_object content'
+  - 'edit own islandora_rdm_dataset content'
+  - 'edit own remote_video media'
+  - 'edit own video media'
+  - 'grant own content access'
+  - 'manage own workflow participants'
+  - 'revert data_management_plan revisions'
+  - 'revert funding_information revisions'
+  - 'revert islandora_object revisions'
+  - 'revert islandora_rdm_dataset revisions'
+  - 'update media'
+  - 'use islandora_rdm_dataset_workflow transition archive'
+  - 'use islandora_rdm_dataset_workflow transition create_new_draft'
+  - 'use moderation dashboard'
+  - 'view data_management_plan revisions'
+  - 'view funding_information revisions'
+  - 'view islandora_object revisions'
+  - 'view islandora_rdm_dataset revisions'
+  - 'view latest version'
+  - 'view own unpublished content'
