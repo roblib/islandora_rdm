@@ -21,7 +21,7 @@
         "drupal/field_group": "*",
         "drupal/lc_subject_field": "*",
         "drupal/moderation_dashboard": "*",
-        "drupal/workflow_participants": "*",
+        "drupal/workflow_participants": "^2.4",
         "islandora/controlled_access_terms": "*",
         "drupal/field_permissions": "*",
 	"drupal/entity_reference_revisions": "^1.6",
