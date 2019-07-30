@@ -28,7 +28,7 @@
 	"drupal/name": "1.x-dev",
         "drupal/paragraphs": "~1.5",
         "islandora-rdm/funder_autocomplete_widget": "*",
-        "islandora-rdm/islandora_grid_widget": "*"
+        "islandora-rdm/grid_autocomplete_widget": "*"
     }
 }
 
