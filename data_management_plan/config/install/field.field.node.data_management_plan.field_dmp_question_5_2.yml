@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_question_5_2
+    - node.type.data_management_plan
+  module:
+    - text
+id: node.data_management_plan.field_dmp_question_5_2
+field_name: field_dmp_question_5_2
+entity_type: node
+bundle: data_management_plan
+label: 'What is the long-term preservation plan for the dataset?'
+description: "Questions to consider:\r\n\r\n<ul>\r\n<li>Where e.g. in which repository or archive will the data be held?</li>\r\n<li>What costs if any will your selected data repository or archive charge?</li>\r\n<li>Have you budgeted for time and effort to prepare the data for sharing / preservation?</li>\r\n</ul>\r\n\r\n\r\nConsider how datasets that have long-term value will be preserved and curated beyond the lifetime of the grant. Also outline the plans for preparing and documenting data for sharing and archiving. If you do not propose to use an established repository, the data management plan should demonstrate that resources and systems will be in place to enable the data to be curated effectively beyond the lifetime of the grant.\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

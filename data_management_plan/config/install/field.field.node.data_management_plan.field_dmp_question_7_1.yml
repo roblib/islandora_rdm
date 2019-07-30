@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_question_7_1
+    - node.type.data_management_plan
+  module:
+    - text
+id: node.data_management_plan.field_dmp_question_7_1
+field_name: field_dmp_question_7_1
+entity_type: node
+bundle: data_management_plan
+label: 'Who will be responsible for data management?'
+description: "Questions to consider:\r\n\r\n<ul>\r\n<li>Who is responsible for implementing the DMP, and ensuring it is reviewed and revised?</li>\r\n<li>Who will be responsible for each data management activity?</li>\r\n<li>How will responsibilities be split across partner sites in collaborative research projects?</li>\r\n<li>Will data ownership and responsibilities for research data management be part of any consortium agreement or contract agreed between partners?</li>\r\n</ul>\r\n\r\nOutline the roles and responsibilities for all activities e.g. data capture, metadata production, data quality, storage and backup, data archiving and data sharing. Consider who will be responsible for ensuring relevant policies will be respected. Individuals should be named where possible."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

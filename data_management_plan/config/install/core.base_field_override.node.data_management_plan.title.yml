@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.data_management_plan
+id: node.data_management_plan.title
+field_name: title
+entity_type: node
+bundle: data_management_plan
+label: 'Project Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

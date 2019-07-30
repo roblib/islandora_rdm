@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_question_6_1
+    - node.type.data_management_plan
+  module:
+    - text
+id: node.data_management_plan.field_dmp_question_6_1
+field_name: field_dmp_question_6_1
+entity_type: node
+bundle: data_management_plan
+label: 'How will you share the data?'
+description: "Questions to consider:\r\n\r\n<ul>\r\n<li>How will potential users find out about your data?</li>\r\n<li>With whom will you share the data, and under what conditions?</li>\r\n<li>Will you share data via a repository, handle requests directly or use another mechanism?</li>\r\n<li>When will you make the data available?</li>\r\n<li>Will you pursue getting a persistent identifier for your data?</li>\r\n</ul>\r\n\r\n\r\nConsider where, how, and to whom data with acknowledged long-term value should be made available. The methods used to share data will be dependent on a number of factors such as the type, size, complexity and sensitivity of data. If possible, mention earlier examples to show a track record of effective data sharing. Consider how people might acknowledge the reuse of your data.\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

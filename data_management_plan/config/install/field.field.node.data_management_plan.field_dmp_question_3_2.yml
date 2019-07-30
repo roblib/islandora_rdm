@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_question_3_2
+    - node.type.data_management_plan
+  module:
+    - text
+id: node.data_management_plan.field_dmp_question_3_2
+field_name: field_dmp_question_3_2
+entity_type: node
+bundle: data_management_plan
+label: 'How will you manage copyright and Intellectual Property Rights (IP/IPR) issues?'
+description: "Questions to consider:\r\n\r\n<ul>\r\n<li>Who owns the data?</li>\r\n<li>How will the data be licensed for reuse?</li>\r\n<li>Are there any restrictions on the reuse of third-party data?</li>\r\n<li>Will data sharing be postponed / restricted e.g. to publish or seek patents?</li>\r\n</ul>\r\n\r\nState who will own the copyright and IPR of any data that you will collect or create, along with the licence(s) for its use and reuse. For multi-partner projects, IPR ownership may be worth covering in a consortium agreement. Consider any relevant funder, institutional, departmental or group policies on copyright or IPR. Also consider permissions to reuse third-party data and any restrictions needed on data sharing."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

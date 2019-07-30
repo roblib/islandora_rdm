@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_creator
+    - node.type.data_management_plan
+    - paragraphs.paragraphs_type.rdm_organization
+    - paragraphs.paragraphs_type.rdm_person
+  module:
+    - entity_reference_revisions
+id: node.data_management_plan.field_dmp_creator
+field_name: field_dmp_creator
+entity_type: node
+bundle: data_management_plan
+label: Creator
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      rdm_organization: rdm_organization
+      rdm_person: rdm_person
+    target_bundles_drag_drop:
+      alternate_identifier:
+        weight: 11
+        enabled: false
+      rdm_contribution_organizational:
+        weight: 12
+        enabled: false
+      rdm_contribution_personal:
+        weight: 13
+        enabled: false
+      rdm_organization:
+        enabled: true
+        weight: 14
+      rdm_organizational_identifier:
+        weight: 15
+        enabled: false
+      rdm_person:
+        enabled: true
+        weight: 16
+      rdm_personal_identifier:
+        weight: 17
+        enabled: false
+      related_resource:
+        weight: 18
+        enabled: false
+      typed_date:
+        weight: 19
+        enabled: false
+      typed_description:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

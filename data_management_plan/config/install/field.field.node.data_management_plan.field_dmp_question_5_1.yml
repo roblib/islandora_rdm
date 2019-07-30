@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_question_5_1
+    - node.type.data_management_plan
+  module:
+    - text
+id: node.data_management_plan.field_dmp_question_5_1
+field_name: field_dmp_question_5_1
+entity_type: node
+bundle: data_management_plan
+label: 'Which data are of long-term value and should be retained, shared, and/or preserved?'
+description: "Questions to consider:\r\n\r\n<ul>\r\n<li>What data must be retained/destroyed for contractual, legal, or regulatory purposes?</li>\r\n<li>How will you decide what other data to keep?</li>\r\n<li>What are the foreseeable research uses for the data?</li>\r\n<li>How long will the data be retained and preserved?</li>\r\n</ul>\r\n\r\nConsider how the data may be reused e.g. to validate your research findings, conduct new studies, or for teaching. Decide which data to keep and for how long. This could be based on any obligations to retain certain data, the potential reuse value, what is economically viable to keep, and any additional effort required to prepare the data for data sharing and preservation. Remember to consider any additional effort required to prepare the data for sharing and preservation, such as changing file formats.\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

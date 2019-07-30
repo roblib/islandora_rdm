@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_question_4_1
+    - node.type.data_management_plan
+  module:
+    - text
+id: node.data_management_plan.field_dmp_question_4_1
+field_name: field_dmp_question_4_1
+entity_type: node
+bundle: data_management_plan
+label: 'How will the data be stored and backed up during the research?'
+description: "Questions to consider:\r\n\r\n<ul>\r\n<li>Do you have sufficient storage or will you need to include charges for additional services?</li>\r\n<li>How will the data be backed up?</li>\r\n<li>Who will be responsible for backup and recovery?</li>\r\n<li>How will the data be recovered in the event of an incident?</li>\r\n</ul>\r\n\r\nState how often the data will be backed up and to which locations. How many copies are being made? Storing data on laptops, computer hard drives or external storage devices alone is very risky. The use of robust, managed storage provided by university IT teams is preferable. Similarly, it is normally better to use automatic backup services provided by IT Services than rely on manual processes. If you choose to use a third-party service, you should ensure that this does not conflict with any funder, institutional, departmental or group policies, for example in terms of the legal jurisdiction in which data are held or the protection of sensitive data."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

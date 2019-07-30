@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_question_2_1
+    - node.type.data_management_plan
+  module:
+    - text
+id: node.data_management_plan.field_dmp_question_2_1
+field_name: field_dmp_question_2_1
+entity_type: node
+bundle: data_management_plan
+label: 'What documentation and metadata will accompany the data?'
+description: "Questions to consider:\r\n\r\n<ul>\r\n<li>What information is needed for the data to be to be read and interpreted in the future?</li>\r\n<li>How will you capture / create this documentation and metadata?</li>\r\n<li>What metadata standards will you use and why?</li>\r\n<li>Describe the types of documentation that will accompany the data to help secondary users to understand and reuse it. This should at least include basic details that will help people to find the data, including who created or contributed to the data, its title, date of creation and under what conditions it can be accessed.</li>\r\n</ul>\r\n\r\nDocumentation may also include details on the methodology used, analytical and procedural information, definitions of variables, vocabularies, units of measurement, any assumptions made, and the format and file type of the data. Consider how you will capture this information and where it will be recorded. Wherever possible you should identify and use existing community standards."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

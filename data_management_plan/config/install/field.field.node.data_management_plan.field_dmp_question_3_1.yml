@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_question_3_1
+    - node.type.data_management_plan
+  module:
+    - text
+id: node.data_management_plan.field_dmp_question_3_1
+field_name: field_dmp_question_3_1
+entity_type: node
+bundle: data_management_plan
+label: 'How will you manage any ethical issues?'
+description: "Questions to consider:\r\n\r\n<ul>\r\n<li>Have you gained consent for data preservation and sharing?</li>\r\n<li>How will you protect the identity of participants if required? e.g. via anonymization</li>\r\n<li>How will sensitive data be handled to ensure it is stored and transferred securely?</li>\r\n</ul>\r\n\r\nEthical issues affect how you store data, who can see/use it and how long it is kept. Managing ethical concerns may include: anonymization of data; referral to departmental or institutional ethics committees; and formal consent agreements. You should show that you are aware of any issues and have planned accordingly. If you are carrying out research involving human participants, you must also ensure that consent is requested to allow data to be shared and reused."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

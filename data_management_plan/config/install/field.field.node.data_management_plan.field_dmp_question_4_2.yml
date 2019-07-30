@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_question_4_2
+    - node.type.data_management_plan
+  module:
+    - text
+id: node.data_management_plan.field_dmp_question_4_2
+field_name: field_dmp_question_4_2
+entity_type: node
+bundle: data_management_plan
+label: 'How will you manage access and security?'
+description: "Questions to consider:\r\n\r\n<ul>\r\n<li>What are the risks to data security and how will these be managed?</li>\r\n<li>How will you control access to keep the data secure?</li>\r\n<li>How will you ensure that collaborators can access your data securely?</li>\r\n<li>If creating or collecting data in the field how will you ensure its safe transfer into your main secured systems?</li>\r\n</ul>\r\n\r\nIf your data is confidential (e.g. personal data not already in the public domain, confidential information or trade secrets), you should outline any appropriate security measures and note any formal standards that you will comply with e.g. ISO 27001."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

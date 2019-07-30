@@ -1,0 +1,469 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.data_management_plan.field_dmp_creator
+    - field.field.node.data_management_plan.field_dmp_download
+    - field.field.node.data_management_plan.field_dmp_email
+    - field.field.node.data_management_plan.field_dmp_name
+    - field.field.node.data_management_plan.field_dmp_orcid_id
+    - field.field.node.data_management_plan.field_dmp_projectdesc
+    - field.field.node.data_management_plan.field_dmp_question_1_1
+    - field.field.node.data_management_plan.field_dmp_question_1_2
+    - field.field.node.data_management_plan.field_dmp_question_2_1
+    - field.field.node.data_management_plan.field_dmp_question_3_1
+    - field.field.node.data_management_plan.field_dmp_question_3_2
+    - field.field.node.data_management_plan.field_dmp_question_4_1
+    - field.field.node.data_management_plan.field_dmp_question_4_2
+    - field.field.node.data_management_plan.field_dmp_question_5_1
+    - field.field.node.data_management_plan.field_dmp_question_5_2
+    - field.field.node.data_management_plan.field_dmp_question_6_1
+    - field.field.node.data_management_plan.field_dmp_question_6_2
+    - field.field.node.data_management_plan.field_dmp_question_7_1
+    - field.field.node.data_management_plan.field_dmp_question_7_2
+    - field.field.node.data_management_plan.field_dmp_share_your_plan
+    - field.field.node.data_management_plan.field_plan_overview_generic
+    - field.field.node.data_management_plan.field_rdm_award_number
+    - field.field.node.data_management_plan.field_rdm_funder_name
+    - node.type.data_management_plan
+  module:
+    - field_group
+    - funder_autocomplete_widget
+    - markup
+    - paragraphs
+    - text
+third_party_settings:
+  field_group:
+    group_dmp_principle_investigator:
+      children:
+        - field_dmp_creator
+        - field_dmp_name
+        - field_dmp_orcid_id
+        - field_dmp_email
+      parent_name: group_dmp_project_details
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Principle Investigator'
+      region: content
+    group_dmp_dashboard:
+      children:
+        - group_dmp_project_details
+        - group_dmp_plan_overview
+        - group_dmp_write_plan
+        - group_dmp_share
+        - group_dmp_download
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 'DMP Dashboard'
+      region: content
+    group_dmp_project_details:
+      children:
+        - title
+        - field_rdm_funder_name
+        - field_rdm_award_number
+        - field_dmp_projectdesc
+        - group_dmp_principle_investigator
+      parent_name: group_dmp_dashboard
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: 'Project Details'
+      region: content
+    group_dmp_plan_overview:
+      children:
+        - field_plan_overview_generic
+      parent_name: group_dmp_dashboard
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Plan Overview'
+      region: content
+    group_dmp_write_plan:
+      children:
+        - group_dmp_data_collection
+        - group_dmp_docs_metadata
+        - group_dmp_ethics_and_legal
+        - group_dmp_storage_and_backup
+        - group_dmp_select_and_pres
+        - group_dmp_data_sharing
+        - group_dmp_responsibilities
+      parent_name: group_dmp_dashboard
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Write Plan'
+      region: content
+    group_dmp_data_collection:
+      children:
+        - field_dmp_question_1_1
+        - field_dmp_question_1_2
+      parent_name: group_dmp_write_plan
+      weight: 23
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        effect: none
+        description: ''
+        required_fields: true
+      label: 'Data Collection'
+      region: content
+    group_dmp_docs_metadata:
+      children:
+        - field_dmp_question_2_1
+      parent_name: group_dmp_write_plan
+      weight: 24
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Documentation and Metadata'
+      region: content
+    group_dmp_ethics_and_legal:
+      children:
+        - field_dmp_question_3_1
+        - field_dmp_question_3_2
+      parent_name: group_dmp_write_plan
+      weight: 25
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Ethics and Legal Compliance'
+      region: content
+    group_dmp_storage_and_backup:
+      children:
+        - field_dmp_question_4_1
+        - field_dmp_question_4_2
+      parent_name: group_dmp_write_plan
+      weight: 26
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Storage and Backup'
+      region: content
+    group_dmp_data_sharing:
+      children:
+        - field_dmp_question_6_1
+        - field_dmp_question_6_2
+      parent_name: group_dmp_write_plan
+      weight: 28
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Data Sharing'
+      region: content
+    group_dmp_responsibilities:
+      children:
+        - field_dmp_question_7_1
+        - field_dmp_question_7_2
+      parent_name: group_dmp_write_plan
+      weight: 29
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Responsibilities
+      region: content
+    group_dmp_select_and_pres:
+      children:
+        - field_dmp_question_5_1
+        - field_dmp_question_5_2
+      parent_name: group_dmp_write_plan
+      weight: 27
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Selection and Preservation'
+      region: content
+    group_dmp_download:
+      children:
+        - field_dmp_download
+      parent_name: group_dmp_dashboard
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Download
+      region: content
+    group_dmp_share:
+      children:
+        - field_dmp_share_your_plan
+      parent_name: group_dmp_dashboard
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Share
+      region: content
+id: node.data_management_plan.default
+targetEntityType: node
+bundle: data_management_plan
+mode: default
+content:
+  field_dmp_creator:
+    type: paragraphs
+    weight: 3
+    settings:
+      title: creator
+      title_plural: creators
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  field_dmp_download:
+    weight: 40
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
+    region: content
+  field_dmp_email:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_dmp_name:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_dmp_orcid_id:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_dmp_projectdesc:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_dmp_question_1_1:
+    weight: 28
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_1_2:
+    weight: 29
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_2_1:
+    weight: 27
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_3_1:
+    weight: 30
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_3_2:
+    weight: 31
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_4_1:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_4_2:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_5_1:
+    weight: 33
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_5_2:
+    weight: 34
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_6_1:
+    weight: 35
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_6_2:
+    weight: 36
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_7_1:
+    weight: 37
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_question_7_2:
+    weight: 38
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_dmp_share_your_plan:
+    weight: 39
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
+    region: content
+  field_plan_overview_generic:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
+    region: content
+  field_rdm_award_number:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_rdm_funder_name:
+    weight: 2
+    settings:
+      size: '255'
+      placeholder: ''
+      suggestions_count: '10'
+    third_party_settings: {  }
+    type: funder_autocomplete_widget
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

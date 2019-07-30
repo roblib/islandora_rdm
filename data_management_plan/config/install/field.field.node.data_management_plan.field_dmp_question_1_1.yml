@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_question_1_1
+    - node.type.data_management_plan
+  module:
+    - text
+id: node.data_management_plan.field_dmp_question_1_1
+field_name: field_dmp_question_1_1
+entity_type: node
+bundle: data_management_plan
+label: 'What data will you collect or create?'
+description: "Questions to consider:\r\n\r\n<ul>\r\n<li>What type, format and volume of data?</li>\r\n<li>Do your chosen formats and software enable sharing and long-term access to the data?</li>\r\n<li>Are there any existing data that you can reuse?</li>\r\n</ul>\r\n\r\nGive a brief description of the data, including any existing data or third-party sources that will be used, in each case noting its content, type and coverage. Outline and justify your choice of format and consider the implications of data format and data volumes in terms of storage, backup and access."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

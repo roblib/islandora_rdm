@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_question_1_2
+    - node.type.data_management_plan
+  module:
+    - text
+id: node.data_management_plan.field_dmp_question_1_2
+field_name: field_dmp_question_1_2
+entity_type: node
+bundle: data_management_plan
+label: 'How will the data be collected or created?'
+description: "Questions to consider:\r\n\r\n<ul>\r\n<li>What standards or methodologies will you use?</li>\r\n<li>How will you structure and name your folders and files?</li>\r\n<li>How will you handle versioning?</li>\r\n<li>What quality assurance processes will you adopt?</li>\r\n</ul>\r\n\r\nOutline how the data will be collected/created and which community data standards (if any) will be used. Consider how the data will be organized during the project, mentioning for example naming conventions, version control and folder structures. Explain how the consistency and quality of data collection will be controlled and documented. This may include processes such as calibration, repeat samples or measurements, standardized data capture or recording, data entry validation, peer review of data or representation with controlled vocabularies."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

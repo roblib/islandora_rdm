@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_funder_name
+    - node.type.data_management_plan
+id: node.data_management_plan.field_rdm_funder_name
+field_name: field_rdm_funder_name
+entity_type: node
+bundle: data_management_plan
+label: 'Funder Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
