@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function islandora_rdm_theme() {
+  return [
+    'node__islandora_rdm_dataset__search_result' => [
+      'template' => 'node--islandora-rdm-dataset--search-result',
+      'preprocess functions' => ['islandora_rdm_search_result_preprocess'],
+      'base hook' => 'node',
+    ],
+  ];
+}
+
+/**
+ * Preprocess function for search result display. Get the abstract description and put it in $variables.
+ */
+function islandora_rdm_search_result_preprocess(&$variables) {
+  foreach ($variables['node']->get('field_rdm_description')->referencedEntities() as $description) {
+    $type = $description->get('field_rdm_description_type')->getString();
+
+    $abs_description = $description->get('field_rdm_description')->getString();
+    if ($type == 'Abstract'&& trim($abs_description) != "") {
+      $variables['rdm_abstract'] = "Abstract: " . $abs_description;
+    }
+  }
+}
