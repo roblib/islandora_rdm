@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function islandora_rdm_theme() {
+  return [
+    'node__islandora_rdm_dataset__search_result' => [
+      'template' => 'node--islandora-rdm-dataset--search-result',
+      'preprocess functions' => ['islandora_rdm_search_result_preprocess'],
+      'base hook' => 'node',
+    ],
+  ];
+}
+
+/**
+ * Preprocess function.
+ */
+function islandora_rdm_search_result_preprocess(&$variables) {
+  foreach ($variables['node']->get('field_rdm_description')->referencedEntities() as $description) {
+    $type = $description->get('field_rdm_description_type')->getString();
+
+    if ($type == 'Abstract') {
+      $variables['rdm_abstract'] = $description->get('field_rdm_description')->getString();
+    }
+  }
+}
