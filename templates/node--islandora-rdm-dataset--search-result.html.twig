@@ -1,0 +1,21 @@
+   
+{% set created_date = node.getCreatedTime|format_date('umami_dates') %}
+{{ attach_library('classy/node') }} {# apply classy theme to node}
+                                    
+{# Format Creator (PublicationYear): Title. Publisher. (resourceTypeGeneral). Identifier #}
+<h4>{{ node.field_rdm_creator.0.entity.field_rdm_personal_name.value }} 
+    ({{ node.field_rdm_publication_year.value }}):  
+    <a href="{{url}}"class="node__title-link">{{- label -}}</a>. 
+    {{ node.field_rdm_publisher.0.entity.field_rdm_organization_name.value }}. 
+    {{ node.field_rdm_resource_type_general.value }}. 
+    <a href="https://doi.org/{{node.field_islandora_rdm_identifier.value}}">{{ node.field_islandora_rdm_identifier.value }}</a></h4>
+    
+
+<p>Abstract: {{ rdm_abstract }}</p>
+<p>[{{ node.field_subjects.value }}]
+    [{{ node.field_rights.value }}]              
+    [{{ created_date }}]</p>
+
+
+
+
