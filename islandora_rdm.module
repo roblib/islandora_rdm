@@ -19,16 +19,15 @@ function islandora_rdm_theme() {
 }
 
 /**
- * Preprocess function.
+ * Preprocess function for search result display. Get the abstract description and put it in $variables.
  */
 function islandora_rdm_search_result_preprocess(&$variables) {
   foreach ($variables['node']->get('field_rdm_description')->referencedEntities() as $description) {
     $type = $description->get('field_rdm_description_type')->getString();
 
-    if ($type == 'Abstract') {
-      $variables['rdm_abstract'] = $description->get('field_rdm_description')->getString();
+    $abs_description = $description->get('field_rdm_description')->getString();
+    if ($type == 'Abstract'&& trim($abs_description) != "") {
+      $variables['rdm_abstract'] = "Abstract: " . $abs_description;
     }
   }
 }
-
-
