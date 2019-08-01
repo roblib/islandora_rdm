@@ -30,3 +30,5 @@ function islandora_rdm_search_result_preprocess(&$variables) {
     }
   }
 }
+
+
