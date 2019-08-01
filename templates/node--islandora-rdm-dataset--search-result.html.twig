@@ -1,4 +1,4 @@
-   
+
 {% set created_date = node.getCreatedTime|format_date('umami_dates') %}
 {{ attach_library('classy/node') }} {# apply classy theme to node}
                                     
@@ -15,7 +15,4 @@
 <p>[{{ node.field_subjects.value }}]
     [{{ node.field_rights.value }}]              
     [{{ created_date }}]</p>
-
-
-
 
