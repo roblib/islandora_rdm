@@ -1,8 +1,0 @@
-
-data_management_plan.d_m_p_markdown_controller_exportMarkdown:
-  path: '/dmp-export/markdown/{node}'
-  defaults:
-    _controller: '\Drupal\data_management_plan\Controller\DMPMarkdownController::exportMarkdown'
-    _title: 'exportMarkdown'
-  requirements:
-    _permission: 'access content'
