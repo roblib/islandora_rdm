@@ -27,16 +27,14 @@ dependencies:
     - field.field.node.data_management_plan.field_rdm_funder_name
     - node.type.data_management_plan
   module:
+    - content_moderation
     - field_group
-    - funder_autocomplete_widget
     - markup
-    - paragraphs
     - text
 third_party_settings:
   field_group:
     group_dmp_principle_investigator:
       children:
-        - field_dmp_creator
         - field_dmp_name
         - field_dmp_orcid_id
         - field_dmp_email
@@ -249,25 +247,6 @@ targetEntityType: node
 bundle: data_management_plan
 mode: default
 content:
-  field_dmp_creator:
-    type: paragraphs
-    weight: 3
-    settings:
-      title: creator
-      title_plural: creators
-      edit_mode: open
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-      features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
-        add_above: '0'
-    third_party_settings: {  }
-    region: content
   field_dmp_download:
     weight: 40
     settings: {  }
@@ -275,7 +254,7 @@ content:
     type: markup
     region: content
   field_dmp_email:
-    weight: 6
+    weight: 14
     settings:
       size: 60
       placeholder: ''
@@ -283,7 +262,7 @@ content:
     type: email_default
     region: content
   field_dmp_name:
-    weight: 4
+    weight: 12
     settings:
       size: 60
       placeholder: ''
@@ -291,7 +270,7 @@ content:
     type: string_textfield
     region: content
   field_dmp_orcid_id:
-    weight: 5
+    weight: 13
     settings:
       size: 60
       placeholder: ''
@@ -355,7 +334,7 @@ content:
     type: text_textarea
     region: content
   field_dmp_question_4_2:
-    weight: 4
+    weight: 3
     settings:
       rows: 5
       placeholder: ''
@@ -433,11 +412,10 @@ content:
   field_rdm_funder_name:
     weight: 2
     settings:
-      size: '255'
+      size: 60
       placeholder: ''
-      suggestions_count: '10'
     third_party_settings: {  }
-    type: funder_autocomplete_widget
+    type: string_textfield
     region: content
   langcode:
     type: language_select
@@ -445,6 +423,12 @@ content:
     region: content
     settings:
       include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
@@ -463,6 +447,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_dmp_creator: true
   path: true
   promote: true
   sticky: true

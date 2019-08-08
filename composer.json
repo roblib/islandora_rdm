@@ -15,6 +15,7 @@
     "require": {
         "drupal/chartjs_api": "*",
         "drupal/ctools": "*",
+        "drupal/entity_print:*",
         "drupal/events_logging": "*",
         "drupal/inline_entity_form": "*", 
         "drupal/field_permissions": "*",

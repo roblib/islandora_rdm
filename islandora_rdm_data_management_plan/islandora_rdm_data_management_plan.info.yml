@@ -3,6 +3,10 @@ description: 'Provides Data Management Plan content type and related configurati
 type: module
 core: 8.x
 dependencies:
+  - block
+  - content_moderation
+  - doc_serialization
+  - entity_print
   - entity_reference_revisions
   - field
   - field_group
@@ -14,5 +18,9 @@ dependencies:
   - menu_ui
   - node
   - paragraphs
+  - rest
+  - serialization
   - text
   - user
+  - views
+package: 'Islandora RDM'

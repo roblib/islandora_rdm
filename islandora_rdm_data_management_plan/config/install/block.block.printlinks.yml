@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_print
+    - node
+  theme:
+    - carapace
+id: printlinks
+theme: carapace
+region: sidebar_second
+weight: 0
+provider: null
+plugin: print_links
+settings:
+  id: print_links
+  label: 'Print or Export'
+  provider: entity_print
+  label_display: visible
+  pdf_enabled: true
+  pdf_link_text: 'View PDF'
+  epub_enabled: false
+  epub_link_text: 'View EPub'
+  word_docx_enabled: false
+  word_docx_link_text: 'View Word Document'
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      data_management_plan: data_management_plan
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
