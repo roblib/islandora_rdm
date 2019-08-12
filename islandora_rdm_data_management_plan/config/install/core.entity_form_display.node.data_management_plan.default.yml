@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.data_management_plan.field_dmp_contributor
     - field.field.node.data_management_plan.field_dmp_creator
     - field.field.node.data_management_plan.field_dmp_download
-    - field.field.node.data_management_plan.field_dmp_email
-    - field.field.node.data_management_plan.field_dmp_name
-    - field.field.node.data_management_plan.field_dmp_orcid_id
+    - field.field.node.data_management_plan.field_dmp_funder_name
+    - field.field.node.data_management_plan.field_dmp_plan_generic
     - field.field.node.data_management_plan.field_dmp_projectdesc
     - field.field.node.data_management_plan.field_dmp_question_1_1
     - field.field.node.data_management_plan.field_dmp_question_1_2
@@ -22,22 +22,20 @@ dependencies:
     - field.field.node.data_management_plan.field_dmp_question_7_1
     - field.field.node.data_management_plan.field_dmp_question_7_2
     - field.field.node.data_management_plan.field_dmp_share_your_plan
-    - field.field.node.data_management_plan.field_plan_overview_generic
     - field.field.node.data_management_plan.field_rdm_award_number
-    - field.field.node.data_management_plan.field_rdm_funder_name
     - node.type.data_management_plan
   module:
     - content_moderation
     - field_group
+    - lc_subject_field
     - markup
+    - paragraphs
     - text
 third_party_settings:
   field_group:
     group_dmp_principle_investigator:
       children:
-        - field_dmp_name
-        - field_dmp_orcid_id
-        - field_dmp_email
+        - field_dmp_creator
       parent_name: group_dmp_project_details
       weight: 5
       format_type: fieldset
@@ -67,10 +65,11 @@ third_party_settings:
     group_dmp_project_details:
       children:
         - title
-        - field_rdm_funder_name
-        - field_rdm_award_number
         - field_dmp_projectdesc
+        - field_dmp_funder_name
+        - field_rdm_award_number
         - group_dmp_principle_investigator
+        - group_dmp_contributor_s_
       parent_name: group_dmp_dashboard
       weight: 20
       format_type: tab
@@ -84,7 +83,7 @@ third_party_settings:
       region: content
     group_dmp_plan_overview:
       children:
-        - field_plan_overview_generic
+        - field_dmp_plan_generic
       parent_name: group_dmp_dashboard
       weight: 21
       format_type: tab
@@ -121,7 +120,7 @@ third_party_settings:
         - field_dmp_question_1_1
         - field_dmp_question_1_2
       parent_name: group_dmp_write_plan
-      weight: 23
+      weight: 35
       format_type: fieldset
       format_settings:
         id: ''
@@ -135,7 +134,7 @@ third_party_settings:
       children:
         - field_dmp_question_2_1
       parent_name: group_dmp_write_plan
-      weight: 24
+      weight: 36
       format_type: fieldset
       format_settings:
         id: ''
@@ -149,7 +148,7 @@ third_party_settings:
         - field_dmp_question_3_1
         - field_dmp_question_3_2
       parent_name: group_dmp_write_plan
-      weight: 25
+      weight: 37
       format_type: fieldset
       format_settings:
         id: ''
@@ -163,7 +162,7 @@ third_party_settings:
         - field_dmp_question_4_1
         - field_dmp_question_4_2
       parent_name: group_dmp_write_plan
-      weight: 26
+      weight: 38
       format_type: fieldset
       format_settings:
         id: ''
@@ -177,7 +176,7 @@ third_party_settings:
         - field_dmp_question_6_1
         - field_dmp_question_6_2
       parent_name: group_dmp_write_plan
-      weight: 28
+      weight: 40
       format_type: fieldset
       format_settings:
         id: ''
@@ -191,7 +190,7 @@ third_party_settings:
         - field_dmp_question_7_1
         - field_dmp_question_7_2
       parent_name: group_dmp_write_plan
-      weight: 29
+      weight: 41
       format_type: fieldset
       format_settings:
         id: ''
@@ -205,7 +204,7 @@ third_party_settings:
         - field_dmp_question_5_1
         - field_dmp_question_5_2
       parent_name: group_dmp_write_plan
-      weight: 27
+      weight: 39
       format_type: fieldset
       format_settings:
         id: ''
@@ -218,7 +217,7 @@ third_party_settings:
       children:
         - field_dmp_download
       parent_name: group_dmp_dashboard
-      weight: 24
+      weight: 25
       format_type: tab
       format_settings:
         id: ''
@@ -242,43 +241,80 @@ third_party_settings:
         required_fields: true
       label: Share
       region: content
+    group_dmp_contributor_s_:
+      children:
+        - field_dmp_contributor
+      parent_name: group_dmp_project_details
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Contributor(s)
+      region: content
 id: node.data_management_plan.default
 targetEntityType: node
 bundle: data_management_plan
 mode: default
 content:
+  field_dmp_contributor:
+    type: paragraphs
+    weight: 28
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+  field_dmp_creator:
+    type: paragraphs
+    weight: 27
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
   field_dmp_download:
-    weight: 40
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: markup
     region: content
-  field_dmp_email:
-    weight: 14
-    settings:
-      size: 60
-      placeholder: ''
+  field_dmp_funder_name:
+    weight: 3
+    settings: {  }
     third_party_settings: {  }
-    type: email_default
+    type: funder_widget
     region: content
-  field_dmp_name:
-    weight: 12
-    settings:
-      size: 60
-      placeholder: ''
+  field_dmp_plan_generic:
+    type: markup
+    weight: 31
+    region: content
+    settings: {  }
     third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_dmp_orcid_id:
-    weight: 13
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_dmp_projectdesc:
-    weight: 4
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
@@ -286,7 +322,7 @@ content:
     type: string_textarea
     region: content
   field_dmp_question_1_1:
-    weight: 28
+    weight: 24
     settings:
       rows: 5
       placeholder: ''
@@ -294,7 +330,7 @@ content:
     type: text_textarea
     region: content
   field_dmp_question_1_2:
-    weight: 29
+    weight: 25
     settings:
       rows: 5
       placeholder: ''
@@ -310,7 +346,7 @@ content:
     type: text_textarea
     region: content
   field_dmp_question_3_1:
-    weight: 30
+    weight: 35
     settings:
       rows: 5
       placeholder: ''
@@ -318,7 +354,7 @@ content:
     type: text_textarea
     region: content
   field_dmp_question_3_2:
-    weight: 31
+    weight: 36
     settings:
       rows: 5
       placeholder: ''
@@ -326,7 +362,7 @@ content:
     type: text_textarea
     region: content
   field_dmp_question_4_1:
-    weight: 2
+    weight: 24
     settings:
       rows: 5
       placeholder: ''
@@ -334,7 +370,7 @@ content:
     type: text_textarea
     region: content
   field_dmp_question_4_2:
-    weight: 3
+    weight: 25
     settings:
       rows: 5
       placeholder: ''
@@ -350,14 +386,6 @@ content:
     type: text_textarea
     region: content
   field_dmp_question_5_2:
-    weight: 34
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
-  field_dmp_question_6_1:
     weight: 35
     settings:
       rows: 5
@@ -365,8 +393,16 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_dmp_question_6_1:
+    weight: 24
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_dmp_question_6_2:
-    weight: 36
+    weight: 25
     settings:
       rows: 5
       placeholder: ''
@@ -374,7 +410,7 @@ content:
     type: text_textarea
     region: content
   field_dmp_question_7_1:
-    weight: 37
+    weight: 25
     settings:
       rows: 5
       placeholder: ''
@@ -382,7 +418,7 @@ content:
     type: text_textarea
     region: content
   field_dmp_question_7_2:
-    weight: 38
+    weight: 26
     settings:
       rows: 5
       placeholder: ''
@@ -395,22 +431,8 @@ content:
     third_party_settings: {  }
     type: markup
     region: content
-  field_plan_overview_generic:
-    weight: 26
-    settings: {  }
-    third_party_settings: {  }
-    type: markup
-    region: content
   field_rdm_award_number:
-    weight: 3
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_rdm_funder_name:
-    weight: 2
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -426,7 +448,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 4
     settings: {  }
     region: content
     third_party_settings: {  }
@@ -447,7 +469,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_dmp_creator: true
   path: true
   promote: true
   sticky: true

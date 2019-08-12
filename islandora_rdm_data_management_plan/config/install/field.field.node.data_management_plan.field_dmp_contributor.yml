@@ -2,16 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_dmp_creator
+    - field.storage.node.field_dmp_contributor
     - node.type.data_management_plan
-    - paragraphs.paragraphs_type.rdm_person
+    - paragraphs.paragraphs_type.rdm_contribution_personal
   module:
     - entity_reference_revisions
-id: node.data_management_plan.field_dmp_creator
-field_name: field_dmp_creator
+id: node.data_management_plan.field_dmp_contributor
+field_name: field_dmp_contributor
 entity_type: node
 bundle: data_management_plan
-label: 'Principle Investigator'
+label: Contributor
 description: ''
 required: false
 translatable: false
@@ -22,7 +22,7 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      rdm_person: rdm_person
+      rdm_contribution_personal: rdm_contribution_personal
     target_bundles_drag_drop:
       alternate_identifier:
         weight: 11
@@ -31,8 +31,8 @@ settings:
         weight: 12
         enabled: false
       rdm_contribution_personal:
+        enabled: true
         weight: 13
-        enabled: false
       rdm_organization:
         weight: 14
         enabled: false
@@ -40,8 +40,8 @@ settings:
         weight: 15
         enabled: false
       rdm_person:
-        enabled: true
         weight: 16
+        enabled: false
       rdm_personal_identifier:
         weight: 17
         enabled: false
