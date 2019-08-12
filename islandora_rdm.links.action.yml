@@ -1,0 +1,5 @@
+islandora_rdm.add_media_to_node:
+  route_name: islandora.add_media_to_node_page
+  title: Add media
+  appears_on:
+    - view.rdm_media_of.page_1

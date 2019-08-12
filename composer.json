@@ -15,22 +15,16 @@
     "require": {
         "drupal/chartjs_api": "*",
         "drupal/ctools": "*",
-        "drupal/doc_serialization": "*",
-        "drupal/entity_print": "*",
         "drupal/events_logging": "*",
         "drupal/inline_entity_form": "*", 
         "drupal/field_permissions": "*",
         "drupal/field_group": "*",
         "drupal/lc_subject_field": "*",
-        "drupal/moderation_dashboard": "*",
-        "drupal/workflow_participants":  "^2.4",
         "islandora/controlled_access_terms": "*",
         "drupal/field_permissions": "*",
 	"drupal/entity_reference_revisions": "^1.6",
 	"drupal/name": "1.x-dev",
-        "drupal/paragraphs": "~1.5",
-        "islandora-rdm/funder_autocomplete_widget": "*",
-        "islandora-rdm/grid_autocomplete_widget": "*"
+        "drupal/paragraphs": "~1.5"
     }
 }
 
