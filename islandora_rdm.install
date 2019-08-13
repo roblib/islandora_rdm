@@ -107,20 +107,17 @@ function check_bigdata_service() {
 
 }
 
-function islandora_rdm_tasks(&$install_state) {
-  return [
-    'islandora_rdm_disable_view' => [
-      'display_name' => 'Disabling replaced views',
-      'display' => TRUE,
-      'type' => 'normal',
-      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
-    ],
-  ];
-}
-function islandora_rdm_disable_view() {
-  $view = \Drupal::service('entity.manager')->getStorage('view')->load('media_of');
+
+/**
+ * Implements hook_install().
+ */
+function islandora_rdm_install() {
+  $views = ['media_of', 'solr_search_content'];
+  foreach ($views as $candidate)
+  $view = \Drupal::service('entity.manager')->getStorage('view')->load($candidate);
   if (!is_null($view)) {
     $view->setStatus(FALSE);
     $view->save();
   }
 }
+
