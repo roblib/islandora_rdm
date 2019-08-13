@@ -11,13 +11,18 @@ dependencies:
   - field
   - field_group
   - field_permissions
+  - file
+  - islandora_core_feature
   - islandora_defaults
   - islandora_rdm_types
   - language
+  - lc_subject_field
   - markup
   - menu_ui
   - node
   - paragraphs
+  - path
+  - pdf
   - rest
   - serialization
   - text

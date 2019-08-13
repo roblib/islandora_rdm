@@ -4,7 +4,6 @@ dependencies:
   config:
     - field.storage.node.field_dmp_creator
     - node.type.data_management_plan
-    - paragraphs.paragraphs_type.rdm_organization
     - paragraphs.paragraphs_type.rdm_person
   module:
     - entity_reference_revisions
@@ -12,7 +11,7 @@ id: node.data_management_plan.field_dmp_creator
 field_name: field_dmp_creator
 entity_type: node
 bundle: data_management_plan
-label: Creator
+label: 'Principle Investigator'
 description: ''
 required: false
 translatable: false
@@ -23,7 +22,6 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      rdm_organization: rdm_organization
       rdm_person: rdm_person
     target_bundles_drag_drop:
       alternate_identifier:
@@ -36,8 +34,8 @@ settings:
         weight: 13
         enabled: false
       rdm_organization:
-        enabled: true
         weight: 14
+        enabled: false
       rdm_organizational_identifier:
         weight: 15
         enabled: false

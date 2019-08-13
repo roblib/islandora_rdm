@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_plan_generic
+    - node.type.data_management_plan
+  module:
+    - markup
+id: node.data_management_plan.field_dmp_plan_generic
+field_name: field_dmp_plan_generic
+entity_type: node
+bundle: data_management_plan
+label: 'Plan Overview - Generic'
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: "<table border=\"1\" cellpadding=\"5\" cellspacing=\"1\" style=\"width: 90%;\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>\r\n\t\t\t<h2>Digital Curation Centre</h2>\r\n\r\n\t\t\t<p>This plan is based on the \"Digital Curation Centre\" template provided by Digital Curation Centre (DCC).</p>\r\n\r\n\t\t\t<p>&nbsp;</p>\r\n\r\n\t\t\t<p>http://www.dcc.ac.uk/resources/how-guides/develop-data-plan</p>\r\n\r\n\t\t\t<p>&nbsp;</p>\r\n\r\n\t\t\t<h4>Instructions</h4>\r\n\r\n\t\t\t<ul>\r\n\t\t\t\t<li>Data Collection\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>What data will you collect or create?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>How will the data be collected or created?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li>Documentation and Metadata\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>What documentation and metadata will accompany the data?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li>Ethics and Legal Compliance\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>How will you manage any ethical issues?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>How will you manage copyright and Intellectual Property Rights (IP/IPR) issues?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li>Storage and Backup\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>How will the data be stored and backed up during the research?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>How will you manage access and security?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li>Selection and Preservation\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>Which data are of long-term value and should be retained, shared, and/or preserved?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>What is the long-term preservation plan for the dataset?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li>Data Sharing\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>How will you share the data?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>Are any restrictions on data sharing required?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li>Responsibilities and Resources\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>Who will be responsible for data management?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li>\r\n\t\t\t\t\t<p>What resources will you require to deliver your plan?</p>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t</ul>\r\n\t\t\t</td>\r\n\t\t\t<td style=\"text-align: right; vertical-align: top;\">\r\n\t\t\t<h2><a href=\"#edit-group-dmp-write-plan\"><strong>Write Plan</strong></a>&nbsp;</h2>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n"
+    format: full_html
+field_type: markup

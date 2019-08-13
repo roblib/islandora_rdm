@@ -2,17 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_rdm_contributors
-    - node.type.islandora_rdm_dataset
-    - paragraphs.paragraphs_type.rdm_contribution_organizational
+    - field.storage.node.field_dmp_contributor
+    - node.type.data_management_plan
     - paragraphs.paragraphs_type.rdm_contribution_personal
   module:
     - entity_reference_revisions
-id: node.islandora_rdm_dataset.field_rdm_contributors
-field_name: field_rdm_contributors
+id: node.data_management_plan.field_dmp_contributor
+field_name: field_dmp_contributor
 entity_type: node
-bundle: islandora_rdm_dataset
-label: Contributors
+bundle: data_management_plan
+label: Contributor
 description: ''
 required: false
 translatable: false
@@ -24,33 +23,35 @@ settings:
     negate: 0
     target_bundles:
       rdm_contribution_personal: rdm_contribution_personal
-      rdm_contribution_organizational: rdm_contribution_organizational
     target_bundles_drag_drop:
       alternate_identifier:
-        weight: -19
+        weight: 11
+        enabled: false
+      rdm_contribution_organizational:
+        weight: 12
         enabled: false
       rdm_contribution_personal:
         enabled: true
-        weight: -18
-      rdm_contribution_organizational:
-        enabled: true
-        weight: -17
+        weight: 13
       rdm_organization:
-        weight: -16
+        weight: 14
         enabled: false
       rdm_organizational_identifier:
-        weight: -15
+        weight: 15
         enabled: false
       rdm_person:
-        weight: -14
+        weight: 16
         enabled: false
       rdm_personal_identifier:
-        weight: -13
+        weight: 17
+        enabled: false
+      related_resource:
+        weight: 18
         enabled: false
       typed_date:
-        weight: -12
+        weight: 19
         enabled: false
       typed_description:
-        weight: -11
+        weight: 20
         enabled: false
 field_type: entity_reference_revisions
