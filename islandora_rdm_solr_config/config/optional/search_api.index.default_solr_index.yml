@@ -5,10 +5,13 @@ dependencies:
     - search_api_solr
     - node
     - user
+    - paragraphs
     - search_api
     - media
-    - paragraphs
   config:
+    - field.storage.media.field_edited_text
+    - field.storage.node.field_rdm_creator
+    - field.storage.paragraph.field_rdm_personal_name
     - field.storage.node.field_tags
     - search_api.server.default_solr_server
     - core.entity_view_mode.node.search_index
@@ -34,6 +37,8 @@ third_party_settings:
         fragsize: 0
     advanced:
       index_prefix: ''
+_core:
+  default_config_hash: lB3g7pP4d5WoIDhvi41ngXGpcOj78D0gn2e6BTMKikw
 id: default_solr_index
 name: 'Default Solr content index'
 description: 'Default content index created by the Solr Search Defaults module'
@@ -65,6 +70,17 @@ field_settings:
     dependencies:
       module:
         - node
+  field_rdm_personal_name:
+    label: 'Creator » Paragraph » Personal Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_rdm_creator:entity:field_rdm_personal_name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_rdm_creator
+        - field.storage.paragraph.field_rdm_personal_name
+      module:
+        - paragraphs
   field_tags:
     label: Tags
     datasource_id: 'entity:node'
@@ -80,6 +96,14 @@ field_settings:
     indexed_locked: true
     type_locked: true
     hidden: true
+  processed:
+    label: 'Edited Text » Processed text'
+    datasource_id: 'entity:media'
+    property_path: 'field_edited_text:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.media.field_edited_text
   rendered_item:
     label: 'Rendered item'
     property_path: rendered_item
