@@ -15,7 +15,7 @@ dependencies:
     - serialization
     - user
 _core:
-  default_config_hash: 1doOZP_1lWycYBHuPe-SfuCWbeVcaFNYo7WvE01cmlo
+  default_config_hash: ulZTEi1E-dZLYvDO8Dz2WPOTVb-e3D4Qsl89px1PaSk
 id: rdm_manage_media
 label: 'RDM Manage media'
 module: views
@@ -36,7 +36,7 @@ display:
         options:
           perm: 'manage media'
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query
@@ -488,7 +488,8 @@ display:
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        doc_serialization: {  }
       path: node/%node/media
       menu:
         type: tab
@@ -927,8 +928,8 @@ display:
           destination: false
           entity_type: media
           plugin_id: entity_operations
-        riprap_results_1:
-          id: riprap_results_1
+        riprap_results:
+          id: riprap_results
           table: media
           field: riprap_results
           relationship: none
