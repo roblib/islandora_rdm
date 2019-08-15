@@ -11,7 +11,7 @@ id: node.data_management_plan.field_dmp_creator
 field_name: field_dmp_creator
 entity_type: node
 bundle: data_management_plan
-label: 'Principle Investigator'
+label: 'Principal Investigator'
 description: ''
 required: false
 translatable: false
