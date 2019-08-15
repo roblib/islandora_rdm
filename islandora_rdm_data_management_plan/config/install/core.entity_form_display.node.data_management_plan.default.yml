@@ -33,7 +33,7 @@ dependencies:
     - text
 third_party_settings:
   field_group:
-    group_dmp_principle_investigator:
+    group_dmp_principal_investigator:
       children:
         - field_dmp_creator
       parent_name: group_dmp_project_details
@@ -44,7 +44,7 @@ third_party_settings:
         classes: ''
         description: ''
         required_fields: true
-      label: 'Principle Investigator'
+      label: 'Principal Investigator'
       region: content
     group_dmp_dashboard:
       children:
@@ -68,7 +68,7 @@ third_party_settings:
         - field_dmp_projectdesc
         - field_dmp_funder_name
         - field_rdm_award_number
-        - group_dmp_principle_investigator
+        - group_dmp_principal_investigator
         - group_dmp_contributor_s_
       parent_name: group_dmp_dashboard
       weight: 20
