@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.license_taxonomy_term_license_link_link_text
+  module:
+    - facets
+  theme:
+    - carapace
+id: licensetaxonomytermlicenselinklinktext
+theme: carapace
+region: sidebar_first
+weight: 6
+provider: null
+plugin: 'facet_block:license_taxonomy_term_license_link_link_text'
+settings:
+  id: 'facet_block:license_taxonomy_term_license_link_link_text'
+  label: License
+  provider: facets
+  label_display: '0'
+  block_id: licensetaxonomytermlicenselinklinktext
+visibility: {  }
