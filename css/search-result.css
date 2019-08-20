@@ -1,0 +1,53 @@
+/*
+    Created on : Aug 5, 2019, 2:41:36 PM
+    Author     : Mengyu Zang
+*/
+
+/*
+    Search results
+*/
+.rdm-dataset-search-result-title {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.label {
+  color: white;
+  padding: 0.2em;
+  font-size: 0.8em;
+}
+
+.search-result-subject {
+  font-weight: bold;
+  background-color: #696969;
+}
+
+.search-result-created-date {
+  color: black;
+  float: right;
+}
+.search-result-license-image {
+  height: 18.5px;
+  padding-left: 4px;
+}
+
+/*
+    Facets
+*/
+.block__title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #a52a2a;
+}
+.facet-item__value {
+  font-size: 1em;
+}
+.facet-item__count {
+  font-size: 1em;
+}
+.field__item {
+  font-weight: bold;
+}
+.facets-widget-checkbox label {
+  display: inline-block;
+}
