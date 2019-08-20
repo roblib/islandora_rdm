@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_license
+    - node.type.islandora_rdm_dataset
+    - taxonomy.vocabulary.media_attribution_licenses
+  module:
+    - controlled_access_terms
+  enforced:
+    module:
+      - islandora_rdm_types
+id: node.islandora_rdm_dataset.field_rdm_license
+field_name: field_rdm_license
+entity_type: node
+bundle: islandora_rdm_dataset
+label: License
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      media_attribution_licenses: media_attribution_licenses
+    sort:
+      field: name
+      direction: asc
+    auto_create: 0
+    auto_create_bundle: ''
+  rel_types:
+    licensedunder: 'Licensed Under'
+field_type: typed_relation
+
