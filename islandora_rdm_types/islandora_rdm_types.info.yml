@@ -15,6 +15,7 @@ dependencies:
   - geolocation
   - lc_subject_field
   - link
+  - media_attribution
   - menu_ui
   - node
   - options
