@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.publication_year
+  module:
+    - facets
+  theme:
+    - carapace
+id: publicationyear
+theme: carapace
+region: sidebar_first
+weight: 3
+provider: null
+plugin: 'facet_block:publication_year'
+settings:
+  id: 'facet_block:publication_year'
+  label: 'Publication Year'
+  provider: facets
+  label_display: '0'
+  block_id: publicationyear
+visibility: {  }
