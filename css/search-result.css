@@ -8,13 +8,13 @@
 */
 .rdm-dataset-search-result-title {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.4em;
 }
 
 .label {
   color: white;
-  padding: 2px;
-  font-size: 14px;
+  padding: 0.2em;
+  font-size: 0.8em;
 }
 
 .search-result-subject {
@@ -35,25 +35,19 @@
     Facets
 */
 .block__title {
-  font-size: 18px;
+  font-size: 1.2em;
   font-weight: bold;
   color: #a52a2a;
 }
-
-.facets-checkbox {
-  font-size: 4px;
-}
 .facet-item__value {
-  font-size: 14px;
+  font-size: 1em;
 }
 .facet-item__count {
-  font-size: 14px;
+  font-size: 1em;
 }
-
 .field__item {
   font-weight: bold;
 }
-
 .facets-widget-checkbox label {
   display: inline-block;
 }
