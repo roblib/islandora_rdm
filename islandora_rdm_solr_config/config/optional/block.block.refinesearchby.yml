@@ -7,6 +7,9 @@ dependencies:
     - block_content
   theme:
     - carapace
+  enforced:
+    module:
+    - islandora_rdm_solr_config
 id: refinesearchby
 theme: carapace
 region: sidebar_first

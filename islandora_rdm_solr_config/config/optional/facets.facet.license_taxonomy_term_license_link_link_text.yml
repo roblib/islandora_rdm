@@ -6,6 +6,9 @@ dependencies:
     - views.view.solr_search_content
   module:
     - search_api
+  enforced:
+    module:
+    - islandora_rdm_solr_config
 id: license_taxonomy_term_license_link_link_text
 name: License
 url_alias: license_taxonomy_term_license_link_link_text

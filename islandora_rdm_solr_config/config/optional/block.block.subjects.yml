@@ -7,6 +7,9 @@ dependencies:
     - facets
   theme:
     - carapace
+  enforced:
+    module:
+    - islandora_rdm_solr_config
 id: subjects
 theme: carapace
 region: sidebar_first
