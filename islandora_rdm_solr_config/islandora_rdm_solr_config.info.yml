@@ -6,5 +6,6 @@ dependencies:
   - block_content
   - facets
   - search_api_solr
+  - media_attribution
   - vefl
 package: islandora_rdm
