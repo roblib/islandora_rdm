@@ -1,0 +1,231 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.default_solr_index
+  module:
+    - search_api
+    - vefl
+  enforced:
+    module:
+    - islandora_rdm_solr_config
+_core:
+  default_config_hash: WL4w5mZNKQaKr_LN6ix_lTtr-GqNDdB468D-WjlTtD0
+id: solr_search_content
+label: 'Solr search content'
+module: views
+description: 'A search page preconfigured to search through the content of your site'
+tag: ''
+base_table: search_api_index_default_solr_index
+base_field: search_api_id
+core: 8.x
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: none
+        options: {  }
+      query:
+        type: search_api_query
+        options: {  }
+      exposed_form:
+        type: vefl_basic
+        options:
+          submit_button: Search
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: Sort
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          layout:
+            layout_id: grid-4x4
+            change: Change
+            widget_region:
+              search_api_fulltext: r1c1
+              sort_by: r1c2
+              sort_order: r1c3
+              items_per_page: r2c1
+              offset: r2c3
+              submit: r2c4
+              reset: r3c1
+      pager:
+        type: mini
+        options:
+          items_per_page: 10
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ previous'
+            next: 'next ›'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      style:
+        type: default
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              article: search_result
+              funding_information: default
+              islandora_object: default
+              islandora_rdm_dataset: search_result
+              page: search_result
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_default_solr_index
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            identifier: search_api_fulltext
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              fedoraadmin: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: 'Fulltext search'
+            description: ''
+            identifier: search_api_fulltext
+            optional: false
+            widget: select
+            multiple: false
+            remember: true
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: ''
+                operator: or
+                value: ''
+              2:
+                title: ''
+                operator: or
+                value: ''
+              3:
+                title: ''
+                operator: or
+                value: ''
+          parse_mode: terms
+          min_length: 3
+          fields:
+            - title
+          plugin_id: search_api_fulltext
+      sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_default_solr_index
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Relevance
+          plugin_id: search_api
+        title:
+          id: title
+          table: search_api_index_default_solr_index
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Title
+          plugin_id: search_api
+        created:
+          id: created
+          table: search_api_index_default_solr_index
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: 'Authored on'
+          plugin_id: search_api
+      title: ''
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          content: 'Displaying results @start - @end of @total'
+          plugin_id: result
+      footer: {  }
+      empty: {  }
+      relationships: {  }
+      arguments: {  }
+      display_extenders: {  }
+    cache_metadata:
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
+      cacheable: false
+      max-age: -1
+      tags: {  }
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: solr-search/content
+      cache:
+        type: none
+      defaults:
+        cache: false
+    cache_metadata:
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
+      cacheable: false
+      max-age: -1
+      tags: {  }
