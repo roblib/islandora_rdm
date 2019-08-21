@@ -25,7 +25,8 @@
 	"drupal/entity_reference_revisions": "^1.6",
 	"drupal/name": "1.x-dev",
         "drupal/paragraphs": "~1.5",
-        "drupal/facets": "*"
+        "drupal/facets": "*",
+        "drupal/vefl": "*"
     }
 }
 
