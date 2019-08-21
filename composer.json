@@ -26,7 +26,8 @@
 	"drupal/media_attribution": "*",
 	"drupal/name": "1.x-dev",
         "drupal/paragraphs": "~1.5",
-        "drupal/facets": "*"
+        "drupal/facets": "*",
+        "drupal/vefl": "*"
     }
 }
 
