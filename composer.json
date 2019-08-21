@@ -23,6 +23,7 @@
         "islandora/controlled_access_terms": "*",
         "drupal/field_permissions": "*",
 	"drupal/entity_reference_revisions": "^1.6",
+	"drupal/media_attribution": "*",
 	"drupal/name": "1.x-dev",
         "drupal/paragraphs": "~1.5",
         "drupal/facets": "*",
