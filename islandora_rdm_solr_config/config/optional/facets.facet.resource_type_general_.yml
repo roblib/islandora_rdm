@@ -6,6 +6,9 @@ dependencies:
     - views.view.solr_search_content
   module:
     - search_api
+  enforced:
+    module:
+    - islandora_rdm_solr_config
 id: resource_type_general_
 name: 'Resource Type'
 url_alias: resource_type_general_

@@ -15,6 +15,9 @@ dependencies:
     - field.storage.node.field_tags
     - search_api.server.default_solr_server
     - core.entity_view_mode.node.search_index
+  enforced:
+    module:
+    - islandora_rdm_solr_config
 third_party_settings:
   search_api_solr:
     finalize: false

@@ -6,6 +6,9 @@ dependencies:
     - views.view.solr_search_content
   module:
     - search_api
+  enforced:
+    module:
+    - islandora_rdm_solr_config
 id: publication_year
 name: 'Publication Year'
 url_alias: publication_year
