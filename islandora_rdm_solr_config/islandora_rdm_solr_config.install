@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the Solr Search Defaults module.
+ * Install, update and uninstall functions for the Islandora RDM Solr Config module.
  */
 
 use Drupal\node\Entity\NodeType;
@@ -10,7 +10,7 @@ use Drupal\node\Entity\NodeType;
 /**
  * Implements hook_requirements().
  */
-function search_api_solr_defaults_requirements($phase) {
+function islandora_rdm_solr_config_requirements($phase) {
   $requirements = [];
 
   if ($phase == 'install') {
@@ -77,7 +77,7 @@ function search_api_solr_defaults_requirements($phase) {
 /**
  * Implements hook_install().
  */
-function search_api_solr_defaults_install() {
+function islandora_rdm_solr_config_install() {
   // Clear the display plugin cache after installation so the plugin for the new
   // view (display) gets found.
   \Drupal::service('plugin.manager.search_api.display')
