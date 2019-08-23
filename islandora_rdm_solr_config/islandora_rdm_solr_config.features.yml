@@ -1,5 +1,0 @@
-bundle: islandora_rdm
-excluded:
-  - search_api.index.default_solr_index
-  - search_api.server.default_solr_server
-required: true

@@ -6,13 +6,13 @@ dependencies:
     - views.view.solr_search_content
   module:
     - search_api
-id: publication_year
-name: 'Publication Year'
-url_alias: publication_year
+id: license
+name: License
+url_alias: license
 weight: 0
 min_count: 1
 show_only_one_result: false
-field_identifier: field_rdm_publication_year
+field_identifier: title_1
 facet_source_id: 'search_api:views_page__solr_search_content__page_1'
 widget:
   type: checkbox

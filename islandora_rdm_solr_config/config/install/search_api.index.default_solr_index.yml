@@ -5,19 +5,16 @@ dependencies:
     - search_api_solr
     - node
     - user
-    - paragraphs
+    - taxonomy
     - search_api
-    - media
   config:
-    - field.storage.media.field_edited_text
-    - field.storage.node.field_rdm_creator
-    - field.storage.paragraph.field_rdm_personal_name
+    - field.storage.node.field_rdm_license
+    - field.storage.taxonomy_term.field_license_link
+    - field.storage.node.field_rdm_publication_year
+    - field.storage.node.field_subjects
     - field.storage.node.field_tags
     - search_api.server.default_solr_server
     - core.entity_view_mode.node.search_index
-  enforced:
-    module:
-    - islandora_rdm_solr_config
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -73,17 +70,22 @@ field_settings:
     dependencies:
       module:
         - node
-  field_rdm_personal_name:
-    label: 'Creator » Paragraph » Personal Name'
+  field_rdm_publication_year:
+    label: 'Publication Year'
     datasource_id: 'entity:node'
-    property_path: 'field_rdm_creator:entity:field_rdm_personal_name'
-    type: text
+    property_path: field_rdm_publication_year
+    type: string
     dependencies:
       config:
-        - field.storage.node.field_rdm_creator
-        - field.storage.paragraph.field_rdm_personal_name
-      module:
-        - paragraphs
+        - field.storage.node.field_rdm_publication_year
+  field_subjects:
+    label: Subjects
+    datasource_id: 'entity:node'
+    property_path: field_subjects
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_subjects
   field_tags:
     label: Tags
     datasource_id: 'entity:node'
@@ -99,14 +101,6 @@ field_settings:
     indexed_locked: true
     type_locked: true
     hidden: true
-  processed:
-    label: 'Edited Text » Processed text'
-    datasource_id: 'entity:media'
-    property_path: 'field_edited_text:processed'
-    type: text
-    dependencies:
-      config:
-        - field.storage.media.field_edited_text
   rendered_item:
     label: 'Rendered item'
     property_path: rendered_item
@@ -115,41 +109,13 @@ field_settings:
       roles:
         anonymous: anonymous
       view_mode:
-        'entity:media':
-          audio: ''
-          extracted_text: ''
-          file: ''
-          fits_technical_metadata: ''
-          image: ''
-          pdf: ''
-          remote_video: ''
-          video: ''
         'entity:node':
           article: search_index
-          data_management_plan: default
-          funding_information: default
-          islandora_object: ''
-          islandora_rdm_dataset: default
+          data_management_plan: search_index
+          funding_information: search_index
+          islandora_object: search_index
+          islandora_rdm_dataset: search_index
           page: search_index
-        'entity:paragraph':
-          alternate_identifier: ''
-          rdm_contribution_organizational: ''
-          rdm_contribution_personal: ''
-          rdm_organization: ''
-          rdm_organizational_identifier: ''
-          rdm_person: ''
-          rdm_personal_identifier: ''
-          related_resource: ''
-          typed_date: ''
-          typed_description: ''
-  rendered_item_1:
-    label: 'Rendered HTML output'
-    property_path: rendered_item
-    type: text
-    configuration:
-      roles:
-        - anonymous
-      view_mode: {  }
   status:
     label: 'Publishing status'
     datasource_id: 'entity:node'
@@ -177,6 +143,17 @@ field_settings:
     dependencies:
       module:
         - node
+  title_1:
+    label: 'License » Taxonomy term » License link » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_rdm_license:entity:field_license_link:title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_rdm_license
+        - field.storage.taxonomy_term.field_license_link
+      module:
+        - taxonomy
   type:
     label: 'Content type'
     datasource_id: 'entity:node'
@@ -196,21 +173,7 @@ field_settings:
       module:
         - node
 datasource_settings:
-  'entity:media':
-    bundles:
-      default: true
-      selected: {  }
-    languages:
-      default: true
-      selected: {  }
   'entity:node':
-    bundles:
-      default: true
-      selected: {  }
-    languages:
-      default: true
-      selected: {  }
-  'entity:paragraph':
     bundles:
       default: true
       selected: {  }
@@ -258,3 +221,4 @@ options:
   index_directly: true
   cron_limit: 50
 server: default_solr_server
+

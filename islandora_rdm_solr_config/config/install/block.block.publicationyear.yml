@@ -7,13 +7,10 @@ dependencies:
     - facets
   theme:
     - carapace
-  enforced:
-    module:
-    - islandora_rdm_solr_config
 id: publicationyear
 theme: carapace
 region: sidebar_first
-weight: 3
+weight: 0
 provider: null
 plugin: 'facet_block:publication_year'
 settings:
@@ -23,3 +20,4 @@ settings:
   label_display: '0'
   block_id: publicationyear
 visibility: {  }
+
