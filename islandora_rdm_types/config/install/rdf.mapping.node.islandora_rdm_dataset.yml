@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.islandora_rdm_dataset
+  enforced:
+    module:
+      - islandora_rdm_types
+  module:
+    - node
+id: node.islandora_rdm_dataset
+targetEntityType: node
+bundle: islandora_rdm_dataset
+types:
+  - 'pcdm:Object'
+fieldMappings:
+  field_islandora_rdm_identifier:
+    properties:
+      - 'dc:identifier'
+  field_islandora_rdm_publication_year:
+    properties:
+      - 'fabio:hasPublicationYear'
+  field_rdm_resource_type_general:
+    properties:
+      - 'datacite:hasGeneralResourceTYpe'
+  field_rdm_resource_type:
+    properties:
+      - 'datacite:hasResourceType'
