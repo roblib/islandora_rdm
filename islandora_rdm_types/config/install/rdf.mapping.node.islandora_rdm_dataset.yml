@@ -26,3 +26,8 @@ fieldMappings:
   field_rdm_resource_type:
     properties:
       - 'datacite:hasResourceType'
+  changed:
+    properties:
+      - 'schema:dateModified'
+    datatype_callback:
+      callable: 'Drupal\rdf\CommonDataConverter::dateIso8601Value'
