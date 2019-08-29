@@ -75,16 +75,10 @@ class RDMAltMetricBlock extends BlockBase implements ContainerFactoryPluginInter
         if (!empty($doi_value)) {
 
           $build['#theme'] = 'rdm_altmetric_block';
-          $build['rdm_altmetric_block']['#markup'] = 'Implement RDMAltMetricBlock.';
+          $build['rdm_altmetric_block'] = 'Implement RDMAltMetricBlock.';
 
-          $build['altmetric'] = [
-            '#type' => 'markup',
-            '#markup' => '<h3>Altmetric</h3>',
-            '#weight' => 255,
-          ];
           $build['#attached']['library'][] = 'islandora_rdm_altmetric/altmetric';
           $build['rdm_altmetric_block'] = [
-            '#weight' => 255,
             '#type' => 'container',
             '#attributes' => [
               'class' => ['rdm_altmetric_block'],
