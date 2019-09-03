@@ -4,7 +4,9 @@
  * @file
  * Module file.
  */
-
+use \Drupal\block\Entity\Block;
+use \Drupal\Core\Session\AccountInterface;
+use \Drupal\Core\Access\AccessResult;
 /**
  * Implements hook_theme().
  */
@@ -29,5 +31,17 @@ function islandora_rdm_search_result_preprocess(&$variables) {
     if ($type == 'Abstract'&& trim($abs_description) != "") {
       $variables['rdm_abstract'] = "Abstract: " . $abs_description;
     }
+  }
+}
+
+/**
+ * @param \Drupal\block\Entity\Block $block
+ * @param $operation
+ * @param \Drupal\Core\Session\AccountInterface $account
+ * @return \Drupal\Core\Access\AccessResultForbidden
+ */
+function islandora_rdm_block_access(Block $block, $operation, AccountInterface $account) {
+  if ($operation == 'view' && $block->getPluginId() == 'views_exposed_filter_block:solr_search_content-page_1'){
+    return AccessResult::forbidden();
   }
 }

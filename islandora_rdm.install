@@ -120,16 +120,5 @@ function islandora_rdm_install() {
       $view->save();
     }
   }
-
-  $block = \Drupal\block\Entity\Block::load('exposedformsolr_search_contentpage_1');
-  if ($block) {
-    $visibility = $block->getVisibility();
-    if (isset($visibility['request_path']['pages'])) {
-      $visibility['request_path']['pages'] = '/new/path';
-      $block->setVisibilityConfig('request_path', $visibility['request_path']);
-      $block->save();
-    }
-  }
-
 }
 
