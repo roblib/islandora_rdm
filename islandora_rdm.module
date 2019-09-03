@@ -42,6 +42,9 @@ function islandora_rdm_search_result_preprocess(&$variables) {
  */
 function islandora_rdm_block_access(Block $block, $operation, AccountInterface $account) {
   if ($operation == 'view' && $block->getPluginId() == 'views_exposed_filter_block:solr_search_content-page_1'){
-    return AccessResult::forbidden();
+    $view = \Drupal::service('entity.manager')->getStorage('view')->load('solr_search_content');
+    if (!$view->status()){
+      return AccessResult::forbidden();
+    }
   }
 }
