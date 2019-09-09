@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Site\Settings;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\taxonomy\Entity\Term;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
@@ -119,6 +121,22 @@ function islandora_rdm_install() {
       $view->setStatus(FALSE);
       $view->save();
     }
+  }
+  // Add extensions if they doesn't already exist.
+  $field = FieldConfig::load("media.file.field_media_file");
+  $fieldSettings = $field->getSettings();
+  $extensions = $fieldSettings['file_extensions'];
+  $candidates = ['csv', 'tsv', 'zip'];
+  $count = 0;
+  foreach ($candidates as $candidate) {
+    if (!strpos($extensions, $candidate)) {
+      $fieldSettings['file_extensions'] .= " $candidate";
+      $count++;
+    }
+  }
+  if ($count) {
+    $field->set('settings', $fieldSettings);
+    $field->save();
   }
 }
 
