@@ -4,9 +4,8 @@ dependencies: {  }
 id: node__islandora_rdm_dataset
 label: 'Content: RDM Dataset'
 tags:
-  schema_article_publisher: 'a:3:{s:5:"@type";s:12:"Organization";s:3:"@id";s:99:"[node:field_rdm_publisher:entity:field_rdm_organizational_ids:0:entity:field_rdm_identifier_string]";s:4:"name";s:61:"[node:field_rdm_publisher:entity:field_rdm_organization_name]";}'
-  schema_article_is_accessible_for_free: 'True'
-  schema_article_name: '[node:title]'
-  schema_article_author: 'a:4:{s:5:"pivot";s:1:"1";s:5:"@type";s:6:"Person";s:3:"@id";s:96:"[node:field_rdm_creator:entity:field_rdm_personal_identifier:entity:field_rdm_identifier_string]";s:4:"name";s:55:"[node:field_rdm_creator:entity:field_rdm_personal_name]";}'
-  schema_article_date_published: '[node:created:html_datetime]'
-  schema_article_description: '[node:field_rdm_description:entity:field_rdm_description]'
+  schema_dataset_description: '[node:field_rdm_description:entity:field_rdm_description]'
+  schema_dataset_creator: 'a:3:{s:5:"@type";s:6:"Person";s:3:"@id";s:96:"[node:field_rdm_creator:entity:field_rdm_personal_identifier:entity:field_rdm_identifier_string]";s:4:"name";s:55:"[node:field_rdm_creator:entity:field_rdm_personal_name]";}'
+  schema_dataset_contributor: 'a:4:{s:5:"pivot";s:1:"1";s:5:"@type";s:6:"Person";s:3:"@id";s:125:"[node:field_rdm_contributors:entity:field_rdm_person:entity:field_rdm_personal_identifier:entity:field_rdm_identifier_string]";s:4:"name";s:84:"[node:field_rdm_contributors:entity:field_rdm_person:entity:field_rdm_personal_name]";}'
+  schema_dataset_license: '[node:field_rdm_license:entity:title]'
+  schema_dataset_identifier: 'a:1:{s:3:"@id";s:27:"[node:field_rdm_identifier]";}'
