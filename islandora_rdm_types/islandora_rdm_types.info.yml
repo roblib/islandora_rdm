@@ -20,6 +20,7 @@ dependencies:
   - node
   - options
   - paragraphs
+  - schema_metatag
   - taxonomy
   - text
   - user
