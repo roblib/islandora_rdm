@@ -29,5 +29,12 @@
         "drupal/paragraphs": "~1.5",
         "drupal/facets": "*",
         "drupal/vefl": "*"
+    },
+    "extra": {
+	"patches": {
+	    "drupal/workflow_participants": {
+		"Using module with Content moderation throws Revision check errors": "https://www.drupal.org/files/issues/2019-08-16/workflow_participants-revision-error-3075426-1.patch"
+	    }
+	}
     }
 }
