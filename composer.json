@@ -28,7 +28,8 @@
 	"drupal/name": "1.x-dev",
         "drupal/paragraphs": "~1.5",
         "drupal/facets": "*",
-        "drupal/vefl": "*"
+        "drupal/vefl": "*",
+	"islandora-rdm/workflow_participants": "*"
     },
     "extra": {
 	"patches": {
