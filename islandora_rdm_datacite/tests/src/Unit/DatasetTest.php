@@ -6,7 +6,9 @@ use Drupal\islandora_rdm_datacite\Dataset;
 use Drupal\Tests\UnitTestCase;
 
 /**
+ * Simple test to ensure that xml is exported.
  *
+ * @group islandora_rdm_datacite
  */
 class DatasetTest extends UnitTestCase {
 

@@ -6,7 +6,9 @@ use Drupal\islandora_rdm_datacite\Dataset;
 use Drupal\Tests\UnitTestCase;
 
 /**
+ * Simple test to ensure that main page loads with module enabled.
  *
+ * @group islandora_rdm_datacite
  */
 class ResearcherTest extends UnitTestCase {
 

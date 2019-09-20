@@ -4,9 +4,10 @@ namespace Drupal\Tests\islandora_rdm_dataset\Unit;
 
 use Drupal\islandora_rdm_datacite\Dataset;
 use Drupal\Tests\UnitTestCase;
-
 /**
+ * Simple test to ensure that dataset is loaded.
  *
+ * @group islandora_rdm_datacite
  */
 class ExternalIdentifierTest extends UnitTestCase {
 
