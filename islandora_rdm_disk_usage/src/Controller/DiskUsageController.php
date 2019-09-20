@@ -50,30 +50,11 @@ class DiskUsageController extends ControllerBase {
         t('Group by Owner'),
       ],
     ];
-
-    // $rows[] = ["2222","444"];
-    /*$rows[] = [['data' => $this->createChart("bar", "type")],
-    ['data' => $this->createChart("bar", "owner")],
-    ];*/
     $rows[] = [['data' => $this->createChart("pie", "type")],
           ['data' => $this->createChart("pie", "owner")],
     ];
-
     $report['chart']['content']['#rows'] = $rows;
-    /*$report['chart']['button'] = array(
-    '#type' => 'button',
-    '#value' => t('switch chart'),
-    '#weight' => 19,
-    '#attributes' => ['id' => 'chart-toggle-button'],
-    '#attached' => array(
-    'library' => array('islandora_rdm_disk_usage/switch-button',),
-    ),
-    //$report['#attached']['library'][] = 'islandora_rdm_disk_usage/switch-button';
-    );*/
-    // \Kint::$maxLevels = 0;
     $report['table'] = $this->createTable();
-
-    // Attach js file.
     return $report;
   }
 
@@ -81,24 +62,25 @@ class DiskUsageController extends ControllerBase {
    * Create a table with the entities. Using Render arrays.
    */
   private function createTable() {
-    $entities = $this->getMyList();
+    $entities = $this->getMediaEntityList();
 
     $report['pageTitle'] = [
       '#type' => 'markup',
-      '#markup' => '<h3>Media Items List</h3>',
+      '#prefix' => '<h3>',
+      '#markup' => $this->t('Media Items List'),
+      '#suffix' => '</h3>',
     ];
 
     $report['table'] = [
       '#type' => 'table',
       '#header' => [
-        t('Title'),
-        t('Owner'),
-        t('Size'),
-        t('Type'),
+        $this->t('Title'),
+        $this->t('Owner'),
+        $this->t('Size'),
+        $this->t('Type'),
       ],
     ];
 
-    // Using array_keys(),array_values()function
     $key = array_keys($entities);
     $entity = array_values($entities);
 
@@ -145,13 +127,12 @@ class DiskUsageController extends ControllerBase {
     return $report;
   }
 
-  // Create a chart with the entities. Using ChartJS API module.
-
   /**
+   * Create a chart with the entities. Using ChartJS API module.
    * Var: $chartType: a string; $groupBy:"owner"/"type".
    */
   private function createChart($chartType, $groupBy) {
-    $entities = $this->getMyList();
+    $entities = $this->getMediaEntityList();
 
     // An array to count the size of each media type.
     $count = [];
@@ -159,12 +140,12 @@ class DiskUsageController extends ControllerBase {
     foreach ($entities as $key => $entity) {
 
       if (($entity->hasField('field_file_size'))
-                &&($entity->hasField('revision_user'))
-                &&($entity->hasField('field_mime_type'))) {
+                && ($entity->hasField('revision_user'))
+                && ($entity->hasField('field_mime_type'))) {
         $size = $entity->get('field_file_size')->value;
         $owner = $entity->get('revision_user')->getString();
-        $typeFull = $entity->get('field_mime_type')->getString();
-        $type = strtok($typeFull, '/');
+        $type_full = $entity->get('field_mime_type')->getString();
+        $type = strtok($type_full, '/');
 
         if ($groupBy == "type") {
           if ($this->exist($type, $count)) {
@@ -191,10 +172,7 @@ class DiskUsageController extends ControllerBase {
         continue;
       }
     }
-    /* $report['content']['pageTitle'] = [
-    '#type' => 'markup',
-    '#markup' => '<h3> Group by ' . ucfirst($groupBy) . '</h3>',
-    ]; */
+
     $report = [
       '#data' => [
         'labels' => array_keys($count),
@@ -217,7 +195,7 @@ class DiskUsageController extends ControllerBase {
   /**
    * Query with the entity_type.manager, load entities in Drupal code.
    */
-  private function getMyList() {
+  private function getMediaEntityList() {
     $query = $this->entityTypeManager->getStorage('media');
 
     // Get An array of entity ID of all published materials.
@@ -235,9 +213,8 @@ class DiskUsageController extends ControllerBase {
     return $list;
   }
 
-  // Helper method to decide if a type exists in the array.
-
   /**
+   * Helper method to decide if a type exists in the array.
    * Var: $type: string, $array: array; return Boolean.
    */
   private function exist($type, $array) {
