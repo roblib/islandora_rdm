@@ -1,0 +1,22 @@
+<?php
+
+
+function islandora_rdm_metadata_token_info() {
+  $type = [
+    'name' => t('Islandora RDM Tokens'),
+    'description' => t('Tokens for Islandora RDM types.'),
+  ];
+  $node['title'] = [
+    'name' => t("Node Title"),
+    'description' => t('The node\'s title'),
+  ];
+  $node['dateformat'] = [
+    'name' => t("Custom Date Format"),
+    'dynamic' => TRUE,
+    'description' => t('Show a custom format for the current date'),
+  ];
+  return [
+    'types' => ['customtoken' => $type],
+    'tokens' => ['customtoken' => $node],
+  ];
+}

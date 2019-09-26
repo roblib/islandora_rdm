@@ -1,0 +1,9 @@
+name: 'Islandora RDM Metadata'
+type: module
+description: 'Metadata tags and data export for Islandora RDM.'
+core: 8.x
+package: 'Islandora RDM'
+dependencies:
+  - islandora_rdm_types
+  - schema_metatag
+  - token
