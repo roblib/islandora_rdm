@@ -6,7 +6,7 @@ dependencies:
   module:
     - search_api
 _core:
-  default_config_hash: WL4w5mZNKQaKr_LN6ix_lTtr-GqNDdB468D-WjlTtD0
+  default_config_hash: NdnNiZQDLwfPv1QsasKrHEbjZlxf2px5qn-l79kRVik
 id: solr_search_content
 label: 'Solr search content'
 module: views
@@ -154,6 +154,7 @@ display:
         type: none
       defaults:
         cache: false
+      exposed_block: true
     cache_metadata:
       contexts:
         - 'languages:language_interface'
@@ -162,4 +163,3 @@ display:
       cacheable: false
       max-age: -1
       tags: {  }
-
