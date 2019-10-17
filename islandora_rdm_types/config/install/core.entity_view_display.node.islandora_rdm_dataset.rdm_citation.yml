@@ -6,11 +6,14 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.body
     - field.field.node.islandora_rdm_dataset.field_date_paragraph
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
+    - field.field.node.islandora_rdm_dataset.field_member_of
     - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
     - field.field.node.islandora_rdm_dataset.field_rdm_contributors
     - field.field.node.islandora_rdm_dataset.field_rdm_creator
     - field.field.node.islandora_rdm_dataset.field_rdm_description
+    - field.field.node.islandora_rdm_dataset.field_rdm_funding_information
     - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
+    - field.field.node.islandora_rdm_dataset.field_rdm_license
     - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
     - field.field.node.islandora_rdm_dataset.field_rdm_publisher
     - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
@@ -18,6 +21,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_rdm_resource_type_general
     - field.field.node.islandora_rdm_dataset.field_rights
     - field.field.node.islandora_rdm_dataset.field_subjects
+    - field.field.node.islandora_rdm_dataset.field_tags
     - node.type.islandora_rdm_dataset
   module:
     - entity_reference_revisions
@@ -74,8 +78,6 @@ third_party_settings:
         direction: horizontal
       label: Dataset
       region: content
-_core:
-  default_config_hash: Q9bFFDQXwHhKlb4krGAOQdGW-InhUbxHkkNeLRlCGJI
 id: node.islandora_rdm_dataset.rdm_citation
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -259,4 +261,11 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_member_of: true
+  field_rdm_funding_information: true
+  field_rdm_license: true
+  field_tags: true
   langcode: true

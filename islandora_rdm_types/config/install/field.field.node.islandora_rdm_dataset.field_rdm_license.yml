@@ -5,11 +5,11 @@ dependencies:
     - field.storage.node.field_rdm_license
     - node.type.islandora_rdm_dataset
     - taxonomy.vocabulary.media_attribution_licenses
-  module:
-    - controlled_access_terms
   enforced:
     module:
       - islandora_rdm_types
+  module:
+    - controlled_access_terms
 id: node.islandora_rdm_dataset.field_rdm_license
 field_name: field_rdm_license
 entity_type: node
@@ -33,4 +33,3 @@ settings:
   rel_types:
     licensedunder: 'Licensed Under'
 field_type: typed_relation
-

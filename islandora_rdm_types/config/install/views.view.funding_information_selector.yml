@@ -657,6 +657,7 @@ display:
         - 'config:field.storage.node.field_rdm_funding_organization'
         - 'config:field.storage.node.field_rdm_funding_program'
         - 'config:field.storage.node.field_rdm_start_date'
+        - extensions
   entity_browser_1:
     display_plugin: entity_browser
     id: entity_browser_1
@@ -679,3 +680,4 @@ display:
         - 'config:field.storage.node.field_rdm_funding_organization'
         - 'config:field.storage.node.field_rdm_funding_program'
         - 'config:field.storage.node.field_rdm_start_date'
+        - extensions
