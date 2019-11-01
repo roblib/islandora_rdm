@@ -17,6 +17,7 @@ dependencies:
   - geolocation
   - islandora_core_feature
   - islandora_defaults
+  - languagefield
   - lc_subject_field
   - link
   - media_attribution

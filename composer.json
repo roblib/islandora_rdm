@@ -19,6 +19,7 @@
         "drupal/inline_entity_form": "*", 
         "drupal/field_permissions": "*",
         "drupal/field_group": "*",
+        "drupal/languagefield": "*",
         "drupal/lc_subject_field": "1.x-dev",
         "drupal/schema_metatag": "*",
         "islandora/controlled_access_terms": "*",

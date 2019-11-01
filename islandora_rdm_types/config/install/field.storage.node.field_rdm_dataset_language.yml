@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - languagefield
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_rdm_dataset_language
+field_name: field_rdm_dataset_language
+entity_type: node
+type: language_field
+settings:
+  language_range:
+    11: '11'
+    1: '1'
+    12: 0
+    2: 0
+    site_default: 0
+    und: 0
+    current_interface: 0
+    authors_default: 0
+  included_languages: {  }
+  excluded_languages: {  }
+  groups: 'en,fr'
+  maxlength: 12
+  allowed_values_function: languagefield_allowed_values
+module: languagefield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
