@@ -114,7 +114,7 @@ function check_bigdata_service() {
  * Implements hook_install().
  */
 function islandora_rdm_install() {
-  $views = ['media_of', 'solr_search_content'];
+  $views = ['solr_search_content'];
   foreach ($views as $candidate) {
     $view = \Drupal::service('entity.manager')->getStorage('view')->load($candidate);
     if (!is_null($view)) {
