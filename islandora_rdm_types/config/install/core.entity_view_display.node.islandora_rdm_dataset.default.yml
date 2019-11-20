@@ -95,8 +95,6 @@ third_party_settings:
         classes: ''
       label: Funding
       region: hidden
-_core:
-  default_config_hash: pWoBXQievSRL8Tlp9BEJNV-mbuqI3oPzfWDIeJNkExI
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
