@@ -2,75 +2,85 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.audio.field_access_terms
-    - field.field.media.audio.field_file_size
-    - field.field.media.audio.field_media_audio_file
-    - field.field.media.audio.field_media_of
-    - field.field.media.audio.field_media_use
-    - field.field.media.audio.field_mime_type
-    - field.field.media.audio.field_original_name
-    - field.field.media.audio.field_transcript
-    - media.type.audio
+    - field.field.media.islandora_rdm_interview.field_access_terms
+    - field.field.media.islandora_rdm_interview.field_file_size
+    - field.field.media.islandora_rdm_interview.field_media_audio_file
+    - field.field.media.islandora_rdm_interview.field_media_of
+    - field.field.media.islandora_rdm_interview.field_media_use
+    - field.field.media.islandora_rdm_interview.field_transcript
+    - media.type.islandora_rdm_interview
   module:
     - file
     - path
-id: media.audio.default
+id: media.islandora_rdm_interview.default
 targetEntityType: media
-bundle: audio
+bundle: islandora_rdm_interview
 mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_access_terms:
-    weight: 3
-    settings: {  }
+    weight: 101
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_buttons
+    type: entity_reference_autocomplete
+    region: content
+  field_file_size:
+    weight: 102
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   field_media_audio_file:
-    weight: 1
+    weight: 0
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_media_of:
-    type: entity_reference_autocomplete
-    weight: 4
-    region: content
+    weight: 103
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_media_use:
-    type: options_buttons
-    weight: 2
+    type: entity_reference_autocomplete
     region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_original_name:
-    weight: 26
+  field_media_use:
+    weight: 104
     settings:
-      rows: 5
+      match_operator: CONTAINS
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textarea
+    type: entity_reference_autocomplete
     region: content
   field_transcript:
-    weight: 27
+    weight: 105
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   name:
     type: string_textfield
-    weight: 0
+    weight: -5
     region: content
     settings:
       size: 60
@@ -78,7 +88,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -86,13 +96,8 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 100
     region: content
-    third_party_settings: {  }
-  translation:
-    weight: 9
-    region: content
-    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
@@ -103,7 +108,4 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden:
-  field_file_size: true
-  field_mime_type: true
-  langcode: true
+hidden: {  }

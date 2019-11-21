@@ -3,16 +3,16 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_media_use
-    - media.type.audio
+    - media.type.islandora_rdm_interview
     - taxonomy.vocabulary.islandora_media_use
-id: media.audio.field_media_use
+id: media.islandora_rdm_interview.field_media_use
 field_name: field_media_use
 entity_type: media
-bundle: audio
+bundle: islandora_rdm_interview
 label: 'Media Use'
 description: 'Defined by Portland Common Data Model: Use Extension https://pcdm.org/2015/05/12/use. ''Original File'' will trigger creation of derivatives.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

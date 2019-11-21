@@ -3,16 +3,16 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_access_terms
-    - media.type.audio
+    - media.type.islandora_rdm_interview
     - taxonomy.vocabulary.islandora_access
-id: media.audio.field_access_terms
+id: media.islandora_rdm_interview.field_access_terms
 field_name: field_access_terms
 entity_type: media
-bundle: audio
+bundle: islandora_rdm_interview
 label: 'Access terms'
 description: 'Terms that define who has access to view/edit this resource.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

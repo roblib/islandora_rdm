@@ -3,21 +3,19 @@ status: true
 dependencies:
   module:
     - field_permissions
-    - file
-    - media
+    - node
+    - viewfield
+    - views
 third_party_settings:
   field_permissions:
     permission_type: public
-id: media.field_web_audio
-field_name: field_web_audio
-entity_type: media
-type: file
+id: node.field_islandora_rdm_media_list
+field_name: field_islandora_rdm_media_list
+entity_type: node
+type: viewfield
 settings:
-  display_field: true
-  display_default: false
-  uri_scheme: public
-  target_type: file
-module: file
+  target_type: view
+module: viewfield
 locked: false
 cardinality: 1
 translatable: true

@@ -21,6 +21,7 @@ dependencies:
   - languagefield
   - lc_subject_field
   - media
+  - node
   - options
   - paragraphs
   - path
@@ -28,5 +29,5 @@ dependencies:
   - user
   - viewfield
   - views
-version: 8.x-1.0
+version: 8.x-1.1
 package: 'Islandora RDM'

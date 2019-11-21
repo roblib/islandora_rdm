@@ -2,23 +2,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_transcript
-    - media.type.audio
+    - field.storage.media.field_media_audio_file
+    - media.type.islandora_rdm_interview
   module:
     - file
-id: media.audio.field_transcript
-field_name: field_transcript
+id: media.islandora_rdm_interview.field_media_audio_file
+field_name: field_media_audio_file
 entity_type: media
-bundle: audio
-label: Transcript
+bundle: islandora_rdm_interview
+label: 'Audio file'
 description: ''
-required: false
-translatable: false
+required: true
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
+  file_extensions: 'mp3 wav aac'
   file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'txt xml pdf'
   max_filesize: ''
   description_field: false
   handler: 'default:file'

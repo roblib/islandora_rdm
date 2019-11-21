@@ -3,18 +3,15 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_file_size
-    - media.type.audio
-  enforced:
-    module:
-      - islandora_core_feature
-id: media.audio.field_file_size
+    - media.type.islandora_rdm_interview
+id: media.islandora_rdm_interview.field_file_size
 field_name: field_file_size
 entity_type: media
-bundle: audio
+bundle: islandora_rdm_interview
 label: 'File size'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
