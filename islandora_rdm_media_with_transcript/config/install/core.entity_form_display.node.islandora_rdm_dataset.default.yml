@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.body
     - field.field.node.islandora_rdm_dataset.field_date_paragraph
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
+    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_media_list
     - field.field.node.islandora_rdm_dataset.field_member_of
     - field.field.node.islandora_rdm_dataset.field_model
     - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
@@ -34,6 +35,7 @@ dependencies:
     - languagefield
     - lc_subject_field
     - paragraphs
+    - viewfield
 third_party_settings:
   field_group:
     group_dataset:
@@ -167,6 +169,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_islandora_rdm_media_list:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: viewfield_select
+    region: content
   field_model:
     weight: 2
     settings:

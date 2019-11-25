@@ -5,6 +5,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.body
     - field.field.node.islandora_rdm_dataset.field_date_paragraph
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
+    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_media_list
     - field.field.node.islandora_rdm_dataset.field_member_of
     - field.field.node.islandora_rdm_dataset.field_model
     - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
@@ -32,6 +33,7 @@ dependencies:
     - lc_subject_field
     - options
     - user
+    - viewfield
 third_party_settings:
   field_group:
     group_identification:
@@ -72,6 +74,7 @@ third_party_settings:
       region: content
     group_dataset:
       children:
+        - group_islandora_rdm_files
         - group_identification
         - group_more_info
       parent_name: ''
@@ -95,6 +98,19 @@ third_party_settings:
         classes: ''
       label: Funding
       region: hidden
+    group_islandora_rdm_files:
+      children:
+        - field_islandora_rdm_media_list
+      parent_name: group_dataset
+      weight: 20
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: islandora-rdm-files-list-tab
+        description: ''
+        formatter: open
+      label: Files
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -141,6 +157,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_islandora_rdm_media_list:
+    weight: 29
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: false
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
     region: content
   field_model:
     weight: 9
