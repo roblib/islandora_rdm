@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.media.islandora_rdm_interview.field_access_terms
     - field.field.media.islandora_rdm_interview.field_file_size
+    - field.field.media.islandora_rdm_interview.field_islandora_rdm_web_audio
     - field.field.media.islandora_rdm_interview.field_media_audio_file
     - field.field.media.islandora_rdm_interview.field_media_of
     - field.field.media.islandora_rdm_interview.field_media_use
@@ -24,6 +25,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
+  field_islandora_rdm_web_audio:
+    weight: 4
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
     region: content
   field_media_audio_file:
     type: file_audio

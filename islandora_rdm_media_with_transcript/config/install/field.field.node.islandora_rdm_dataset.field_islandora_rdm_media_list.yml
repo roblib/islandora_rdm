@@ -4,7 +4,6 @@ dependencies:
   config:
     - field.storage.node.field_islandora_rdm_media_list
     - node.type.islandora_rdm_dataset
-    - views.view.inline_media
   module:
     - viewfield
 id: node.islandora_rdm_dataset.field_islandora_rdm_media_list
