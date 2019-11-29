@@ -1,21 +1,2 @@
 bundle: islandora_rdm
-required:
-  - core.entity_form_display.media.islandora_rdm_interview.default
-  - core.entity_form_display.node.islandora_rdm_dataset.default
-  - core.entity_view_display.media.audio.default
-  - core.entity_view_display.media.audio.teaser
-  - core.entity_view_display.media.islandora_rdm_interview.default
-  - core.entity_view_display.media.islandora_rdm_interview.teaser
-  - core.entity_view_display.node.islandora_rdm_dataset.default
-  - field.field.media.islandora_rdm_interview.field_access_terms
-  - field.field.media.islandora_rdm_interview.field_file_size
-  - field.field.media.islandora_rdm_interview.field_media_audio_file
-  - field.field.media.islandora_rdm_interview.field_media_of
-  - field.field.media.islandora_rdm_interview.field_media_use
-  - field.field.media.islandora_rdm_interview.field_transcript
-  - field.field.node.islandora_rdm_dataset.field_islandora_rdm_media_list
-  - field.storage.media.field_transcript
-  - field.storage.node.field_islandora_rdm_media_list
-  - media.type.islandora_rdm_interview
-  - views.view.inline_media
-  - core.entity_view_mode.media.teaser
+required: true

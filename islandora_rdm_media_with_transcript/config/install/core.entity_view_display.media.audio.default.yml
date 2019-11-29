@@ -9,7 +9,6 @@ dependencies:
     - field.field.media.audio.field_media_use
     - field.field.media.audio.field_mime_type
     - field.field.media.audio.field_original_name
-    - field.field.media.audio.field_transcript
     - media.type.audio
   module:
     - file
@@ -18,18 +17,14 @@ targetEntityType: media
 bundle: audio
 mode: default
 content:
-  field_file_size:
-    type: number_integer
-    weight: 2
-    region: content
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
+  field_gemini_uri:
+    weight: 100
+    settings: {  }
     third_party_settings: {  }
+    region: content
   field_media_audio_file:
     type: file_audio
-    weight: 1
+    weight: 0
     label: visually_hidden
     settings:
       controls: true
@@ -38,40 +33,18 @@ content:
       multiple_file_display_type: tags
     third_party_settings: {  }
     region: content
-  field_media_of:
-    type: entity_reference_label
-    weight: 3
-    region: content
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-  field_transcript:
-    weight: 4
-    label: above
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
-    region: content
-  name:
-    type: string
-    weight: 0
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
 hidden:
   created: true
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_access_terms: true
-  field_gemini_uri: true
+  field_file_size: true
+  field_media_of: true
   field_media_use: true
   field_mime_type: true
   field_original_name: true
   langcode: true
+  name: true
   thumbnail: true
   uid: true
