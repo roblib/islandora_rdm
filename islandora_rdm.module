@@ -7,6 +7,8 @@
 use \Drupal\block\Entity\Block;
 use \Drupal\Core\Session\AccountInterface;
 use \Drupal\Core\Access\AccessResult;
+use \Drupal\Core\Url;
+
 /**
  * Implements hook_theme().
  */
@@ -16,6 +18,11 @@ function islandora_rdm_theme() {
       'template' => 'node--islandora-rdm-dataset--search-result',
       'preprocess functions' => ['islandora_rdm_search_result_preprocess'],
       'base hook' => 'node',
+    ],
+    'media__islandora_rdm_interview__teaser' => [
+      'template' => 'media--islandora-rdm-interview--teaser',
+      'preprocess functions' => ['islandora_rdm_interview_preprocess'],
+      'base hook' => 'media',
     ],
   ];
 }
@@ -32,6 +39,25 @@ function islandora_rdm_search_result_preprocess(&$variables) {
       $variables['rdm_abstract'] = "Abstract: " . $abs_description;
     }
   }
+}
+
+function islandora_rdm_preprocess_media__islandora_rdm_interview__teaser(&$variables) {
+#  ksm($variables);
+  $media = $variables['media'];
+  $items = [];
+
+  $items[] = file_create_url($media->get('field_interview_compressed_audio')->entity->getFileUri());
+
+  $items[] = file_create_url($media->get('field_interview_vtt_file')->entity->getFileUri());
+
+  $variables['interview'] = array(
+    '#theme' => 'videojs',
+    '#items' => $items,
+    '#player_attributes' => ['controls' => TRUE], 
+    '#attached' => array(
+      'library' => array('videojs/videojs'),
+    ),
+  );
 }
 
 /**
