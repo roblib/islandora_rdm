@@ -45,15 +45,30 @@ function islandora_rdm_preprocess_media__islandora_rdm_interview__teaser(&$varia
 #  ksm($variables);
   $media = $variables['media'];
   $items = [];
+  $captions = [];
 
-  $items[] = file_create_url($media->get('field_interview_compressed_audio')->entity->getFileUri());
+  $recording_field = $media->get('field_interview_compressed_audio')->entity;
+  if (!empty($recording_field)) {
 
-  $items[] = file_create_url($media->get('field_interview_vtt_file')->entity->getFileUri());
+    $items[] = file_create_url($recording_field->getFileUri());
+  }
+  $caption_field = $media->get('field_interview_vtt_file')->entity;
+  if (!empty($caption_field)) {
+    $captions_item = file_create_url($caption_field->getFileUri());
+  
+    $captions[] = [
+      'src' => $captions_item,
+      'kind' => 'captions',
+      'srclang' => $media->language,
+      'label' => 'Captions',
+    ];
+  }
 
   $variables['interview'] = array(
     '#theme' => 'videojs',
     '#items' => $items,
-    '#player_attributes' => ['controls' => TRUE], 
+    '#captions' => $captions,
+    '#player_attributes' => ['controls' => TRUE, 'width' => 500, 'height' => 400, 'poster' => base_path() . "core/themes/classy/images/icons/audio-x-generic.png"], 
     '#attached' => array(
       'library' => array('videojs/videojs'),
     ),
