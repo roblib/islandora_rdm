@@ -33,4 +33,5 @@ dependencies:
   - text
   - user
   - views
+  - workflows
 version: 8.x-dev

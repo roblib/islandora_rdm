@@ -7,6 +7,8 @@
 use \Drupal\block\Entity\Block;
 use \Drupal\Core\Session\AccountInterface;
 use \Drupal\Core\Access\AccessResult;
+use \Drupal\Core\Url;
+
 /**
  * Implements hook_theme().
  */
@@ -16,6 +18,11 @@ function islandora_rdm_theme() {
       'template' => 'node--islandora-rdm-dataset--search-result',
       'preprocess functions' => ['islandora_rdm_search_result_preprocess'],
       'base hook' => 'node',
+    ],
+    'media__islandora_rdm_interview__teaser' => [
+      'template' => 'media--islandora-rdm-interview--teaser',
+      'preprocess functions' => ['islandora_rdm_interview_preprocess'],
+      'base hook' => 'media',
     ],
   ];
 }
@@ -32,6 +39,40 @@ function islandora_rdm_search_result_preprocess(&$variables) {
       $variables['rdm_abstract'] = "Abstract: " . $abs_description;
     }
   }
+}
+
+function islandora_rdm_preprocess_media__islandora_rdm_interview__teaser(&$variables) {
+#  ksm($variables);
+  $media = $variables['media'];
+  $items = [];
+  $captions = [];
+
+  $recording_field = $media->get('field_interview_compressed_audio')->entity;
+  if (!empty($recording_field)) {
+
+    $items[] = file_create_url($recording_field->getFileUri());
+  }
+  $caption_field = $media->get('field_interview_vtt_file')->entity;
+  if (!empty($caption_field)) {
+    $captions_item = file_create_url($caption_field->getFileUri());
+  
+    $captions[] = [
+      'src' => $captions_item,
+      'kind' => 'captions',
+      'srclang' => $media->language,
+      'label' => 'Captions',
+    ];
+  }
+
+  $variables['interview'] = array(
+    '#theme' => 'videojs',
+    '#items' => $items,
+    '#captions' => $captions,
+    '#player_attributes' => ['controls' => TRUE, 'width' => 500, 'height' => 400, 'poster' => base_path() . "core/themes/classy/images/icons/audio-x-generic.png"], 
+    '#attached' => array(
+      'library' => array('videojs/videojs'),
+    ),
+  );
 }
 
 /**

@@ -25,7 +25,6 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_subjects
     - field.field.node.islandora_rdm_dataset.field_tags
     - node.type.islandora_rdm_dataset
-    - workflows.workflow.islandora_rdm_dataset_workflow
   module:
     - content_moderation
     - controlled_access_terms
@@ -136,8 +135,6 @@ third_party_settings:
         required_fields: true
       label: Funding
       region: hidden
-_core:
-  default_config_hash: 5MlQnk3SYhiTbkdjAVdisRkFqY-2wcjcqpwF8VbrAeo
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset

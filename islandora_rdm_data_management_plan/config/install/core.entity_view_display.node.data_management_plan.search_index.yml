@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.data_management_plan.field_dmp_contributor
     - field.field.node.data_management_plan.field_dmp_creator
     - field.field.node.data_management_plan.field_dmp_download
+    - field.field.node.data_management_plan.field_dmp_funder_name
     - field.field.node.data_management_plan.field_dmp_plan_generic
     - field.field.node.data_management_plan.field_dmp_projectdesc
     - field.field.node.data_management_plan.field_dmp_question_1_1
@@ -104,8 +105,12 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
   field_dmp_contributor: true
   field_dmp_download: true
+  field_dmp_funder_name: true
   field_dmp_plan_generic: true
   field_dmp_question_1_1: true
   field_dmp_question_1_2: true

@@ -30,6 +30,7 @@
         "drupal/paragraphs": "~1.5",
         "drupal/facets": "*",
         "drupal/vefl": "*",
+        "drupal/viewfield": "^3.0",
 	"islandora-rdm/workflow_participants": "*"
     },
     "extra": {
