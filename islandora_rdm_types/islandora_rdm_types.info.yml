@@ -16,7 +16,7 @@ dependencies:
   - field_permissions
   - geolocation
   - islandora_core_feature
-  - islandora_rdm__defaults
+  - islandora_rdm_defaults
   - islandora_rdm_datacite
   - languagefield
   - lc_subject_field
