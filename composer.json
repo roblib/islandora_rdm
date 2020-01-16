@@ -36,7 +36,13 @@
     "extra": {
 	"patches": {
 	    "drupal/workflow_participants": {
-		"Using module with Content moderation throws Revision check errors": "https://www.drupal.org/files/issues/2019-08-16/workflow_participants-revision-error-3075426-1.patch"
+          "Using module with Content moderation throws Revision check errors": "https://www.drupal.org/files/issues/2019-08-16/workflow_participants-revision-error-3075426-1.patch"
+	    },
+	    "drupal/metatag": {
+	      "Use custom delimiter instead of commas for multiple values": "https://www.drupal.org/files/issues/2019-07-15/3067803-token-alter-hook_1.patch"
+	    },
+	    "drupal/schema_metatag": {
+		"Recipe step descriptions will explode on comma": "https://www.drupal.org/files/issues/2019-07-15/2976935-use-metatag-delimiter.patch"
 	    }
 	}
     }
