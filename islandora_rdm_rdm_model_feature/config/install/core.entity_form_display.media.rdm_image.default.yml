@@ -1,0 +1,140 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.rdm_image.field_file_size
+    - field.field.media.rdm_image.field_fits_file
+    - field.field.media.rdm_image.field_height
+    - field.field.media.rdm_image.field_image_service_file
+    - field.field.media.rdm_image.field_media_image_1
+    - field.field.media.rdm_image.field_media_of
+    - field.field.media.rdm_image.field_mime_type
+    - field.field.media.rdm_image.field_service_file
+    - field.field.media.rdm_image.field_thumbnail_file
+    - field.field.media.rdm_image.field_width
+    - field.field.media.rdm_image.fits_ois_file_information_md5che
+    - image.style.thumbnail
+    - media.type.rdm_image
+  module:
+    - file
+    - image
+    - path
+id: media.rdm_image.default
+targetEntityType: media
+bundle: rdm_image
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_file_size:
+    weight: 101
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_fits_file:
+    weight: 108
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_height:
+    weight: 104
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_image_service_file:
+    weight: 107
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_media_image_1:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_media_of:
+    weight: 102
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_mime_type:
+    weight: 103
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_width:
+    weight: 105
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  fits_ois_file_information_md5che:
+    weight: 106
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden:
+  field_service_file: true
+  field_thumbnail_file: true

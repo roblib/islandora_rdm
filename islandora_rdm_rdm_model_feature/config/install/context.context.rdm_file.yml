@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_rdm_multifile_media
+name: rdm_file
+label: 'RDM File'
+group: Islandora
+description: 'Derivatives for RDM File'
+requireAllConditions: false
+disabled: false
+conditions:
+  entity_bundle:
+    id: entity_bundle
+    bundles:
+      rdm_file: rdm_file
+    negate: 0
+    uuid: cd89131f-633c-4101-8704-303394540e53
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+reactions:
+  file_derivative:
+    id: file_derivative
+    actions:
+      generate_a_fits_derivative_for_rdm_media_attachment: generate_a_fits_derivative_for_rdm_media_attachment
+    saved: false
+weight: 0

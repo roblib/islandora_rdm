@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.fits_ois_file_information_md5che
+    - media.type.rdm_image
+id: media.rdm_image.fits_ois_file_information_md5che
+field_name: fits_ois_file_information_md5che
+entity_type: media
+bundle: rdm_image
+label: OIS_File_Information_Md5checksum
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

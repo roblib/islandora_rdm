@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_rdm_multifile_media
+name: rdm_video_derivative_creation
+label: 'RDM Video Derivative Creation'
+group: Islandora
+description: 'Add all derivatives to RDM Video Media'
+requireAllConditions: false
+disabled: false
+conditions:
+  entity_bundle:
+    id: entity_bundle
+    bundles:
+      rdm_video: rdm_video
+    negate: 0
+    uuid: 980f7ac7-5901-4521-ab09-1606f9199a2d
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+reactions:
+  file_derivative:
+    id: file_derivative
+    actions:
+      generate_a_fits_derivative_file_for_rdm_media_attachment: generate_a_fits_derivative_file_for_rdm_media_attachment
+      generate_a_video_service_file_for_media_attachment: generate_a_video_service_file_for_media_attachment
+      generate_a_video_thumbnail_file_for_media_attachment: generate_a_video_thumbnail_file_for_media_attachment
+    saved: false
+weight: 0

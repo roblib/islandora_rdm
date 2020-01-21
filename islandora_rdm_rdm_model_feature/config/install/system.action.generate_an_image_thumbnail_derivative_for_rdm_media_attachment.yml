@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora_rdm_multifile_media
+id: generate_an_image_thumbnail_derivative_for_rdm_media_attachment
+label: 'Generate an Image Thumbnail Derivative for RDM Media Attachment'
+type: media
+plugin: generate_derivative_file
+configuration:
+  queue: islandora-connector-houdini
+  event: 'Generate Derivative'
+  source_term_uri: 'http://pcdm.org/use#OriginalFile'
+  mimetype: image/jpeg
+  args: '-thumbnail 100x100'
+  scheme: public
+  path: '[date:custom:Y]-[date:custom:m]/[media:mid]-thumbnail.jpg'
+  source_field_name: field_media_file
+  destination_field_name: field_thumbnail_file
