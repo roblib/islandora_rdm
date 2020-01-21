@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies: {  }
+id: rdm_tabular_data
+label: 'RDM Tabular Data'
+description: 'CSVs and Spreadsheets'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map:
+  name: name
+  mimetype: field_mime_type
+  filesize: field_file_size

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_model
+    - media.type.rdm_file
+    - taxonomy.vocabulary.islandora_models
+id: media.rdm_file.field_media_model
+field_name: field_media_model
+entity_type: media
+bundle: rdm_file
+label: 'Media Model'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      islandora_models: islandora_models
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,157 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.rdm_file.field_access_terms
+    - field.field.media.rdm_file.field_creating_application_name
+    - field.field.media.rdm_file.field_extracted_text
+    - field.field.media.rdm_file.field_extracted_text_file
+    - field.field.media.rdm_file.field_file_size
+    - field.field.media.rdm_file.field_fits_file
+    - field.field.media.rdm_file.field_media_file_1
+    - field.field.media.rdm_file.field_media_model
+    - field.field.media.rdm_file.field_media_of
+    - field.field.media.rdm_file.field_mime_type
+    - field.field.media.rdm_file.field_thumbnail_file
+    - media.type.rdm_file
+  module:
+    - file
+    - path
+    - text
+    - uppy
+id: media.rdm_file.default
+targetEntityType: media
+bundle: rdm_file
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_access_terms:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_creating_application_name:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_extracted_text:
+    weight: 14
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_extracted_text_file:
+    weight: 15
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_file_size:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_fits_file:
+    weight: 12
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_media_file_1:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      auto_proceed: false
+      file_sources: dashboard
+      uploader: tus
+      chunk_size: 2000000
+    third_party_settings: {  }
+    type: uppy_widget
+    region: content
+  field_media_model:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_media_of:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_mime_type:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_thumbnail_file:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

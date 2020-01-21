@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_rdm_multifile_media
+name: rdm_image
+label: 'RDM Image'
+group: Islandora
+description: 'Derivatives for Image Media Type'
+requireAllConditions: false
+disabled: false
+conditions:
+  entity_bundle:
+    id: entity_bundle
+    bundles:
+      rdm_image: rdm_image
+    negate: 0
+    uuid: 57304ca0-8e41-4a58-b86e-cfe56afd2134
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+reactions:
+  file_derivative:
+    id: file_derivative
+    actions:
+      generate_a_fits_derivative_for_rdm_media_attachment: generate_a_fits_derivative_for_rdm_media_attachment
+      generate_an_image_service_derivative_for_rdm_media_attachment_: generate_an_image_service_derivative_for_rdm_media_attachment_
+      generate_an_image_thumbnail_derivative_for_rdm_media_attachment: generate_an_image_thumbnail_derivative_for_rdm_media_attachment
+    saved: false
+weight: 0
