@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Install/update hook implementations.
+ */
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_install().
+ */
+function islandora_rdm_types_install() {
+  /*
+   * Install the "Dataset" term into the Islandora Models vocabulary.
+   */
+  $dataset_term_name = 'Dataset';
+  $test_terms = taxonomy_term_load_multiple_by_name($dataset_term_name, 'islandora_models');
+  if (!$test_terms) {
+    $term = Term::create([
+      'parent' => [],
+      'name' => $dataset_term_name,
+      'vid' => 'islandora_models',
+      'description' => 'Data encoded in a defined structure. Examples include lists, tables, and databases.',
+      'field_external_uri' => ['uri' => 'http://purl.org/dc/dcmitype/Dataset'],
+    ])->save();
+  }
+  $grant_term_name = 'Grant';
+  $test_terms = taxonomy_term_load_multiple_by_name($grant_term_name, 'islandora_models');
+  if (!$test_terms) {
+    $term = Term::create([
+      'parent' => [],
+      'name' => $grant_term_name,
+      'vid' => 'islandora_models',
+      'description' => 'A financial award by a funding agency for a particular project or purpose, usually awarded on the basis of a competitive application.',
+      'field_external_uri' => ['uri' => 'http://purl.org/cerif/frapo/Grant'],
+    ])->save();
+  }
+}
+
