@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_rdm_multifile_media
+name: rdm_file_generate_derivatives
+label: 'RDM File - generate derivatives'
+group: Islandora
+description: 'Generates all derivatives for RDM Tabular Data Media Type'
+requireAllConditions: false
+disabled: false
+conditions:
+  entity_bundle:
+    id: entity_bundle
+    bundles:
+      rdm_file: rdm_file
+    negate: 0
+    uuid: 5371f6df-4034-441b-8fca-75b77a269f99
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+reactions:
+  file_derivative:
+    id: file_derivative
+    actions:
+      rdm_generate_a_fits_file: rdm_generate_a_fits_file
+    saved: false
+weight: 0

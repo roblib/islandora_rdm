@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_rdm_multifile_media
+name: rdm_audio_generate_derivatives
+label: 'RDM Audio - generate derivatives'
+group: Islandora
+description: 'Generates all derivatives for RDM Audio Media Type'
+requireAllConditions: false
+disabled: false
+conditions:
+  entity_bundle:
+    id: entity_bundle
+    bundles:
+      rdm_audio: rdm_audio
+    negate: 0
+    uuid: 2d7ec672-df05-4b67-a393-5d94daa8a763
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+reactions:
+  file_derivative:
+    id: file_derivative
+    actions:
+      rdm_generate_a_fits_file: rdm_generate_a_fits_file
+      rdm_generate_audio_service_file: rdm_generate_audio_service_file
+    saved: false
+weight: 0

@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_rdm_multifile_media
+name: rdm_display_csv
+label: 'RDM - Display CSV'
+group: Islandora
+description: 'Displays RDM Tabular Data csv'
+requireAllConditions: false
+disabled: false
+conditions:
+  media_source_mimetype:
+    id: media_source_mimetype
+    mimetype: ''
+    negate: 0
+    uuid: 42a13ccf-256b-4a60-b1ee-2e6a709bea07
+    context_mapping: {  }
+  entity_bundle:
+    id: entity_bundle
+    bundles:
+      rdm_tabular_data: rdm_tabular_data
+    negate: 0
+    uuid: 5b6fd31c-f6d8-4d02-87fc-dc53b880541e
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+reactions:
+  view_mode_alter:
+    id: view_mode_alter
+    mode: media.csv
+    saved: false
+weight: 0
