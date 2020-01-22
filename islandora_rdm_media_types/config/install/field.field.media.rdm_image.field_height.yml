@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_height
+    - media.type.rdm_image
+id: media.rdm_image.field_height
+field_name: field_height
+entity_type: media
+bundle: rdm_image
+label: Height
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

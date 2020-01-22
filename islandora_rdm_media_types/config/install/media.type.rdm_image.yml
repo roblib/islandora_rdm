@@ -1,0 +1,17 @@
+langcode: en
+status: false
+dependencies: {  }
+id: rdm_image
+label: 'RDM Image'
+description: 'RDM Audio Image Type'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image
+field_map:
+  name: name
+  mimetype: field_mime_type
+  filesize: field_file_size
+  width: field_width
+  height: field_height

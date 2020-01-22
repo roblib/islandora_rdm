@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora_rdm_multifile_media
+id: rdm_generate_an_video_service_file
+label: 'RDM - Generate an Video service file'
+type: media
+plugin: generate_derivative_file
+configuration:
+  queue: islandora-connector-homarus
+  event: 'Generate Derivative'
+  source_term_uri: 'http://pcdm.org/use#OriginalFile'
+  mimetype: video/mp4
+  args: ''
+  scheme: public
+  path: '[date:custom:Y]-[date:custom:m]/[media:mid]_video_service.mp4'
+  source_field_name: field_media_file
+  destination_field_name: field_service_file

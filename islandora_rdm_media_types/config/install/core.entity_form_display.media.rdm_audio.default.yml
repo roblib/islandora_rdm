@@ -1,0 +1,123 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.rdm_audio.field_file_size
+    - field.field.media.rdm_audio.field_fits_file
+    - field.field.media.rdm_audio.field_media_audio_file
+    - field.field.media.rdm_audio.field_media_of
+    - field.field.media.rdm_audio.field_media_use
+    - field.field.media.rdm_audio.field_mime_type
+    - field.field.media.rdm_audio.field_service_file
+    - media.type.rdm_audio
+  module:
+    - file
+    - path
+    - uppy
+id: media.rdm_audio.default
+targetEntityType: media
+bundle: rdm_audio
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_file_size:
+    weight: 103
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_fits_file:
+    weight: 105
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_media_audio_file:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      auto_proceed: false
+      file_sources: dashboard
+      uploader: tus
+      chunk_size: 2000000
+    third_party_settings: {  }
+    type: uppy_widget
+    region: content
+  field_media_of:
+    weight: 101
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_media_use:
+    weight: 102
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_mime_type:
+    weight: 104
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_service_file:
+    weight: 106
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }
