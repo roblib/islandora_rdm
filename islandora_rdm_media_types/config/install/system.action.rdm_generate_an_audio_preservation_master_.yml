@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora_rdm_multifile_media
+id: rdm_generate_an_audio_preservation_master_
+label: 'RDM - Generate an Audio Preservation Master '
+type: media
+plugin: generate_derivative_file
+configuration:
+  queue: islandora-connector-homaris
+  event: 'Generate Derivative'
+  source_term_uri: 'http://pcdm.org/use#OriginalFile'
+  mimetype: audio/wave
+  args: ''
+  scheme: public
+  path: '[date:custom:Y]-[date:custom:m]/[media:mid]_preservation_master.mp3'
+  source_field_name: field_media_file
+  destination_field_name: field_preservation_master_file

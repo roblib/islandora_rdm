@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_rdm_multifile_media
+name: rdm_audio_generate_preservation_master
+label: 'RDM Audio - generate Preservation Master'
+group: Islandora
+description: 'Generates Preservation Master as file attachment'
+requireAllConditions: false
+disabled: false
+conditions:
+  entity_bundle:
+    id: entity_bundle
+    bundles:
+      rdm_audio: rdm_audio
+    negate: 0
+    uuid: e01f6e43-d575-4381-bd10-a5524a63c1b2
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+  media_source_mimetype:
+    id: media_source_mimetype
+    mimetype: audio/mpeg
+    negate: 0
+    uuid: c195be83-350e-44e1-973a-3324a8bc20fa
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+reactions:
+  file_derivative:
+    id: file_derivative
+    actions:
+      rdm_generate_an_audio_preservation_master_: rdm_generate_an_audio_preservation_master_
+    saved: false
+weight: 0
