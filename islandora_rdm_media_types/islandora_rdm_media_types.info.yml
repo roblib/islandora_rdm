@@ -3,17 +3,23 @@ type: module
 core: 8.x
 package: 'Islandora RDM'
 dependencies:
+  - context
   - csv_field_preview
   - field
+  - field_permissions
   - file
   - image
+  - islandora
   - islandora_core_feature
   - islandora_fits
   - islandora_rdm_defaults
+  - islandora_rdm_multifile_media
   - islandora_rdm_types
   - language
+  - media
   - path
   - pdf
+  - system
   - text
   - uppy
   - user

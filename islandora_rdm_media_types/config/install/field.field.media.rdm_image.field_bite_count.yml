@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_bite_count
+    - media.type.rdm_image
+id: media.rdm_image.field_bite_count
+field_name: field_bite_count
+entity_type: media
+bundle: rdm_image
+label: 'Bite Count'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

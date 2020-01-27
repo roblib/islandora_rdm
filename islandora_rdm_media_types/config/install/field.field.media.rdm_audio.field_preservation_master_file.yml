@@ -2,23 +2,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_media_file
-    - media.type.rdm_tabular_data
+    - field.storage.media.field_preservation_master_file
+    - media.type.rdm_audio
   module:
     - file
-id: media.rdm_tabular_data.field_media_file
-field_name: field_media_file
+id: media.rdm_audio.field_preservation_master_file
+field_name: field_preservation_master_file
 entity_type: media
-bundle: rdm_tabular_data
-label: File
+bundle: rdm_audio
+label: 'Preservation Master File'
 description: ''
-required: true
-translatable: true
+required: false
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'csv txv xls ods'
+  file_extensions: wav
   max_filesize: ''
   description_field: false
   handler: 'default:file'

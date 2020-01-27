@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.rdm_tabular_data.field_bite_count
     - field.field.media.rdm_tabular_data.field_file_size
     - field.field.media.rdm_tabular_data.field_fits_file
     - field.field.media.rdm_tabular_data.field_media_file
@@ -24,6 +25,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_bite_count:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_file_size:
     weight: 9
     settings:

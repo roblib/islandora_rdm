@@ -13,10 +13,11 @@ disabled: false
 conditions:
   media_source_mimetype:
     id: media_source_mimetype
-    mimetype: ''
+    mimetype: application/pdf
     negate: 0
     uuid: 7df1fc72-678a-4dbe-bf77-1766739254b2
-    context_mapping: {  }
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
   entity_bundle:
     id: entity_bundle
     bundles:

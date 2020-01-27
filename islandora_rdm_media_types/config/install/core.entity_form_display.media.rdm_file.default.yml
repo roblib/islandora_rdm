@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.rdm_file.field_bite_count
     - field.field.media.rdm_file.field_editable_text
     - field.field.media.rdm_file.field_extracted_text_file
     - field.field.media.rdm_file.field_file_size
@@ -10,6 +11,7 @@ dependencies:
     - field.field.media.rdm_file.field_media_of
     - field.field.media.rdm_file.field_media_use
     - field.field.media.rdm_file.field_mime_type
+    - field.field.media.rdm_file.field_preservation_master_file
     - media.type.rdm_file
   module:
     - file
@@ -27,6 +29,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_bite_count:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_editable_text:
     weight: 11
     settings:
@@ -83,6 +93,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_preservation_master_file:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
     region: content
   langcode:
     type: language_select
