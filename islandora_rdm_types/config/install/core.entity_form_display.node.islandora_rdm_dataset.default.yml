@@ -25,6 +25,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_subjects
     - field.field.node.islandora_rdm_dataset.field_tags
     - node.type.islandora_rdm_dataset
+    - workflows.workflow.islandora_rdm_dataset_workflow
   module:
     - content_moderation
     - controlled_access_terms
@@ -169,12 +170,9 @@ content:
     third_party_settings: {  }
   field_model:
     weight: 2
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_rdm_alternate_identifier:
     type: paragraphs
