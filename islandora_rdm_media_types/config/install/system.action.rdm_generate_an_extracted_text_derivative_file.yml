@@ -18,4 +18,4 @@ configuration:
   source_field_name: field_media_file
   destination_field_name: field_extracted_text_file
   destination_media_type: file
-  destination_text_field_name: field_edited_text
+  destination_text_field_name: field_editable_text

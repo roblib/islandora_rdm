@@ -23,8 +23,9 @@ reactions:
   file_derivative:
     id: file_derivative
     actions:
-      rdm_generate_a_fits_file: rdm_generate_a_fits_file
+      rdm_generate_an_extracted_text_derivative_file: rdm_generate_an_extracted_text_derivative_file
       rdm_generate_an_image_service_file: rdm_generate_an_image_service_file
       rdm_generate_an_image_thumbnail_file: rdm_generate_an_image_thumbnail_file
+      rdm_generate_a_fits_file: rdm_generate_a_fits_file
     saved: false
 weight: 0

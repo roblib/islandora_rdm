@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.pdfjs
+    - field.field.media.rdm_file.field_bite_count
     - field.field.media.rdm_file.field_editable_text
     - field.field.media.rdm_file.field_extracted_text_file
     - field.field.media.rdm_file.field_file_size
@@ -11,6 +12,7 @@ dependencies:
     - field.field.media.rdm_file.field_media_of
     - field.field.media.rdm_file.field_media_use
     - field.field.media.rdm_file.field_mime_type
+    - field.field.media.rdm_file.field_preservation_master_file
     - image.style.thumbnail
     - media.type.rdm_file
   module:
@@ -115,6 +117,8 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_bite_count: true
   field_extracted_text_file: true
+  field_preservation_master_file: true
   langcode: true
   name: true

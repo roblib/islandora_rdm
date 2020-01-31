@@ -3,7 +3,7 @@ status: false
 dependencies: {  }
 id: rdm_image
 label: 'RDM Image'
-description: 'RDM Audio Image Type'
+description: 'RDM Image Type'
 source: image
 queue_thumbnail_downloads: false
 new_revision: true

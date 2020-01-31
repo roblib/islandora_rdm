@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.csv
+    - field.field.media.rdm_tabular_data.field_bite_count
     - field.field.media.rdm_tabular_data.field_file_size
     - field.field.media.rdm_tabular_data.field_fits_file
     - field.field.media.rdm_tabular_data.field_media_file
@@ -98,5 +99,6 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_bite_count: true
   langcode: true
   name: true
