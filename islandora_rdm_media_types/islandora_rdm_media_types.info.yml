@@ -12,6 +12,7 @@ dependencies:
   - islandora
   - islandora_core_feature
   - islandora_fits
+  - islandora_rdm
   - islandora_rdm_defaults
   - islandora_rdm_multifile_media
   - islandora_rdm_types
@@ -23,3 +24,4 @@ dependencies:
   - text
   - uppy
   - user
+core_incompatible: false

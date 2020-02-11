@@ -5,6 +5,8 @@ dependencies:
     - field.storage.media.field_media_use
     - media.type.rdm_audio
     - taxonomy.vocabulary.islandora_media_use
+  content:
+    - 'taxonomy_term:islandora_media_use:78f370e5-8c31-4ed8-b0f0-12073e6c8ab9'
 id: media.rdm_audio.field_media_use
 field_name: field_media_use
 entity_type: media
@@ -15,7 +17,7 @@ required: false
 translatable: true
 default_value:
   -
-    target_uuid: fc1a6974-f38a-4fe2-8ffe-5985a702e8f7
+    target_uuid: 78f370e5-8c31-4ed8-b0f0-12073e6c8ab9
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

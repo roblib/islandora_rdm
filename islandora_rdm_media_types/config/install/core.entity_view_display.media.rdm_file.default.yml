@@ -18,8 +18,8 @@ dependencies:
     - file
     - image
     - islandora_fits
+    - islandora_rdm
     - pdf
-    - text
     - user
 id: media.rdm_file.default
 targetEntityType: media
@@ -45,11 +45,11 @@ content:
     type: string
     region: content
   field_editable_text:
-    weight: 13
+    weight: 17
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    type: texttohtml
     region: content
   field_extracted_text_file:
     weight: 14

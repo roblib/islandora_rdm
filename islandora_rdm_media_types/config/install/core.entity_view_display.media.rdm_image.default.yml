@@ -22,7 +22,7 @@ dependencies:
     - file
     - image
     - islandora_fits
-    - text
+    - islandora_rdm
     - user
 id: media.rdm_image.default
 targetEntityType: media
@@ -52,7 +52,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    type: texttohtml
     region: content
   field_extracted_text_file:
     weight: 13

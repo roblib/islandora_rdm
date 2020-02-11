@@ -28,7 +28,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_bite_count:
-    weight: 27
+    weight: 13
     settings:
       size: 60
       placeholder: ''
@@ -66,9 +66,20 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_media_use:
+    type: entity_reference_autocomplete
+    weight: 14
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_mime_type:
     weight: 9
     settings:
@@ -78,7 +89,7 @@ content:
     type: string_textfield
     region: content
   field_preservation_master_file:
-    weight: 26
+    weight: 12
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -126,7 +137,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
-hidden:
-  field_media_use: true
+hidden: {  }
