@@ -17,6 +17,7 @@ dependencies:
   module:
     - file
     - image
+    - islandora_fits
     - user
 id: media.rdm_video.default
 targetEntityType: media
@@ -53,10 +54,9 @@ content:
   field_fits_file:
     weight: 7
     label: above
-    settings:
-      use_description_as_link_text: true
+    settings: {  }
     third_party_settings: {  }
-    type: file_default
+    type: fits_formatter
     region: content
   field_media_of:
     weight: 5
