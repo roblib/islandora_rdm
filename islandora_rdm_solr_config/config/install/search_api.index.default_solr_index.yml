@@ -1,3 +1,4 @@
+uuid: 79bcbbae-ae07-4a6e-abd7-776a0ef1b5c6
 langcode: en
 status: true
 dependencies:
@@ -5,13 +6,10 @@ dependencies:
     - search_api_solr
     - node
     - user
-    - taxonomy
     - search_api
+    - media
   config:
-    - field.storage.node.field_rdm_license
-    - field.storage.taxonomy_term.field_license_link
-    - field.storage.node.field_rdm_publication_year
-    - field.storage.node.field_subjects
+    - field.storage.node.field_rdm_description
     - field.storage.node.field_tags
     - search_api.server.default_solr_server
     - core.entity_view_mode.node.search_index
@@ -70,22 +68,14 @@ field_settings:
     dependencies:
       module:
         - node
-  field_rdm_publication_year:
-    label: 'Publication Year'
+  field_rdm_description:
+    label: Description
     datasource_id: 'entity:node'
-    property_path: field_rdm_publication_year
-    type: string
+    property_path: field_rdm_description
+    type: integer
     dependencies:
       config:
-        - field.storage.node.field_rdm_publication_year
-  field_subjects:
-    label: Subjects
-    datasource_id: 'entity:node'
-    property_path: field_subjects
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_subjects
+        - field.storage.node.field_rdm_description
   field_tags:
     label: Tags
     datasource_id: 'entity:node'
@@ -111,11 +101,35 @@ field_settings:
       view_mode:
         'entity:node':
           article: search_index
-          data_management_plan: search_index
-          funding_information: search_index
-          islandora_object: search_index
-          islandora_rdm_dataset: search_index
           page: search_index
+  rendered_item_1:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:media':
+          audio: ''
+          document: ''
+          extracted_text: ''
+          file: ''
+          fits_technical_metadata: ''
+          image: ''
+          rdm_audio: ''
+          rdm_file: ''
+          rdm_image: ''
+          rdm_tabular_data: ''
+          rdm_video: ''
+          remote_video: ''
+          video: ''
+        'entity:node':
+          article: ''
+          data_management_plan: ''
+          funding_information: ''
+          islandora_rdm_dataset: default
+          page: ''
   status:
     label: 'Publishing status'
     datasource_id: 'entity:node'
@@ -143,17 +157,6 @@ field_settings:
     dependencies:
       module:
         - node
-  title_1:
-    label: 'License » Taxonomy term » License link » Link text'
-    datasource_id: 'entity:node'
-    property_path: 'field_rdm_license:entity:field_license_link:title'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_rdm_license
-        - field.storage.taxonomy_term.field_license_link
-      module:
-        - taxonomy
   type:
     label: 'Content type'
     datasource_id: 'entity:node'
@@ -173,6 +176,13 @@ field_settings:
       module:
         - node
 datasource_settings:
+  'entity:media':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
   'entity:node':
     bundles:
       default: true
@@ -221,4 +231,3 @@ options:
   index_directly: true
   cron_limit: 50
 server: default_solr_server
-
