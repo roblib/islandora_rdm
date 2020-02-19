@@ -1,27 +1,27 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - views.view.export_metadata
   module:
-    - ctools
     - node
+    - views
   theme:
     - carapace
-_core:
-  default_config_hash: GR81onoV3mPMN_EnZi8G0VheKK5K5ANTlgEaiWf2GXw
-id: entityviewcontent
+id: views_block__export_metadata_block_1
 theme: carapace
 region: sidebar_second
-weight: -6
+weight: -5
 provider: null
-plugin: 'entity_view:node'
+plugin: 'views_block:export_metadata-block_1'
 settings:
-  id: 'entity_view:node'
-  label: 'Cite as'
-  provider: ctools
+  id: 'views_block:export_metadata-block_1'
+  label: ''
+  provider: views
   label_display: visible
-  view_mode: rdm_citation
-  context_mapping:
-    entity: '@node.node_route_context:node'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
 visibility:
   node_type:
     id: node_type
