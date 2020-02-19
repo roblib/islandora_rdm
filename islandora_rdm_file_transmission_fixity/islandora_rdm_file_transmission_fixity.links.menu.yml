@@ -1,0 +1,7 @@
+islandora_rdm_file_transmission_fixity.admin_settings_form:
+  title: 'Islandora File Transmission Fixity Setting'
+  parent: system.admin_config_islandora
+  route_name: islandora_rdm_file_transmission_fixity.admin_settings_form
+  description: 'Configure File Transmission Fixity.'
+
+

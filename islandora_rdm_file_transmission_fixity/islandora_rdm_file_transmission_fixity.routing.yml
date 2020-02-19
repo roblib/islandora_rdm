@@ -1,0 +1,7 @@
+islandora_rdm_file_transmission_fixity.admin_settings_form:
+  path: '/admin/config/islandora_file_fixity/settings'
+  defaults:
+    _form: '\Drupal\islandora_rdm_file_transmission_fixity\Form\FixitySettingForm'
+    _title: 'File Transmission Fixity Settings'
+  requirements:
+    _permission: 'administer site configuration'
