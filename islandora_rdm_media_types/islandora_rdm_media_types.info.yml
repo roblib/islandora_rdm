@@ -6,6 +6,7 @@ dependencies:
   - context
   - csv_field_preview
   - field
+  - field_group
   - field_permissions
   - file
   - image
@@ -20,6 +21,7 @@ dependencies:
   - media
   - path
   - pdf
+  - readonly_field_widget
   - system
   - text
   - uppy

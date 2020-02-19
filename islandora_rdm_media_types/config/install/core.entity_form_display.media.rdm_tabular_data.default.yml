@@ -2,7 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.rdm_tabular_data.field_actual_checksum
     - field.field.media.rdm_tabular_data.field_bite_count
+    - field.field.media.rdm_tabular_data.field_expected_checksum
     - field.field.media.rdm_tabular_data.field_file_size
     - field.field.media.rdm_tabular_data.field_fits_file
     - field.field.media.rdm_tabular_data.field_media_file
@@ -11,9 +13,27 @@ dependencies:
     - field.field.media.rdm_tabular_data.field_mime_type
     - media.type.rdm_tabular_data
   module:
+    - field_group
     - file
     - path
+    - readonly_field_widget
     - uppy
+third_party_settings:
+  field_group:
+    group_checksums:
+      children:
+        - field_expected_checksum
+        - field_actual_checksum
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Checksums
 id: media.rdm_tabular_data.default
 targetEntityType: media
 bundle: rdm_tabular_data
@@ -21,12 +41,30 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_actual_checksum:
+    weight: 14
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
   field_bite_count:
-    weight: 26
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_expected_checksum:
+    weight: 13
     settings:
       size: 60
       placeholder: ''
@@ -34,14 +72,14 @@ content:
     type: string_textfield
     region: content
   field_file_size:
-    weight: 9
+    weight: 10
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_fits_file:
-    weight: 8
+    weight: 9
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -59,7 +97,7 @@ content:
     type: uppy_widget
     region: content
   field_media_of:
-    weight: 7
+    weight: 8
     settings:
       match_operator: CONTAINS
       size: 60
@@ -69,7 +107,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_mime_type:
-    weight: 10
+    weight: 11
     settings:
       size: 60
       placeholder: ''
@@ -78,7 +116,7 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
@@ -93,7 +131,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -101,12 +139,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60

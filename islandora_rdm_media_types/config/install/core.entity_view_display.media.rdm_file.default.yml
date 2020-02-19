@@ -2,8 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.rdm_file.field_actual_checksum
     - field.field.media.rdm_file.field_bite_count
     - field.field.media.rdm_file.field_editable_text
+    - field.field.media.rdm_file.field_expected_checksum
     - field.field.media.rdm_file.field_extracted_text_file
     - field.field.media.rdm_file.field_file_size
     - field.field.media.rdm_file.field_fits_file
@@ -36,6 +38,14 @@ content:
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
+  field_actual_checksum:
+    weight: 18
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_bite_count:
     weight: 16
     label: above
@@ -50,6 +60,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: texttohtml
+    region: content
+  field_expected_checksum:
+    weight: 19
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_extracted_text_file:
     weight: 14

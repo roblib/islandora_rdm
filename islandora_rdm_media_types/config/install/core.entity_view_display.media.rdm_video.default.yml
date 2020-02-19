@@ -2,7 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.rdm_video.field_actual_checksum
     - field.field.media.rdm_video.field_bite_count
+    - field.field.media.rdm_video.field_expected_checksum
     - field.field.media.rdm_video.field_file_size
     - field.field.media.rdm_video.field_fits_file
     - field.field.media.rdm_video.field_media_of
@@ -34,8 +36,24 @@ content:
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
+  field_actual_checksum:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_bite_count:
     weight: 12
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_expected_checksum:
+    weight: 14
     label: above
     settings:
       link_to_entity: false
