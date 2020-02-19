@@ -36,3 +36,16 @@ function islandora_rdm_file_transmission_fixity_media_presave(MediaInterface $me
     }
   }
 }
+
+/**
+ * Implements hook_entity_bundle_field_info_alter().
+ */
+function islandora_rdm_file_transmission_fixity_entity_bundle_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type, $bundle) {
+  $config = \Drupal::config('islandora_rdm_file_transmission_fixity.settings');
+  $expected_fixity_field = $config->get('expected_fixity_field') ? $config->get('expected_fixity_field') : 'field_expected_checksum';
+
+  if (isset($fields[$expected_fixity_field])) {
+    // Use the ID as defined in the annotation of the constraint definition
+    $fields[$expected_fixity_field]->addConstraint('ValidSha1', []);
+  }
+}
