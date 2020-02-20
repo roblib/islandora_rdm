@@ -6,4 +6,5 @@ package: 'Islandora RDM'
 dependencies:
   - clamav
   - islandora_rdm
+  - islandora_rdm_data_management_plan
 version: 8.x-dev
