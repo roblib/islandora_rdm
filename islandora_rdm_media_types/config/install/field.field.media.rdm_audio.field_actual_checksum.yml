@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_actual_checksum
+    - media.type.rdm_audio
+id: media.rdm_audio.field_actual_checksum
+field_name: field_actual_checksum
+entity_type: media
+bundle: rdm_audio
+label: 'Actual Checksum'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
