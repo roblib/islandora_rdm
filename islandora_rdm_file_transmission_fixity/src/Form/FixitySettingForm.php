@@ -2,7 +2,6 @@
 
 namespace Drupal\islandora_rdm_file_transmission_fixity\Form;
 
-use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -15,8 +14,11 @@ class FixitySettingForm extends ConfigFormBase {
    *
    * @var string
    */
-  protected $config_filepath;
+  protected $configFilepath;
 
+  /**
+   * {@inheritdoc}
+   */
   public function getFormId() {
     return 'islandora_rdm_file_transmission_fixity_settings';
   }
@@ -62,5 +64,5 @@ class FixitySettingForm extends ConfigFormBase {
       ->save();
     parent::submitForm($form, $form_state);
   }
-}
 
+}

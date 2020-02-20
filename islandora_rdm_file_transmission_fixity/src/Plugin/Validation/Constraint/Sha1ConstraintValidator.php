@@ -1,12 +1,15 @@
 <?php
 
-
 namespace Drupal\islandora_rdm_file_transmission_fixity\Plugin\Validation\Constraint;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
+/**
+ * Checks if sha1 is valid.
+ */
 class Sha1ConstraintValidator extends ConstraintValidator {
+
   /**
    * {@inheritdoc}
    */
@@ -17,4 +20,5 @@ class Sha1ConstraintValidator extends ConstraintValidator {
       }
     }
   }
+
 }

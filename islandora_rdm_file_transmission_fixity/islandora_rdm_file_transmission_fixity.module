@@ -1,12 +1,17 @@
 <?php
 
+/**
+ * @file
+ * Contains islandora_rdm_file_transmission_fixity.module.
+ */
+
 use Drupal\file\Entity\File;
 use Drupal\media\MediaInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
 
 /**
  * Implements hook_media_presave().
  */
-
 function islandora_rdm_file_transmission_fixity_media_presave(MediaInterface $media) {
   $config = \Drupal::config('islandora_rdm_file_transmission_fixity.settings');
   $expected_fixity_field = $config->get('expected_fixity_field') ? $config->get('expected_fixity_field') : 'field_expected_checksum';
@@ -24,7 +29,7 @@ function islandora_rdm_file_transmission_fixity_media_presave(MediaInterface $me
   $file = File::load($fid);
   $checksum = $file->filehash['sha1'];
   if ($media->hasField($actual_fixity_field)) {
-    $media->set('field_actual_checksum', $actual_fixity_field);
+    $media->set($actual_fixity_field, $checksum);
   }
 
   if ($expected_checksum) {
@@ -40,12 +45,10 @@ function islandora_rdm_file_transmission_fixity_media_presave(MediaInterface $me
 /**
  * Implements hook_entity_bundle_field_info_alter().
  */
-function islandora_rdm_file_transmission_fixity_entity_bundle_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type, $bundle) {
+function islandora_rdm_file_transmission_fixity_entity_bundle_field_info_alter(&$fields, EntityTypeInterface $entity_type, $bundle) {
   $config = \Drupal::config('islandora_rdm_file_transmission_fixity.settings');
   $expected_fixity_field = $config->get('expected_fixity_field') ? $config->get('expected_fixity_field') : 'field_expected_checksum';
-
   if (isset($fields[$expected_fixity_field])) {
-    // Use the ID as defined in the annotation of the constraint definition
     $fields[$expected_fixity_field]->addConstraint('ValidSha1', []);
   }
 }
