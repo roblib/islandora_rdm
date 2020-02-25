@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_expected_checksum
+    - media.type.rdm_image
+id: media.rdm_image.field_expected_checksum
+field_name: field_expected_checksum
+entity_type: media
+bundle: rdm_image
+label: 'Expected Checksum'
+description: 'Enter SHA1 checksum to verify transmission fixity '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

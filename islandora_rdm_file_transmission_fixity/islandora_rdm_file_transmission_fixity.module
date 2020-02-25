@@ -34,11 +34,14 @@ function islandora_rdm_file_transmission_fixity_media_presave(MediaInterface $me
 
   if ($expected_checksum) {
     if ($expected_checksum == $checksum) {
-      \Drupal::messenger()->addMessage('File checksum verified.');
+      $message = t('File checksum verified.');
+      \Drupal::messenger()->addMessage($message);
     }
     else {
-      \Drupal::messenger()->addWarning('Uploaded file does not match expected checksum');
+      $message = t('Uploaded file does not match expected checksum.');
+      \Drupal::messenger()->addWarning($message);
     }
+    $media->set($actual_fixity_field, "$checksum\n\n$message");
   }
 }
 
