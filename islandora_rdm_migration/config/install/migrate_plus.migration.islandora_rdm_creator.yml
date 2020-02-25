@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_7x_claw
+      - migrate_plus
+      - islandora
+id: islandora_rdm_creator
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: islandora_7x
+label: 'Islandora RDM Creator'
+source:
+  plugin: islandora
+  solr_base_url: 'http://data.upei.ca:8080/solr'
+  q: 'fedora_datastreams_ms:DDI AND PID:researchdata\:*'
+  row_type: DDI
+  fedora_base_url: 'http://10.0.2.2:8080/fedora'
+  data_fetcher_plugin: http
+  authentication:
+    plugin: basic
+    username: fedoraAdmin
+    password: %%%%%%%%%%
+  data_parser_plugin: authenticated_xml
+  item_selector: '/ns1:DDIInstance/s:StudyUnit/r:Citation/r:Creator/r:CreatorName'
+  constants:
+    creator_uid: 1
+  fields:
+    -
+      name: name
+      label: Name
+      selector: 'r:String'
+    - name: pid
+      label: PID
+  ids:
+    PID:
+      type: string
+process:
+  field_rdm_personal_name: name
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: rdm_person
+migration_dependencies:
+  required: { }
+  optional: { }
