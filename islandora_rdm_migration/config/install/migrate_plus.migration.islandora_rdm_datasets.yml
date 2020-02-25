@@ -1,0 +1,104 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_7x_claw
+      - migrate_plus
+      - islandora_rdm
+id: islandora_rdm_datasets
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: islandora_7x
+label: 'Islandora RDM Dataset Objects'
+source:
+  plugin: islandora
+  solr_base_url: 'http://data.upei.ca:8080/solr'
+  q: 'fedora_datastreams_ms:DDI AND PID:researchdata\:*'
+  row_type: solr
+  fedora_base_url: 'http://10.0.2.2:8080/fedora'
+  data_fetcher_plugin: http
+  authentication:
+    plugin: basic
+    username: fedoraAdmin
+    password: %%%%%%%%%
+  data_parser_plugin: json_list 
+  item_selector: '/response/docs'
+  constants:
+    creator_uid: 1
+  fields:
+    -
+      name: PID
+      label: PID
+      selector: 'PID'
+    -
+      name: created
+      label: 'Created Date'
+      selector: 'fgs_createdDate_dt'
+    -
+      name: lastmodified
+      label: 'Last Modified Date'
+      selector: 'fgs_lastModifiedDate_dt'
+    -
+      name: title 
+      label: 'Title'
+      selector: 'fgs_label_s'
+    -
+      name: rdm_resource_type
+      label: 'Type of Resource'
+      selector: 'ddiStudyUnit_KindOfData_ms'
+    -
+      name: identifier 
+      label: 'Identifier'
+      selector: 'ddiStudyUnit_Citation_InternationalIdentifier_IdentifierContent_ms'
+    -
+      name: member_of
+      label: 'Member Of'
+      selector: 'RELS_EXT_isMemberOfCollection_uri_ms'
+  ids:
+    PID:
+      type: string
+process:
+  title: title
+  field_islandora_rdm_identifier: identifier
+  uid: constants/creator_uid
+  field_rdm_migration_source_pid: PID
+  created:
+    plugin: format_date
+    from_format: 'Y-m-d\TH:i:s.u\Z'
+    to_format: U
+    source: created
+    settings:
+      validate_format: false
+  updated:
+    plugin: format_date
+    from_format: 'Y-m-d\TH:i:s.u\Z'
+    to_format: U
+    source: lastmodified
+    settings:
+      validate_format: false
+  field_rdm_resource_type:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: rdm_resource_type
+  pseudo_creator_name_paragraph:
+    plugin: migration_lookup
+    migration: islandora_rdm_creator
+    source: PID
+  field_rdm_creator:
+    plugin: sub_process
+    source:
+      - '@pseudo_creator_name_paragraph'
+    process:
+      target_id: '0'
+      target_revision_id: '1'
+destination:
+  plugin: 'entity:node'
+  default_bundle: 'islandora_rdm_dataset'
+migration_dependencies:
+  required:
+    - migrate_plus.migration.islandora_rdm_creator
+  optional: { }
