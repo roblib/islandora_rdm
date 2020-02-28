@@ -56,7 +56,7 @@ function islandora_rdm_file_transmission_fixity_media_presave(MediaInterface $me
   $config = \Drupal::config('islandora_rdm_file_transmission_fixity . settings');
   $expected_fixity_field = $config->get('expected_fixity_field') ? $config->get('expected_fixity_field') : 'field_expected_checksum';
   $actual_fixity_field = $config->get('actual_fixity_field') ? $config->get('actual_fixity_field') : 'field_actual_checksum';
-  $media_source_service = \Drupal::service('islandora . media_source_service');
+  $media_source_service = \Drupal::service('islandora.media_source_service');
   $source_field = $media_source_service->getSourceFieldName($media->bundle());
   if (empty($source_field)) {
     return;
