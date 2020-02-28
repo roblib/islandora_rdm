@@ -18,12 +18,12 @@ source:
   solr_base_url: 'http://data.upei.ca:8080/solr'
   q: 'fedora_datastreams_ms:DDI AND PID:researchdata\:*'
   row_type: solr
-  fedora_base_url: 'http://10.0.2.2:8080/fedora'
+  fedora_base_url: 'http://data.upei.ca:8080/fedora'
   data_fetcher_plugin: http
   authentication:
     plugin: basic
     username: fedoraAdmin
-    password: %%%%%%%%%
+    password: fedoraAdmin
   data_parser_plugin: json_list 
   item_selector: '/response/docs'
   constants:
@@ -84,17 +84,17 @@ process:
       plugin: skip_on_empty
       method: process
       source: rdm_resource_type
-  pseudo_creator_name_paragraph:
-    plugin: migration_lookup
-    migration: islandora_rdm_creator
-    source: PID
   field_rdm_creator:
-    plugin: sub_process
-    source:
-      - '@pseudo_creator_name_paragraph'
-    process:
-      target_id: '0'
-      target_revision_id: '1'
+    - plugin: migration_lookup
+      allow_multiple: true
+      migration:
+        - 'islandora_rdm_creator'
+      source: 'PID'
+      no_stub: true
+    - plugin: sub_process
+      process:
+        target_id: 'id'
+        target_revision_id: 'revision_id'
 destination:
   plugin: 'entity:node'
   default_bundle: 'islandora_rdm_dataset'
