@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_rdm_funding_information
     - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
     - field.field.node.islandora_rdm_dataset.field_rdm_license
+    - field.field.node.islandora_rdm_dataset.field_rdm_migration_source_pid
     - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
     - field.field.node.islandora_rdm_dataset.field_rdm_publisher
     - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
@@ -44,7 +45,7 @@ third_party_settings:
         - field_rights
         - field_rdm_license
       parent_name: group_dataset
-      weight: 21
+      weight: 34
       format_type: tab
       format_settings:
         formatter: open
@@ -61,17 +62,18 @@ third_party_settings:
         - field_rdm_contributors
         - field_rdm_dataset_language
       parent_name: group_dataset
-      weight: 22
+      weight: 35
       format_type: tab
       format_settings:
+        description: ''
+        formatter: closed
         id: group-dataset-more-info
         classes: ''
-        formatter: closed
-        description: 'Extended information'
       label: 'More info'
       region: content
     group_dataset:
       children:
+        - group_islandora_rdm_files
         - group_identification
         - group_more_info
       parent_name: ''
@@ -86,15 +88,30 @@ third_party_settings:
     group_rdm_funding:
       children: {  }
       parent_name: ''
-      weight: 28
-      format_type: tab
+      weight: 3
+      format_type: fieldset
       format_settings:
         formatter: closed
         description: ''
         id: ''
         classes: ''
       label: Funding
-      region: hidden
+      region: content
+    group_islandora_rdm_files:
+      children:
+        - rdm_media_evas_entity_view_3
+      parent_name: group_dataset
+      weight: 32
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: islandora-rdm-files-list-tab
+        description: ''
+        formatter: open
+      label: Files
+_core:
+  default_config_hash: CDejEvsTV7bSJfsBJ6CtJuuZlFcldNGUYpPqVrKJBNI
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -105,18 +122,8 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  display_media_entity_view_2:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  display_media_service_file:
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  display_media_thumbnail:
-    weight: 7
+  display_media_entity_view_3:
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -130,7 +137,7 @@ content:
     third_party_settings: {  }
     region: content
   field_gemini_uri:
-    weight: 4
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -142,18 +149,10 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_model:
-    weight: 9
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_rdm_contributors:
     type: entity_reference_revisions_entity_view
     weight: 15
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: ''
@@ -162,7 +161,7 @@ content:
   field_rdm_creator:
     type: entity_reference_revisions_entity_view
     weight: 14
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: ''
@@ -243,35 +242,47 @@ content:
     type: lcsubject_formatter
     region: content
   islandora_fits_checksum:
-    weight: 10
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   links:
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
-  openseadragon_media_evas_service_file:
-    weight: 8
+  rdm_media_evas_entity_view_3:
+    weight: 33
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   body: true
   display_media_entity_view_1: true
+  display_media_entity_view_2: true
+  display_media_service_file: true
+  display_media_thumbnail: true
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_islandora_rdm_media_list: true
   field_member_of: true
+  field_model: true
   field_rdm_alternate_identifier: true
   field_rdm_funding_information: true
   field_rdm_geograhical_location: true
+  field_rdm_migration_source_pid: true
   field_rdm_related_identifier: true
   field_tags: true
   langcode: true
   openseadragon_media_evas_entity_view_1: true
   openseadragon_media_evas_entity_view_2: true
+  openseadragon_media_evas_service_file: true
   pdfjs_media_evas_entity_view_1: true
   pdfjs_media_evas_entity_view_2: true
   pdfjs_media_evas_service_file: true
+  player_media_evas_entity_view_1: true
+  rdm_media_evas_entity_view_1: true
+  rdm_media_evas_entity_view_2: true
+  rdm_media_evas_service_file: true
+  rdm_media_evas_thumbnail: true
