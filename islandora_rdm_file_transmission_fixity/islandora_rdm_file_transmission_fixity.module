@@ -5,9 +5,49 @@
  * Contains islandora_rdm_file_transmission_fixity.module.
  */
 
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\file\Entity\File;
 use Drupal\media\MediaInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
+
+/**
+ * Implements hook_help().
+ */
+function islandora_rdm_file_transmission_fixity_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the islandora_fits module.
+    case 'help.page.islandora_rdm_file_transmission_fixity':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Islandora RDM File Transmission Fixity ') . '</p>';
+      $output .= '<p>This module allows a user who is uploading a file as a media attachment to enter
+that file\'s sha1 checksum.  The checksum will be tested for validity before the
+upload begins, and will be compared to the checksum of the file once uploaded.
+A message indicating success or failure will be shown on the screen, and persisted
+to the media. </p>';
+
+
+      $output .= '<h3>To use</h3>';
+      $output .= '<p> Two fields will have to be added to each media type for which checksumming is
+    desired - one for the expected checksum, and one to hold the actual checksum of
+the file once received. <br /> The default file fields are <strong>field_expected_checksum</strong> and
+ <strong>field_actual_checksum</strong>. These can be changed in configuration at
+<strong>/admin/config/islandora_file_fixity/settings</strong>. <br />
+
+Before a file is uploaded the user will have to determine the sha1 of the existing
+file . On a Macbook this means typing <strong>shasum /path/to/file</strong> from a terminal window,
+on as Windows machine it\'s <strong>CertUtil -hashfile path/to/file SHA1 </strong><br />
+
+I recommend the <a href = "https://www.drupal.org/project/readonly_field_widget">Read only File Widget</a>
+to display <strong>field_actual-checksum</strong> but it\'s not necessary.
+</p>';
+
+
+      return $output;
+
+    default:
+  }
+}
 
 /**
  * Implements hook_media_presave().
@@ -34,11 +74,11 @@ function islandora_rdm_file_transmission_fixity_media_presave(MediaInterface $me
 
   if ($expected_checksum) {
     if ($expected_checksum == $checksum) {
-      $message = t('File checksum verified.');
+      $message = t('File checksum verified . ');
       \Drupal::messenger()->addMessage($message);
     }
     else {
-      $message = t('Uploaded file does not match expected checksum.');
+      $message = t('Uploaded file does not match expected checksum . ');
       \Drupal::messenger()->addWarning($message);
     }
     $media->set($actual_fixity_field, "$checksum\n\n$message");
@@ -49,7 +89,7 @@ function islandora_rdm_file_transmission_fixity_media_presave(MediaInterface $me
  * Implements hook_entity_bundle_field_info_alter().
  */
 function islandora_rdm_file_transmission_fixity_entity_bundle_field_info_alter(&$fields, EntityTypeInterface $entity_type, $bundle) {
-  $config = \Drupal::config('islandora_rdm_file_transmission_fixity.settings');
+  $config = \Drupal::config('islandora_rdm_file_transmission_fixity . settings');
   $expected_fixity_field = $config->get('expected_fixity_field') ? $config->get('expected_fixity_field') : 'field_expected_checksum';
   if (isset($fields[$expected_fixity_field])) {
     $fields[$expected_fixity_field]->addConstraint('ValidSha1', []);
