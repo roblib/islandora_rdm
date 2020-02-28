@@ -53,7 +53,7 @@ to display <strong>field_actual-checksum</strong> but it\'s not necessary.
  * Implements hook_media_presave().
  */
 function islandora_rdm_file_transmission_fixity_media_presave(MediaInterface $media) {
-  $config = \Drupal::config('islandora_rdm_file_transmission_fixity . settings');
+  $config = \Drupal::config('islandora_rdm_file_transmission_fixity.settings');
   $expected_fixity_field = $config->get('expected_fixity_field') ? $config->get('expected_fixity_field') : 'field_expected_checksum';
   $actual_fixity_field = $config->get('actual_fixity_field') ? $config->get('actual_fixity_field') : 'field_actual_checksum';
   $media_source_service = \Drupal::service('islandora.media_source_service');
