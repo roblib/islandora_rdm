@@ -23,7 +23,7 @@ source:
   authentication:
     plugin: basic
     username: fedoraAdmin
-    password: fedoraAdmin
+    password: 11r3@ll0bst3r12
   data_parser_plugin: json_list 
   item_selector: '/response/docs'
   constants:
@@ -57,6 +57,10 @@ source:
       name: member_of
       label: 'Member Of'
       selector: 'RELS_EXT_isMemberOfCollection_uri_ms'
+    -
+      name: publisher
+      label: 'Publisher Name'
+      selector: 'ddiStudyUnit_Citation_Publisher_PublisherName_String_ms'
   ids:
     PID:
       type: string
@@ -65,6 +69,7 @@ process:
   field_islandora_rdm_identifier: identifier
   uid: constants/creator_uid
   field_rdm_migration_source_pid: PID
+  field_rdm_publisher: publisher
   created:
     plugin: format_date
     from_format: 'Y-m-d\TH:i:s.u\Z'
@@ -85,10 +90,23 @@ process:
       method: process
       source: rdm_resource_type
   field_rdm_creator:
-    - plugin: migration_lookup
+    -
+      plugin: migration_lookup
       allow_multiple: true
       migration:
         - 'islandora_rdm_creator'
+      source: 'PID'
+      no_stub: true
+    -
+      plugin: sub_process
+      process:
+        target_id: 'id'
+        target_revision_id: 'revision_id'
+  field_rdm_description:
+    - plugin: migration_lookup
+      allow_multiple: true
+      migration:
+        - 'islandora_rdm_abstract'
       source: 'PID'
       no_stub: true
     - plugin: sub_process
@@ -100,5 +118,6 @@ destination:
   default_bundle: 'islandora_rdm_dataset'
 migration_dependencies:
   required:
+    - migrate_plus.migration.islandora_rdm_abstract
     - migrate_plus.migration.islandora_rdm_creator
   optional: { }
