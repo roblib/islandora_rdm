@@ -57,6 +57,10 @@ source:
       name: member_of
       label: 'Member Of'
       selector: 'RELS_EXT_isMemberOfCollection_uri_ms'
+    -
+      name: subject
+      label: 'Subject'
+      selector: 'ddiStudyUnit_Coverage_TopicalCoverage_Subject_ms'
   ids:
     PID:
       type: string
@@ -85,20 +89,64 @@ process:
       method: process
       source: rdm_resource_type
   field_rdm_creator:
-    - plugin: migration_lookup
+    -
+      plugin: migration_lookup
       allow_multiple: true
       migration:
         - 'islandora_rdm_creator'
+      source: 'PID'
+      no_stub: true
+    -
+      plugin: sub_process
+      process:
+        target_id: 'id'
+        target_revision_id: 'revision_id'
+  field_rdm_description:
+    - plugin: migration_lookup
+      allow_multiple: true
+      migration:
+        - 'islandora_rdm_abstract'
       source: 'PID'
       no_stub: true
     - plugin: sub_process
       process:
         target_id: 'id'
         target_revision_id: 'revision_id'
+  field_rdm_publisher:
+    - plugin: migration_lookup
+      allow_multiple: true
+      migration:
+        - 'islandora_rdm_publisher'
+      source: 'PID'
+      no_stub: true
+    - plugin: sub_process
+      process:
+        target_id: 'id'
+        target_revision_id: 'revision_id'
+  field_subjects:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: subject
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: deepen
+    -
+      plugin: sub_process
+      process:
+        value: 'value'
+        url:
+          -
+            plugin: default_value
+            default_value: ''
 destination:
   plugin: 'entity:node'
   default_bundle: 'islandora_rdm_dataset'
 migration_dependencies:
   required:
+    - migrate_plus.migration.islandora_rdm_abstract
     - migrate_plus.migration.islandora_rdm_creator
+    - migrate_plus.migration.islandora_rdm_publisher
   optional: { }
