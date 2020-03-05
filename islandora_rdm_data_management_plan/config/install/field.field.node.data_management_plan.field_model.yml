@@ -5,6 +5,8 @@ dependencies:
     - field.storage.node.field_model
     - node.type.data_management_plan
     - taxonomy.vocabulary.islandora_models
+  content:
+    - 'taxonomy_term:islandora_models:1a47e647-4e1c-47df-b267-c53f7682afcf'
 id: node.data_management_plan.field_model
 field_name: field_model
 entity_type: node
@@ -13,7 +15,9 @@ label: Model
 description: ''
 required: false
 translatable: true
-default_value: {  }
+default_value:
+  -
+    target_uuid: 1a47e647-4e1c-47df-b267-c53f7682afcf
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

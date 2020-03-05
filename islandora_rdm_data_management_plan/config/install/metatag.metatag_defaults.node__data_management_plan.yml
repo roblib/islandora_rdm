@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: node__data_management_plan
+label: 'Content: Data Management Plan'
+tags:
+  dcterms_title: '[node:title] '

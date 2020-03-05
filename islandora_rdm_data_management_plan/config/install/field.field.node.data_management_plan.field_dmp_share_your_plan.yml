@@ -10,7 +10,7 @@ id: node.data_management_plan.field_dmp_share_your_plan
 field_name: field_dmp_share_your_plan
 entity_type: node
 bundle: data_management_plan
-label: 'Share your plan'
+label: 'Add Collaborators'
 description: ''
 required: false
 translatable: false
@@ -19,6 +19,6 @@ default_value:
 default_value_callback: ''
 settings:
   markup:
-    value: "<h2>Set plan visibility</h2>\r\n\r\n<p>This is where we will surface permissions for the plan using flexiaccess module.</p>\r\n"
+    value: "<h2>Sharing your plan with collaborators</h2>\r\n\r\n<p><span style=\"font-size: 15px;\">You can share your data management plan with other researchers registered in the system once it has been saved.&nbsp; There are two ways you can share your plan:</span></p>\r\n\r\n<ol>\r\n\t<li><span style=\"font-size: 15px;\">You can provide other researchers with edit access (read and write)&nbsp;to the plan by assigning them as an Editor.</span></li>\r\n\t<li><span style=\"font-size: 15px;\">You can provide other researchers with review access (read only) to the plan by assigning them as a Reviewer.</span></li>\r\n</ol>\r\n\r\n<p><span style=\"font-size: 15px;\">To add collaborators, 1. select Workflow Participants from the menu.</span></p>\r\n\r\n<p><span style=\"font-size: 15px;\"><img alt=\"Select Workflow Participants to add editors or reviewers to your data management plan.\" data-entity-type=\"file\" data-entity-uuid=\"220e0823-1e27-4ec2-b2e6-fb3639353b50\" height=\"190\" src=\"/sites/default/files/inline-images/workflow-participants1.png\" width=\"322\" /></span></p>\r\n\r\n<p>2. Add an Editor or Reviewer to your DMP by searching for their username (in this example we are adding a Reviewer).</p>\r\n\r\n<p>3. If you want to add more than one Editor or Reviewer select the Add user button.</p>\r\n\r\n<p>4. Select Save.</p>\r\n\r\n<p><img alt=\"Search for a username, and add an editor or reviewer.\" data-entity-type=\"file\" data-entity-uuid=\"3a482c08-80ec-4403-bd8e-b12e47053c2e\" height=\"247\" src=\"/sites/default/files/inline-images/workflow-participants2.png\" width=\"498\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n"
     format: full_html
 field_type: markup

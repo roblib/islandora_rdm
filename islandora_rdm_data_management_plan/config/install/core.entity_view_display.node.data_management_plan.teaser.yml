@@ -5,7 +5,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.data_management_plan.field_dmp_contributor
     - field.field.node.data_management_plan.field_dmp_creator
-    - field.field.node.data_management_plan.field_dmp_download
     - field.field.node.data_management_plan.field_dmp_funder_name
     - field.field.node.data_management_plan.field_dmp_plan_generic
     - field.field.node.data_management_plan.field_dmp_projectdesc
@@ -23,6 +22,8 @@ dependencies:
     - field.field.node.data_management_plan.field_dmp_question_7_1
     - field.field.node.data_management_plan.field_dmp_question_7_2
     - field.field.node.data_management_plan.field_dmp_share_your_plan
+    - field.field.node.data_management_plan.field_member_of
+    - field.field.node.data_management_plan.field_model
     - field.field.node.data_management_plan.field_rdm_award_number
     - node.type.data_management_plan
   module:
@@ -32,12 +33,22 @@ targetEntityType: node
 bundle: data_management_plan
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   display_media_entity_view_1:
     weight: 10
     settings: {  }
     third_party_settings: {  }
     region: content
   display_media_entity_view_2:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  display_media_entity_view_3:
     weight: 10
     settings: {  }
     third_party_settings: {  }
@@ -49,6 +60,11 @@ content:
     region: content
   display_media_thumbnail:
     weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  islandora_fits_checksum:
+    weight: 100
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -87,13 +103,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  player_media_evas_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_dmp_contributor: true
   field_dmp_creator: true
-  field_dmp_download: true
   field_dmp_funder_name: true
   field_dmp_plan_generic: true
   field_dmp_projectdesc: true
@@ -111,5 +131,7 @@ hidden:
   field_dmp_question_7_1: true
   field_dmp_question_7_2: true
   field_dmp_share_your_plan: true
+  field_member_of: true
+  field_model: true
   field_rdm_award_number: true
   langcode: true
