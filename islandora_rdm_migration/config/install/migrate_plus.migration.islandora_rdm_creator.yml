@@ -23,7 +23,7 @@ source:
   authentication:
     plugin: basic
     username: fedoraAdmin
-    password: 11r3@ll0bst3r12
+    password: fedoraAdmin
   data_parser_plugin: authenticated_xml
   item_selector: '/ns1:DDIInstance/s:StudyUnit/r:Citation/r:Creator/r:CreatorName/r:String'
   constants:
