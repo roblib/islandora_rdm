@@ -11,20 +11,24 @@ dependencies:
   - field_group
   - field_permissions
   - file
+  - image
   - islandora_core_feature
-  - islandora_rdm_defaults
+  - islandora_defaults
   - islandora_rdm_types
   - language
   - lc_subject_field
   - markup
   - menu_ui
+  - metatag
   - node
   - paragraphs
   - path
   - pdf
   - rest
   - serialization
+  - system
   - text
   - user
   - views
 package: 'Islandora RDM'
+core_incompatible: false
