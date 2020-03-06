@@ -23,7 +23,6 @@ settings:
       data_management_plan: data_management_plan
       funding_information: funding_information
       islandora_rdm_dataset: islandora_rdm_dataset
-      islandora_object: islandora_object
     sort:
       field: _none
     auto_create: false
