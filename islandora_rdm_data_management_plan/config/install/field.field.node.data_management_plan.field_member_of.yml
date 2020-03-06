@@ -5,7 +5,6 @@ dependencies:
     - field.storage.node.field_member_of
     - node.type.data_management_plan
     - node.type.funding_information
-    - node.type.islandora_object
     - node.type.islandora_rdm_dataset
 id: node.data_management_plan.field_member_of
 field_name: field_member_of

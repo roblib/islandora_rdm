@@ -5,6 +5,7 @@ dependencies:
     - core.entity_view_mode.node.pdf
     - field.field.node.data_management_plan.field_dmp_contributor
     - field.field.node.data_management_plan.field_dmp_creator
+    - field.field.node.data_management_plan.field_dmp_download
     - field.field.node.data_management_plan.field_dmp_funder_name
     - field.field.node.data_management_plan.field_dmp_plan_generic
     - field.field.node.data_management_plan.field_dmp_projectdesc
@@ -27,7 +28,9 @@ dependencies:
     - field.field.node.data_management_plan.field_rdm_award_number
     - node.type.data_management_plan
   module:
+    - entity_reference_revisions
     - lc_subject_field
+    - paragraphs
     - text
     - user
 id: node.data_management_plan.pdf
@@ -35,198 +38,166 @@ targetEntityType: node
 bundle: data_management_plan
 mode: pdf
 content:
-  content_moderation_control:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  display_media_entity_view_1:
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  display_media_entity_view_2:
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   display_media_entity_view_3:
     weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
-  display_media_service_file:
-    weight: 6
+  field_dmp_contributor:
+    type: entity_reference_revisions_entity_view
+    weight: 1
     region: content
-    settings: {  }
+    label: above
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-  display_media_thumbnail:
-    weight: 5
+  field_dmp_creator:
+    type: paragraph_summary
+    weight: 0
     region: content
+    label: above
     settings: {  }
     third_party_settings: {  }
   field_dmp_funder_name:
-    weight: 15
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: funder_formatter
     region: content
   field_dmp_projectdesc:
-    weight: 14
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_dmp_question_1_1:
-    weight: 19
+    weight: 7
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_1_2:
-    weight: 17
+    weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_2_1:
-    weight: 18
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_3_1:
-    weight: 20
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_3_2:
-    weight: 21
+    weight: 9
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_4_1:
-    weight: 22
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_4_2:
-    weight: 23
+    weight: 11
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_5_1:
-    weight: 24
+    weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_5_2:
-    weight: 25
+    weight: 13
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_6_1:
-    weight: 26
+    weight: 14
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_6_2:
-    weight: 27
+    weight: 15
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_7_1:
-    weight: 28
+    weight: 16
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_dmp_question_7_2:
-    weight: 29
+    weight: 17
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_rdm_award_number:
-    weight: 16
+    weight: 4
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  links:
-    weight: 13
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  openseadragon_media_evas_entity_view_1:
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  openseadragon_media_evas_entity_view_2:
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  openseadragon_media_evas_service_file:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  pdfjs_media_evas_entity_view_1:
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  pdfjs_media_evas_entity_view_2:
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  pdfjs_media_evas_service_file:
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   player_media_evas_entity_view_1:
     weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  content_moderation_control: true
+  display_media_dataset_file_list: true
+  display_media_entity_view_1: true
+  display_media_entity_view_2: true
+  display_media_service_file: true
+  display_media_thumbnail: true
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
-  field_dmp_contributor: true
-  field_dmp_creator: true
+  field_dmp_download: true
   field_dmp_plan_generic: true
   field_dmp_share_your_plan: true
   field_member_of: true
   field_model: true
   islandora_fits_checksum: true
   langcode: true
+  links: true
+  openseadragon_media_evas_entity_view_1: true
+  openseadragon_media_evas_entity_view_2: true
+  openseadragon_media_evas_service_file: true
+  pdfjs_media_evas_entity_view_1: true
+  pdfjs_media_evas_entity_view_2: true
+  pdfjs_media_evas_service_file: true

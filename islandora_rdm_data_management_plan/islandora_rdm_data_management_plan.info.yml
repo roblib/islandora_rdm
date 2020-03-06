@@ -14,6 +14,7 @@ dependencies:
   - image
   - islandora_core_feature
   - islandora_defaults
+  - islandora_rdm_defaults
   - islandora_rdm_types
   - language
   - lc_subject_field
