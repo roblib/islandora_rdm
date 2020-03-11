@@ -4,10 +4,13 @@
  * @file
  * Module file.
  */
+
 use \Drupal\block\Entity\Block;
 use \Drupal\Core\Session\AccountInterface;
 use \Drupal\Core\Access\AccessResult;
 use \Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+use Drupal\media\Entity\Media;
 
 /**
  * Implements hook_theme().
@@ -35,7 +38,7 @@ function islandora_rdm_search_result_preprocess(&$variables) {
     $type = $description->get('field_rdm_description_type')->getString();
 
     $abs_description = $description->get('field_rdm_description')->getString();
-    if ($type == 'Abstract'&& trim($abs_description) != "") {
+    if ($type == 'Abstract' && trim($abs_description) != "") {
       $variables['rdm_abstract'] = "Abstract: " . $abs_description;
     }
   }
@@ -55,7 +58,7 @@ function islandora_rdm_preprocess_media__islandora_rdm_interview__teaser(&$varia
   $caption_field = $media->get('field_interview_vtt_file')->entity;
   if (!empty($caption_field)) {
     $captions_item = file_create_url($caption_field->getFileUri());
-  
+
     $captions[] = [
       'src' => $captions_item,
       'kind' => 'captions',
@@ -64,15 +67,15 @@ function islandora_rdm_preprocess_media__islandora_rdm_interview__teaser(&$varia
     ];
   }
 
-  $variables['interview'] = array(
+  $variables['interview'] = [
     '#theme' => 'videojs',
     '#items' => $items,
     '#captions' => $captions,
-    '#player_attributes' => ['controls' => TRUE, 'width' => 500, 'height' => 400, 'poster' => base_path() . "core/themes/classy/images/icons/audio-x-generic.png"], 
-    '#attached' => array(
-      'library' => array('videojs/videojs'),
-    ),
-  );
+    '#player_attributes' => ['controls' => TRUE, 'width' => 500, 'height' => 400, 'poster' => base_path() . "core/themes/classy/images/icons/audio-x-generic.png"],
+    '#attached' => [
+      'library' => ['videojs/videojs'],
+    ],
+  ];
 }
 
 /**
@@ -82,10 +85,23 @@ function islandora_rdm_preprocess_media__islandora_rdm_interview__teaser(&$varia
  * @return \Drupal\Core\Access\AccessResultForbidden
  */
 function islandora_rdm_block_access(Block $block, $operation, AccountInterface $account) {
-  if ($operation == 'view' && $block->getPluginId() == 'views_exposed_filter_block:solr_search_content-page_1'){
+  if ($operation == 'view' && $block->getPluginId() == 'views_exposed_filter_block:solr_search_content-page_1') {
     $view = \Drupal::service('entity.manager')->getStorage('view')->load('solr_search_content');
-    if (!$view->status()){
+    if (!$view->status()) {
       return AccessResult::forbidden();
+    }
+  }
+}
+
+/**
+ * Implements hook_node_delete().
+ */
+function islandora_rdm_node_delete(NodeInterface $node) {
+  if ($node->bundle() == 'islandora_rdm_dataset') {
+    $utils = \Drupal::service('islandora.utils');
+    $media = $utils->getMedia($node);
+    foreach ($media as $victim) {
+      $victim->delete();
     }
   }
 }
