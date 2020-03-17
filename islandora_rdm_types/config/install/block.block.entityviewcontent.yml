@@ -4,10 +4,11 @@ dependencies:
   module:
     - ctools
     - node
+    - system
   theme:
     - carapace
 _core:
-  default_config_hash: GR81onoV3mPMN_EnZi8G0VheKK5K5ANTlgEaiWf2GXw
+  default_config_hash: koSgLdPk0E3A4khgVd8SF-w3TogN-utS0HMg1OzKE_k
 id: entityviewcontent
 theme: carapace
 region: sidebar_second
@@ -30,3 +31,8 @@ visibility:
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: "/node/*/edit\r\n/node/add/*"
+    negate: true
+    context_mapping: {  }
