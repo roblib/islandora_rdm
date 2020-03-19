@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.media.rdm_video.field_actual_checksum
-    - field.field.media.rdm_video.field_bite_count
+    - field.field.media.rdm_video.field_byte_count
     - field.field.media.rdm_video.field_expected_checksum
     - field.field.media.rdm_video.field_file_size
     - field.field.media.rdm_video.field_fits_file
@@ -58,7 +58,7 @@ content:
     third_party_settings: {  }
     type: readonly_field_widget
     region: content
-  field_bite_count:
+  field_byte_count:
     weight: 14
     settings:
       size: 60

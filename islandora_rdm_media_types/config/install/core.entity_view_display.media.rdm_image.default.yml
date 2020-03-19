@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.media.rdm_image.field_actual_checksum
-    - field.field.media.rdm_image.field_bite_count
+    - field.field.media.rdm_image.field_byte_count
     - field.field.media.rdm_image.field_editable_text
     - field.field.media.rdm_image.field_expected_checksum
     - field.field.media.rdm_image.field_extracted_text_file
@@ -49,7 +49,7 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_bite_count:
+  field_byte_count:
     weight: 16
     label: above
     settings:

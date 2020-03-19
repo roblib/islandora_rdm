@@ -2,13 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_bite_count
+    - field.storage.media.field_byte_count
     - media.type.rdm_tabular_data
-id: media.rdm_tabular_data.field_bite_count
-field_name: field_bite_count
+id: media.rdm_tabular_data.field_byte_count
+field_name: field_byte_count
 entity_type: media
 bundle: rdm_tabular_data
-label: 'Bite Count'
+label: 'Byte Count'
 description: ''
 required: false
 translatable: false
