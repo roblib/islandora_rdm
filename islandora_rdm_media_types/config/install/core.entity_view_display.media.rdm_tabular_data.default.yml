@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.media.rdm_tabular_data.field_actual_checksum
-    - field.field.media.rdm_tabular_data.field_bite_count
+    - field.field.media.rdm_tabular_data.field_byte_count
     - field.field.media.rdm_tabular_data.field_expected_checksum
     - field.field.media.rdm_tabular_data.field_file_size
     - field.field.media.rdm_tabular_data.field_fits_file
@@ -41,7 +41,7 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_bite_count:
+  field_byte_count:
     weight: 12
     label: above
     settings:
