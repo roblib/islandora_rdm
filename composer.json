@@ -23,7 +23,7 @@
         "drupal/lc_subject_field": "1.x-dev",
         "drupal/schema_metatag": "*",
 	"drupal/schema_dataset": "*",
-        "islandora/controlled_access_terms": "*",
+        "islandora/controlled_access_terms": "dev-8.x-1.x",
         "drupal/field_permissions": "*",
 	"drupal/entity_reference_revisions": "^1.6",
 	"drupal/media_attribution": "*",
