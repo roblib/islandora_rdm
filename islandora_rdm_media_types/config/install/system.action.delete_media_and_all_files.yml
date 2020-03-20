@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - islandora_rdm_multifile_media
+  module:
+    - islandora_rdm_multifile_media
+id: delete_media_and_all_files
+label: 'Delete media and all associated file(s)'
+type: media
+plugin: delete_media_and_all_files
+configuration: {  }

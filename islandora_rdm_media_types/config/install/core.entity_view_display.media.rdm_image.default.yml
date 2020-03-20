@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.rdm_image.field_access_terms
     - field.field.media.rdm_image.field_actual_checksum
     - field.field.media.rdm_image.field_byte_count
     - field.field.media.rdm_image.field_editable_text
@@ -11,6 +12,7 @@ dependencies:
     - field.field.media.rdm_image.field_fits_file
     - field.field.media.rdm_image.field_height
     - field.field.media.rdm_image.field_media_image
+    - field.field.media.rdm_image.field_media_image_1
     - field.field.media.rdm_image.field_media_of
     - field.field.media.rdm_image.field_media_use
     - field.field.media.rdm_image.field_mime_type
@@ -18,103 +20,17 @@ dependencies:
     - field.field.media.rdm_image.field_service_file
     - field.field.media.rdm_image.field_thumbnail_file
     - field.field.media.rdm_image.field_width
-    - image.style.thumbnail
+    - image.style.large
     - media.type.rdm_image
   module:
     - file
     - image
-    - islandora_fits
-    - islandora_rdm
-    - user
 id: media.rdm_image.default
 targetEntityType: media
 bundle: rdm_image
 mode: default
 content:
-  created:
-    label: hidden
-    type: timestamp
-    weight: 1
-    region: content
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
-  field_actual_checksum:
-    weight: 18
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_byte_count:
-    weight: 16
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_editable_text:
-    weight: 14
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: texttohtml
-    region: content
-  field_expected_checksum:
-    weight: 17
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_extracted_text_file:
-    weight: 13
-    label: above
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
-    region: content
-  field_file_size:
-    weight: 9
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_fits_file:
-    weight: 7
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: fits_formatter
-    region: content
-  field_height:
-    weight: 11
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_media_image:
-    weight: 3
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_media_of:
+  field_access_terms:
     weight: 5
     label: above
     settings:
@@ -122,8 +38,50 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_media_use:
+  field_byte_count:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_extracted_text_file:
     weight: 6
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_fits_file:
+    weight: 3
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_height:
+    weight: 7
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_media_image_1:
+    label: visually_hidden
+    weight: 0
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_media_of:
+    weight: 4
     label: above
     settings:
       link: true
@@ -131,23 +89,15 @@ content:
     type: entity_reference_label
     region: content
   field_mime_type:
-    weight: 10
+    weight: 2
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  field_preservation_master_file:
-    weight: 15
-    label: above
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
-    region: content
   field_service_file:
-    weight: 4
+    weight: 10
     label: above
     settings:
       use_description_as_link_text: true
@@ -163,7 +113,7 @@ content:
     type: file_default
     region: content
   field_width:
-    weight: 12
+    weight: 9
     label: above
     settings:
       thousand_separator: ''
@@ -171,25 +121,20 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
-  thumbnail:
-    type: image
-    weight: 2
-    label: hidden
-    settings:
-      image_style: thumbnail
-      image_link: ''
-    region: content
-    third_party_settings: {  }
-  uid:
-    label: hidden
-    type: author
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  created: true
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_actual_checksum: true
+  field_editable_text: true
+  field_expected_checksum: true
+  field_file_size: true
+  field_media_image: true
+  field_media_use: true
+  field_preservation_master_file: true
   langcode: true
   name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

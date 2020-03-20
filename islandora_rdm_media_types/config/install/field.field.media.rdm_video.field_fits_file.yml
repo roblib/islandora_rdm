@@ -10,7 +10,7 @@ id: media.rdm_video.field_fits_file
 field_name: field_fits_file
 entity_type: media
 bundle: rdm_video
-label: 'Fits File'
+label: 'FITS file'
 description: ''
 required: false
 translatable: true

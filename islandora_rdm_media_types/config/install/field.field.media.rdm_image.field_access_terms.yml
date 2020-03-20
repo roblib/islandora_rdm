@@ -2,26 +2,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_media_use
-    - media.type.rdm_file
-    - taxonomy.vocabulary.islandora_media_use
-id: media.rdm_file.field_media_use
-field_name: field_media_use
+    - field.storage.media.field_access_terms
+    - media.type.rdm_image
+    - taxonomy.vocabulary.islandora_access
+id: media.rdm_image.field_access_terms
+field_name: field_access_terms
 entity_type: media
-bundle: rdm_file
-label: 'Media Use'
+bundle: rdm_image
+label: 'Access terms'
 description: ''
 required: false
 translatable: true
-default_value:
-  -
-    target_uuid: 78f370e5-8c31-4ed8-b0f0-12073e6c8ab9
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      islandora_media_use: islandora_media_use
+      islandora_access: islandora_access
     sort:
       field: name
       direction: asc

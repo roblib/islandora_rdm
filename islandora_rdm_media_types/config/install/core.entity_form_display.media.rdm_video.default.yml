@@ -16,27 +16,9 @@ dependencies:
     - field.field.media.rdm_video.field_thumbnail_file
     - media.type.rdm_video
   module:
-    - field_group
     - file
     - path
-    - readonly_field_widget
     - uppy
-third_party_settings:
-  field_group:
-    group_checksum:
-      children:
-        - field_expected_checksum
-        - field_actual_checksum
-      parent_name: ''
-      weight: 15
-      format_type: fieldset
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        required_fields: true
-      label: Checksum
 id: media.rdm_video.default
 targetEntityType: media
 bundle: rdm_video
@@ -44,52 +26,26 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_actual_checksum:
-    weight: 18
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_byte_count:
-    weight: 14
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_expected_checksum:
-    weight: 17
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_file_size:
-    weight: 10
+    weight: 101
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_fits_file:
-    weight: 8
+    weight: 102
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_media_of:
-    weight: 7
+    weight: 104
     settings:
       match_operator: CONTAINS
       size: 60
@@ -99,7 +55,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_media_video_file:
-    weight: 1
+    weight: 0
     settings:
       progress_indicator: throbber
       auto_proceed: false
@@ -110,29 +66,22 @@ content:
     type: uppy_widget
     region: content
   field_mime_type:
-    weight: 11
+    weight: 103
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_preservation_master_file:
-    weight: 13
-    settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
-    type: file_generic
-    region: content
-  field_service_file:
-    weight: 12
-    settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
-    type: file_generic
-    region: content
   field_thumbnail_file:
-    weight: 9
+    weight: 105
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_video_service_file:
+    weight: 106
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -147,7 +96,7 @@ content:
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: 0
+    weight: -5
     region: content
     settings:
       size: 60
@@ -155,7 +104,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -163,12 +112,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 100
     region: content
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -177,4 +126,9 @@ content:
     region: content
     third_party_settings: {  }
 hidden:
+  field_actual_checksum: true
+  field_byte_count: true
+  field_expected_checksum: true
   field_media_use: true
+  field_preservation_master_file: true
+  field_service_file: true

@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+name: delete_delete_all_files_from_media
+label: 'Delete Delete All Files from Media'
+group: Islandora
+description: 'On media deletion all associated files will be purged'
+requireAllConditions: false
+disabled: false
+conditions:
+  entity_bundle:
+    id: entity_bundle
+    bundles:
+      rdm_audio: rdm_audio
+      rdm_file: rdm_file
+      rdm_image: rdm_image
+      rdm_tabular_data: rdm_tabular_data
+      rdm_video: rdm_video
+    negate: 0
+    uuid: 3136de81-d5a3-4ec6-a9c0-9c7f7361a291
+    context_mapping:
+      media: '@islandora.media_route_context_provider:media'
+reactions:
+  delete:
+    id: delete
+    actions:
+      delete_media_and_all_files: delete_media_and_all_files
+    saved: false
+weight: 0

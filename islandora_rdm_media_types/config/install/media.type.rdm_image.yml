@@ -1,17 +1,15 @@
 langcode: en
-status: false
+status: true
 dependencies: {  }
 id: rdm_image
 label: 'RDM Image'
-description: 'RDM Image Type'
+description: 'Image Media type with RDM enhancements'
 source: image
 queue_thumbnail_downloads: false
-new_revision: true
+new_revision: false
 source_configuration:
-  source_field: field_media_image
+  source_field: field_media_image_1
 field_map:
-  name: name
   mimetype: field_mime_type
   filesize: field_byte_count
-  width: field_width
   height: field_height

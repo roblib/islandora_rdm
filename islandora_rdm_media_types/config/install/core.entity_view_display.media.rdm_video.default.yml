@@ -19,7 +19,6 @@ dependencies:
   module:
     - file
     - image
-    - islandora_fits
     - user
 id: media.rdm_video.default
 targetEntityType: media
@@ -29,39 +28,15 @@ content:
   created:
     label: hidden
     type: timestamp
-    weight: 3
+    weight: 0
     region: content
     settings:
       date_format: medium
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
-  field_actual_checksum:
-    weight: 13
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_byte_count:
-    weight: 12
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_expected_checksum:
-    weight: 14
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_file_size:
-    weight: 9
+    weight: 7
     label: above
     settings:
       thousand_separator: ''
@@ -70,22 +45,15 @@ content:
     type: number_integer
     region: content
   field_fits_file:
-    weight: 7
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: fits_formatter
-    region: content
-  field_media_of:
-    weight: 5
+    weight: 8
     label: above
     settings:
-      link: true
+      use_description_as_link_text: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: file_default
     region: content
-  field_media_use:
-    weight: 6
+  field_media_of:
+    weight: 10
     label: above
     settings:
       link: true
@@ -93,31 +61,8 @@ content:
     type: entity_reference_label
     region: content
   field_media_video_file:
-    type: file_default
-    weight: 1
-    label: above
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    region: content
-  field_mime_type:
-    weight: 10
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_preservation_master_file:
-    weight: 11
-    label: above
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
-    region: content
-  field_service_file:
-    weight: 0
+    type: file_video
+    weight: 6
     label: above
     settings:
       muted: false
@@ -128,10 +73,25 @@ content:
       loop: false
       multiple_file_display_type: tags
     third_party_settings: {  }
-    type: file_video
+    region: content
+  field_mime_type:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_thumbnail_file:
-    weight: 8
+    weight: 11
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_video_service_file:
+    weight: 12
     label: above
     settings:
       use_description_as_link_text: true
@@ -140,7 +100,7 @@ content:
     region: content
   thumbnail:
     type: image
-    weight: 4
+    weight: 5
     label: hidden
     settings:
       image_style: thumbnail
@@ -150,7 +110,7 @@ content:
   uid:
     label: hidden
     type: author
-    weight: 2
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -158,5 +118,12 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_actual_checksum: true
+  field_byte_count: true
+  field_expected_checksum: true
+  field_media_use: true
+  field_preservation_master_file: true
+  field_service_file: true
   langcode: true
   name: true
+  search_api_excerpt: true
