@@ -20,6 +20,8 @@ dependencies:
     - file
     - image
     - islandora_fits
+    - islandora_rdm
+    - pdf
     - user
 id: media.rdm_file.default
 targetEntityType: media
@@ -36,28 +38,36 @@ content:
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
-  field_access_terms:
-    weight: 10
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_creating_application_name:
-    weight: 12
+  field_actual_checksum:
+    weight: 18
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  field_extracted_text:
-    weight: 13
+  field_byte_count:
+    weight: 16
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_editable_text:
+    weight: 17
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    type: texttohtml
+    region: content
+  field_expected_checksum:
+    weight: 19
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_extracted_text_file:
     weight: 14
@@ -68,7 +78,7 @@ content:
     type: file_default
     region: content
   field_file_size:
-    weight: 7
+    weight: 10
     label: above
     settings:
       thousand_separator: ''
@@ -77,28 +87,35 @@ content:
     type: number_integer
     region: content
   field_fits_file:
-    weight: 11
-    label: hidden
+    weight: 9
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: fits_formatter
     region: content
-  field_media_file_1:
+  field_media_file:
     weight: 6
     label: above
-    settings: {  }
+    settings:
+      keep_pdfjs: true
+      width: 100%
+      height: ''
+      page: null
+      zoom: null
+      custom_zoom: null
+      pagemode: null
     third_party_settings: {  }
-    type: csv_preview
+    type: pdf_default
     region: content
-  field_media_model:
-    weight: 15
+  field_media_of:
+    weight: 7
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_media_of:
+  field_media_use:
     weight: 8
     label: above
     settings:
@@ -107,15 +124,15 @@ content:
     type: entity_reference_label
     region: content
   field_mime_type:
-    weight: 9
+    weight: 11
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  field_thumbnail_file:
-    weight: 16
+  field_preservation_master_file:
+    weight: 15
     label: above
     settings:
       use_description_as_link_text: true
@@ -142,13 +159,5 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
-  field_actual_checksum: true
-  field_byte_count: true
-  field_editable_text: true
-  field_expected_checksum: true
-  field_media_file: true
-  field_media_use: true
-  field_preservation_master_file: true
   langcode: true
   name: true
-  search_api_excerpt: true

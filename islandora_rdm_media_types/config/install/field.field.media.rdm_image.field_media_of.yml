@@ -4,8 +4,6 @@ dependencies:
   config:
     - field.storage.media.field_media_of
     - media.type.rdm_image
-    - node.type.data_management_plan
-    - node.type.funding_information
     - node.type.islandora_rdm_dataset
 id: media.rdm_image.field_media_of
 field_name: field_media_of
@@ -21,11 +19,9 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      data_management_plan: data_management_plan
-      funding_information: funding_information
       islandora_rdm_dataset: islandora_rdm_dataset
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: data_management_plan
+    auto_create_bundle: ''
 field_type: entity_reference

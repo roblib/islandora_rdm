@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.rdm_image.field_access_terms
     - field.field.media.rdm_image.field_actual_checksum
     - field.field.media.rdm_image.field_byte_count
     - field.field.media.rdm_image.field_editable_text
@@ -12,7 +11,6 @@ dependencies:
     - field.field.media.rdm_image.field_fits_file
     - field.field.media.rdm_image.field_height
     - field.field.media.rdm_image.field_media_image
-    - field.field.media.rdm_image.field_media_image_1
     - field.field.media.rdm_image.field_media_of
     - field.field.media.rdm_image.field_media_use
     - field.field.media.rdm_image.field_mime_type
@@ -22,9 +20,28 @@ dependencies:
     - field.field.media.rdm_image.field_width
     - media.type.rdm_image
   module:
+    - field_group
     - file
     - path
+    - readonly_field_widget
+    - text
     - uppy
+third_party_settings:
+  field_group:
+    group_checksums:
+      children:
+        - field_expected_checksum
+        - field_actual_checksum
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Checksums
 id: media.rdm_image.default
 targetEntityType: media
 bundle: rdm_image
@@ -32,22 +49,38 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_access_terms:
-    weight: 105
+  field_actual_checksum:
+    weight: 3
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_byte_count:
+    weight: 20
+    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: string_textfield
     region: content
-  field_byte_count:
-    weight: 101
+  field_editable_text:
+    weight: 18
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_expected_checksum:
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -55,28 +88,35 @@ content:
     type: string_textfield
     region: content
   field_extracted_text_file:
-    weight: 106
+    weight: 17
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
+  field_file_size:
+    weight: 12
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   field_fits_file:
-    weight: 103
+    weight: 10
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_height:
-    weight: 107
+    weight: 14
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
-  field_media_image_1:
-    weight: 0
+  field_media_image:
+    weight: 1
     settings:
       progress_indicator: throbber
       auto_proceed: false
@@ -87,39 +127,56 @@ content:
     type: uppy_widget
     region: content
   field_media_of:
-    weight: 104
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_media_use:
+    type: entity_reference_autocomplete
+    weight: 21
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_mime_type:
-    weight: 102
+    weight: 13
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_preservation_master_file:
+    weight: 19
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
   field_service_file:
-    weight: 110
+    weight: 16
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_thumbnail_file:
-    weight: 108
+    weight: 11
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_width:
-    weight: 109
+    weight: 15
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -127,14 +184,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -142,7 +199,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -150,12 +207,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 100
+    weight: 8
     region: content
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
@@ -163,11 +220,4 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-hidden:
-  field_actual_checksum: true
-  field_editable_text: true
-  field_expected_checksum: true
-  field_file_size: true
-  field_media_image: true
-  field_media_use: true
-  field_preservation_master_file: true
+hidden: {  }

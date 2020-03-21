@@ -13,12 +13,12 @@ bundle: rdm_image
 label: 'Thumbnail File'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: txt
+  file_extensions: jpg
   max_filesize: ''
   description_field: false
   handler: 'default:file'
