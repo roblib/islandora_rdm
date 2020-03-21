@@ -106,3 +106,4 @@ hidden:
   field_expected_checksum: true
   langcode: true
   name: true
+  search_api_excerpt: true

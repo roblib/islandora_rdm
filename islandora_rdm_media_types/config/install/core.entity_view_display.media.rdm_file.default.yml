@@ -161,3 +161,4 @@ hidden:
   entity_print_view_word_docx: true
   langcode: true
   name: true
+  search_api_excerpt: true
