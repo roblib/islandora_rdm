@@ -1,7 +1,0 @@
-bundle: islandora_rdm
-excluded:
-  - views.view.rdm_solr_search_content
-  - block.block.exposedformrdm_solr_search_contentpage_1
-  - core.entity_view_display.media.fits_technical_metadata.fits_technical_metadata
-  - field.field.media.fits_technical_metadata.fits_ois_file_information_md5che
-required: true
