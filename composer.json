@@ -49,7 +49,7 @@
         "Recipe step descriptions will explode on comma": "https://www.drupal.org/files/issues/2019-07-15/2976935-use-metatag-delimiter.patch"
       },
       "drupal/tus": {
-        "Adds config for fly system": "https://www.drupal.org/files/issues/2020-03-23/tus-422_error-3079433-16.patch"
+        "Adds config for fly system": "https://www.drupal.org/files/issues/2020-03-23/tus-422_error-3079433-17.patch"
       }
     }
   }
