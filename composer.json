@@ -1,53 +1,56 @@
 {
-    "name": "islandora-rdm/islandora_rdm",
-    "description": "Islandora Research Data Managment Platform",
-    "type": "drupal-module",
-    "homepage": "https://github.com/roblib/islandora_rdm",
-    "authors": [
-        {
-            "name": "Alexander O'Neill (alxp)",
-            "homepage": "https://www.drupal.org/u/alxp",
-            "role": "Maintainer"
-        }
-    ],
-    "license": "GPL-2.0-or-later",
-    "minimum-stability": "dev", 
-    "require": {
-        "drupal/chartjs_api": "*",
-        "drupal/ctools": "*",
-        "drupal/events_logging": "*",
-        "drupal/inline_entity_form": "*", 
-        "drupal/field_permissions": "*",
-        "drupal/field_group": "*",
-        "drupal/languagefield": "*",
-        "drupal/lc_subject_field": "1.x-dev",
-        "drupal/schema_metatag": "*",
-	"drupal/schema_dataset": "*",
-        "islandora/controlled_access_terms": "dev-8.x-1.x",
-        "drupal/field_permissions": "*",
-	"drupal/entity_reference_revisions": "^1.6",
-	"drupal/media_attribution": "*",
-	"drupal/name": "1.x-dev",
-        "drupal/paragraphs": "~1.5",
-        "drupal/facets": "*",
-        "drupal/vefl": "*",
-        "drupal/viewfield": "^3.0",
-	"islandora-rdm/workflow_participants": "*"
-    },
-    "extra": {
-	"patches": {
-        "drupal/drupal": {
-          "Migration Lookup plugin does not return multiple values when matched": "https://www.drupal.org/files/issues/2020-02-02/2890844-65.drupal.patch"
-        },
-	    "drupal/workflow_participants": {
-          "Using module with Content moderation throws Revision check errors": "https://www.drupal.org/files/issues/2019-08-16/workflow_participants-revision-error-3075426-1.patch"
-	    },
-	    "drupal/metatag": {
-	      "Use custom delimiter instead of commas for multiple values": "https://www.drupal.org/files/issues/2019-07-15/3067803-token-alter-hook_1.patch"
-	    },
-	    "drupal/schema_metatag": {
-		  "Recipe step descriptions will explode on comma": "https://www.drupal.org/files/issues/2019-07-15/2976935-use-metatag-delimiter.patch"
-	    }
-	}
+  "name": "islandora-rdm/islandora_rdm",
+  "description": "Islandora Research Data Managment Platform",
+  "type": "drupal-module",
+  "homepage": "https://github.com/roblib/islandora_rdm",
+  "authors": [
+    {
+      "name": "Alexander O'Neill (alxp)",
+      "homepage": "https://www.drupal.org/u/alxp",
+      "role": "Maintainer"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "require": {
+    "drupal/chartjs_api": "*",
+    "drupal/ctools": "*",
+    "drupal/events_logging": "*",
+    "drupal/inline_entity_form": "*",
+    "drupal/field_permissions": "*",
+    "drupal/field_group": "*",
+    "drupal/languagefield": "*",
+    "drupal/lc_subject_field": "1.x-dev",
+    "drupal/schema_metatag": "*",
+    "drupal/schema_dataset": "*",
+    "islandora/controlled_access_terms": "dev-8.x-1.x",
+    "drupal/field_permissions": "*",
+    "drupal/entity_reference_revisions": "^1.6",
+    "drupal/media_attribution": "*",
+    "drupal/name": "1.x-dev",
+    "drupal/paragraphs": "~1.5",
+    "drupal/facets": "*",
+    "drupal/vefl": "*",
+    "drupal/viewfield": "^3.0",
+    "islandora-rdm/workflow_participants": "*"
+  },
+  "extra": {
+    "patches": {
+      "drupal/drupal": {
+        "Migration Lookup plugin does not return multiple values when matched": "https://www.drupal.org/files/issues/2020-02-02/2890844-65.drupal.patch"
+      },
+      "drupal/workflow_participants": {
+        "Using module with Content moderation throws Revision check errors": "https://www.drupal.org/files/issues/2019-08-16/workflow_participants-revision-error-3075426-1.patch"
+      },
+      "drupal/metatag": {
+        "Use custom delimiter instead of commas for multiple values": "https://www.drupal.org/files/issues/2019-07-15/3067803-token-alter-hook_1.patch"
+      },
+      "drupal/schema_metatag": {
+        "Recipe step descriptions will explode on comma": "https://www.drupal.org/files/issues/2019-07-15/2976935-use-metatag-delimiter.patch"
+      },
+      "drupal/tus": {
+        "Adds config for fly system": "https://www.drupal.org/files/issues/2020-03-23/tus-422_error-3079433-16.patch"
+      }
+    }
   }
 }
