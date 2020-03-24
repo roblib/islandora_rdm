@@ -6,4 +6,4 @@ package: 'Islandora RDM'
 dependencies:
   - islandora_rdm_types
   - migrate_plus
-  - migrate_7x_claw
+  - islandora_migrate_7x_claw_feature
