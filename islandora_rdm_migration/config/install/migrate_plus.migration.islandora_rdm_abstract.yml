@@ -15,10 +15,10 @@ migration_group: islandora_7x
 label: 'Islandora RDM Abstract'
 source:
   plugin: islandora
-  solr_base_url: 'http://data.upei.ca:8080/solr'
+  solr_base_url: 'http://10.0.2.2:8080/solr'
   q: 'fedora_datastreams_ms:DDI AND PID:researchdata\:*'
   row_type: DDI
-  fedora_base_url: 'http://data.upei.ca:8080/fedora'
+  fedora_base_url: 'http://10.0.2.2:8080/fedora'
   data_fetcher_plugin: http
   authentication:
     plugin: basic

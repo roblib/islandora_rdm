@@ -47,16 +47,18 @@ function islandora_rdm_types_preprocess_node__islandora_rdm_dataset__rdm_citatio
     $p = Paragraph::load($target);
 
     $name = '';
-    switch ($p->getType()) {
-      case 'rdm_organization':
-        $name = $p->get('field_rdm_organization_name')->getString();
-        break;
+    if ($p) {
+      switch ($p->getType()) {
+        case 'rdm_organization':
+          $name = $p->get('field_rdm_organization_name')->getString();
+          break;
 
-      case 'rdm_person':
-        $name = $p->get('field_rdm_personal_name')->getString();
-        break;
+        case 'rdm_person':
+          $name = $p->get('field_rdm_personal_name')->getString();
+          break;
+      }
+      $variables['cite_name'] = $name;
     }
-    $variables['cite_name'] = $name;
   }
 }
 

@@ -15,16 +15,16 @@ migration_group: islandora_7x
 label: 'Islandora RDM Dataset Objects'
 source:
   plugin: islandora
-  solr_base_url: 'http://data.upei.ca:8080/solr'
+  solr_base_url: 'http://10.0.2.2:8080/solr'
   q: 'fedora_datastreams_ms:DDI AND PID:researchdata\:*'
   row_type: solr
-  fedora_base_url: 'http://data.upei.ca:8080/fedora'
+  fedora_base_url: 'http://10.0.2.2:8080/fedora'
   data_fetcher_plugin: http
   authentication:
     plugin: basic
     username: fedoraAdmin
     password: fedoraAdmin
-  data_parser_plugin: json_list 
+  data_parser_plugin: json_list
   item_selector: '/response/docs'
   constants:
     creator_uid: 1
@@ -42,7 +42,7 @@ source:
       label: 'Last Modified Date'
       selector: 'fgs_lastModifiedDate_dt'
     -
-      name: title 
+      name: title
       label: 'Title'
       selector: 'fgs_label_s'
     -
@@ -50,7 +50,7 @@ source:
       label: 'Type of Resource'
       selector: 'ddiStudyUnit_KindOfData_ms'
     -
-      name: identifier 
+      name: identifier
       label: 'Identifier'
       selector: 'ddiStudyUnit_Citation_InternationalIdentifier_IdentifierContent_ms'
     -
