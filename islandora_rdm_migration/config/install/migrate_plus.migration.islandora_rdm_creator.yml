@@ -24,8 +24,7 @@ source:
     plugin: basic
     username: fedoraAdmin
     password: fedoraAdmin
-
-  data_parser_plugin: authenticated_xml
+  data_parser_plugin: authenticated_xml_pid
   item_selector: '/ns1:DDIInstance/s:StudyUnit/r:Citation/r:Creator/r:CreatorName/r:String'
   constants:
     creator_uid: 1
