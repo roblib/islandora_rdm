@@ -36,19 +36,22 @@
         "islandora/migrate_7x_claw": "*"
     },
     "extra": {
-	"patches": {
-        "drupal/drupal": {
-          "Migration Lookup plugin does not return multiple values when matched": "https://www.drupal.org/files/issues/2020-02-02/2890844-65.drupal.patch"
-        },
-	    "drupal/workflow_participants": {
-          "Using module with Content moderation throws Revision check errors": "https://www.drupal.org/files/issues/2019-08-16/workflow_participants-revision-error-3075426-1.patch"
-	    },
-	    "drupal/metatag": {
-	      "Use custom delimiter instead of commas for multiple values": "https://www.drupal.org/files/issues/2019-07-15/3067803-token-alter-hook_1.patch"
-	    },
-	    "drupal/schema_metatag": {
-		  "Recipe step descriptions will explode on comma": "https://www.drupal.org/files/issues/2019-07-15/2976935-use-metatag-delimiter.patch"
-	    }
-	}
-  }
+        "patches": {
+            "drupal/drupal": {
+                "Migration Lookup plugin does not return multiple values when matched": "https://www.drupal.org/files/issues/2020-02-02/2890844-65.drupal.patch"
+            },
+            "drupal/workflow_participants": {
+                "Using module with Content moderation throws Revision check errors": "https://www.drupal.org/files/issues/2019-08-16/workflow_participants-revision-error-3075426-1.patch"
+            },
+            "drupal/metatag": {
+                "Use custom delimiter instead of commas for multiple values": "https://www.drupal.org/files/issues/2019-07-15/3067803-token-alter-hook_1.patch"
+            },
+            "drupal/schema_metatag": {
+                "Recipe step descriptions will explode on comma": "https://www.drupal.org/files/issues/2019-07-15/2976935-use-metatag-delimiter.patch"
+            },
+            "drupal/tus": {
+                "Adds config for fly system": "https://www.drupal.org/files/issues/2020-03-23/tus-422_error-3079433-17.patch"
+            }
+        }
+    }
 }
