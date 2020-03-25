@@ -1,18 +1,20 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - islandora_rdm_workflows
   enforced:
     module:
       - islandora_rdm_workflows
 _core:
-  default_config_hash: s5k8TFl5xU9WM7uOnCS-XzupULBDBtKAqGNA6N5Eg6Y
+  default_config_hash: n8sGf0Ysu-nTJ-F_ch_qkt4QIARq0dhX8NCiMQzwE-s
 id: islandora_rdm_data_creator
 label: 'Research data user'
 weight: 6
 is_admin: null
 permissions:
+  - 'access browse_content entity browser pages'
+  - 'access browse_content_iframe entity browser pages'
+  - 'access funding_information_selector entity browser pages'
+  - 'access media overview'
   - 'can be workflow participant'
   - 'create audio media'
   - 'create data_management_plan content'
@@ -23,6 +25,11 @@ permissions:
   - 'create islandora_object content'
   - 'create islandora_rdm_dataset content'
   - 'create media'
+  - 'create rdm_audio media'
+  - 'create rdm_file media'
+  - 'create rdm_image media'
+  - 'create rdm_tabular_data media'
+  - 'create rdm_video media'
   - 'create remote_video media'
   - 'create video media'
   - 'delete islandora_object revisions'
@@ -44,9 +51,15 @@ permissions:
   - 'edit own image media'
   - 'edit own islandora_object content'
   - 'edit own islandora_rdm_dataset content'
+  - 'edit own rdm_audio media'
+  - 'edit own rdm_file media'
+  - 'edit own rdm_image media'
+  - 'edit own rdm_tabular_data media'
+  - 'edit own rdm_video media'
   - 'edit own remote_video media'
   - 'edit own video media'
   - 'grant own content access'
+  - 'manage media'
   - 'manage own workflow participants'
   - 'revert data_management_plan revisions'
   - 'revert funding_information revisions'
@@ -62,3 +75,4 @@ permissions:
   - 'view islandora_rdm_dataset revisions'
   - 'view latest version'
   - 'view own unpublished content'
+  - 'view own unpublished media'
