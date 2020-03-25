@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.subjects
+  module:
+    - facets
+  theme:
+    - carapace
+id: subjects
+theme: carapace
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:subjects'
+settings:
+  id: 'facet_block:subjects'
+  label: Subjects
+  provider: facets
+  label_display: '0'
+  block_id: subjects
+visibility: {  }
+
