@@ -266,6 +266,31 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  rdm_media_evas_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_entity_view_2:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_entity_view_3:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_service_file:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_thumbnail:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   body: true
   entity_print_view_epub: true
@@ -278,3 +303,4 @@ hidden:
   field_rdm_license: true
   field_tags: true
   langcode: true
+  search_api_excerpt: true

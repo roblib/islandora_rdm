@@ -11,16 +11,21 @@ dependencies:
   - entity_browser
   - entity_browser_entity_form
   - entity_reference_revisions
+  - eva
   - field
   - field_group
   - field_permissions
+  - file
+  - filehash
   - geolocation
   - islandora_core_feature
-  - islandora_rdm_defaults
+  - islandora_rdm_data_management_plan
   - islandora_rdm_datacite
+  - islandora_rdm_defaults
   - languagefield
   - lc_subject_field
   - link
+  - media
   - media_attribution
   - menu_ui
   - metatag
@@ -30,9 +35,11 @@ dependencies:
   - rdf
   - schema_dataset
   - schema_metatag
+  - system
   - taxonomy
   - text
   - user
   - views
   - workflows
 version: 8.x-dev
+core_incompatible: false

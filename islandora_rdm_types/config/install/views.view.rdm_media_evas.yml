@@ -5,7 +5,7 @@ dependencies:
     - core.entity_view_mode.media.teaser
     - field.storage.media.field_media_audio_file
     - field.storage.media.field_media_file
-    - field.storage.media.field_media_image 
+    - field.storage.media.field_media_image
     - field.storage.media.field_media_use
     - field.storage.media.field_media_video_file
   enforced:
@@ -15,12 +15,9 @@ dependencies:
     - eva
     - file
     - filehash
-    - image
     - media
     - taxonomy
     - user
-_core:
-  default_config_hash: Mzu_nG5xgemY4WYAkhXc6KeebGBvFbmXkM0v5nyK8sE
 id: rdm_media_evas
 label: 'RDM Media EVAs'
 module: views
@@ -28,7 +25,6 @@ description: 'Displays media for content as EVA''s per model.'
 tag: ''
 base_table: media_field_data
 base_field: mid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -713,7 +709,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions
@@ -736,6 +732,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         field_external_uri_uri:
           id: field_external_uri_uri
@@ -761,6 +759,8 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -798,7 +798,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions
@@ -821,6 +821,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         field_external_uri_uri:
           id: field_external_uri_uri
@@ -846,6 +848,8 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -883,7 +887,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions
@@ -927,7 +931,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions
@@ -950,6 +954,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         field_external_uri_uri:
           id: field_external_uri_uri
@@ -975,6 +981,8 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1011,7 +1019,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions
@@ -1034,6 +1042,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         field_external_uri_uri:
           id: field_external_uri_uri
@@ -1059,6 +1069,8 @@ display:
             remember_roles:
               authenticated: authenticated
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -1095,7 +1107,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions
