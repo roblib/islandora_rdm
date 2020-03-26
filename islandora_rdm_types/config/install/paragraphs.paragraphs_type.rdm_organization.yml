@@ -4,5 +4,6 @@ dependencies: {  }
 id: rdm_organization
 label: Organization
 icon_uuid: null
+icon_default: null
 description: 'An organization, with name and optional identifier(s)'
 behavior_plugins: {  }

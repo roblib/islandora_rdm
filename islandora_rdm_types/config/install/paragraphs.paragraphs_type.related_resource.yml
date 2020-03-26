@@ -4,5 +4,6 @@ dependencies: {  }
 id: related_resource
 label: 'Related Resource'
 icon_uuid: null
+icon_default: null
 description: 'A resource, identified by an identifier, that has a relation to this resource.'
 behavior_plugins: {  }

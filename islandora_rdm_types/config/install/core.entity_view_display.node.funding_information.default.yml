@@ -2,14 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.funding_information.field_dmp_funder_name
+    - field.field.node.funding_information.field_model
     - field.field.node.funding_information.field_rdm_award_uri
     - field.field.node.funding_information.field_rdm_end_date
-    - field.field.node.funding_information.field_rdm_funding_organization
     - field.field.node.funding_information.field_rdm_funding_program
     - field.field.node.funding_information.field_rdm_funding_type
     - field.field.node.funding_information.field_rdm_start_date
     - node.type.funding_information
   module:
+    - lc_subject_field
     - link
     - options
     - user
@@ -19,28 +21,35 @@ bundle: funding_information
 mode: default
 content:
   display_media_entity_view_1:
-    weight: 10
+    weight: 22
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   display_media_entity_view_2:
-    weight: 10
+    weight: 21
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   display_media_service_file:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
+    weight: 20
     region: content
-  display_media_thumbnail:
-    weight: 10
     settings: {  }
     third_party_settings: {  }
+  display_media_thumbnail:
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_dmp_funder_name:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: funder_formatter
     region: content
   field_rdm_award_uri:
     type: link
-    weight: 6
+    weight: 7
     region: content
     label: inline
     settings:
@@ -51,23 +60,15 @@ content:
       url_plain: false
     third_party_settings: {  }
   field_rdm_end_date:
-    weight: 4
+    weight: 5
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  field_rdm_funding_organization:
-    weight: 0
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_rdm_funding_program:
-    weight: 1
+    weight: 2
     label: inline
     settings:
       link: false
@@ -75,14 +76,14 @@ content:
     type: entity_reference_label
     region: content
   field_rdm_funding_type:
-    weight: 2
+    weight: 3
     label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_rdm_start_date:
-    weight: 3
+    weight: 4
     label: inline
     settings:
       link_to_entity: false
@@ -90,42 +91,69 @@ content:
     type: string
     region: content
   links:
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   openseadragon_media_evas_entity_view_1:
-    weight: 10
+    weight: 15
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   openseadragon_media_evas_entity_view_2:
-    weight: 10
+    weight: 18
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   openseadragon_media_evas_service_file:
-    weight: 10
+    weight: 17
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   pdfjs_media_evas_entity_view_1:
-    weight: 10
+    weight: 16
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   pdfjs_media_evas_entity_view_2:
-    weight: 10
+    weight: 8
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   pdfjs_media_evas_service_file:
-    weight: 10
+    weight: 14
+    region: content
     settings: {  }
     third_party_settings: {  }
+  rdm_media_evas_entity_view_1:
+    weight: 13
     region: content
+    settings: {  }
+    third_party_settings: {  }
+  rdm_media_evas_entity_view_2:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  rdm_media_evas_entity_view_3:
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  rdm_media_evas_service_file:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  rdm_media_evas_thumbnail:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_model: true
   langcode: true
+  search_api_excerpt: true

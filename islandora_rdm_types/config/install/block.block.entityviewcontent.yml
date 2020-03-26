@@ -7,8 +7,6 @@ dependencies:
     - system
   theme:
     - carapace
-_core:
-  default_config_hash: koSgLdPk0E3A4khgVd8SF-w3TogN-utS0HMg1OzKE_k
 id: entityviewcontent
 theme: carapace
 region: sidebar_second
