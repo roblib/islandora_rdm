@@ -15,6 +15,7 @@ permissions:
   - 'access browse_content_iframe entity browser pages'
   - 'access funding_information_selector entity browser pages'
   - 'access media overview'
+  - 'access tus upload'
   - 'can be workflow participant'
   - 'create audio media'
   - 'create data_management_plan content'
