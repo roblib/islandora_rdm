@@ -5,7 +5,7 @@ dependencies:
     module:
       - islandora_rdm_workflows
 _core:
-  default_config_hash: n8sGf0Ysu-nTJ-F_ch_qkt4QIARq0dhX8NCiMQzwE-s
+  default_config_hash: _ss0Fzy4RYpNfWdJvs7Ti5SE4OSd12KyKSrASNHFfG0
 id: islandora_rdm_data_creator
 label: 'Research data user'
 weight: 6
@@ -19,6 +19,8 @@ permissions:
   - 'can be workflow participant'
   - 'create audio media'
   - 'create data_management_plan content'
+  - 'create document media'
+  - 'create extracted_text media'
   - 'create file media'
   - 'create fits_technical_metadata media'
   - 'create funding_information content'
@@ -33,6 +35,7 @@ permissions:
   - 'create rdm_video media'
   - 'create remote_video media'
   - 'create video media'
+  - 'delete any audio media'
   - 'delete islandora_object revisions'
   - 'delete media'
   - 'delete own audio media'
@@ -44,6 +47,7 @@ permissions:
   - 'delete own islandora_object content'
   - 'delete own remote_video media'
   - 'delete own video media'
+  - 'edit any rdm_file media'
   - 'edit own audio media'
   - 'edit own data_management_plan content'
   - 'edit own file media'
@@ -59,6 +63,7 @@ permissions:
   - 'edit own rdm_video media'
   - 'edit own remote_video media'
   - 'edit own video media'
+  - 'entity print access bundle rdm_file'
   - 'grant own content access'
   - 'manage media'
   - 'manage own workflow participants'
@@ -67,6 +72,7 @@ permissions:
   - 'revert islandora_object revisions'
   - 'revert islandora_rdm_dataset revisions'
   - 'update media'
+  - 'use editorial transition create_new_draft'
   - 'use islandora_rdm_dataset_workflow transition archive'
   - 'use islandora_rdm_dataset_workflow transition create_new_draft'
   - 'use moderation dashboard'
