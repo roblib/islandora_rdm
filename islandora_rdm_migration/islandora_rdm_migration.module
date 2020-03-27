@@ -19,6 +19,7 @@ function islandora_rdm_migration_migrate_7x_claw_settings_form_submit(&$form, Fo
   $islandora_rdm_abstract_config->set('source.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
   $islandora_rdm_media_config->set('source.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
   $islandora_rdm_files_config->set('source.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
+  $islandora_rdm_files_config->set('source.constants.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
   $islandora_rdm_publisher_config->set('source.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
   $islandora_rdm_creator_config->set('source.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
   $islandora_rdm_datasets_config->set('source.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
