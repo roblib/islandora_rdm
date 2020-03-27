@@ -14,7 +14,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_rdm_description
     - field.field.node.islandora_rdm_dataset.field_rdm_funding_information
     - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
-    - field.field.node.islandora_rdm_dataset.field_rdm_license
+    - field.field.node.islandora_rdm_dataset.field_rdm_license 
     - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
     - field.field.node.islandora_rdm_dataset.field_rdm_publisher
     - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
@@ -109,6 +109,8 @@ third_party_settings:
         description: ''
         formatter: open
       label: Files
+_core:
+  default_config_hash: CDejEvsTV7bSJfsBJ6CtJuuZlFcldNGUYpPqVrKJBNI
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -267,7 +269,7 @@ hidden:
   field_model: true
   field_rdm_alternate_identifier: true
   field_rdm_funding_information: true
-  field_rdm_geograhical_location: true
+  field_rdm_geograhical_location: true 
   field_rdm_related_identifier: true
   field_tags: true
   langcode: true
@@ -282,4 +284,3 @@ hidden:
   rdm_media_evas_entity_view_2: true
   rdm_media_evas_service_file: true
   rdm_media_evas_thumbnail: true
-  search_api_excerpt: true

@@ -4,6 +4,5 @@ dependencies: {  }
 id: typed_description
 label: 'Typed Description'
 icon_uuid: null
-icon_default: null
 description: 'Plain-text description with a controlled vocabulary type field.'
 behavior_plugins: {  }

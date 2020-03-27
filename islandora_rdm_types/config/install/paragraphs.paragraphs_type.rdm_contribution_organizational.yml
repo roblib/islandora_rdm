@@ -4,6 +4,5 @@ dependencies: {  }
 id: rdm_contribution_organizational
 label: 'Contribution - Organizational'
 icon_uuid: null
-icon_default: null
 description: 'A contribution done by an organization with a role.'
 behavior_plugins: {  }

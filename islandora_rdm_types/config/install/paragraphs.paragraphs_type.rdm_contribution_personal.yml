@@ -4,6 +4,5 @@ dependencies: {  }
 id: rdm_contribution_personal
 label: 'Contribution - Personal'
 icon_uuid: null
-icon_default: null
 description: 'A contribution done by a person with a role.'
 behavior_plugins: {  }

@@ -4,6 +4,5 @@ dependencies: {  }
 id: typed_date
 label: 'Typed Date'
 icon_uuid: null
-icon_default: null
 description: 'A field to hold a representation of a date (with precision of year, year-month, or year-month-day) with a type ("Created", "Accepted", "Valid", "Withdrawn", etc) and a free-form description for notes about that date.'
 behavior_plugins: {  }

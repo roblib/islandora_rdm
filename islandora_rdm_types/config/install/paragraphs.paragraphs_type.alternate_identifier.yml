@@ -4,6 +4,5 @@ dependencies: {  }
 id: alternate_identifier
 label: 'Alternate Resource Identifier'
 icon_uuid: null
-icon_default: null
 description: 'An identifier or identifiers other than the primary Identifier applied to the resource being registered.'
 behavior_plugins: {  }

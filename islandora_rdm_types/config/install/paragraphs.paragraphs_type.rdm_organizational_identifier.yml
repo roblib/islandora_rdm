@@ -4,6 +4,5 @@ dependencies: {  }
 id: rdm_organizational_identifier
 label: 'Organizational Identifier'
 icon_uuid: null
-icon_default: null
 description: 'A typed identifier for an organization. Types include isni (defined by Datacite Schema) as well as wikidata and grid.'
 behavior_plugins: {  }
