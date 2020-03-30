@@ -21,6 +21,7 @@
         "drupal/field_group": "*",
         "drupal/languagefield": "*",
         "drupal/lc_subject_field": "1.x-dev",
+        "drupal/metatag": "1.11",
         "drupal/schema_metatag": "*",
         "drupal/schema_dataset": "*",
         "islandora/controlled_access_terms": "dev-8.x-1.x",
