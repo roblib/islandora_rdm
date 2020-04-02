@@ -8,50 +8,74 @@ dependencies:
       - islandora_rdm_datacite
   module:
     - content_moderation
+    - workflow_participants
+third_party_settings:
+  workflow_participants:
+    editor_transitions: {  }
+    reviewer_transitions: {  }
+_core:
+  default_config_hash: NymLgNMY5byc9xsOSi19L_s1Ne0SkqUlnJqT--8b3Po
 id: islandora_rdm_dataset_workflow
-label: 'Dataset publication'
+label: 'Dataset Publication'
 type: content_moderation
 type_settings:
   states:
     archived:
-      published: false
+      published: true
       default_revision: true
       label: Archived
-      weight: 2
+      weight: 1
     draft:
       label: Draft
       published: false
       default_revision: false
-      weight: 0
+      weight: -3
+    in_review:
+      published: false
+      default_revision: false
+      label: 'In Review'
+      weight: -1
     published:
       label: Published
       published: true
       default_revision: true
-      weight: 1
+      weight: 0
   transitions:
     archive:
-      label: Archive
+      label: 'Archive and edit while Archived'
       from:
         - archived
-        - draft
         - published
       to: archived
       weight: 2
     create_new_draft:
-      label: 'Create New Draft'
+      label: 'Edit While Draft'
       to: draft
-      weight: 0
+      weight: -3
       from:
         - draft
-        - published
     publish:
-      label: Publish
+      label: 'Publish, edit while published, revert to published'
       to: published
       weight: 1
       from:
         - archived
-        - draft
+        - in_review
         - published
+    revert_to_draft:
+      label: 'Revert to Draft'
+      from:
+        - in_review
+      to: draft
+      weight: 0
+    submit_for_review:
+      label: 'Submit for Review'
+      from:
+        - draft
+        - in_review
+      to: in_review
+      weight: -2
   entity_types:
     node:
       - islandora_rdm_dataset
+  default_moderation_state: draft
