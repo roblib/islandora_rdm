@@ -4,8 +4,6 @@ dependencies:
   enforced:
     module:
       - islandora_rdm_workflows
-_core:
-  default_config_hash: r_gcQLjI87srRC9N4DGy7NeeW6d9VGu_XOve5gbqaJ8
 id: islandora_rdm_metadata_curator
 label: 'Metadata curator'
 weight: 4
@@ -14,8 +12,11 @@ permissions:
   - 'access browse_content entity browser pages'
   - 'access browse_content_iframe entity browser pages'
   - 'access content overview'
+  - 'access funding_information_selector entity browser pages'
+  - 'access media overview'
   - 'access taxonomy overview'
   - 'access toolbar'
+  - 'access tus upload'
   - 'administer nodes'
   - 'administer taxonomy'
   - 'can be workflow participant'
@@ -24,6 +25,7 @@ permissions:
   - 'create terms in islandora_display'
   - 'create terms in islandora_media_use'
   - 'create terms in islandora_models'
+  - 'create terms in media_attribution_licenses'
   - 'create terms in person'
   - 'create terms in resource_types'
   - 'create terms in subject'
@@ -42,6 +44,7 @@ permissions:
   - 'delete terms in islandora_display'
   - 'delete terms in islandora_media_use'
   - 'delete terms in islandora_models'
+  - 'delete terms in media_attribution_licenses'
   - 'delete terms in person'
   - 'delete terms in resource_types'
   - 'delete terms in subject'
@@ -60,6 +63,7 @@ permissions:
   - 'edit terms in islandora_display'
   - 'edit terms in islandora_media_use'
   - 'edit terms in islandora_models'
+  - 'edit terms in media_attribution_licenses'
   - 'edit terms in person'
   - 'edit terms in resource_types'
   - 'edit terms in subject'
