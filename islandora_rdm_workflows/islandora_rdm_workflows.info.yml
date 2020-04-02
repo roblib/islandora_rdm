@@ -6,4 +6,6 @@ package: 'Islandora RDM'
 dependencies:
   - content_moderation
   - islandora_rdm_types
+  - user
   - workflow_participants
+core_incompatible: false
