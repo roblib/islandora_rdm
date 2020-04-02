@@ -74,6 +74,7 @@ process:
   extension:
     plugin: static_map
     source: mimetype
+    filter: filter_html_escape
     map:
       application/acad: dwg
       application/arj: arj
@@ -646,45 +647,31 @@ process:
       www/mime: mime
       x-conference/x-cooltalk: ice
       x-music/x-midi: mid
-      x-music/x-midi: midi
-      x-world/x-3dmf: 3dm
-      x-world/x-3dmf: 3dmf
-      x-world/x-3dmf: qd3
-      x-world/x-3dmf: qd3d
       x-world/x-svr: svr
       x-world/x-vrml: vrml
-      x-world/x-vrml: wrl
-      x-world/x-vrml: wrz
       x-world/x-vrt: vrt
       xgl/drawing: xgz
       xgl/movie: xmz
       text/txt: txt
-      application/msword: doc
-      application/msword: dot
-      application/vnd.ms-excel.addin.macroEnabled.12: xlam
-      application/vnd.ms-excel.sheet.binary.macroEnabled.12: xlsb
-      application/vnd.ms-excel.sheet.macroEnabled.12: xlsm
-      application/vnd.ms-excel.template.macroEnabled.12: xltm
-      application/vnd.ms-excel: xla
-      application/vnd.ms-excel: xls
-      application/vnd.ms-excel: xlt
-      application/vnd.ms-powerpoint.addin.macroEnabled.12: ppam
-      application/vnd.ms-powerpoint.presentation.macroEnabled.12: pptm
-      application/vnd.ms-powerpoint.slideshow.macroEnabled.12: ppsm
-      application/vnd.ms-powerpoint.template.macroEnabled.12: potm
-      application/vnd.ms-powerpoint: pot
-      application/vnd.ms-powerpoint: ppa
-      application/vnd.ms-powerpoint: pps
-      application/vnd.ms-powerpoint: ppt
-      application/vnd.ms-word.document.macroEnabled.12: docm
-      application/vnd.ms-word.template.macroEnabled.12: dotm
-      application/vnd.openxmlformats-officedocument.presentationml.presentation: pptx
-      application/vnd.openxmlformats-officedocument.presentationml.slideshow: ppsx
-      application/vnd.openxmlformats-officedocument.presentationml.template: potx
-      application/vnd.openxmlformats-officedocument.spreadsheetml.sheet: xlsx
-      application/vnd.openxmlformats-officedocument.spreadsheetml.template: xltx
-      application/vnd.openxmlformats-officedocument.wordprocessingml.document: docx
-      application/vnd.openxmlformats-officedocument.wordprocessingml.template: dotx
+      application/vnd&#46;ms-excel&#46;addin&#46;macroEnabled&#46;12: xlam
+      application/vnd&#46;ms-excel&#46;sheet&#46;binary&#46;macroEnabled&#46;12: xlsb
+      application/vnd&#46;ms-excel&#46;sheet&#46;macroEnabled&#46;12: xlsm
+      application/vnd&#46;ms-excel&#46;template&#46;macroEnabled&#46;12: xltm
+      application/vnd&#46;ms-excel: xls
+      application/vnd&#46;ms-powerpoint&#46;addin&#46;macroEnabled&#46;12: ppam
+      application/vnd&#46;ms-powerpoint&#46;presentation&#46;macroEnabled&#46;12: pptm
+      application/vnd&#46;ms-powerpoint&#46;slideshow&#46;macroEnabled&#46;12: ppsm
+      application/vnd&#46;ms-powerpoint&#46;template&#46;macroEnabled&#46;12: potm
+      application/vnd&#46;ms-powerpoint: pot
+      application/vnd&#46;ms-word&#46;document&#46;macroEnabled&#46;12: docm
+      application/vnd&#46;ms-word&#46;template&#46;macroEnabled&#46;12: dotm
+      application/vnd&#46;openxmlformats-officedocument&#46;presentationml&#46;presentation: pptx
+      application/vnd&#46;openxmlformats-officedocument&#46;presentationml&#46;slideshow: ppsx
+      application/vnd&#46;openxmlformats-officedocument&#46;presentationml&#46;template: potx
+      application/vnd&#46;openxmlformats-officedocument&#46;spreadsheetml&#46;sheet: xlsx
+      application/vnd&#46;openxmlformats-officedocument&#46;spreadsheetml&#46;template: xltx
+      application/vnd&#46;openxmlformats-officedocument&#46;wordprocessingml&#46;document: docx
+      application/vnd&#46;openxmlformats-officedocument&#46;wordprocessingml&#46;template: dotx
   filename:
     plugin: concat
     delimiter: .
