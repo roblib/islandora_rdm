@@ -6,8 +6,8 @@ dependencies:
       - islandora_rdm_workflows
 _core:
   default_config_hash: n8sGf0Ysu-nTJ-F_ch_qkt4QIARq0dhX8NCiMQzwE-s
-id: islandora_rdm_data_creator
-label: 'Research data user'
+id: islandora_rdm_data_curator
+label: 'Data Curator'
 weight: 6
 is_admin: null
 permissions:
