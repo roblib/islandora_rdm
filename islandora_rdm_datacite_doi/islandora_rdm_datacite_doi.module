@@ -9,8 +9,8 @@ use Drupal\islandora_datacite_doi\DataciteDoi;
 use Drupal\islandora_rdm_datacite\Dataset;
 
 /**
- * Implementation of hook_noce_delete().
- * If the node has a DOI, inform Datacite taht the
+ * Implementation of hook_node_delete().
+ * If the node has a DOI, inform Datacite that the
  * DOI should be marked as 'archived'.
  *
  * TODO: We should leave a stub node to indicate that a DOI's resource used to exist.
