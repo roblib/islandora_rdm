@@ -72,9 +72,8 @@ process:
       - DSID
       - constants/content_string
   extension:
-    plugin: static_map
+    plugin: static_map_dots
     source: mimetype
-    filter: filter_html_escape
     map:
       application/acad: dwg
       application/arj: arj
