@@ -16,7 +16,7 @@ label: 'Islandora RDM Dataset Objects'
 source:
   plugin: islandora
   solr_base_url: 'http://10.0.2.2:8080/solr'
-  q: 'fedora_datastreams_ms:DDI AND PID:researchdata\:*'
+  q: 'fedora_datastreams_ms:DDI AND PID:researchdata\:*1'
   row_type: solr
   fedora_base_url: 'http://10.0.2.2:8080/fedora'
   data_fetcher_plugin: http
@@ -112,6 +112,10 @@ process:
       process:
         target_id: 'id'
         target_revision_id: 'revision_id'
+  field_rdm_publication_year:
+    - plugin: substr
+      length: 4
+      source: 'created'
   field_rdm_publisher:
     - plugin: migration_lookup
       allow_multiple: true
