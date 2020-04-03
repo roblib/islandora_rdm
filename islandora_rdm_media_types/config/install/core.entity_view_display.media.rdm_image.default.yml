@@ -24,6 +24,7 @@ dependencies:
     - file
     - image
     - islandora_fits
+    - islandora_rdm
     - user
 id: media.rdm_image.default
 targetEntityType: media
