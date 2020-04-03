@@ -9,5 +9,5 @@ dependencies:
   - paragraphs
   - islandora_rdm_types
   - islandora_rdm_datacite
-  - islandora_rdm_altmetric
-  - islandora_rdm_site
+
+
