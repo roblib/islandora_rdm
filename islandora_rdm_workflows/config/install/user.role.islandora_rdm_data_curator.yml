@@ -56,7 +56,6 @@ permissions:
   - 'view any unpublished content'
   - 'view data_management_plan revisions'
   - 'view funding_information revisions'
-  - 'view islandora_object revisions'
   - 'view islandora_rdm_dataset revisions'
   - 'view latest version'
   - 'view own unpublished content'
