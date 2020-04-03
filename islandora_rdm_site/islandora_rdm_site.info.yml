@@ -7,4 +7,6 @@ dependencies:
   - clamav
   - islandora_rdm
   - islandora_rdm_data_management_plan
+  - islandora_rdm_workflows
+  - islandora_rdm_media_types
 version: 8.x-dev
