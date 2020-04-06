@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.funding_information_selector
     - field.field.node.islandora_rdm_dataset.body
     - field.field.node.islandora_rdm_dataset.field_date_paragraph
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
@@ -29,9 +28,10 @@ dependencies:
   module:
     - content_moderation
     - controlled_access_terms
-    - entity_browser
+    - entity_browser_entity_form
     - field_group
     - geolocation
+    - inline_entity_form
     - languagefield
     - lc_subject_field
     - paragraphs
@@ -89,9 +89,9 @@ third_party_settings:
       region: content
     group_geographical_info:
       children:
+        - field_rdm_description
         - field_rdm_geograhical_location
         - field_subjects
-        - field_rdm_description
       parent_name: group_dataset
       weight: 22
       format_type: tab
@@ -135,7 +135,9 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Funding
-      region: hidden
+      region: content
+_core:
+  default_config_hash: 2ou9J5kgSVJA_EZDSKGQJhxji_zNSSF92raPbPi1KZs
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -256,21 +258,26 @@ content:
     third_party_settings: {  }
     region: content
   field_rdm_funding_information:
+    type: inline_entity_form_complex
     weight: 2
-    settings:
-      entity_browser: funding_information_selector
-      field_widget_display: label
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_replace: false
-      open: false
-      field_widget_display_settings: {  }
-    third_party_settings: {  }
-    type: entity_browser_entity_reference
     region: content
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
   field_rdm_geograhical_location:
-    weight: 24
+    weight: 27
     settings: {  }
     third_party_settings: {  }
     type: geolocation_latlng
@@ -283,6 +290,7 @@ content:
       match_operator: CONTAINS
       size: '60'
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
   field_rdm_publication_year:
     weight: 8
@@ -352,7 +360,7 @@ content:
     type: string_textfield
     region: content
   field_subjects:
-    weight: 25
+    weight: 28
     settings: {  }
     third_party_settings: {  }
     type: lcsubject_widget

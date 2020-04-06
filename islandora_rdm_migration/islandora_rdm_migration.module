@@ -13,6 +13,7 @@ function islandora_rdm_migration_migrate_7x_claw_settings_form_submit(&$form, Fo
   $islandora_rdm_files_config = $config_factory->getEditable('migrate_plus.migration.islandora_rdm_files');
   $islandora_rdm_publisher_config = $config_factory->getEditable('migrate_plus.migration.islandora_rdm_publisher');
   $islandora_rdm_creator_config = $config_factory->getEditable('migrate_plus.migration.islandora_rdm_creator');
+  $islandora_rdm_issued_date_config = $config_factory->getEditable('migrate_plus.migration.islandora_rdm_issued_date');
   $islandora_rdm_datasets_config = $config_factory->getEditable('migrate_plus.migration.islandora_rdm_datasets');
 
 
@@ -22,6 +23,7 @@ function islandora_rdm_migration_migrate_7x_claw_settings_form_submit(&$form, Fo
   $islandora_rdm_files_config->set('source.constants.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
   $islandora_rdm_publisher_config->set('source.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
   $islandora_rdm_creator_config->set('source.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
+  $islandora_rdm_issued_date_config->set('source.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
   $islandora_rdm_datasets_config->set('source.fedora_base_url', $form_state->getValue('fedora-endpoint-url'));
 
   $islandora_rdm_abstract_config->set('source.authentication.password', $form_state->getValue('oldfedoraUsername'));
@@ -29,6 +31,7 @@ function islandora_rdm_migration_migrate_7x_claw_settings_form_submit(&$form, Fo
   $islandora_rdm_files_config->set('source.authentication.password', $form_state->getValue('oldfedoraUsername'));
   $islandora_rdm_publisher_config->set('source.authentication.password', $form_state->getValue('oldfedoraUsername'));
   $islandora_rdm_creator_config->set('source.authentication.password', $form_state->getValue('oldfedoraUsername'));
+  $islandora_rdm_issued_date_config->set('source.authentication.password', $form_state->getValue('oldfedoraUsername'));
   $islandora_rdm_datasets_config->set('source.authentication.password', $form_state->getValue('oldfedoraUsername'));
 
   if (!$form_state->getValue('oldfedorapsswd') == '') {
@@ -38,6 +41,7 @@ function islandora_rdm_migration_migrate_7x_claw_settings_form_submit(&$form, Fo
     $islandora_rdm_files_config->set('source.authentication.password', $form_state->getValue('oldfedorapsswd'));
     $islandora_rdm_publisher_config->set('source.authentication.password', $form_state->getValue('oldfedorapsswd'));
     $islandora_rdm_creator_config->set('source.authentication.password', $form_state->getValue('oldfedorapsswd'));
+    $islandora_rdm_issued_date_config->set('source.authentication.password', $form_state->getValue('oldfedorapsswd'));
     $islandora_rdm_datasets_config->set('source.authentication.password', $form_state->getValue('oldfedorapsswd'));
 
     // File needs a special authentication configuration to pass to Guzzle.
@@ -49,6 +53,7 @@ function islandora_rdm_migration_migrate_7x_claw_settings_form_submit(&$form, Fo
   $islandora_rdm_files_config->set('source.solr_base_url', $form_state->getValue('solr-endpoint-url'));
   $islandora_rdm_publisher_config->set('source.solr_base_url', $form_state->getValue('solr-endpoint-url'));
   $islandora_rdm_creator_config->set('source.solr_base_url', $form_state->getValue('solr-endpoint-url'));
+  $islandora_rdm_issued_date_config->set('source.solr_base_url', $form_state->getValue('solr-endpoint-url'));
   $islandora_rdm_datasets_config->set('source.solr_base_url', $form_state->getValue('solr-endpoint-url'));
 
   $islandora_rdm_abstract_config->set('source.q', $form_state->getValue('migrate_7x_claw_solr_q'));
@@ -56,6 +61,7 @@ function islandora_rdm_migration_migrate_7x_claw_settings_form_submit(&$form, Fo
   $islandora_rdm_files_config->set('source.q', $form_state->getValue('migrate_7x_claw_solr_q'));
   $islandora_rdm_publisher_config->set('source.q', $form_state->getValue('migrate_7x_claw_solr_q'));
   $islandora_rdm_creator_config->set('source.q', $form_state->getValue('migrate_7x_claw_solr_q'));
+  $islandora_rdm_issued_date_config->set('source.q', $form_state->getValue('migrate_7x_claw_solr_q'));
   $islandora_rdm_datasets_config->set('source.q', $form_state->getValue('migrate_7x_claw_solr_q'));
 
   $islandora_rdm_abstract_config->save();
@@ -63,6 +69,7 @@ function islandora_rdm_migration_migrate_7x_claw_settings_form_submit(&$form, Fo
   $islandora_rdm_files_config->save();
   $islandora_rdm_publisher_config->save();
   $islandora_rdm_creator_config->save();
+  $islandora_rdm_issued_date_config->save();
   $islandora_rdm_datasets_config->save();
 
 }

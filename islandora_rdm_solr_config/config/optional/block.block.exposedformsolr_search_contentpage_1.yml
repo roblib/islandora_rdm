@@ -4,9 +4,12 @@ dependencies:
   config:
     - views.view.solr_search_content
   module:
+    - system
     - views
   theme:
     - carapace
+_core:
+  default_config_hash: nq3JUY0WPYDpHv1BKj0D2E_g_bChb0OtpLHCOcvIFt8
 id: exposedformsolr_search_contentpage_1
 theme: carapace
 region: sidebar_second
@@ -19,4 +22,9 @@ settings:
   provider: views
   label_display: visible
   views_label: ''
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/add/*\r\n/node/*/edit"
+    negate: false
+    context_mapping: {  }

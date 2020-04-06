@@ -101,6 +101,17 @@ process:
       process:
         target_id: 'id'
         target_revision_id: 'revision_id'
+  field_date_paragraph:
+    - plugin: migration_lookup
+      allow_multiple: true
+      migration:
+        - 'islandora_rdm_issued_date'
+      source: 'PID'
+      no_stub: true
+    - plugin: sub_process
+      process:
+        target_id: 'id'
+        target_revision_id: 'revision_id'
   field_rdm_description:
     - plugin: migration_lookup
       allow_multiple: true

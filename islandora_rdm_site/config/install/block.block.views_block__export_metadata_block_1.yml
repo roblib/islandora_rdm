@@ -5,9 +5,12 @@ dependencies:
     - views.view.export_metadata
   module:
     - node
+    - system
     - views
   theme:
     - carapace
+_core:
+  default_config_hash: 6GcrIIZxMhVLfAE8WbpZVRUeJDCQySLEQ9H_BgeCBck
 id: views_block__export_metadata_block_1
 theme: carapace
 region: sidebar_second
@@ -30,3 +33,8 @@ visibility:
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: "/node/add/*\r\n/node/*/edit"
+    negate: true
+    context_mapping: {  }

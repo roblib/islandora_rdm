@@ -13,6 +13,8 @@ dependencies:
   module:
     - content_moderation
     - link
+_core:
+  default_config_hash: Mccjgso1OsrFM9kk3XKi2wX61gyOG5Zxoj4bKPy-6nA
 id: node.funding_information.default
 targetEntityType: node
 bundle: funding_information
@@ -20,7 +22,7 @@ mode: default
 content:
   field_rdm_award_uri:
     type: link_default
-    weight: 9
+    weight: 8
     region: content
     settings:
       placeholder_url: ''
@@ -77,7 +79,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 10
+    weight: 9
     settings: {  }
     region: content
     third_party_settings: {  }
@@ -85,7 +87,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
@@ -96,19 +98,10 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 7
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
-    region: content
-    third_party_settings: {  }
 hidden:
   created: true
   field_model: true
   path: true
   promote: true
   sticky: true
+  uid: true

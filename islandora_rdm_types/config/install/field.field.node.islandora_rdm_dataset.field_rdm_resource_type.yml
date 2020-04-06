@@ -9,7 +9,7 @@ field_name: field_rdm_resource_type
 entity_type: node
 bundle: islandora_rdm_dataset
 label: 'Resource Type'
-description: 'A description of the resource. A single term is preferred. Consider using a term from the <a href="https://dictionary.casrai.org/Output_Types">CASRAI Publications resource type list</a>, especially if the Resource Type General is ''text''. '
+description: 'A description of the resource. A single term is preferred.'
 required: true
 translatable: false
 default_value: {  }
