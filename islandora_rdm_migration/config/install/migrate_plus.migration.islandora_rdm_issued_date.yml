@@ -41,7 +41,7 @@ source:
       type: string
 process:
   field_date_string: pubdate
-  field_date_type:
+  field_type_of_date:
     plugin: default_value
     default_value: 'Issued'
 destination:
