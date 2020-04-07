@@ -1,378 +1,377 @@
-langcode:langcode: en
-  status: true
-  dependencies:
-    config:
-      - entity_browser.browser.funding_information_selector
-      - field.field.node.islandora_rdm_dataset.body
-      - field.field.node.islandora_rdm_dataset.field_date_paragraph
-      - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
-      - field.field.node.islandora_rdm_dataset.field_member_of
-      - field.field.node.islandora_rdm_dataset.field_model
-      - field.field.node.islandora_rdm_dataset.field_organization
-      - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
-      - field.field.node.islandora_rdm_dataset.field_rdm_contributors
-      - field.field.node.islandora_rdm_dataset.field_rdm_creator
-      - field.field.node.islandora_rdm_dataset.field_rdm_dataset_language
-      - field.field.node.islandora_rdm_dataset.field_rdm_description
-      - field.field.node.islandora_rdm_dataset.field_rdm_funding_information
-      - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
-      - field.field.node.islandora_rdm_dataset.field_rdm_license
-      - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
-      - field.field.node.islandora_rdm_dataset.field_rdm_publisher
-      - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
-      - field.field.node.islandora_rdm_dataset.field_rdm_resource_type
-      - field.field.node.islandora_rdm_dataset.field_rdm_resource_type_general
-      - field.field.node.islandora_rdm_dataset.field_rights
-      - field.field.node.islandora_rdm_dataset.field_subjects
-      - field.field.node.islandora_rdm_dataset.field_tags
-      - node.type.islandora_rdm_dataset
-      - workflows.workflow.islandora_rdm_dataset_workflow
-    module:
-      - content_moderation
-      - controlled_access_terms
-      - entity_browser
-      - field_group
-      - geolocation
-      - languagefield
-      - lc_subject_field
-      - paragraphs
-  third_party_settings:
-    field_group:
-      group_dataset:
-        children:
-          - group_identification
-          - group_people
-          - group_geographical_info
-          - group_relationships
-          - group_funding
-        parent_name: ''
-        weight: 0
-        format_type: tabs
-        format_settings:
-          id: dataset-groups
-          classes: ''
-          direction: vertical
-        label: Dataset
-        region: content
-      group_identification:
-        children:
-          - title
-          - field_rdm_creator
-          - field_rdm_contributors
-          - field_rdm_resource_type_general
-          - field_rdm_resource_type
-        parent_name: group_dataset
-        weight: 20
-        format_type: tab
-        format_settings:
-          id: dataset-group-identification
-          classes: ''
-          formatter: open
-          description: 'Basic info'
-          required_fields: true
-        label: Identification
-        region: content
-      group_people:
-        children:
-          - field_organization
-          - field_rdm_publication_year
-          - field_date_paragraph
-        parent_name: group_dataset
-        weight: 21
-        format_type: tab
-        format_settings:
-          formatter: closed
-          description: ''
-          required_fields: true
-          id: group-dataset-publication
-          classes: ''
-        label: Publication
-        region: content
-      group_geographical_info:
-        children:
-          - field_rdm_geograhical_location
-          - field_subjects
-          - field_rdm_description
-        parent_name: group_dataset
-        weight: 22
-        format_type: tab
-        format_settings:
-          formatter: closed
-          description: 'Details and descriptions of contents'
-          required_fields: true
-          id: group-dataset-contents
-          classes: ''
-        label: Contents
-        region: content
-      group_relationships:
-        children:
-          - field_islandora_rdm_identifier
-          - field_rdm_alternate_identifier
-          - field_rdm_related_identifier
-          - field_rights
-          - field_rdm_license
-          - field_rdm_dataset_language
-        parent_name: group_dataset
-        weight: 23
-        format_type: tab
-        format_settings:
-          formatter: closed
-          description: 'Links to related items and alternate identifiers'
-          required_fields: true
-          id: group-dataset-identifiers
-          classes: ''
-        label: Identifiers
-        region: content
-      group_funding:
-        children:
-          - field_rdm_funding_information
-        parent_name: group_dataset
-        weight: 24
-        format_type: tab
-        format_settings:
-          id: ''
-          classes: ''
-          formatter: closed
-          description: ''
-          required_fields: true
-        label: Funding
-        region: hidden
-  _core:
-    default_config_hash: 2ou9J5kgSVJA_EZDSKGQJhxji_zNSSF92raPbPi1KZs
-  id: node.islandora_rdm_dataset.default
-  targetEntityType: node
-  bundle: islandora_rdm_dataset
-  mode: default
-  content:
-    field_date_paragraph:
-      type: paragraphs
-      weight: 12
-      settings:
-        title: Paragraph
-        title_plural: Paragraphs
-        edit_mode: open
-        closed_mode: summary
-        autocollapse: none
-        closed_mode_threshold: 0
-        add_mode: dropdown
-        form_display_mode: default
-        default_paragraph_type: _none
-        features:
-          duplicate: duplicate
-          collapse_edit_all: collapse_edit_all
-          add_above: '0'
-      third_party_settings: {  }
-      region: content
-    field_islandora_rdm_identifier:
-      type: string_textfield
-      weight: 10
-      region: content
-      settings:
-        size: 60
-        placeholder: ''
-      third_party_settings: {  }
-    field_model:
-      weight: 2
-      settings: {  }
-      third_party_settings: {  }
-      type: options_select
-      region: content
-    field_organization:
-      weight: 9
-      settings: {  }
-      third_party_settings: {  }
-      type: grid_widget
-      region: content
-    field_rdm_alternate_identifier:
-      type: paragraphs
-      weight: 11
-      settings:
-        title: 'Alternate Identifier'
-        title_plural: 'Alternate Identifiers'
-        edit_mode: open
-        add_mode: dropdown
-        form_display_mode: default
-        default_paragraph_type: alternate_identifier
-        closed_mode: summary
-        autocollapse: none
-        closed_mode_threshold: 0
-        features:
-          duplicate: duplicate
-          collapse_edit_all: collapse_edit_all
-      third_party_settings: {  }
-      region: content
-    field_rdm_contributors:
-      type: paragraphs
-      weight: 2
-      settings:
-        title: contributor
-        title_plural: contributors
-        edit_mode: open
-        add_mode: dropdown
-        form_display_mode: default
-        default_paragraph_type: _none
-        closed_mode: summary
-        autocollapse: none
-        closed_mode_threshold: 0
-        features:
-          duplicate: duplicate
-          collapse_edit_all: collapse_edit_all
-      third_party_settings: {  }
-      region: content
-    field_rdm_creator:
-      type: paragraphs
-      weight: 1
-      settings:
-        title: creator
-        title_plural: creators
-        edit_mode: open
-        add_mode: dropdown
-        form_display_mode: default
-        default_paragraph_type: _none
-        closed_mode: summary
-        autocollapse: none
-        closed_mode_threshold: 0
-        features:
-          duplicate: duplicate
-          collapse_edit_all: collapse_edit_all
-      third_party_settings: {  }
-      region: content
-    field_rdm_dataset_language:
-      weight: 16
-      settings:
-        format:
-          name: name
-      third_party_settings: {  }
-      type: languagefield_select
-      region: content
-    field_rdm_description:
-      type: paragraphs
-      weight: 27
-      settings:
-        title: Description
-        title_plural: Descriptions
-        edit_mode: open
-        closed_mode: summary
-        autocollapse: none
-        closed_mode_threshold: 0
-        add_mode: dropdown
-        form_display_mode: default
-        default_paragraph_type: typed_description
-        features:
-          duplicate: duplicate
-          collapse_edit_all: collapse_edit_all
-          add_above: '0'
-      third_party_settings: {  }
-      region: content
-    field_rdm_funding_information:
-      weight: 2
-      settings:
-        entity_browser: funding_information_selector
-        field_widget_display: label
-        field_widget_edit: true
-        field_widget_remove: true
-        selection_mode: selection_append
-        field_widget_replace: false
-        open: false
-        field_widget_display_settings: {  }
-      third_party_settings: {  }
-      type: entity_browser_entity_reference
-      region: content
-    field_rdm_geograhical_location:
-      weight: 24
-      settings: {  }
-      third_party_settings: {  }
-      type: geolocation_latlng
-      region: content
-    field_rdm_license:
-      type: typed_relation_default
-      weight: 15
-      region: content
-      settings:
-        match_operator: CONTAINS
-        size: '60'
-        placeholder: ''
-        match_limit: 10
-      third_party_settings: {  }
-    field_rdm_publication_year:
-      weight: 11
-      settings:
-        size: 4
-        placeholder: ''
-      third_party_settings: {  }
-      type: string_textfield
-      region: content
-    field_rdm_related_identifier:
-      type: paragraphs
-      weight: 13
-      settings:
-        title: 'Related Identifier'
-        title_plural: 'Related Identifiers'
-        edit_mode: open
-        closed_mode: summary
-        autocollapse: none
-        closed_mode_threshold: 0
-        add_mode: dropdown
-        form_display_mode: default
-        default_paragraph_type: alternate_identifier
-        features:
-          duplicate: duplicate
-          collapse_edit_all: collapse_edit_all
-          add_above: '0'
-      third_party_settings: {  }
-      region: content
-    field_rdm_resource_type:
-      weight: 6
-      settings:
-        size: 60
-        placeholder: ''
-      third_party_settings: {  }
-      type: string_textfield
-      region: content
-    field_rdm_resource_type_general:
-      type: options_select
-      weight: 5
-      region: content
-      settings: {  }
-      third_party_settings: {  }
-    field_rights:
-      weight: 14
-      settings:
-        size: 60
-        placeholder: ''
-      third_party_settings: {  }
-      type: string_textfield
-      region: content
-    field_subjects:
-      weight: 25
-      settings: {  }
-      third_party_settings: {  }
-      type: lcsubject_widget
-      region: content
-    moderation_state:
-      type: moderation_state_default
-      weight: 1
-      settings: {  }
-      region: content
-      third_party_settings: {  }
-    title:
-      type: string_textfield
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.funding_information_selector
+    - field.field.node.islandora_rdm_dataset.body
+    - field.field.node.islandora_rdm_dataset.field_date_paragraph
+    - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
+    - field.field.node.islandora_rdm_dataset.field_member_of
+    - field.field.node.islandora_rdm_dataset.field_model
+    - field.field.node.islandora_rdm_dataset.field_organization
+    - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
+    - field.field.node.islandora_rdm_dataset.field_rdm_contributors
+    - field.field.node.islandora_rdm_dataset.field_rdm_creator
+    - field.field.node.islandora_rdm_dataset.field_rdm_dataset_language
+    - field.field.node.islandora_rdm_dataset.field_rdm_description
+    - field.field.node.islandora_rdm_dataset.field_rdm_funding_information
+    - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
+    - field.field.node.islandora_rdm_dataset.field_rdm_license
+    - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
+    - field.field.node.islandora_rdm_dataset.field_rdm_publisher
+    - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
+    - field.field.node.islandora_rdm_dataset.field_rdm_resource_type
+    - field.field.node.islandora_rdm_dataset.field_rdm_resource_type_general
+    - field.field.node.islandora_rdm_dataset.field_rights
+    - field.field.node.islandora_rdm_dataset.field_subjects
+    - field.field.node.islandora_rdm_dataset.field_tags
+    - node.type.islandora_rdm_dataset
+    - workflows.workflow.islandora_rdm_dataset_workflow
+  module:
+    - content_moderation
+    - controlled_access_terms
+    - entity_browser
+    - field_group
+    - geolocation
+    - languagefield
+    - lc_subject_field
+    - paragraphs
+third_party_settings:
+  field_group:
+    group_dataset:
+      children:
+        - group_identification
+        - group_people
+        - group_geographical_info
+        - group_relationships
+        - group_funding
+      parent_name: ''
       weight: 0
+      format_type: tabs
+      format_settings:
+        id: dataset-groups
+        classes: ''
+        direction: vertical
+      label: Dataset
       region: content
-      settings:
-        size: 60
-        placeholder: ''
-      third_party_settings: {  }
-  hidden:
-    body: true
-    created: true
-    field_member_of: true
-    field_rdm_publisher: true
-    field_tags: true
-    langcode: true
-    path: true
-    promote: true
-    status: true
-    sticky: true
-    uid: true
-
+    group_identification:
+      children:
+        - title
+        - field_rdm_creator
+        - field_rdm_contributors
+        - field_rdm_resource_type_general
+        - field_rdm_resource_type
+      parent_name: group_dataset
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: dataset-group-identification
+        classes: ''
+        formatter: open
+        description: 'Basic info'
+        required_fields: true
+      label: Identification
+      region: content
+    group_people:
+      children:
+        - field_organization
+        - field_rdm_publication_year
+        - field_date_paragraph
+      parent_name: group_dataset
+      weight: 21
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: group-dataset-publication
+        classes: ''
+      label: Publication
+      region: content
+    group_geographical_info:
+      children:
+        - field_rdm_geograhical_location
+        - field_subjects
+        - field_rdm_description
+      parent_name: group_dataset
+      weight: 22
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: 'Details and descriptions of contents'
+        required_fields: true
+        id: group-dataset-contents
+        classes: ''
+      label: Contents
+      region: content
+    group_relationships:
+      children:
+        - field_islandora_rdm_identifier
+        - field_rdm_alternate_identifier
+        - field_rdm_related_identifier
+        - field_rights
+        - field_rdm_license
+        - field_rdm_dataset_language
+      parent_name: group_dataset
+      weight: 23
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: 'Links to related items and alternate identifiers'
+        required_fields: true
+        id: group-dataset-identifiers
+        classes: ''
+      label: Identifiers
+      region: content
+    group_funding:
+      children:
+        - field_rdm_funding_information
+      parent_name: group_dataset
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Funding
+      region: hidden
+_core:
+  default_config_hash: 2ou9J5kgSVJA_EZDSKGQJhxji_zNSSF92raPbPi1KZs
+id: node.islandora_rdm_dataset.default
+targetEntityType: node
+bundle: islandora_rdm_dataset
+mode: default
+content:
+  field_date_paragraph:
+    type: paragraphs
+    weight: 12
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  field_islandora_rdm_identifier:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_model:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_organization:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: grid_widget
+    region: content
+  field_rdm_alternate_identifier:
+    type: paragraphs
+    weight: 11
+    settings:
+      title: 'Alternate Identifier'
+      title_plural: 'Alternate Identifiers'
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: alternate_identifier
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+    region: content
+  field_rdm_contributors:
+    type: paragraphs
+    weight: 2
+    settings:
+      title: contributor
+      title_plural: contributors
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+    region: content
+  field_rdm_creator:
+    type: paragraphs
+    weight: 1
+    settings:
+      title: creator
+      title_plural: creators
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+    region: content
+  field_rdm_dataset_language:
+    weight: 16
+    settings:
+      format:
+        name: name
+    third_party_settings: {  }
+    type: languagefield_select
+    region: content
+  field_rdm_description:
+    type: paragraphs
+    weight: 27
+    settings:
+      title: Description
+      title_plural: Descriptions
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: typed_description
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  field_rdm_funding_information:
+    weight: 2
+    settings:
+      entity_browser: funding_information_selector
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_rdm_geograhical_location:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  field_rdm_license:
+    type: typed_relation_default
+    weight: 15
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+  field_rdm_publication_year:
+    weight: 11
+    settings:
+      size: 4
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_rdm_related_identifier:
+    type: paragraphs
+    weight: 13
+    settings:
+      title: 'Related Identifier'
+      title_plural: 'Related Identifiers'
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: alternate_identifier
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  field_rdm_resource_type:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_rdm_resource_type_general:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rights:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_subjects:
+    weight: 25
+    settings: {  }
+    third_party_settings: {  }
+    type: lcsubject_widget
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 1
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  field_member_of: true
+  field_rdm_publisher: true
+  field_tags: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
