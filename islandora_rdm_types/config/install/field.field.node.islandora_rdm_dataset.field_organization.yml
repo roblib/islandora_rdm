@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_organization
+    - node.type.islandora_rdm_dataset
+  module:
+    - lc_subject_field
+id: node.islandora_rdm_dataset.field_organization
+field_name: field_organization
+entity_type: node
+bundle: islandora_rdm_dataset
+label: Organization
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: grid_field

@@ -76,8 +76,8 @@ class Dataset {
       $resource->appendChild($year);
     }
 
-    if ($publisher_field = $node->get('field_rdm_publisher')->first()) {
-      $publisher_name = $publisher_field->get('entity')->getTarget()->get('field_rdm_organization_name')->first()->getString();
+    if ($publisher_field = $node->get('field_organization')->first()) {
+      $publisher_name = $publisher_field->getValue()['value'];
       $publisher = $this->doc->createElement('publisher', $publisher_name);
       $resource->appendChild($publisher);
     }
