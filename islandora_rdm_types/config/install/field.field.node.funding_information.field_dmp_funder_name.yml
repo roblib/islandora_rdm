@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dmp_funder_name
+    - node.type.funding_information
+  module:
+    - lc_subject_field
+id: node.funding_information.field_dmp_funder_name
+field_name: field_dmp_funder_name
+entity_type: node
+bundle: funding_information
+label: Funder
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: funder_field
+

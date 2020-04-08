@@ -1,0 +1,17 @@
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_funding_program
+    - node.type.funding_information
+id: node.funding_information.field_funding_program
+field_name: field_funding_program
+entity_type: node
+bundle: funding_information
+label: 'Funding Program'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
