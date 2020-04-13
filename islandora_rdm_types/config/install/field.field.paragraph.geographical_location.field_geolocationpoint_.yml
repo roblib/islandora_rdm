@@ -1,0 +1,21 @@
+uuid: 52519286-0643-4324-8ccc-c2aaa5dc006d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_geolocationpoint_
+    - paragraphs.paragraphs_type.geographical_location
+  module:
+    - geolocation
+id: paragraph.geographical_location.field_geolocationpoint_
+field_name: field_geolocationpoint_
+entity_type: paragraph
+bundle: geographical_location
+label: 'geoLocationPoint '
+description: 'A point location in space containing a single longitude-latitude pair.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

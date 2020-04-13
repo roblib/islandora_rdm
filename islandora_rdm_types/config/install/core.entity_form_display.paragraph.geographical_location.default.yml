@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.geographical_location.field_geolocation
+    - field.field.paragraph.geographical_location.field_geolocationpoint_
+    - paragraphs.paragraphs_type.geographical_location
+  module:
+    - geolocation
+id: paragraph.geographical_location.default
+targetEntityType: paragraph
+bundle: geographical_location
+mode: default
+content:
+  field_geolocation:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_geolocationpoint_:
+    type: geolocation_latlng
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
