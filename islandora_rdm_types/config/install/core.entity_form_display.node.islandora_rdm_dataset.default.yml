@@ -1,3 +1,4 @@
+uuid: ddaf52d8-15fb-427b-9c92-c4eb9259d0ad
 langcode: en
 status: true
 dependencies:
@@ -5,10 +6,12 @@ dependencies:
     - entity_browser.browser.funding_information_selector
     - field.field.node.islandora_rdm_dataset.body
     - field.field.node.islandora_rdm_dataset.field_date_paragraph
+    - field.field.node.islandora_rdm_dataset.field_geographic_location
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
     - field.field.node.islandora_rdm_dataset.field_member_of
     - field.field.node.islandora_rdm_dataset.field_model
     - field.field.node.islandora_rdm_dataset.field_organization
+    - field.field.node.islandora_rdm_dataset.field_physical_location
     - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
     - field.field.node.islandora_rdm_dataset.field_rdm_contributors
     - field.field.node.islandora_rdm_dataset.field_rdm_creator
@@ -32,7 +35,6 @@ dependencies:
     - controlled_access_terms
     - entity_browser
     - field_group
-    - geolocation
     - languagefield
     - lc_subject_field
     - paragraphs
@@ -90,7 +92,7 @@ third_party_settings:
       region: content
     group_geographical_info:
       children:
-        - field_rdm_geograhical_location
+        - field_physical_location
         - field_subjects
         - field_rdm_description
       parent_name: group_dataset
@@ -138,7 +140,7 @@ third_party_settings:
       label: Funding
       region: hidden
 _core:
-  default_config_hash: 2ou9J5kgSVJA_EZDSKGQJhxji_zNSSF92raPbPi1KZs
+  default_config_hash: IVUAzYJnoxCo8_ofT3uH3llumjd3aab6mTaqtMOsWAM
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -183,6 +185,18 @@ content:
     third_party_settings: {  }
     type: grid_widget
     region: content
+  field_physical_location:
+    type: entity_reference_paragraphs
+    weight: 25
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
   field_rdm_alternate_identifier:
     type: paragraphs
     weight: 11
@@ -278,12 +292,6 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
-  field_rdm_geograhical_location:
-    weight: 24
-    settings: {  }
-    third_party_settings: {  }
-    type: geolocation_latlng
-    region: content
   field_rdm_license:
     type: typed_relation_default
     weight: 15
@@ -344,7 +352,7 @@ content:
     type: string_textfield
     region: content
   field_subjects:
-    weight: 25
+    weight: 26
     settings: {  }
     third_party_settings: {  }
     type: lcsubject_widget
@@ -366,7 +374,9 @@ content:
 hidden:
   body: true
   created: true
+  field_geographic_location: true
   field_member_of: true
+  field_rdm_geograhical_location: true
   field_rdm_publisher: true
   field_tags: true
   langcode: true
