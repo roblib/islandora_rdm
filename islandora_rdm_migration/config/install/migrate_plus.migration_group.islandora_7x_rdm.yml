@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - islandora_rdm_migration
+      - migrate_plus
+      - islandora
+id: islandora_7x_rdm
+label: 'Islandora RDM Datasets'
+description: 'Migration configuration for migrating Islandora 7.x datasets'
+source_type: Islandora_7x
+module: null
+shared_configuration: null
