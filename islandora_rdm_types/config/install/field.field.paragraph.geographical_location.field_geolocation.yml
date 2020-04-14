@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_geolocation
+    - paragraphs.paragraphs_type.geographical_location
+id: paragraph.geographical_location.field_geolocation
+field_name: field_geolocation
+entity_type: paragraph
+bundle: geographical_location
+label: GeoLocation
+description: 'Spatial region or named place where the data was gathered or about which the data is focused'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - geolocation
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_geolocationpoint_
+field_name: field_geolocationpoint_
+entity_type: paragraph
+type: geolocation
+settings: {  }
+module: geolocation
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geographic_location
+    - node.type.islandora_rdm_dataset
+    - paragraphs.paragraphs_type.geographical_location
+  module:
+    - entity_reference_revisions
+id: node.islandora_rdm_dataset.field_geographic_location
+field_name: field_geographic_location
+entity_type: node
+bundle: islandora_rdm_dataset
+label: 'Geographic Location'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      geographical_location: geographical_location
+    target_bundles_drag_drop:
+      alternate_identifier:
+        weight: 13
+        enabled: false
+      geographical_location:
+        enabled: true
+        weight: 14
+      license_attribution:
+        weight: 15
+        enabled: false
+      rdm_contribution_organizational:
+        weight: 16
+        enabled: false
+      rdm_contribution_personal:
+        weight: 17
+        enabled: false
+      rdm_organization:
+        weight: 18
+        enabled: false
+      rdm_organizational_identifier:
+        weight: 19
+        enabled: false
+      rdm_person:
+        weight: 20
+        enabled: false
+      rdm_personal_identifier:
+        weight: 21
+        enabled: false
+      related_resource:
+        weight: 22
+        enabled: false
+      typed_date:
+        weight: 23
+        enabled: false
+      typed_description:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

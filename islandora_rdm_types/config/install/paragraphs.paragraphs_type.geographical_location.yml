@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: geographical_location
+label: 'Geographical Location'
+icon_uuid: null
+icon_default: null
+description: 'Geographical location data, compliant with the  Datacite Schema'
+behavior_plugins: {  }
