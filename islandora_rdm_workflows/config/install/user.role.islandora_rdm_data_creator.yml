@@ -44,6 +44,7 @@ permissions:
   - 'use data_management_plan_publication transition restore'
   - 'use data_management_plan_publication transition restore_to_draft'
   - 'use islandora_rdm_dataset_workflow transition create_new_draft'
+  - 'use islandora_rdm_dataset_workflow transition revert_to_draft'
   - 'use islandora_rdm_dataset_workflow transition submit_for_review'
   - 'use media_publication transition create_new_draft'
   - 'use media_publication transition edit_media_while_in_review'
