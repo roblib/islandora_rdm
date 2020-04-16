@@ -38,6 +38,7 @@ permissions:
   - 'grant own content access'
   - 'manage media'
   - 'manage own workflow participants'
+  - 'update media'
   - 'use data_management_plan_publication transition archive'
   - 'use data_management_plan_publication transition create_new_draft'
   - 'use data_management_plan_publication transition publish'
