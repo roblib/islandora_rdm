@@ -21,7 +21,6 @@ dependencies:
     - path
     - readonly_field_widget
     - text
-    - uppy
 third_party_settings:
   field_group:
     group_checksum:
@@ -108,12 +107,8 @@ content:
     weight: 1
     settings:
       progress_indicator: throbber
-      auto_proceed: false
-      file_sources: dashboard
-      uploader: tus
-      chunk_size: 2000000
     third_party_settings: {  }
-    type: uppy_widget
+    type: file_generic
     region: content
   field_media_of:
     weight: 8

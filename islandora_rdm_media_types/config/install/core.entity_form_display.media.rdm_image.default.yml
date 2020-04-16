@@ -1,3 +1,4 @@
+uuid: 0c7c1f63-1df1-47d2-9ad8-b0a64ab91f58
 langcode: en
 status: true
 dependencies:
@@ -18,14 +19,15 @@ dependencies:
     - field.field.media.rdm_image.field_service_file
     - field.field.media.rdm_image.field_thumbnail_file
     - field.field.media.rdm_image.field_width
+    - image.style.thumbnail
     - media.type.rdm_image
   module:
     - field_group
     - file
+    - image
     - path
     - readonly_field_widget
     - text
-    - uppy
 third_party_settings:
   field_group:
     group_checksums:
@@ -119,12 +121,9 @@ content:
     weight: 1
     settings:
       progress_indicator: throbber
-      auto_proceed: false
-      file_sources: dashboard
-      uploader: tus
-      chunk_size: 2000000
+      preview_image_style: thumbnail
     third_party_settings: {  }
-    type: uppy_widget
+    type: image_image
     region: content
   field_media_of:
     weight: 8
