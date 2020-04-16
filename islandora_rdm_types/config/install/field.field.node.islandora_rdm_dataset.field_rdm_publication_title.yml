@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_publication_title
+    - node.type.islandora_rdm_dataset
+id: node.islandora_rdm_dataset.field_rdm_publication_title
+field_name: field_rdm_publication_title
+entity_type: node
+bundle: islandora_rdm_dataset
+label: 'Publication Title'
+description: 'Title of the work that this dataset is part of.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -16,7 +16,7 @@ label: 'Islandora RDM Dataset Objects'
 source:
   plugin: islandora
   solr_base_url: 'http://10.0.2.2:8080/solr'
-  q: 'fedora_datastreams_ms:DDI AND PID:researchdata\:*1'
+  q: 'fedora_datastreams_ms:DDI AND PID:researchdata\:*'
   row_type: solr
   fedora_base_url: 'http://10.0.2.2:8080/fedora'
   data_fetcher_plugin: http
@@ -58,9 +58,21 @@ source:
       label: 'Member Of'
       selector: 'RELS_EXT_isMemberOfCollection_uri_ms'
     -
+      name: publication_link_title
+      label: 'Publicatoin Link Title'
+      selector: 'ddiStudyUnit_Archive_OtherMaterial_Citation_Title_String_ms'
+    -
+      name: publication_link_url
+      label: 'Publication Link URL'
+      selector: 'ddiStudyUnit_Archive_OtherMaterial_ExternalURLReference_ms'
+    -
       name: subject
       label: 'Subject'
       selector: 'ddiStudyUnit_Coverage_TopicalCoverage_Subject_ms'
+    -
+      name: publisher
+      label: 'Publisher'
+      selector: 'ddiStudyUnit_Citation_Publisher_PublisherName_String_ms'
   ids:
     PID:
       type: string
@@ -88,6 +100,10 @@ process:
       plugin: skip_on_empty
       method: process
       source: rdm_resource_type
+  field_rdm_resource_type_general:
+    -
+      plugin: default_value
+      default_value: 'Dataset'
   field_rdm_creator:
     -
       plugin: migration_lookup
@@ -123,21 +139,35 @@ process:
       process:
         target_id: 'id'
         target_revision_id: 'revision_id'
+  field_rdm_publication_link/uri:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: publication_link_url
+    -
+      plugin: extract
+      default: ''
+      index:
+        - '0'
+  field_rdm_publication_title:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: publication_link_title
+    -
+      plugin: extract
+      default_value: ''
+      index:
+        - '0'
   field_rdm_publication_year:
     - plugin: substr
       length: 4
       source: 'created'
-  field_rdm_publisher:
-    - plugin: migration_lookup
-      allow_multiple: true
-      migration:
-        - 'islandora_rdm_publisher'
-      source: 'PID'
-      no_stub: true
-    - plugin: sub_process
-      process:
-        target_id: 'id'
-        target_revision_id: 'revision_id'
+  field_organization:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: publisher
   field_subjects:
     -
       plugin: skip_on_empty
