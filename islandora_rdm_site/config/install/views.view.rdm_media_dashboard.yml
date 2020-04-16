@@ -1019,18 +1019,26 @@ display:
               islandora_rdm_metadata_curator: '0'
               islandora_rdm_data_curator: '0'
               islandora_rdm_data_creator: '0'
-          is_grouped: false
+          is_grouped: true
           group_info:
-            label: ''
+            label: Published
             description: ''
-            identifier: ''
+            identifier: status
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items: {  }
+            group_items:
+              1:
+                title: 'Yes'
+                operator: '='
+                value: '1'
+              2:
+                title: 'No'
+                operator: '='
+                value: '0'
           entity_type: media
           entity_field: status
           plugin_id: boolean
