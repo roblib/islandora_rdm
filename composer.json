@@ -30,6 +30,7 @@
         "drupal/media_attribution": "*",
         "drupal/name": "1.x-dev",
         "drupal/paragraphs": "~1.5",
+        "drupal/redirect_after_login": "*",
         "drupal/facets": "*",
         "drupal/vefl": "*",
         "drupal/viewfield": "^3.0",
