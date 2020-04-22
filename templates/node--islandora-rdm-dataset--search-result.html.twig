@@ -10,7 +10,6 @@
     {% if  node.field_rdm_publisher.0.entity.field_rdm_organization_name %}
         {{ node.field_rdm_publisher.0.entity.field_rdm_organization_name.value }}.
     {% endif %}
-    {{ node.field_rdm_resource_type_general.value }}.
     {% if node.field_islandora_rdm_identifier.value %}
         <a href="https://doi.org/{{ node.field_islandora_rdm_identifier.value }}">{{ "https://doi.org/" }}{{ node.field_islandora_rdm_identifier.value }}</a>
     {% endif %}
