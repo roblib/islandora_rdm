@@ -7,13 +7,22 @@
     {{ node.field_rdm_creator.0.entity.field_rdm_personal_name.value }}
     ({{ node.field_rdm_publication_year.value }}):
     <a href="{{ url }}" class="node__title-link">{{- label -}}</a>.
-    {{ node.field_rdm_publisher.0.entity.field_rdm_organization_name.value }}.
+    {% if  node.field_rdm_publisher.0.entity.field_rdm_organization_name %}
+        {{ node.field_rdm_publisher.0.entity.field_rdm_organization_name.value }}.
+    {% endif %}
     {{ node.field_rdm_resource_type_general.value }}.
-    <a href="https://doi.org/{{ node.field_islandora_rdm_identifier.value }}">{{ "https://doi.org/" }}{{ node.field_islandora_rdm_identifier.value }}</a>
+    {% if node.field_islandora_rdm_identifier.value %}
+        <a href="https://doi.org/{{ node.field_islandora_rdm_identifier.value }}">{{ "https://doi.org/" }}{{ node.field_islandora_rdm_identifier.value }}</a>
+    {% endif %}
 </h2>
 
 <p>{{ rdm_abstract }}</p>
-<p><span class="label search-result-subject">{{ node.field_subjects.value }}</span>
+<p>
+    {% for subject in node.field_subjects [0:3] %}
+        <span class="label search-result-subject">{{ subject.value }}</span>
+    {% endfor %}
+
+    <br/>
     {% if node.field_rdm_license.entity.field_license_link.0.url %}
         <a href="{{ node.field_rdm_license.entity.field_license_link.0.url }}"><img class="search-result-license-image"
                                                                                     src="{{ file_url(node.field_rdm_license.entity.field_license_icon.entity.fileuri) }}"
@@ -21,7 +30,3 @@
 
     {% endif %}
     <span class="label search-result-created-date">{{ "Uploaded on " }}{{ created_date }}</span></p>
-
-
-
-
