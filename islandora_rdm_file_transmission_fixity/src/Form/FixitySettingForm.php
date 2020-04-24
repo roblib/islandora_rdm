@@ -48,7 +48,7 @@ class FixitySettingForm extends ConfigFormBase {
     $form['actual_fixity_field'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Machine name of actual checksum field'),
-      '#description' => $this->t('Each Media Type must have a to hold the actual checksum.'),
+      '#description' => $this->t('Each Media Type must have a field to hold the actual checksum.'),
       '#default_value' => $config->get('actual_fixity_field') ? $config->get('actual_fixity_field') : 'field_actual_checksum',
     ];
     return parent::buildForm($form, $form_state);
