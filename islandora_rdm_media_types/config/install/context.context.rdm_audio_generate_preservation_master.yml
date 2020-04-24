@@ -11,8 +11,8 @@ description: 'Generates Preservation Master as file attachment'
 requireAllConditions: false
 disabled: false
 conditions:
-  entity_bundle:
-    id: entity_bundle
+  islandora_entity_bundle:
+    id: islandora_entity_bundle
     bundles:
       rdm_audio: rdm_audio
     negate: 0

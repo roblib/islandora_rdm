@@ -106,37 +106,4 @@ function check_bigdata_service() {
     ];
     return $array;
   }
-
 }
-
-
-/**
- * Implements hook_install().
- */
-function islandora_rdm_install() {
-  $views = ['solr_search_content'];
-  foreach ($views as $candidate) {
-    $view = \Drupal::service('entity.manager')->getStorage('view')->load($candidate);
-    if (!is_null($view)) {
-      $view->setStatus(FALSE);
-      $view->save();
-    }
-  }
-  // Add extensions if they doesn't already exist.
-  $field = FieldConfig::load("media.file.field_media_file");
-  $fieldSettings = $field->getSettings();
-  $extensions = $fieldSettings['file_extensions'];
-  $candidates = ['csv', 'tsv', 'zip'];
-  $count = 0;
-  foreach ($candidates as $candidate) {
-    if (!strpos($extensions, $candidate)) {
-      $fieldSettings['file_extensions'] .= " $candidate";
-      $count++;
-    }
-  }
-  if ($count) {
-    $field->set('settings', $fieldSettings);
-    $field->save();
-  }
-}
-

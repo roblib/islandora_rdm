@@ -18,8 +18,8 @@ conditions:
     uuid: 42a13ccf-256b-4a60-b1ee-2e6a709bea07
     context_mapping:
       media: '@islandora.media_route_context_provider:media'
-  entity_bundle:
-    id: entity_bundle
+  islandora_entity_bundle:
+    id: islandora_entity_bundle
     bundles:
       rdm_tabular_data: rdm_tabular_data
     negate: 0
