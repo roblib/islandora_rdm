@@ -34,9 +34,8 @@ class Dataset {
     if ($node->getType() !== 'islandora_rdm_dataset') {
       return FALSE;
     }
-
-    $this->doc = \DOMDocument::loadXml('<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://datacite.org/schema/kernel-4" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd"></resource>');
-
+    $this->doc = new \DOMDocument();
+    $this->doc ->loadXml('<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://datacite.org/schema/kernel-4" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd"></resource>');
     // Identifier.
     $resource = $this->doc->documentElement;
 
