@@ -1,4 +1,3 @@
-uuid: ddaf52d8-15fb-427b-9c92-c4eb9259d0ad
 langcode: en
 status: true
 dependencies:
@@ -20,6 +19,8 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_rdm_funding_information
     - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
     - field.field.node.islandora_rdm_dataset.field_rdm_license
+    - field.field.node.islandora_rdm_dataset.field_rdm_publication_link
+    - field.field.node.islandora_rdm_dataset.field_rdm_publication_title
     - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
     - field.field.node.islandora_rdm_dataset.field_rdm_publisher
     - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
@@ -36,8 +37,10 @@ dependencies:
     - entity_browser
     - field_group
     - languagefield
-    - lc_subject_field
+    - linked_data_field
+    - link
     - paragraphs
+    - readonly_field_widget
 third_party_settings:
   field_group:
     group_dataset:
@@ -92,9 +95,11 @@ third_party_settings:
       region: content
     group_geographical_info:
       children:
+        - field_rdm_description
         - field_physical_location
         - field_subjects
-        - field_rdm_description
+        - field_rdm_publication_title
+        - field_rdm_publication_link
       parent_name: group_dataset
       weight: 22
       format_type: tab
@@ -140,7 +145,7 @@ third_party_settings:
       label: Funding
       region: hidden
 _core:
-  default_config_hash: IVUAzYJnoxCo8_ofT3uH3llumjd3aab6mTaqtMOsWAM
+  default_config_hash: _UZhLCweZ1BGfFcfM2lLTqI-L5QMKJO72ayLB4YkJeY
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -187,7 +192,7 @@ content:
     region: content
   field_physical_location:
     type: entity_reference_paragraphs
-    weight: 25
+    weight: 30
     region: content
     settings:
       title: Paragraph
@@ -261,7 +266,7 @@ content:
     region: content
   field_rdm_description:
     type: paragraphs
-    weight: 27
+    weight: 29
     settings:
       title: Description
       title_plural: Descriptions
@@ -302,6 +307,22 @@ content:
       placeholder: ''
       match_limit: 10
     third_party_settings: {  }
+  field_rdm_publication_link:
+    type: link_default
+    weight: 33
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_rdm_publication_title:
+    type: string_textfield
+    weight: 32
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_rdm_publication_year:
     weight: 11
     settings:
@@ -338,10 +359,14 @@ content:
     type: string_textfield
     region: content
   field_rdm_resource_type_general:
-    type: options_select
+    type: readonly_field_widget
     weight: 5
     region: content
-    settings: {  }
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
   field_rights:
     weight: 14
@@ -352,7 +377,7 @@ content:
     type: string_textfield
     region: content
   field_subjects:
-    weight: 26
+    weight: 31
     settings: {  }
     third_party_settings: {  }
     type: lcsubject_widget

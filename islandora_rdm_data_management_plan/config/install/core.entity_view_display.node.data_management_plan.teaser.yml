@@ -29,6 +29,8 @@ dependencies:
     - node.type.data_management_plan
   module:
     - user
+_core:
+  default_config_hash: QTtAWTTJZpmFm15m5RmY8Gf6YiurUK-TXFlrw0413BY
 id: node.data_management_plan.teaser
 targetEntityType: node
 bundle: data_management_plan
@@ -114,6 +116,31 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  rdm_media_evas_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_entity_view_2:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_entity_view_3:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_service_file:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_thumbnail:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
@@ -142,3 +169,4 @@ hidden:
   field_model: true
   field_rdm_award_number: true
   langcode: true
+  search_api_excerpt: true

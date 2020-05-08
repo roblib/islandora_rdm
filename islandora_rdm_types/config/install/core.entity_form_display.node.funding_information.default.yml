@@ -15,21 +15,15 @@ dependencies:
     - node.type.funding_information
   module:
     - content_moderation
-    - lc_subject_field
+    - linked_data_field
     - link
 _core:
-  default_config_hash: n0dipRv82VgF36_t9aOwsGY0aJJ5O_soqqeXT3GoYOc
+  default_config_hash: 0v0HkKsaj3AYs2gUxX0xkJXPZTFXp9Y5oyWsJ0tq6Xk
 id: node.funding_information.default
 targetEntityType: node
 bundle: funding_information
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_funding_organization:
     weight: 3
     settings: {  }
@@ -44,15 +38,9 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_model:
-    type: options_select
-    weight: 14
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_rdm_award_uri:
     type: link_default
-    weight: 12
+    weight: 8
     region: content
     settings:
       placeholder_url: ''
@@ -89,29 +77,15 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 13
-    settings: {  }
-    region: content
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 9
+    settings: {  }
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 10
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
@@ -122,18 +96,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 7
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
-    region: content
-    third_party_settings: {  }
 hidden:
+  created: true
   field_dmp_funder_name: true
+  field_model: true
   field_rdm_funding_organization: true
   field_rdm_funding_program: true
   path: true
+  promote: true
+  sticky: true
+  uid: true

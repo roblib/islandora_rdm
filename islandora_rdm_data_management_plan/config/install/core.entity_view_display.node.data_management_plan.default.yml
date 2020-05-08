@@ -27,9 +27,12 @@ dependencies:
     - field.field.node.data_management_plan.field_rdm_award_number
     - node.type.data_management_plan
   module:
-    - lc_subject_field
+    - entity_reference_revisions
+    - linked_data_field
     - text
     - user
+_core:
+  default_config_hash: aSLH5JK8yBKvJnB2ew6nyrSNP-mMSi3BM77jsTgRS5Y
 id: node.data_management_plan.default
 targetEntityType: node
 bundle: data_management_plan
@@ -70,113 +73,131 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_dmp_contributor:
+    type: entity_reference_revisions_entity_view
+    weight: 18
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_dmp_creator:
+    type: entity_reference_revisions_entity_view
+    weight: 17
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   field_dmp_funder_name:
-    weight: 15
+    weight: 20
     label: above
     settings: {  }
     third_party_settings: {  }
     type: funder_formatter
     region: content
   field_dmp_projectdesc:
-    weight: 14
+    weight: 19
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_dmp_question_1_1:
-    weight: 19
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_dmp_question_1_2:
-    weight: 17
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_dmp_question_2_1:
-    weight: 18
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_dmp_question_3_1:
-    weight: 20
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_dmp_question_3_2:
-    weight: 21
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_dmp_question_4_1:
-    weight: 22
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_dmp_question_4_2:
-    weight: 23
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_dmp_question_5_1:
     weight: 24
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_dmp_question_5_2:
+  field_dmp_question_1_2:
+    weight: 22
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_dmp_question_2_1:
+    weight: 23
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_dmp_question_3_1:
     weight: 25
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_dmp_question_6_1:
+  field_dmp_question_3_2:
     weight: 26
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_dmp_question_6_2:
+  field_dmp_question_4_1:
     weight: 27
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_dmp_question_7_1:
+  field_dmp_question_4_2:
     weight: 28
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_dmp_question_7_2:
+  field_dmp_question_5_1:
     weight: 29
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_dmp_question_5_2:
+    weight: 30
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_dmp_question_6_1:
+    weight: 31
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_dmp_question_6_2:
+    weight: 32
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_dmp_question_7_1:
+    weight: 33
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_dmp_question_7_2:
+    weight: 34
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_rdm_award_number:
-    weight: 16
+    weight: 21
     label: above
     settings:
       link_to_entity: false
@@ -184,7 +205,7 @@ content:
     type: string
     region: content
   links:
-    weight: 13
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -214,7 +235,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   pdfjs_media_evas_service_file:
-    weight: 10
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -223,12 +244,35 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  rdm_media_evas_entity_view_1:
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  rdm_media_evas_entity_view_2:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  rdm_media_evas_entity_view_3:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  rdm_media_evas_service_file:
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  rdm_media_evas_thumbnail:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
-  field_dmp_contributor: true
-  field_dmp_creator: true
   field_dmp_download: true
   field_dmp_plan_generic: true
   field_dmp_share_your_plan: true
@@ -236,3 +280,4 @@ hidden:
   field_model: true
   islandora_fits_checksum: true
   langcode: true
+  search_api_excerpt: true

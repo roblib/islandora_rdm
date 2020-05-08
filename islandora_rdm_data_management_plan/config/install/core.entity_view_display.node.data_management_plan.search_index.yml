@@ -30,49 +30,26 @@ dependencies:
   module:
     - entity_reference_revisions
     - user
+_core:
+  default_config_hash: jnFiIvIGJSCUb8wCkkfLbZJkRSkykadrz98vhkjJI2I
 id: node.data_management_plan.search_index
 targetEntityType: node
 bundle: data_management_plan
 mode: search_index
 content:
-  content_moderation_control:
-    weight: -20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   display_media_dataset_file_list:
     weight: 10
     settings: {  }
     third_party_settings: {  }
     region: content
-  display_media_entity_view_1:
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  display_media_entity_view_2:
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   display_media_entity_view_3:
     weight: 10
     settings: {  }
     third_party_settings: {  }
     region: content
-  display_media_service_file:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  display_media_thumbnail:
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_dmp_creator:
     type: entity_reference_revisions_entity_view
-    weight: 12
+    weight: 0
     label: above
     settings:
       view_mode: default
@@ -80,58 +57,28 @@ content:
     third_party_settings: {  }
     region: content
   field_dmp_projectdesc:
-    weight: 11
+    weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
-  islandora_fits_checksum:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  links:
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  openseadragon_media_evas_entity_view_1:
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  openseadragon_media_evas_entity_view_2:
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  openseadragon_media_evas_service_file:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  pdfjs_media_evas_entity_view_1:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  pdfjs_media_evas_entity_view_2:
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  pdfjs_media_evas_service_file:
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   player_media_evas_entity_view_1:
     weight: 10
     settings: {  }
     third_party_settings: {  }
     region: content
+  search_api_excerpt:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  content_moderation_control: true
+  display_media_entity_view_1: true
+  display_media_entity_view_2: true
+  display_media_service_file: true
+  display_media_thumbnail: true
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
@@ -156,4 +103,17 @@ hidden:
   field_member_of: true
   field_model: true
   field_rdm_award_number: true
+  islandora_fits_checksum: true
   langcode: true
+  links: true
+  openseadragon_media_evas_entity_view_1: true
+  openseadragon_media_evas_entity_view_2: true
+  openseadragon_media_evas_service_file: true
+  pdfjs_media_evas_entity_view_1: true
+  pdfjs_media_evas_entity_view_2: true
+  pdfjs_media_evas_service_file: true
+  rdm_media_evas_entity_view_1: true
+  rdm_media_evas_entity_view_2: true
+  rdm_media_evas_entity_view_3: true
+  rdm_media_evas_service_file: true
+  rdm_media_evas_thumbnail: true

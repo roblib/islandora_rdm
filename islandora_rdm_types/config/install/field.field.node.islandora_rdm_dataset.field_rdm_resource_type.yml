@@ -4,6 +4,8 @@ dependencies:
   config:
     - field.storage.node.field_rdm_resource_type
     - node.type.islandora_rdm_dataset
+_core:
+  default_config_hash: Cvea-A5pjnsQkJvN1lWRb9Y2CtV2kmr_CS7bDpbpzLY
 id: node.islandora_rdm_dataset.field_rdm_resource_type
 field_name: field_rdm_resource_type
 entity_type: node

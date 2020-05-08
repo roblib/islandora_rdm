@@ -29,7 +29,7 @@ dependencies:
   module:
     - content_moderation
     - field_group
-    - lc_subject_field
+    - linked_data_field
     - markup
     - paragraphs
     - text
@@ -241,6 +241,8 @@ third_party_settings:
         required_fields: true
       label: Contributor(s)
       region: content
+_core:
+  default_config_hash: dBCvTWkfajWl0FmSnjk9tDcrFCUxlg4yrofnu20P3vk
 id: node.data_management_plan.default
 targetEntityType: node
 bundle: data_management_plan

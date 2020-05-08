@@ -19,7 +19,7 @@ dependencies:
   - islandora_rdm_defaults
   - islandora_rdm_datacite
   - languagefield
-  - lc_subject_field
+  - linked_data_field
   - link
   - media_attribution
   - menu_ui

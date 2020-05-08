@@ -20,7 +20,7 @@
         "drupal/field_permissions": "*",
         "drupal/field_group": "*",
         "drupal/languagefield": "*",
-        "drupal/lc_subject_field": "1.x-dev",
+        "drupal/linked_data_field": "1.x-dev",
         "drupal/metatag": "1.11",
         "drupal/schema_metatag": "*",
         "drupal/schema_dataset": "*",

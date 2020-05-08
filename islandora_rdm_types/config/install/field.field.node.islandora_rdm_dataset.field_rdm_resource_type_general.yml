@@ -6,6 +6,8 @@ dependencies:
     - node.type.islandora_rdm_dataset
   module:
     - options
+_core:
+  default_config_hash: Az5oX-5tIn2Swj0ZvcPq3XQ5jW1gVpDpS6thNDCHi3I
 id: node.islandora_rdm_dataset.field_rdm_resource_type_general
 field_name: field_rdm_resource_type_general
 entity_type: node
@@ -14,7 +16,9 @@ label: 'Resource Type (General)'
 description: 'The general type of a resource.'
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: Dataset
 default_value_callback: ''
 settings: {  }
 field_type: list_string

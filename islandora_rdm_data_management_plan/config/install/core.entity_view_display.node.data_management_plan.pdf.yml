@@ -29,7 +29,7 @@ dependencies:
     - node.type.data_management_plan
   module:
     - entity_reference_revisions
-    - lc_subject_field
+    - linked_data_field
     - paragraphs
     - text
     - user

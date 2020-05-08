@@ -14,12 +14,12 @@ dependencies:
     - field.field.node.funding_information.field_rdm_start_date
     - node.type.funding_information
   module:
-    - lc_subject_field
+    - linked_data_field
     - link
     - options
     - user
 _core:
-  default_config_hash: qexjKVZT-DAmFlkDr2aOSOCa1q9baR3iWLq595RQdY0
+  default_config_hash: DB-qGycqP4Moe8ZuGUQaza-pkST0alv6oqp3CelYujg
 id: node.funding_information.default
 targetEntityType: node
 bundle: funding_information

@@ -5,9 +5,12 @@ dependencies:
     - core.entity_view_mode.node.rdm_citation
     - field.field.node.islandora_rdm_dataset.body
     - field.field.node.islandora_rdm_dataset.field_date_paragraph
+    - field.field.node.islandora_rdm_dataset.field_geographic_location
     - field.field.node.islandora_rdm_dataset.field_islandora_rdm_identifier
     - field.field.node.islandora_rdm_dataset.field_member_of
     - field.field.node.islandora_rdm_dataset.field_model
+    - field.field.node.islandora_rdm_dataset.field_organization
+    - field.field.node.islandora_rdm_dataset.field_physical_location
     - field.field.node.islandora_rdm_dataset.field_rdm_alternate_identifier
     - field.field.node.islandora_rdm_dataset.field_rdm_contributors
     - field.field.node.islandora_rdm_dataset.field_rdm_creator
@@ -16,6 +19,8 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_rdm_funding_information
     - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
     - field.field.node.islandora_rdm_dataset.field_rdm_license
+    - field.field.node.islandora_rdm_dataset.field_rdm_publication_link
+    - field.field.node.islandora_rdm_dataset.field_rdm_publication_title
     - field.field.node.islandora_rdm_dataset.field_rdm_publication_year
     - field.field.node.islandora_rdm_dataset.field_rdm_publisher
     - field.field.node.islandora_rdm_dataset.field_rdm_related_identifier
@@ -29,7 +34,7 @@ dependencies:
     - entity_reference_revisions
     - field_group
     - geolocation
-    - lc_subject_field
+    - linked_data_field
     - options
     - user
 third_party_settings:
@@ -80,6 +85,8 @@ third_party_settings:
         direction: horizontal
       label: Dataset
       region: content
+_core:
+  default_config_hash: pFRe90iVWi4zmo4IjH8RRR6G_75vrRKXx0YNV-M_Po4
 id: node.islandora_rdm_dataset.rdm_citation
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -266,15 +273,46 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  rdm_media_evas_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_entity_view_2:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_entity_view_3:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_service_file:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  rdm_media_evas_thumbnail:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   body: true
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  field_geographic_location: true
   field_member_of: true
   field_model: true
+  field_organization: true
+  field_physical_location: true
   field_rdm_dataset_language: true
   field_rdm_funding_information: true
   field_rdm_license: true
+  field_rdm_publication_link: true
+  field_rdm_publication_title: true
   field_tags: true
   langcode: true
+  search_api_excerpt: true

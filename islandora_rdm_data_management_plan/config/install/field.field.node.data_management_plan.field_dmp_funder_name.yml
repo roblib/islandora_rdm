@@ -5,7 +5,7 @@ dependencies:
     - field.storage.node.field_dmp_funder_name
     - node.type.data_management_plan
   module:
-    - lc_subject_field
+    - linked_data_field
 id: node.data_management_plan.field_dmp_funder_name
 field_name: field_dmp_funder_name
 entity_type: node

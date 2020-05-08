@@ -16,7 +16,7 @@ dependencies:
   - islandora_rdm_defaults
   - islandora_rdm_types
   - language
-  - lc_subject_field
+  - linked_data_field
   - markup
   - menu_ui
   - metatag
