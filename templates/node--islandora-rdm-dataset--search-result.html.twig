@@ -10,6 +10,10 @@
     {% if  node.field_rdm_publisher.0.entity.field_rdm_organization_name %}
         {{ node.field_rdm_publisher.0.entity.field_rdm_organization_name.value }}.
     {% endif %}
+<<<<<<< Updated upstream
+=======
+    {{ node.field_rdm_resource_type_general.value }}.
+>>>>>>> Stashed changes
     {% if node.field_islandora_rdm_identifier.value %}
         <a href="https://doi.org/{{ node.field_islandora_rdm_identifier.value }}">{{ "https://doi.org/" }}{{ node.field_islandora_rdm_identifier.value }}</a>
     {% endif %}
@@ -28,5 +32,9 @@
                                                                                     alt="access right"> </a>
 
     {% endif %}
+<<<<<<< Updated upstream
     <span class="label search-result-created-date"> {{ node.field_rdm_resource_type_general.value }} Uploaded on {{ created_date }}</span>
+=======
+    <span class="label search-result-created-date"> Uploaded on {{ created_date }}</span>
+>>>>>>> Stashed changes
 </p>
