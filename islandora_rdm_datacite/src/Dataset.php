@@ -34,15 +34,10 @@ class Dataset {
     if ($node->getType() !== 'islandora_rdm_dataset') {
       return FALSE;
     }
-<<<<<<< Updated upstream
-    $this->doc = new \DOMDocument();
-    $this->doc ->loadXml('<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://datacite.org/schema/kernel-4" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd"></resource>');
-=======
 
     $this->doc = new \DOMDocument();
     $this->doc ->loadXml('<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://datacite.org/schema/kernel-4" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd"></resource>');
 
->>>>>>> Stashed changes
     // Identifier.
     $resource = $this->doc->documentElement;
 
