@@ -53,7 +53,7 @@
             },
             "drupal/schema_metatag": {
                 "Recipe step descriptions will explode on comma": "https://www.drupal.org/files/issues/2019-07-15/2976935-use-metatag-delimiter.patch"
-            }, 
+            }
         }
     }
 }
