@@ -28,6 +28,7 @@ dependencies:
   - options
   - paragraphs
   - rdf
+  - readonly_field_widget
   - schema_dataset
   - schema_metatag
   - taxonomy

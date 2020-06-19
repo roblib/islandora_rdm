@@ -22,6 +22,7 @@
         "drupal/languagefield": "*",
         "drupal/linked_data_field": "1.x-dev",
         "drupal/metatag": "1.11",
+        "drupal/readonly_field_widget": "*",
         "drupal/schema_metatag": "*",
         "drupal/schema_dataset": "*",
         "islandora/controlled_access_terms": "dev-8.x-1.x",
