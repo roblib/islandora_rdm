@@ -30,10 +30,7 @@ All other patches are defined in composer.json.
       https://www.drupal.org/files/issues/2019-07-15/3067803-token-alter-hook_1.patch
   3. drupal/schema_metatag: Recipe step descriptions will explode on comma
       https://www.drupal.org/files/issues/2019-07-15/2976935-use-metatag-delimiter.patch
-  4. drupal/tus: Adds config for fly system
-      https://www.drupal.org/files/issues/2020-03-23/tus-422_error-3079433-17.patch
-            }
-
+} 
 ## Module Structure
 
 1. islandora_rdm - Core utilities and classes that any module should expect to be available.
