@@ -11,7 +11,7 @@ third_party_settings:
 id: node.field_subjects
 field_name: field_subjects
 entity_type: node
-type: lcsubject_field
+type: linked_data_field
 settings: {  }
 module: linked_data_field
 locked: false

@@ -188,7 +188,7 @@ content:
     weight: 9
     settings: {  }
     third_party_settings: {  }
-    type: grid_widget
+    type: linked_data_field_widget
     region: content
   field_physical_location:
     type: entity_reference_paragraphs
@@ -380,7 +380,7 @@ content:
     weight: 31
     settings: {  }
     third_party_settings: {  }
-    type: lcsubject_widget
+    type: linked_data_field_widget
     region: content
   moderation_state:
     type: moderation_state_default

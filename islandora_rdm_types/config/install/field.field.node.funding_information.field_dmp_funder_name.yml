@@ -17,5 +17,5 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: funder_field
+field_type: linked_data_field
 

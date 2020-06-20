@@ -96,7 +96,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: funder_formatter
+    type: linked_data_field_formatter
     region: content
   field_dmp_projectdesc:
     weight: 19

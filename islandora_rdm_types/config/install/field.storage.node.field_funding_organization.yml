@@ -11,7 +11,7 @@ third_party_settings:
 id: node.field_funding_organization
 field_name: field_funding_organization
 entity_type: node
-type: funder_field
+type: linked_data_field
 settings: {  }
 module: linked_data_field
 locked: false

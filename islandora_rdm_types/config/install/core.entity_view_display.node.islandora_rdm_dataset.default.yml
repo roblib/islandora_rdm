@@ -159,7 +159,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: grid_formatter
+    type: linked_data_field_formatter
     region: content
   field_rdm_contributors:
     type: entity_reference_revisions_entity_view
@@ -271,7 +271,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: lcsubject_formatter
+    type: linked_data_field_formatter
     region: content
   links:
     weight: 8
