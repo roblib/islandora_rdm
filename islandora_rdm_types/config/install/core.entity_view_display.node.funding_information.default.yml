@@ -46,7 +46,7 @@ content:
     third_party_settings: {  }
     region: content
   field_dmp_funder_name:
-    type: linked_data_field_formatter
+    type: ld_link_formatter
     weight: 0
     region: content
     label: inline
@@ -57,7 +57,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: linked_data_field_formatter
+    type: ld_link_formatter
     region: content
   field_funding_program:
     weight: 19

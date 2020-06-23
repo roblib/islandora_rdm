@@ -231,7 +231,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: linked_data_field_formatter
+    type: ld_link_formatter
     region: content
   islandora_fits_checksum:
     weight: 100
