@@ -28,7 +28,7 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
-    type: linked_data_field_widget
+    type: linked_data_widget
     region: content
   field_funding_program:
     weight: 4
