@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rdm_field_of_research
+    - node.type.islandora_rdm_dataset
+  module:
+    - linked_data_field
+id: node.islandora_rdm_dataset.field_rdm_field_of_research
+field_name: field_rdm_field_of_research
+entity_type: node
+bundle: islandora_rdm_dataset
+label: 'Field of Research'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  source: crossref_funder_id
+field_type: linked_data_field

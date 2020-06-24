@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.islandora_rdm_dataset.field_rdm_creator
     - field.field.node.islandora_rdm_dataset.field_rdm_dataset_language
     - field.field.node.islandora_rdm_dataset.field_rdm_description
+    - field.field.node.islandora_rdm_dataset.field_rdm_field_of_research
     - field.field.node.islandora_rdm_dataset.field_rdm_funding_information
     - field.field.node.islandora_rdm_dataset.field_rdm_geograhical_location
     - field.field.node.islandora_rdm_dataset.field_rdm_license
@@ -37,8 +38,8 @@ dependencies:
     - entity_browser
     - field_group
     - languagefield
-    - linked_data_field
     - link
+    - linked_data_field
     - paragraphs
     - readonly_field_widget
 third_party_settings:
@@ -66,8 +67,9 @@ third_party_settings:
         - field_rdm_contributors
         - field_rdm_resource_type_general
         - field_rdm_resource_type
+        - field_rdm_field_of_research
       parent_name: group_dataset
-      weight: 20
+      weight: 3
       format_type: tab
       format_settings:
         id: dataset-group-identification
@@ -83,7 +85,7 @@ third_party_settings:
         - field_rdm_publication_year
         - field_date_paragraph
       parent_name: group_dataset
-      weight: 21
+      weight: 4
       format_type: tab
       format_settings:
         formatter: closed
@@ -101,7 +103,7 @@ third_party_settings:
         - field_rdm_publication_title
         - field_rdm_publication_link
       parent_name: group_dataset
-      weight: 22
+      weight: 5
       format_type: tab
       format_settings:
         formatter: closed
@@ -119,8 +121,9 @@ third_party_settings:
         - field_rights
         - field_rdm_license
         - field_rdm_dataset_language
+        - field_rdm_funding_information
       parent_name: group_dataset
-      weight: 23
+      weight: 6
       format_type: tab
       format_settings:
         formatter: closed
@@ -131,8 +134,7 @@ third_party_settings:
       label: Identifiers
       region: content
     group_funding:
-      children:
-        - field_rdm_funding_information
+      children: {  }
       parent_name: group_dataset
       weight: 24
       format_type: tab
@@ -145,7 +147,7 @@ third_party_settings:
       label: Funding
       region: hidden
 _core:
-  default_config_hash: _UZhLCweZ1BGfFcfM2lLTqI-L5QMKJO72ayLB4YkJeY
+  default_config_hash: drYYnoRYK1W7ID62sHMBXUIthX9H01y0BMhVKloiu4M
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -165,9 +167,9 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
       features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
         add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
   field_islandora_rdm_identifier:
@@ -216,8 +218,8 @@ content:
       autocollapse: none
       closed_mode_threshold: 0
       features:
-        duplicate: duplicate
         collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
   field_rdm_contributors:
@@ -234,8 +236,8 @@ content:
       autocollapse: none
       closed_mode_threshold: 0
       features:
-        duplicate: duplicate
         collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
   field_rdm_creator:
@@ -252,12 +254,12 @@ content:
       autocollapse: none
       closed_mode_threshold: 0
       features:
-        duplicate: duplicate
         collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
   field_rdm_dataset_language:
-    weight: 16
+    weight: 15
     settings:
       format:
         name: name
@@ -278,13 +280,19 @@ content:
       form_display_mode: default
       default_paragraph_type: typed_description
       features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
         add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
+  field_rdm_field_of_research:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: linked_data_widget
+    region: content
   field_rdm_funding_information:
-    weight: 2
+    weight: 16
     settings:
       entity_browser: funding_information_selector
       field_widget_display: label
@@ -299,7 +307,7 @@ content:
     region: content
   field_rdm_license:
     type: typed_relation_default
-    weight: 15
+    weight: 14
     region: content
     settings:
       match_operator: CONTAINS
@@ -333,7 +341,7 @@ content:
     region: content
   field_rdm_related_identifier:
     type: paragraphs
-    weight: 13
+    weight: 12
     settings:
       title: 'Related Identifier'
       title_plural: 'Related Identifiers'
@@ -345,13 +353,13 @@ content:
       form_display_mode: default
       default_paragraph_type: alternate_identifier
       features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
         add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
   field_rdm_resource_type:
-    weight: 6
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -360,7 +368,7 @@ content:
     region: content
   field_rdm_resource_type_general:
     type: readonly_field_widget
-    weight: 5
+    weight: 3
     region: content
     settings:
       label: above
@@ -369,7 +377,7 @@ content:
       show_description: false
     third_party_settings: {  }
   field_rights:
-    weight: 14
+    weight: 13
     settings:
       size: 60
       placeholder: ''

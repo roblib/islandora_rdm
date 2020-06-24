@@ -6,6 +6,8 @@ dependencies:
     - node.type.funding_information
   module:
     - linked_data_field
+_core:
+  default_config_hash: 3cHBszRD3DFT8VGj0Eu2gRQRc9U0bQojAWmPv9iA6_Y
 id: node.funding_information.field_dmp_funder_name
 field_name: field_dmp_funder_name
 entity_type: node
@@ -16,6 +18,6 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  source: crossref_funder_id
 field_type: linked_data_field
-

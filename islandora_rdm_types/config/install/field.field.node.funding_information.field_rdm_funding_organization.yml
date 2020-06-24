@@ -5,6 +5,8 @@ dependencies:
     - field.storage.node.field_rdm_funding_organization
     - node.type.funding_information
     - taxonomy.vocabulary.funding_organizations
+_core:
+  default_config_hash: YzrZc_S_iwi3Bro6Wv5g1XBm1QLSd-XGLszwMjZfSwk
 id: node.funding_information.field_rdm_funding_organization
 field_name: field_rdm_funding_organization
 entity_type: node
