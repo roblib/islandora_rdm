@@ -17,5 +17,5 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  source: crossref_funder_id
+  source: fields_of_research
 field_type: linked_data_field
