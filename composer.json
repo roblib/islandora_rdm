@@ -36,7 +36,7 @@
         "drupal/vefl": "*",
         "drupal/viewfield": "^3.0",
         "islandora-rdm/workflow_participants": "*",
-        "islandora/migrate_7x_claw": "*"
+        "islandora/migrate_7x_claw": "dev-master"
     },
     "extra": {
         "patches": {
