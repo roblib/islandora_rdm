@@ -21,7 +21,7 @@
         "drupal/field_group": "*",
         "drupal/languagefield": "*",
         "drupal/linked_data_field": "1.x-dev",
-        "drupal/metatag": "1.11",
+        "drupal/metatag": "*",
         "drupal/readonly_field_widget": "*",
         "drupal/schema_metatag": "*",
         "drupal/schema_dataset": "*",
