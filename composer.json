@@ -36,6 +36,7 @@
         "drupal/vefl": "*",
         "drupal/viewfield": "^3.0",
         "islandora-rdm/csv_field_preview": "*",
+        "islandora-rdm/islandora_rdm_multifile_media": "*",
         "islandora-rdm/workflow_participants": "*",
         "islandora-rdm/migrate_7x_claw": "dev-master"
     },
