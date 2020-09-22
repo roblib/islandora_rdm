@@ -24,7 +24,6 @@ dependencies:
   - pdf
   - readonly_field_widget
   - system
-  - text
-  - uppy
+  - text 
   - user
 core_incompatible: false
