@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - matomo_reports
+    - node
+    - user
+  theme:
+    - carapace
+id: matomopagestatistics
+theme: carapace
+region: sidebar_second
+weight: -6
+provider: null
+plugin: matomo_page_report
+settings:
+  id: matomo_page_report
+  label: Statistics
+  provider: matomo_reports
+  label_display: visible
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  node_type:
+    id: node_type
+    bundles:
+      islandora_rdm_dataset: islandora_rdm_dataset
+      data_management_plan: data_management_plan
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
