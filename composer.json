@@ -23,7 +23,7 @@
         "drupal/linked_data_field": "1.x-dev",
         "drupal/metatag": "*",
         "drupal/readonly_field_widget": "*",
-        "drupal/schema_metatag": "*",
+        "drupal/schema_metatag": "1.6",
         "drupal/schema_dataset": "*", 
         "drupal/media_attribution": "*", 
         "drupal/paragraphs": "~1.5",
