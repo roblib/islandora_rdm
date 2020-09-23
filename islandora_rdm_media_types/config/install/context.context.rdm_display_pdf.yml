@@ -3,7 +3,6 @@ status: true
 dependencies:
   module:
     - islandora
-    - islandora_rdm_multifile_media
 name: rdm_display_pdf
 label: 'RDM - Display PDF'
 group: Islandora

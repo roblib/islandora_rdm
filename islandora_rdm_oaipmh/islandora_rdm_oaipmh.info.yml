@@ -5,4 +5,3 @@ core: 8.x
 package: 'Islandora'
 dependencies:
   - rest_oai_pmh
-  - islandora_rdm_defaults

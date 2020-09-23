@@ -14,8 +14,6 @@ dependencies:
   - islandora_core_feature
   - islandora_fits
   - islandora_rdm
-  - islandora_rdm_defaults
-  - islandora_rdm_multifile_media
   - islandora_rdm
   - islandora_rdm_types
   - language

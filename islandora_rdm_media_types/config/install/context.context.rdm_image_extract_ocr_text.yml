@@ -3,7 +3,6 @@ status: true
 dependencies:
   module:
     - islandora
-    - islandora_rdm_multifile_media
 name: rdm_image_extract_ocr_text
 label: 'RDM Image - extract OCR text'
 group: Islandora

@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - islandora_rdm_multifile_media
+    - islandora
 id: rdm_generate_a_fits_file
 label: 'RDM - Generate a FITS file'
 type: media
