@@ -14,6 +14,7 @@
     "minimum-stability": "dev",
     "require": {
         "drupal/chartjs_api": "*",
+        "drupal/clamav": "*",
         "drupal/ctools": "*",
         "drupal/events_logging": "*",
         "drupal/inline_entity_form": "*",
