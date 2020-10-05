@@ -17,6 +17,7 @@
         "drupal/ctools": "*",
         "drupal/events_logging": "*",
         "drupal/inline_entity_form": "*",
+	"drupal/entity_print": "*",
         "drupal/field_permissions": "*",
         "drupal/field_group": "*",
         "drupal/languagefield": "*",
