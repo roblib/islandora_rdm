@@ -13,7 +13,6 @@ dependencies:
   - file
   - image
   - islandora_core_feature
-  - islandora_rdm_defaults
   - islandora_rdm_types
   - language
   - linked_data_field

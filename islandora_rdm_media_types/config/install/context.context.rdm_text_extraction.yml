@@ -3,7 +3,6 @@ status: true
 dependencies:
   module:
     - islandora
-    - islandora_rdm_multifile_media
 name: rdm_text_extraction
 label: 'RDM File - extract PDF text'
 group: Islandora

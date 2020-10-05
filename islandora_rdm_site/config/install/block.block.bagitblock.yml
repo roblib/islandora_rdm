@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_bagger_integration
+    - system
+  theme:
+    - carapace
+_core:
+  default_config_hash: pECMgVAJ_wy6W6e9hmgN-7OmD7ERGZzR6ijSe04c8go
+id: bagitblock
+theme: carapace
+region: sidebar_second
+weight: -5
+provider: null
+plugin: islandora_bagger_block
+settings:
+  id: islandora_bagger_block
+  label: 'Download Dataset'
+  provider: islandora_bagger_integration
+  label_display: visible
+visibility:
+  islandora_entity_bundle:
+    id: islandora_entity_bundle
+    bundles:
+      data_management_plan: data_management_plan
+      islandora_rdm_dataset: islandora_rdm_dataset
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: "/node/add/*\r\n/node/*/edit"
+    negate: true
+    context_mapping: {  }

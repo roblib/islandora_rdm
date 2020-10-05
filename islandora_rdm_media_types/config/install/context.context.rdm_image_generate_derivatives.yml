@@ -3,7 +3,6 @@ status: true
 dependencies:
   module:
     - islandora
-    - islandora_rdm_multifile_media
 name: rdm_image_generate_derivatives
 label: 'RDM Image - generate derivatives'
 group: Islandora

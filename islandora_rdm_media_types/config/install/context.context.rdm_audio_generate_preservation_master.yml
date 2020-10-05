@@ -3,7 +3,6 @@ status: true
 dependencies:
   module:
     - islandora
-    - islandora_rdm_multifile_media
 name: rdm_audio_generate_preservation_master
 label: 'RDM Audio - generate Preservation Master'
 group: Islandora

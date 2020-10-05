@@ -3,7 +3,6 @@ status: true
 dependencies:
   module:
     - islandora
-    - islandora_rdm_multifile_media
 name: rdm_tabular_data_generate_derivatives
 label: 'RDM Tabular Data - generate derivatives'
 group: Islandora

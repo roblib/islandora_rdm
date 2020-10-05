@@ -1,8 +1,7 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - islandora_rdm_multifile_media
+  module: {  }
 id: rdm_generate_a_video_thumbnail_file
 label: 'RDM - Generate a Video thumbnail file'
 type: media
