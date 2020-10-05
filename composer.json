@@ -23,6 +23,7 @@
         "drupal/field_group": "*",
         "drupal/languagefield": "*",
         "drupal/linked_data_field": "1.x-dev",
+	"drupal/markup": "*",
         "drupal/metatag": "*",
         "drupal/readonly_field_widget": "*",
         "drupal/schema_metatag": "^1.6",
