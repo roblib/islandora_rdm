@@ -46,9 +46,6 @@
             "drupal/workflow_participants": {
                 "Using module with Content moderation throws Revision check errors": "https://www.drupal.org/files/issues/2019-08-16/workflow_participants-revision-error-3075426-1.patch"
             },
-            "drupal/metatag": {
-                "Use custom delimiter instead of commas for multiple values": "https://www.drupal.org/files/issues/2019-07-15/3067803-token-alter-hook_1.patch"
-            },
             "drupal/orcid": {
                 "Update wording of user page when new account creation is disabled.": "https://www.drupal.org/files/issues/2020-05-11/orcid-ui_wording_update-3135591-1.patch"
             },
