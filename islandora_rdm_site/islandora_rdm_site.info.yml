@@ -5,9 +5,11 @@ core: 8.x
 package: 'Islandora RDM'
 dependencies:
   - clamav
+  - islandora_bagger_integration
   - islandora_rdm
   - islandora_rdm_data_management_plan
   - islandora_rdm_workflows
   - islandora_rdm_media_types
+  - matomo_reports
   - redirect_after_login
 version: 8.x-dev
