@@ -5,6 +5,7 @@ package: 'Islandora RDM'
 dependencies:
   - context
   - csv_field_preview
+  - entity_reference_unpublished
   - field
   - field_group
   - field_permissions
@@ -13,7 +14,6 @@ dependencies:
   - islandora
   - islandora_core_feature
   - islandora_fits
-  - islandora_rdm
   - islandora_rdm
   - islandora_rdm_types
   - language

@@ -4,12 +4,21 @@ description: 'Site-wide settings for Islandora RDM'
 core: 8.x
 package: 'Islandora RDM'
 dependencies:
+  - chartjs_api
+  - checklistapi
   - clamav
+  - conditional_fields
+  - eu_cookie_compliance
+  - gdpr
   - islandora_bagger_integration
   - islandora_rdm
+  - islandora_rdm_altmetric
   - islandora_rdm_data_management_plan
+  - islandora_rdm_disk_usage
+  - islandora_rdm_file_transmission_fixity
   - islandora_rdm_workflows
   - islandora_rdm_media_types
+  - islandora_rdm_migration
   - matomo_reports
   - redirect_after_login
 version: 8.x-dev
