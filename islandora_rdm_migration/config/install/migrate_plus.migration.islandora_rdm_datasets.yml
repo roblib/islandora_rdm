@@ -105,40 +105,74 @@ process:
       plugin: default_value
       default_value: 'Dataset'
   field_rdm_creator:
-    -
-      plugin: migration_lookup
-      allow_multiple: true
-      migration:
-        - 'islandora_rdm_creator'
+    - plugin: sub_process
       source: 'PID'
-      no_stub: true
-    -
-      plugin: sub_process
       process:
-        target_id: 'id'
-        target_revision_id: 'revision_id'
+        target_id:
+          -
+            plugin: migration_lookup
+            migration:
+              - 'islandora_rdm_creator'
+            source: value
+          -
+            plugin: extract
+            index:
+              - 0
+        target_revision_id:
+          -
+            plugin: migration_lookup
+            migration:
+              - 'islandora_rdm_creator'
+            source: value
+          -
+            plugin: extract
+            index: 1
   field_date_paragraph:
-    - plugin: migration_lookup
-      allow_multiple: true
-      migration:
-        - 'islandora_rdm_issued_date'
-      source: 'PID'
-      no_stub: true
     - plugin: sub_process
+      source: 'PID'
       process:
-        target_id: 'id'
-        target_revision_id: 'revision_id'
+        target_id:
+          -
+            plugin: migration_lookup
+            migration:
+              - 'islandora_rdm_issued_date'
+            source: value
+          -
+            plugin: extract
+            index:
+              - 0
+        target_revision_id:
+          -
+            plugin: migration_lookup
+            migration:
+              - 'islandora_rdm_issued_date'
+            source: value
+          -
+            plugin: extract
+            index: 1
   field_rdm_description:
-    - plugin: migration_lookup
-      allow_multiple: true
-      migration:
-        - 'islandora_rdm_abstract'
-      source: 'PID'
-      no_stub: true
     - plugin: sub_process
+      source: 'PID'
       process:
-        target_id: 'id'
-        target_revision_id: 'revision_id'
+        target_id:
+          -
+            plugin: migration_lookup
+            migration:
+              - 'islandora_rdm_abstract'
+            source: value
+          -
+            plugin: extract
+            index:
+             - 0
+        target_revision_id:
+          -
+            plugin: migration_lookup
+            migration:
+              - 'islandora_rdm_abstract'
+            source: value
+          -
+            plugin: extract
+            index: 1
   field_rdm_publication_link/uri:
     -
       plugin: skip_on_empty
