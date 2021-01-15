@@ -43,7 +43,7 @@
         "drupal/vefl": "*",
         "drupal/viewfield": "^3.0",
         "islandora/islandora": "*",
-        "islandora/islandora_fits": "*",
+        "islandora-rdm/islandora_fits": "*",
         "islandora/controlled_access_terms": "*",
         "islandora-rdm/csv_field_preview": "*",
         "islandora-rdm/workflow_participants": "*",
