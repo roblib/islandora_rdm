@@ -20,6 +20,7 @@
         "drupal/ctools": "*",
         "drupal/events_logging": "*",
         "drupal/inline_entity_form": "*",
+        "drupal/entity_browser": "*",
 	    "drupal/entity_print": "*",
         "drupal/entity_reference_unpublished": "*",
         "drupal/eu_cookie_compliance": "*",
