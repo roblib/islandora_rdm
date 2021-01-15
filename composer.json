@@ -41,7 +41,7 @@
         "drupal/vefl": "*",
         "drupal/viewfield": "^3.0",
         "islandora/islandora": "*",
-        "islandora/controlled_acces_terms": "*",
+        "islandora/controlled_access_terms": "*",
         "islandora-rdm/csv_field_preview": "*",
         "islandora-rdm/workflow_participants": "*",
         "islandora-rdm/islandora_bagger_integration": "dev-8.x-1.x",
