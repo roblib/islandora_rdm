@@ -32,6 +32,7 @@
 	    "drupal/markup": "*",
         "drupal/matomo_reports": "*",
         "drupal/metatag": "*",
+        "drupal/pdf": "*",
         "drupal/readonly_field_widget": "*",
         "drupal/schema_metatag": "^1.6",
         "drupal/schema_dataset": "*",
