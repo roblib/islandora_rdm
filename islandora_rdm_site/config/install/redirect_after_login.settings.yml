@@ -1,8 +1,7 @@
-login_redirection:
+¯login_redirection:
   anonymous: null
   authenticated: /
   administrator: /admin/content/moderated
-  fedoraadmin: /admin/content/moderated
   islandora_rdm_metadata_curator: /admin/content/moderated
   islandora_rdm_data_curator: /admin/content/moderated
   islandora_rdm_data_creator: /dashboard

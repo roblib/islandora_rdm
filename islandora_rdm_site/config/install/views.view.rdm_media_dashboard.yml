@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_media_of
-    - media.type.extracted_text
+    - media.type.extracted_text¯
     - media.type.fits_technical_metadata
     - media.type.rdm_audio
     - media.type.rdm_file
@@ -11,7 +11,6 @@ dependencies:
     - media.type.rdm_tabular_data
     - media.type.rdm_video
     - user.role.administrator
-    - user.role.fedoraadmin
     - user.role.islandora_rdm_data_creator
     - user.role.islandora_rdm_data_curator
     - user.role.islandora_rdm_metadata_curator
@@ -41,7 +40,6 @@ display:
         options:
           role:
             administrator: administrator
-            fedoraadmin: fedoraadmin
             islandora_rdm_metadata_curator: islandora_rdm_metadata_curator
             islandora_rdm_data_curator: islandora_rdm_data_curator
             islandora_rdm_data_creator: islandora_rdm_data_creator
@@ -1015,7 +1013,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              fedoraadmin: '0'
               islandora_rdm_metadata_curator: '0'
               islandora_rdm_data_curator: '0'
               islandora_rdm_data_creator: '0'
@@ -1076,7 +1073,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              fedoraadmin: '0'
               islandora_rdm_metadata_curator: '0'
               islandora_rdm_data_curator: '0'
               islandora_rdm_data_creator: '0'
@@ -1127,7 +1123,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              fedoraadmin: '0'
               islandora_rdm_metadata_curator: '0'
               islandora_rdm_data_curator: '0'
               islandora_rdm_data_creator: '0'
