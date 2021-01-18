@@ -14,7 +14,7 @@ dependencies:
   - islandora
   - islandora_core_feature
   - islandora_fits
-  - islandora_text_extraction_defaults
+  - islandora:islandora_text_extraction_defaults
   - islandora_rdm
   - islandora_rdm_types
   - language
