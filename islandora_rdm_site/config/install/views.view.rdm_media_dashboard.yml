@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_media_of
-    - media.type.extracted_text¯
     - media.type.fits_technical_metadata
     - media.type.rdm_audio
     - media.type.rdm_file
@@ -947,7 +946,6 @@ display:
           admin_label: ''
           operator: in
           value:
-            extracted_text: extracted_text
             fits_technical_metadata: fits_technical_metadata
             rdm_audio: rdm_audio
             rdm_file: rdm_file
@@ -1048,7 +1046,6 @@ display:
           admin_label: ''
           operator: in
           value:
-            extracted_text: extracted_text
             fits_technical_metadata: fits_technical_metadata
             rdm_audio: rdm_audio
             rdm_file: rdm_file
