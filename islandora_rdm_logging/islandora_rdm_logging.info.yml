@@ -1,6 +1,6 @@
 name: 'Islandora RDM Logging'
 type: module
-core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Islandora RDM'
 description: 'Logging configuration for Islandora RDM'
 dependencies:

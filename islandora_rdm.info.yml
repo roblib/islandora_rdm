@@ -1,7 +1,7 @@
 name: 'Islandora RDM'
 type: module
 description: 'Islandora Research Data Managment Platform'
-core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Islandora RDM'
 dependencies:
   - entity_reference_revisions

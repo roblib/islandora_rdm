@@ -1,7 +1,7 @@
 name: 'Islandora RDM Altmetrics'
 type: module
 description: 'AltMetrics implementation for Islandora RDM'
-core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Islandora RDM'
 dependencies:
   - islandora_rdm_types

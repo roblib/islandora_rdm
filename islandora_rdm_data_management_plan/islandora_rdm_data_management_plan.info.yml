@@ -1,7 +1,7 @@
 name: 'Data Management Plan'
 description: 'Provides Data Management Plan content type and related configuration. This content type provides a method for users to create a data management plan for research projects that captures administrative information about the project and details related to data collected.'
 type: module
-core: 8.x
+core_version_requirement: ^8 || ^9
 dependencies:
   - block
   - content_moderation

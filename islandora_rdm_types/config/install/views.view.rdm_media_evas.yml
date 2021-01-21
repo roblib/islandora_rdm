@@ -5,7 +5,7 @@ dependencies:
     - core.entity_view_mode.media.teaser
     - field.storage.media.field_media_audio_file
     - field.storage.media.field_media_file
-    - field.storage.media.field_media_image 
+    - field.storage.media.field_media_image
     - field.storage.media.field_media_use
     - field.storage.media.field_media_video_file
   enforced:
@@ -28,7 +28,7 @@ description: 'Displays media for content as EVA''s per model.'
 tag: ''
 base_table: media_field_data
 base_field: mid
-core: 8.x
+core_version_requirement: ^8 || ^9
 display:
   default:
     display_plugin: default
@@ -713,7 +713,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions
@@ -798,7 +798,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions
@@ -883,7 +883,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions
@@ -927,7 +927,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions
@@ -1011,7 +1011,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions
@@ -1095,7 +1095,7 @@ display:
       tags:
         - 'config:field.storage.media.field_media_audio_file'
         - 'config:field.storage.media.field_media_file'
-        - 'config:field.storage.media.field_media_image' 
+        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.media.field_media_use'
         - 'config:field.storage.media.field_media_video_file'
         - extensions

@@ -1,7 +1,7 @@
 name: 'Islandora RDM OAI-PMH Endpoint'
 type: module
 description: 'Default configuration for an OAI-PMH Endpoint'
-core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Islandora'
 dependencies:
   - rest_oai_pmh

@@ -14,7 +14,7 @@ description: 'A search page preconfigured to search through the content of your 
 tag: ''
 base_table: search_api_index_default_solr_index
 base_field: search_api_id
-core: 8.x
+core_version_requirement: ^8 || ^9
 display:
   default:
     display_plugin: default

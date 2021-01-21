@@ -1,7 +1,7 @@
 name: 'Islandora RDM Site Settings'
 type: module
 description: 'Site-wide settings for Islandora RDM'
-core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'Islandora RDM'
 dependencies:
   - chartjs_api
