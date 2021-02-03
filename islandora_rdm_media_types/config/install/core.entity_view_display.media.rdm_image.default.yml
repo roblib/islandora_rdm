@@ -4,9 +4,7 @@ dependencies:
   config:
     - field.field.media.rdm_image.field_actual_checksum
     - field.field.media.rdm_image.field_byte_count
-    - field.field.media.rdm_image.field_editable_text
     - field.field.media.rdm_image.field_expected_checksum
-    - field.field.media.rdm_image.field_extracted_text_file
     - field.field.media.rdm_image.field_file_size
     - field.field.media.rdm_image.field_fits_file
     - field.field.media.rdm_image.field_height
@@ -57,13 +55,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_editable_text:
-    weight: 14
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: texttohtml
-    region: content
   field_expected_checksum:
     weight: 17
     label: above
@@ -71,14 +62,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_extracted_text_file:
-    weight: 13
-    label: above
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
     region: content
   field_file_size:
     weight: 9

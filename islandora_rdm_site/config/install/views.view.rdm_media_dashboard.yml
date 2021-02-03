@@ -5,7 +5,6 @@ dependencies:
     - field.storage.media.field_media_of
     - media.type.fits_technical_metadata
     - media.type.rdm_audio
-    - media.type.rdm_file
     - media.type.rdm_image
     - media.type.rdm_tabular_data
     - media.type.rdm_video
@@ -948,7 +947,6 @@ display:
           value:
             fits_technical_metadata: fits_technical_metadata
             rdm_audio: rdm_audio
-            rdm_file: rdm_file
             rdm_image: rdm_image
             rdm_tabular_data: rdm_tabular_data
             rdm_video: rdm_video
@@ -1048,7 +1046,6 @@ display:
           value:
             fits_technical_metadata: fits_technical_metadata
             rdm_audio: rdm_audio
-            rdm_file: rdm_file
             rdm_image: rdm_image
             rdm_tabular_data: rdm_tabular_data
             rdm_video: rdm_video

@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - media.type.rdm_audio
-    - media.type.rdm_file
     - media.type.rdm_image
     - media.type.rdm_tabular_data
     - media.type.rdm_video
@@ -82,7 +81,6 @@ type_settings:
   entity_types:
     media:
       - rdm_audio
-      - rdm_file
       - rdm_image
       - rdm_tabular_data
       - rdm_video
