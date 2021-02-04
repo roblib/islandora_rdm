@@ -7,12 +7,8 @@ dependencies:
     module:
       - islandora_rdm_datacite
   module:
-    - content_moderation
-    - workflow_participants
-third_party_settings:
-  workflow_participants:
-    editor_transitions: {  }
-    reviewer_transitions: {  }
+    - content_moderations
+third_party_settings: {  }
 _core:
   default_config_hash: NymLgNMY5byc9xsOSi19L_s1Ne0SkqUlnJqT--8b3Po
 id: islandora_rdm_dataset_workflow

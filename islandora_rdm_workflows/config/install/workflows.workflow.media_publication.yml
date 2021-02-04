@@ -8,11 +8,7 @@ dependencies:
     - media.type.rdm_video
   module:
     - content_moderation
-    - workflow_participants
-third_party_settings:
-  workflow_participants:
-    editor_transitions: {  }
-    reviewer_transitions: {  }
+third_party_settings: {  }
 id: media_publication
 label: 'Media Publication'
 type: content_moderation

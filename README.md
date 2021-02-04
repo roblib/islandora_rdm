@@ -24,13 +24,11 @@ since our use of Composer-patches did not seem to work to install the core patch
 All other patches are defined in composer.json.
 
 
-  1. drupal/workflow_participants: Using module with Content moderation throws Revision check errors
-      https://www.drupal.org/files/issues/2019-08-16/workflow_participants-revision-error-3075426-1.patch
   2. drupal/metatag: Use custom delimiter instead of commas for multiple values
       https://www.drupal.org/files/issues/2019-07-15/3067803-token-alter-hook_1.patch
   3. drupal/schema_metatag: Recipe step descriptions will explode on comma
       https://www.drupal.org/files/issues/2019-07-15/2976935-use-metatag-delimiter.patch
-} 
+}
 ## Module Structure
 
 1. islandora_rdm - Core utilities and classes that any module should expect to be available.

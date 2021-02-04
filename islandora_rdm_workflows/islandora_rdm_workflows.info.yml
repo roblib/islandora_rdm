@@ -8,5 +8,4 @@ dependencies:
   - islandora_rdm_media_types
   - islandora_rdm_types
   - user
-  - workflow_participants
 core_incompatible: false
