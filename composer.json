@@ -18,7 +18,6 @@
         "drupal/clamav": "*",
         "drupal/conditional_fields": "*",
         "drupal/ctools": "*",
-        "drupal/events_logging": "*",
         "drupal/inline_entity_form": "*",
         "drupal/entity_browser": "*",
 	    "drupal/entity_print": "*",
