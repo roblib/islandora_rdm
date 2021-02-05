@@ -26,7 +26,6 @@
         "drupal/eu_cookie_compliance": "*",
         "drupal/field_permissions": "*",
         "drupal/field_group": "*",
-        "drupal/gdpr": "*",
         "drupal/languagefield": "*",
         "drupal/linked_data_field": "1.x-dev",
 	    "drupal/markup": "*",

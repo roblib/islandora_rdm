@@ -9,7 +9,6 @@ dependencies:
   - clamav
   - conditional_fields
   - eu_cookie_compliance
-  - gdpr
   - islandora_bagger_integration
   - islandora:islandora_text_extraction_defaults
   - islandora_rdm
