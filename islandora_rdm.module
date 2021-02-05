@@ -91,8 +91,8 @@ function islandora_rdm_block_access(Block $block, $operation, AccountInterface $
     $view = \Drupal::service('entity.manager')->getStorage('view')->load('solr_search_content');
     if (!$view->status()) {
       return AccessResult::forbidden();
-    } */
-  }
+    }
+  } */
 }
 
 /**
