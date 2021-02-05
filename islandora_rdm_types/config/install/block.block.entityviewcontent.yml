@@ -6,11 +6,11 @@ dependencies:
     - node
     - system
   theme:
-    - carapace
+    - bartik
 _core:
   default_config_hash: koSgLdPk0E3A4khgVd8SF-w3TogN-utS0HMg1OzKE_k
 id: entityviewcontent
-theme: carapace
+theme: bartik
 region: sidebar_second
 weight: -6
 provider: null

@@ -6,11 +6,11 @@ dependencies:
     - islandora_bagger_integration
     - system
   theme:
-    - carapace
+    - bartik
 _core:
   default_config_hash: pECMgVAJ_wy6W6e9hmgN-7OmD7ERGZzR6ijSe04c8go
 id: bagitblock
-theme: carapace
+theme: bartik
 region: sidebar_second
 weight: -5
 provider: null

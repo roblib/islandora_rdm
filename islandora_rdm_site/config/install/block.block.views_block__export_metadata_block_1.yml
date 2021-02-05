@@ -8,11 +8,11 @@ dependencies:
     - system
     - views
   theme:
-    - carapace
+    - bartik
 _core:
   default_config_hash: 6GcrIIZxMhVLfAE8WbpZVRUeJDCQySLEQ9H_BgeCBck
 id: views_block__export_metadata_block_1
-theme: carapace
+theme: bartik
 region: sidebar_second
 weight: -5
 provider: null

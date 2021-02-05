@@ -6,9 +6,9 @@ dependencies:
   module:
     - facets
   theme:
-    - carapace
+    - bartik
 id: license
-theme: carapace
+theme: bartik
 region: sidebar_first
 weight: 0
 provider: null

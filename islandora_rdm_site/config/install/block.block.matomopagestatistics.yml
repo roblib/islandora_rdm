@@ -6,9 +6,9 @@ dependencies:
     - node
     - user
   theme:
-    - carapace
+    - bartik
 id: matomopagestatistics
-theme: carapace
+theme: bartik
 region: sidebar_second
 weight: -6
 provider: null
