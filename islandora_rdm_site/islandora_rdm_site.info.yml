@@ -18,7 +18,6 @@ dependencies:
   - islandora_rdm_file_transmission_fixity
   - islandora_rdm_workflows
   - islandora_rdm_media_types
-  - islandora_rdm_migration
   - matomo_reports
   - redirect_after_login
 version: 8.x-dev
