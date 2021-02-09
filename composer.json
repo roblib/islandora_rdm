@@ -36,7 +36,6 @@
         "drupal/schema_dataset": "*",
         "drupal/media_attribution": "*",
         "drupal/paragraphs": "~1.5",
-        "drupal/redirect_after_login": "*",
         "drupal/facets": "*",
         "drupal/vefl": "*",
         "drupal/viewfield": "^3.0",
