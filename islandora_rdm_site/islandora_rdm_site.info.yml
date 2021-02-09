@@ -19,5 +19,4 @@ dependencies:
   - islandora_rdm_workflows
   - islandora_rdm_media_types
   - matomo_reports
-  - redirect_after_login
 version: 8.x-dev
