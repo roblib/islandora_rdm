@@ -53,9 +53,6 @@
             },
             "drupal/orcid": {
                 "Update wording of user page when new account creation is disabled.": "https://www.drupal.org/files/issues/2020-05-11/orcid-ui_wording_update-3135591-1.patch"
-            },
-            "drupal/schema_metatag": {
-                "Recipe step descriptions will explode on comma": "https://www.drupal.org/files/issues/2019-07-15/2976935-use-metatag-delimiter.patch"
             }
         }
     }
