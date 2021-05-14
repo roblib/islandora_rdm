@@ -151,15 +151,15 @@ process:
     plugin: static_map
     source: mimetype
     map:
-      image/jpeg: rdm_image
-      image/jpg: rdm_image
-      image/png: rdm_image
-      image/gif: rdm_image
-      audio/mpeg: rdm_audio
-      audio/wav: rdm_audio
-      audio/aac: rdm_audio
-      video/mp4: rdm_video
-    default_value: rdm_file
+      image/jpeg: image
+      image/jpg: image
+      image/png: image
+      image/gif: image
+      audio/mpeg: audio
+      audio/wav: audio
+      audio/aac: audio
+      video/mp4: video
+    default_value: file
 destination:
   plugin: 'entity:media'
 migration_dependencies:
