@@ -107,7 +107,7 @@ third_party_settings:
       region: content
     group_islandora_rdm_files:
       children:
-        - rdm_media_evas_entity_view_3
+        - rdm_media_evas_entity_view_2
       parent_name: group_dataset
       weight: 32
       format_type: tab
@@ -119,7 +119,7 @@ third_party_settings:
         formatter: open
       label: Files
 _core:
-  default_config_hash: XSGM8YCRlu-P2FXGjUa8Yf6LDNFxJZetf9AcwI5J9yg
+  default_config_hash: xJcec80-EpbZ9JKMSGoJ5nFNf4xxc6ZwP0bb5coVSz0
 id: node.islandora_rdm_dataset.default
 targetEntityType: node
 bundle: islandora_rdm_dataset
@@ -284,12 +284,12 @@ content:
     type: ld_link_formatter
     region: content
   links:
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
-  rdm_media_evas_entity_view_3:
-    weight: 33
+  rdm_media_evas_entity_view_2:
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -322,7 +322,8 @@ hidden:
   pdfjs_media_evas_service_file: true
   player_media_evas_entity_view_1: true
   rdm_media_evas_entity_view_1: true
-  rdm_media_evas_entity_view_2: true
+  rdm_media_evas_entity_view_3: true
   rdm_media_evas_service_file: true
   rdm_media_evas_thumbnail: true
   search_api_excerpt: true
+
