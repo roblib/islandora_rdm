@@ -26,7 +26,7 @@
         "drupal/field_permissions": "*",
         "drupal/field_group": "*",
         "drupal/languagefield": "*",
-        "drupal/linked_data_field": "1.x-dev",
+        "drupal/linked_data_field": "dev-1.x",
 	    "drupal/markup": "*",
         "drupal/matomo_reports": "*",
         "drupal/metatag": "*",
