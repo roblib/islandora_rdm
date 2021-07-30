@@ -159,7 +159,7 @@ process:
       audio/wav: audio
       audio/aac: audio
       text/csv: rdm_tabular_data
-      video/mp4: videordm_tabular_data
+      video/mp4: video
     default_value: file
 destination:
   plugin: 'entity:media'
