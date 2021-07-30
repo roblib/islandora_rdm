@@ -159,9 +159,7 @@ process:
       audio/wav: audio
       audio/aac: audio
       text/csv: rdm_tabular_data
-      video/mp4: video
-      application/vnd.openxmlformats-officedocument.spreadsheetml.sheet: rdm_tabular_data
-      application/vnd.ms-excel: rdm_tabular_data
+      video/mp4: videordm_tabular_data
     default_value: file
 destination:
   plugin: 'entity:media'
