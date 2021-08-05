@@ -35,7 +35,7 @@
         "drupal/schema_metatag": "^1.6",
         "drupal/schema_dataset": "*",
         "drupal/media_attribution": "*",
-        "drupal/paragraphs": "~1.5",
+        "drupal/paragraphs": "dev-1.x",
         "drupal/facets": "*",
         "drupal/vefl": "*",
         "drupal/viewfield": "^3.0",
