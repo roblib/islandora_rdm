@@ -80,6 +80,9 @@ process:
   title: title
   field_islandora_rdm_identifier: identifier
   uid: constants/creator_uid
+  pid_array:
+    plugin: key_wrapper
+    source: PID
   field_rdm_migration_source_pid: PID
   created:
     plugin: format_date
@@ -106,14 +109,14 @@ process:
       default_value: 'Dataset'
   field_rdm_creator:
     - plugin: sub_process
-      source: 'PID'
+      source: '@pid_array'
       process:
         target_id:
           -
             plugin: migration_lookup
             migration:
               - 'islandora_rdm_creator'
-            source: value
+            source: 'PID'
           -
             plugin: extract
             index:
@@ -123,20 +126,25 @@ process:
             plugin: migration_lookup
             migration:
               - 'islandora_rdm_creator'
-            source: value
+            source: 'PID'
           -
             plugin: extract
-            index: 1
+            index:
+              - 1
+    -
+      plugin: extract
+      index:
+        - 'key_wrapper'
   field_date_paragraph:
     - plugin: sub_process
-      source: 'PID'
+      source: '@pid_array'
       process:
         target_id:
           -
             plugin: migration_lookup
             migration:
               - 'islandora_rdm_issued_date'
-            source: value
+            source: 'PID'
           -
             plugin: extract
             index:
@@ -146,20 +154,25 @@ process:
             plugin: migration_lookup
             migration:
               - 'islandora_rdm_issued_date'
-            source: value
+            source: 'PID'
           -
             plugin: extract
-            index: 1
+            index:
+              - 1
+    -
+      plugin: extract
+      index:
+        - 'key_wrapper'
   field_rdm_description:
     - plugin: sub_process
-      source: 'PID'
+      source: '@pid_array'
       process:
         target_id:
           -
             plugin: migration_lookup
             migration:
               - 'islandora_rdm_abstract'
-            source: value
+            source: 'PID'
           -
             plugin: extract
             index:
@@ -169,10 +182,15 @@ process:
             plugin: migration_lookup
             migration:
               - 'islandora_rdm_abstract'
-            source: value
+            source: 'PID'
           -
             plugin: extract
-            index: 1
+            index:
+              - 1
+    -
+      plugin: extract
+      index:
+        - 'key_wrapper'
   field_rdm_publication_link/uri:
     -
       plugin: skip_on_empty
