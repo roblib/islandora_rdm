@@ -44,7 +44,7 @@
         "islandora/controlled_access_terms": "*",
         "islandora-rdm/csv_field_preview": "*",
         "islandora-rdm/islandora_bagger_integration": "dev-8.x-1.x",
-        "islandora-rdm/migrate_7x_claw": "dev-main"
+        "islandora-rdm/migrate_7x_claw": "1.x@dev"
     },
     "extra": {
         "patches": {
