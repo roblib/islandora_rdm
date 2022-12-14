@@ -1,0 +1,151 @@
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_complete_grants
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Grants)'
+source:
+  plugin: d7_node_complete
+  node_type: grants
+process:
+  langcode:
+    -
+      plugin: default_value
+      default_value: en
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: default_value
+      default_value: 1
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_grants/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_deadline:
+    -
+      plugin: sub_process
+      source: field_deadline
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: Y-m-d
+          source: value
+  field_sponsor_deadline:
+    -
+      plugin: sub_process
+      source: field_sponsor_deadline
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: Y-m-d
+          source: value
+  field_research_category:
+    -
+      plugin: get
+      source: field_research_category
+  field_funding_body:
+    -
+      plugin: sub_process
+      source: field_funding_body
+      process:
+        target_id: tid
+  field_announcement_type:
+    -
+      plugin: get
+      source: field_announcement_type
+  field_deadline_alternative_text:
+    -
+      plugin: get
+      source: field_deadline_alternative_text
+  field_event_date:
+    -
+      plugin: sub_process
+      source: field_event_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: Y-m-d
+          source: value
+  field_archived:
+    -
+      plugin: get
+      source: field_archived
+  field_sticky_at_top:
+    -
+      plugin: get
+      source: field_sticky_at_top
+  field_attached_file:
+    -
+      plugin: sub_process
+      source: field_attached_file
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: grants
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_comment_field_instance
