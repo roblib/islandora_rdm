@@ -8,7 +8,7 @@ cck_plugin_method: null
 migration_tags:
   - 'Drupal 7'
   - Content
-migration_group: migrate_drupal_7
+migration_group: islandora_rdm_drupal_7
 label: 'Node complete (Grants)'
 source:
   plugin: d7_node_complete
@@ -70,17 +70,7 @@ process:
     -
       plugin: get
       source: body
-  field_deadline:
-    -
-      plugin: sub_process
-      source: field_deadline
-      process:
-        value:
-          plugin: format_date
-          from_format: 'Y-m-d H:i:s'
-          to_format: Y-m-d
-          source: value
-  field_sponsor_deadline:
+  field_funding_sponsor_deadline:
     -
       plugin: sub_process
       source: field_sponsor_deadline
@@ -90,16 +80,40 @@ process:
           from_format: 'Y-m-d H:i:s'
           to_format: Y-m-d
           source: value
-  field_research_category:
-    -
-      plugin: get
-      source: field_research_category
-  field_funding_body:
+  field_funding_internal_deadline:
+    - plugin: sub_process
+      source: field_deadline
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: Y-m-d
+          source: value
+  field_rdm_end_date:
     -
       plugin: sub_process
-      source: field_funding_body
+      source: field_sponsor_deadline
       process:
-        target_id: tid
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: Y
+          source: value
+  field_funding_research_category:
+    -
+      source: field_research_category
+      plugin: sub_process
+      process:
+        target_id:
+          -
+            plugin: migration_lookup
+            migration: upgrade_d7_taxonomy_term_broad_research_areas
+            source: target_id
+  field_rdm_funding_organization:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_taxonomy_term_funders
+      source: field_funding_body
   field_announcement_type:
     -
       plugin: get
@@ -108,7 +122,7 @@ process:
     -
       plugin: get
       source: field_deadline_alternative_text
-  field_event_date:
+  field_funding_event_date:
     -
       plugin: sub_process
       source: field_event_date
@@ -118,10 +132,6 @@ process:
           from_format: 'Y-m-d H:i:s'
           to_format: Y-m-d
           source: value
-  field_archived:
-    -
-      plugin: get
-      source: field_archived
   field_sticky_at_top:
     -
       plugin: get
@@ -134,18 +144,12 @@ process:
         target_id: fid
         display: display
         description: description
-  field_metatag:
-    -
-      plugin: d7_metatag_entities
-      source: pseudo_metatag_entities
 destination:
   plugin: 'entity_complete:node'
   translations: true
-  default_bundle: grants
+  default_bundle: funding_information
 migration_dependencies:
   required:
-    - upgrade_d7_user
-    - upgrade_d7_node_type
-  optional:
-    - upgrade_d7_field_instance
-    - upgrade_d7_comment_field_instance
+    - upgrade_d7_taxonomy_term_funders
+    - upgrade_d7_taxonomy_term_broad_research_areas
+  optional: {  }

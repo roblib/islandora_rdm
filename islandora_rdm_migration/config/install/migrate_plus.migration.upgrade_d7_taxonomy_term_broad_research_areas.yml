@@ -1,18 +1,19 @@
+uuid: d3077bed-adda-4c21-a10d-ba1cdf35f0a0
 langcode: en
 status: true
 dependencies: {  }
-id: upgrade_d7_taxonomy_term_funders
+id: upgrade_d7_taxonomy_term_broad_research_areas
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags:
   - 'Drupal 7'
   - Content
-migration_group: islandora_rdm_drupal_7
-label: 'Taxonomy terms (Funders)'
+migration_group: migrate_drupal_7
+label: 'Taxonomy terms (Broad Research Areas)'
 source:
   plugin: d7_taxonomy_term
-  bundle: funders
+  bundle: broad_research_areas
 process:
   name:
     -
@@ -40,7 +41,8 @@ process:
       default_value: en
 destination:
   plugin: 'entity:taxonomy_term'
-  default_bundle: corporate_body
+  default_bundle: broad_research_areas
 migration_dependencies:
   required: {  }
   optional: {  }
+
