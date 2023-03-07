@@ -157,10 +157,9 @@ class Dataset {
     // Spatial Properties
     if ($location_data = $node->get('field_physical_location')) {
       if ($location_data->count()) {
-        $geolocations_element = $this->doc->createElement('Geolocations');
+        $geolocations_element = $this->doc->createElement('geoLocations');
         foreach ($location_data as $location_datum) {
-          $geolocation_element = $this->doc->createElement('GeoLocation');
-          $geolocations_element->appendChild($geolocation_element);
+          $geolocation_element = $this->doc->createElement('geoLocation');
 
           if ($location_target = $location_datum->get('entity')->getTarget()) {
             $location_string = $location_target->get('field_geolocation')
@@ -178,6 +177,9 @@ class Dataset {
               $lat = $this->doc->createElement('pointLatitude', $coordinates[0]['lat']);
               $geolocationpoint->appendChild($long);
               $geolocationpoint->appendChild($lat);
+            }
+            if (!empty($location_string) || !empty($coordinates)) {
+              $geolocations_element->appendChild($geolocation_element);
             }
           }
         }

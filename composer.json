@@ -1,6 +1,6 @@
 {
     "name": "islandora-rdm/islandora_rdm",
-    "description": "Islandora Research Data Managment Platform",
+    "description": "Islandora Research Data Management Platform",
     "type": "drupal-module",
     "homepage": "https://github.com/roblib/islandora_rdm",
     "authors": [
@@ -40,6 +40,7 @@
         "drupal/vefl": "*",
         "drupal/viewfield": "^3.0",
         "islandora/islandora": "*",
+	"islandora-rdm/islandora_datacite_doi": "^2.0.0",
         "islandora-rdm/islandora_fits": "*",
         "islandora/controlled_access_terms": "*",
         "islandora-rdm/csv_field_preview": "*",
