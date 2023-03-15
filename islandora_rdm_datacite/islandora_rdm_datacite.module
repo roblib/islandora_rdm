@@ -6,7 +6,8 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\islandora\Plugin\ContextReaction\DeleteReaction;
 /**
  * Implements hook_help().
  */
@@ -21,4 +22,64 @@ function islandora_rdm_datacite_help($route_name, RouteMatchInterface $route_mat
 
     default:
   }
+}
+
+
+/**
+ * Implementation of hook_node_update().
+ * Register the identifier with Datacite as 'Archived' if the node transitions away from 'Published'..
+ * This has to be separate from the presave hook because:
+ * 1. You can't update the node in this hook
+ * 2. The moderation state chagne is not available in the presave hook.
+ *
+ * @TODO: Replace this code if this is committed to core: https://www.drupal.org/project/drupal/issues/2873287
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function islandora_rdm_datacite_node_update(EntityInterface $entity) {
+
+  if ($entity->bundle() !== 'islandora_rdm_dataset') {
+    return;
+  }
+  $new_moderation_state = _islandora_rdm_datacite_get_entity_moderation_state($entity);
+  if (!empty($entity->original)) {
+    $original_moderation_state = _islandora_rdm_datacite_get_entity_moderation_state($entity->original);
+  }
+  else {
+    return;
+  }
+
+  $workflow_transition = rtrim($original_moderation_state . '-->' . $new_moderation_state);
+
+  switch ($workflow_transition) {
+    case 'published-->archived':
+    case 'archived-->archived':
+    $utils = \Drupal::service('islandora.utils');
+
+    // Execute delete reactions.
+    $utils->executeNodeReactions('\Drupal\islandora\Plugin\ContextReaction\DeleteReaction', $entity);
+
+    break;
+  }
+
+  return FALSE;
+}
+
+/**
+ * Helper function to get a node's moderation state string.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *  The entity to get the moderation state from.
+ * @return false|mixed
+ *   The moderation state string or FALSE if not found.
+ */
+function _islandora_rdm_datacite_get_entity_moderation_state(EntityInterface $entity) {
+  $current_entity_lang = $entity->get('langcode')->value;
+  $translated_entity = $entity->getTranslation($current_entity_lang);
+  if ($moderation_state_field = $translated_entity->get('moderation_state')
+    ->first()) {
+    return $moderation_state_field->getValue()['value'];
+  }
+
+  return FALSE;
 }
