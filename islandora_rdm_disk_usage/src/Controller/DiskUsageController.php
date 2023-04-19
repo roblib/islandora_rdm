@@ -5,6 +5,7 @@ namespace Drupal\islandora_rdm_disk_usage\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Pager\PagerManagerInterface;
 
 /**
  * Class DiskUsageController. All helper methods are private.
@@ -19,10 +20,18 @@ class DiskUsageController extends ControllerBase {
   protected $entityTypeManager;
 
   /**
+   * The pager manager.
+   *
+   * @var \Drupal\Core\Pager\PagerManagerInterface
+   */
+  protected $pagerManager;
+
+  /**
    * Constructs a new DiskUsageController object.
    */
-  public function __construct(EntityTypeManagerInterface $manager) {
+  public function __construct(EntityTypeManagerInterface $manager, PagerManagerInterface $pagerManager) {
     $this->entityTypeManager = $manager;
+    $this->pagerManager = $pagerManager;
   }
 
   /**
@@ -30,7 +39,8 @@ class DiskUsageController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-              $container->get('entity_type.manager')
+              $container->get('entity_type.manager'),
+              $container->get('pager.manager')
       );
   }
 
@@ -87,7 +97,7 @@ class DiskUsageController extends ControllerBase {
     // Get current page.
     $page = \Drupal::request()->query->get('page', '');
     // Starts from 0.
-    $current_page = $page;
+    $current_page = (int)$page;
     $num_per_page = 5;
 
     $begin = $current_page * $num_per_page;
@@ -116,8 +126,8 @@ class DiskUsageController extends ControllerBase {
 
     // Now that we have the total number of results
     // Create and initialize the pager.
-    pager_default_initialize(count($entities), $num_per_page);
-
+    $this->pagerManager->createPager(count($entities), $num_per_page);
+    
     // Finally, add the pager to the render array, and return.
     // Pager_default_initialize sets some global variables so that
     // The pager theme code 'pager' knows how many page links to create
